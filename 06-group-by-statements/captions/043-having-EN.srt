@@ -1,0 +1,449 @@
+00:00:01,020 --> 00:00:04,740
+Hello everyone and welcome to the having lecture.
+
+00:00:05,130 --> 00:00:09,150
+So we're going to learn about that having clause how to use it and then we'll see a few examples in
+
+00:00:09,150 --> 00:00:10,090
+action.
+
+00:00:10,110 --> 00:00:13,620
+It's actually pretty straightforward once you get a good understanding of group by.
+
+00:00:13,830 --> 00:00:20,330
+So we'll basically just go almost straight into the examples after showing you the syntax here.
+
+00:00:20,430 --> 00:00:26,370
+So we often use that having clause in conjunction with the GROUP BY clause to filter group rows that
+
+00:00:26,370 --> 00:00:29,070
+do not satisfy a specified condition.
+
+00:00:29,070 --> 00:00:34,080
+The way I like to think about the having clause is it's almost just like the WHERE statement or that
+
+00:00:34,080 --> 00:00:34,890
+where clause.
+
+00:00:35,130 --> 00:00:37,780
+Except you're using it with a GROUP BY statement.
+
+00:00:38,400 --> 00:00:40,790
+So it kind of looks like this is a syntax.
+
+00:00:40,860 --> 00:00:46,830
+Notice is basically almost the same syntax of using a group by Except if you want to do filtering by
+
+00:00:46,830 --> 00:00:52,050
+some sort or condition instead of a where statement you say having and then some sort of condition here
+
+00:00:52,050 --> 00:00:55,050
+so you can say for instance select column 1.
+
+00:00:55,050 --> 00:01:01,170
+Let's say you are angry a function was a sum or something you say so at column 1 some of column 2 from
+
+00:01:01,170 --> 00:01:06,960
+table name grouped by column 1 and then the having condition would be something like having some of
+
+00:01:06,960 --> 00:01:10,110
+column to greater than $200 something like that.
+
+00:01:10,110 --> 00:01:12,980
+And we'll see plenty of examples to show you this.
+
+00:01:12,990 --> 00:01:19,020
+So again the having clause sets the condition for group rows created by the group by clause after the
+
+00:01:19,020 --> 00:01:25,110
+group by clause applies while the WHERE clause sets the condition for individual rows before the group
+
+00:01:25,110 --> 00:01:26,330
+by clause applies.
+
+00:01:26,550 --> 00:01:29,850
+And this is really the main difference between the having and the WHERE clauses.
+
+00:01:30,030 --> 00:01:34,760
+So they're really similar but the WHERE clause sets the condition for individual rows before you call
+
+00:01:34,760 --> 00:01:35,700
+a Group By.
+
+00:01:35,850 --> 00:01:41,760
+Whereas having sets that condition after you called the Group By Let's go out and see some examples
+
+00:01:41,760 --> 00:01:44,140
+so we can flesh out our understanding of this topic.
+
+00:01:44,160 --> 00:01:46,420
+Me go ahead and jump to PGA admen now.
+
+00:01:47,010 --> 00:01:50,700
+OK so here I am I already open the sequel editor from PGE admen.
+
+00:01:50,700 --> 00:01:56,280
+Again this is arbitrary or opening that execute an arbitrary sequel query editor.
+
+00:01:56,280 --> 00:02:01,890
+So let's go ahead and show you just a quick example of a normal group by statement and then we'll apply
+
+00:02:01,890 --> 00:02:03,910
+the having clause to it.
+
+00:02:03,930 --> 00:02:12,510
+So a typical group by statement may look something like this select customer id call a comma than some
+
+00:02:12,630 --> 00:02:13,850
+the amount.
+
+00:02:13,860 --> 00:02:19,320
+So this should look familiar basically just trying to say what customers has spent the most money etc.
+
+00:02:19,970 --> 00:02:26,810
+from that payment table group by customer underscores ID.
+
+00:02:26,820 --> 00:02:28,320
+So we've already seen this before.
+
+00:02:28,520 --> 00:02:29,630
+Let's go ahead and run that.
+
+00:02:29,800 --> 00:02:34,840
+OK so here we have the customer ID that actually ID number and the total amount that they spent.
+
+00:02:35,160 --> 00:02:42,960
+Now I can apply a having clause to selectively filter out these groups and let's say I wanted to only
+
+00:02:42,960 --> 00:02:46,360
+select customers who have been spending more than $200.
+
+00:02:46,410 --> 00:02:48,260
+So I would do this.
+
+00:02:48,720 --> 00:02:57,390
+I would say having And now the having clause I can do filters based off my group by statement.
+
+00:02:57,520 --> 00:03:03,360
+So and that what that means is basically I can filter off things such as these aggregate functions that
+
+00:03:03,360 --> 00:03:05,690
+would only work given that I had a group by.
+
+00:03:05,730 --> 00:03:15,730
+So I could say having the sum of that amount greater than $200.
+
+00:03:15,790 --> 00:03:21,090
+And then if I run that those are my two customers who are spent more than $200.
+
+00:03:21,100 --> 00:03:21,430
+OK.
+
+00:03:21,450 --> 00:03:26,760
+Let's go in and look at another example of the having clause this time with let's say a count every
+
+00:03:26,790 --> 00:03:29,670
+function so we can get a good idea of how it works again.
+
+00:03:29,730 --> 00:03:33,260
+So it's going to clear all this.
+
+00:03:33,810 --> 00:03:42,180
+And let's go in and explore the customer table a little more will say a select store underscore ID column
+
+00:03:43,260 --> 00:03:49,460
+and then we're going to count the number of occurrences of the customer ID.
+
+00:03:49,470 --> 00:03:57,180
+So this going to return the number of customers per store then we're going to say from the customer
+
+00:03:57,180 --> 00:04:02,140
+table group by the store ID.
+
+00:04:02,190 --> 00:04:05,800
+So I basically just want a count of the customers force per store.
+
+00:04:06,120 --> 00:04:07,520
+So that kind of makes sense.
+
+00:04:07,590 --> 00:04:10,830
+And here they are we have two stores store ID one story of the two.
+
+00:04:11,040 --> 00:04:14,340
+And there we have the count of the customer IDs.
+
+00:04:14,360 --> 00:04:14,890
+OK.
+
+00:04:15,120 --> 00:04:19,410
+So now I can filter this again using a having clause.
+
+00:04:19,470 --> 00:04:26,190
+And again key point here is that the having is doing the filtering after the group by statements meaning
+
+00:04:26,190 --> 00:04:30,660
+I can do a filter based off these aggregate function columns.
+
+00:04:30,660 --> 00:04:32,910
+So I could do something like this.
+
+00:04:33,230 --> 00:04:39,970
+Having count of the customer ID so that count column.
+
+00:04:40,350 --> 00:04:44,160
+And let's say I just want to know who has more than 300 customers.
+
+00:04:44,160 --> 00:04:46,600
+So that should only really return one row right.
+
+00:04:46,680 --> 00:04:47,860
+Store Id won here.
+
+00:04:47,880 --> 00:04:48,830
+So it's going to run that.
+
+00:04:48,960 --> 00:04:50,020
+And there it is.
+
+00:04:50,370 --> 00:04:51,060
+OK.
+
+00:04:51,060 --> 00:04:53,150
+So hopefully I was pretty straightforward.
+
+00:04:53,150 --> 00:04:59,350
+Again it's really similar to where except again you're having claws is going to perform that filtering
+
+00:04:59,350 --> 00:04:59,370
+.
+
+00:04:59,370 --> 00:05:04,830
+On that specific conditions on this case the condition is that the count's customer ID is greater than
+
+00:05:04,830 --> 00:05:08,540
+300 based off of your group by statement.
+
+00:05:09,030 --> 00:05:09,930
+OK.
+
+00:05:09,930 --> 00:05:16,050
+So let's go ahead and do one more example just to really make sure we understand this and then we'll
+
+00:05:16,050 --> 00:05:17,710
+set you off on the challenge.
+
+00:05:18,710 --> 00:05:24,630
+Go ahead and clear all this out in a way we're going to do here show an example of using where and having
+
+00:05:24,690 --> 00:05:26,950
+just to further illustrate their points.
+
+00:05:27,120 --> 00:05:29,790
+And why would you use one versus the other.
+
+00:05:29,860 --> 00:05:36,730
+So I'm gonna go to say selects Let's go in and select everything just so we get an idea of what columns
+
+00:05:36,730 --> 00:05:45,360
+we're working with from the film table and it's going to limit that to just a few rows so we don't spend
+
+00:05:45,370 --> 00:05:46,100
+a lot of time.
+
+00:05:46,180 --> 00:05:46,770
+OK.
+
+00:05:47,050 --> 00:05:51,080
+So again here's a list of all our films the columns we're going to be focused on right now.
+
+00:05:51,370 --> 00:05:52,650
+Is this rating column.
+
+00:05:52,650 --> 00:05:57,630
+That's the RPG Picchu thirteen etc. and the rental rate column.
+
+00:05:57,630 --> 00:06:00,700
+So that's how much it actually costs to rent that movie.
+
+00:06:00,810 --> 00:06:03,720
+So let's go and specify those two euros.
+
+00:06:04,610 --> 00:06:16,900
+So raiding rental rates let's go dance put son in line from film and let's say I wanted to only grab
+
+00:06:17,340 --> 00:06:19,410
+certain film ratings.
+
+00:06:19,410 --> 00:06:23,540
+Let's say I'm only interested in R G and P.G..
+
+00:06:23,680 --> 00:06:24,990
+So how would I do that.
+
+00:06:25,260 --> 00:06:31,560
+I would use a WHERE clause and say rading I remember since I kind of want a list of ratings I'm going
+
+00:06:31,560 --> 00:06:43,180
+to use in in passing a list of ratings so r g P.G. semi-colon run that.
+
+00:06:43,460 --> 00:06:50,730
+OK so now I have my list of movies where the rating is either R G or P.G. meaning the rating was in
+
+00:06:50,740 --> 00:06:51,930
+this list.
+
+00:06:52,020 --> 00:06:57,900
+Again the list is just parentheses and commas separating each of these what are essentially strings
+
+00:06:57,900 --> 00:07:01,700
+with these quotes here and then a semi colons and that.
+
+00:07:01,750 --> 00:07:04,320
+So here's my list of all the movies here.
+
+00:07:04,560 --> 00:07:07,690
+So it doesn't have PGE teens or NC 17.
+
+00:07:08,400 --> 00:07:10,360
+And now let's go ahead and do a group by
+
+00:07:13,810 --> 00:07:19,000
+rating and let's do that group by rating for it to make sense.
+
+00:07:19,000 --> 00:07:24,180
+What I'm going to do is go ahead and put an aggregate function here for the average Rensil rate.
+
+00:07:24,430 --> 00:07:28,990
+So now what I'm going to do is select the rating of the movie and figure out the average rental rate
+
+00:07:28,990 --> 00:07:30,550
+for that movie.
+
+00:07:30,780 --> 00:07:32,140
+Given that rating.
+
+00:07:32,720 --> 00:07:34,440
+So it's going to do that.
+
+00:07:35,190 --> 00:07:35,430
+OK.
+
+00:07:35,440 --> 00:07:38,370
+So I run that the school look at the results here.
+
+00:07:38,380 --> 00:07:44,550
+I have the movie ratings RPG and GI because they filter those based off my where statement and that
+
+00:07:44,560 --> 00:07:48,590
+makes sense because I'm doing that filtering before I do any group buys.
+
+00:07:48,750 --> 00:07:49,410
+Right.
+
+00:07:49,410 --> 00:07:53,070
+I'm not calling any sort of aggregate function on the rating column.
+
+00:07:53,070 --> 00:07:58,190
+So it makes sense that I'm able to actually use where to do some filtering out here.
+
+00:07:58,220 --> 00:08:01,320
+With that rating in our EPG.
+
+00:08:01,320 --> 00:08:01,900
+All right.
+
+00:08:02,040 --> 00:08:04,670
+So now what's the use case for having.
+
+00:08:04,720 --> 00:08:09,700
+Well the use case for having would be doing some sort of filtering on a condition after the group by
+
+00:08:09,690 --> 00:08:10,590
+statements.
+
+00:08:10,920 --> 00:08:15,280
+And so that would really mean filtering on some sort of aggregate function column.
+
+00:08:15,270 --> 00:08:17,970
+So in this case that would be the average rental rate.
+
+00:08:18,250 --> 00:08:25,710
+Let's say I only want to get the rows back where the average rental rate was less than $3 then I could
+
+00:08:25,720 --> 00:08:37,440
+say having average rental rates less than three semi colon may go ahead and run that and now we get
+
+00:08:37,620 --> 00:08:38,840
+a nice final result.
+
+00:08:38,880 --> 00:08:46,550
+We get the movies that are in RG P.G. so that rating where they are where the sorry excuse me the rating
+
+00:08:46,570 --> 00:08:50,750
+that was an RG NPG were the average Rensil rate was less than $3.
+
+00:08:50,760 --> 00:08:52,720
+And we had it all in the group by statement.
+
+00:08:53,110 --> 00:08:53,750
+OK.
+
+00:08:53,940 --> 00:08:59,680
+So go ahead and pause a video really focus and make sure you understand this entire sequel query.
+
+00:09:00,070 --> 00:09:05,040
+I think what's really impressive about where you are now in the course and the sequel query is if you
+
+00:09:05,040 --> 00:09:10,260
+had just started the course not knowing anything about programming or how to use sequel this would have
+
+00:09:10,260 --> 00:09:12,590
+looked like a really intimidating query.
+
+00:09:12,750 --> 00:09:18,280
+But I think now even if you had just learned about the having clause in this lecture you're actually
+
+00:09:18,270 --> 00:09:21,100
+able to really read and understand this query.
+
+00:09:21,390 --> 00:09:27,540
+So it's going to break down one more time before we and the lecturer will say again we're selecting
+
+00:09:27,630 --> 00:09:34,020
+the rating column and the average rental rate because we're grouping by rating were selected from the
+
+00:09:34,020 --> 00:09:40,750
+film table and we're using a where clause first because we're filtering out the rating column which
+
+00:09:40,810 --> 00:09:42,210
+doesn't have an aggregate function on it.
+
+00:09:42,210 --> 00:09:47,970
+So we're saying we're rating in our g mpg group by the rating.
+
+00:09:47,970 --> 00:09:52,320
+And then we're going to use having which is going to filter after the group by statement is going to
+
+00:09:52,330 --> 00:09:57,230
+say having and it's going to do a filtering off the error function.
+
+00:09:57,250 --> 00:09:59,740
+So average rental rate was less than three.
+
+00:10:00,370 --> 00:10:02,970
+OK again make sure you can type this out.
+
+00:10:02,970 --> 00:10:04,660
+Play around with it.
+
+00:10:05,050 --> 00:10:06,680
+Explore your own examples.
+
+00:10:06,820 --> 00:10:10,710
+But coming up next are going to be a few challenges just to make sure you really understand that having
+
+00:10:11,660 --> 00:10:12,640
+claws.
+
+00:10:12,630 --> 00:10:16,530
+All right thanks everyone and I will see it next lecture.

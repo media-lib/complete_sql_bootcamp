@@ -1,0 +1,359 @@
+00:00:01,230 --> 00:00:07,770
+Hello everyone and welcome to the min max average in some lecture and these are all what are known as
+
+00:00:07,860 --> 00:00:09,060
+aggregate functions.
+
+00:00:09,090 --> 00:00:14,330
+And we're going to be using every functions a lot when we learn about group by in the next lecture.
+
+00:00:14,340 --> 00:00:19,560
+So I wanted just to introduce to you some of these aggregate functions we've actually already used one
+
+00:00:19,560 --> 00:00:25,980
+of them called Count counters another example of an aggregate function and aggregate functions do is
+
+00:00:25,980 --> 00:00:33,630
+they basically take a lot of information or a lot of rows of data and aggregate it or combine it into
+
+00:00:33,630 --> 00:00:34,610
+a single value.
+
+00:00:34,650 --> 00:00:41,730
+So you can imagine what a some aggregate function does is it adds up all that data combines to a single
+
+00:00:41,730 --> 00:00:42,810
+value.
+
+00:00:42,810 --> 00:00:49,590
+And in the same way minimax an average take in all these rows of data and combine it to a single value
+
+00:00:49,590 --> 00:00:49,980
+.
+
+00:00:50,040 --> 00:00:53,100
+A lot of these are really self-explanatory in their use.
+
+00:00:53,100 --> 00:00:56,290
+But we're going to go ahead and show you quick simple examples of all of them.
+
+00:00:56,310 --> 00:00:59,220
+There will be a challenge because these are all pretty easy to understand.
+
+00:00:59,430 --> 00:01:04,350
+So let's just go ahead and dive straight into PGE admin and see examples of all these.
+
+00:01:05,250 --> 00:01:07,380
+OK so here we are at PGE admin.
+
+00:01:07,380 --> 00:01:12,810
+I'm going to go ahead and click on DVD rental execute arbitrary SQL query and what I'm going to do is
+
+00:01:12,810 --> 00:01:16,720
+just show you quick examples of all those aggregate functions.
+
+00:01:16,740 --> 00:01:23,400
+So let's go ahead and use the payment table to do this on the say select Asterix meaning all columns
+
+00:01:23,910 --> 00:01:26,430
+from the payments table.
+
+00:01:26,440 --> 00:01:31,400
+And it's going to limit this just to five rows so you don't get a whole bunch stuff back.
+
+00:01:31,440 --> 00:01:31,710
+OK.
+
+00:01:31,710 --> 00:01:34,870
+So let's look for a nice numerical column.
+
+00:01:35,160 --> 00:01:39,660
+It looks like to me a nice to work column to play around with as far as the aggregate functions would
+
+00:01:39,660 --> 00:01:41,550
+be the amount column.
+
+00:01:41,550 --> 00:01:44,960
+So how much that amounts payment was actually four.
+
+00:01:44,970 --> 00:01:46,500
+So we have a bunch of dollar figures here.
+
+00:01:46,500 --> 00:01:48,820
+So 7 9 9 189 et cetera.
+
+00:01:49,110 --> 00:01:53,160
+And we're going to do is go ahead and mess around with the agri functions for them.
+
+00:01:53,170 --> 00:01:58,600
+So aggregate functions are used a lot with the group by statement.
+
+00:01:58,860 --> 00:02:02,850
+And what we're going to do is just show you how you can use them without a group by statement.
+
+00:02:02,870 --> 00:02:08,040
+So it is common to do this without a group by statement because I agree it functions really show their
+
+00:02:08,040 --> 00:02:10,160
+power with GROUP BY together.
+
+00:02:10,260 --> 00:02:16,260
+But maybe you do want to just get a general idea for the entire data base you have.
+
+00:02:16,440 --> 00:02:20,480
+So let's say we want to know what's the average amounts paid.
+
+00:02:20,550 --> 00:02:29,490
+I would just say the average amount from payment and let's go ahead and delete this limit line even
+
+00:02:29,490 --> 00:02:32,040
+though we should only get basically one number back.
+
+00:02:32,250 --> 00:02:39,240
+So if I just say five here and that's the average amount paid $4 and 20 something cents notice I get
+
+00:02:39,300 --> 00:02:41,460
+a lot of decimal points back.
+
+00:02:42,360 --> 00:02:47,700
+And if you want to reduce the number of decimal points which I've actually just jumped to and shown
+
+00:02:47,700 --> 00:02:52,320
+you here but I haven't actually put that code in yet you can use the round function.
+
+00:02:52,320 --> 00:02:54,300
+So let's go in and run this again.
+
+00:02:54,300 --> 00:02:58,500
+So notice here and have a bunch of decimal points in a kind of jumped in the video.
+
+00:02:58,500 --> 00:02:59,580
+This isn't editing.
+
+00:02:59,700 --> 00:03:03,900
+But let's go ahead and reduce this so we just get it to two decimal points since this is money that's
+
+00:03:03,900 --> 00:03:07,270
+really all we care about up to the second decimal place.
+
+00:03:07,320 --> 00:03:12,960
+So to do that I can use round and I can say select and then I have round that I'm going to go ahead
+
+00:03:12,960 --> 00:03:19,050
+and pass in the average amounts that number that I want around Khama.
+
+00:03:19,380 --> 00:03:22,100
+And then the number of decimal places I want around too.
+
+00:03:22,110 --> 00:03:28,230
+So let's say just want around to two places pass the decimal and if I go ahead and run this then I get
+
+00:03:28,230 --> 00:03:31,860
+four dollars and 20 cents here for one more decimal points.
+
+00:03:31,860 --> 00:03:34,890
+I can just add in a different number here.
+
+00:03:34,980 --> 00:03:39,210
+Run it it'll give me that many decimal places past that point.
+
+00:03:39,210 --> 00:03:45,870
+So in this case I put in five and we can use round in order to round that average or a man or Max whatever
+
+00:03:45,870 --> 00:03:49,660
+the aggregate function is two more decimal places.
+
+00:03:49,970 --> 00:03:56,610
+OK so we won't be using round too often just because you can call it if you need it and it's just faster
+
+00:03:57,090 --> 00:04:02,940
+for demonstration purposes or for doing stuff just to go ahead and run it like this and then call the
+
+00:04:02,940 --> 00:04:05,070
+average here with all the decimal places.
+
+00:04:05,070 --> 00:04:10,110
+Usually I'm not going to need that many decimal places but throughout the course we won't be using around
+
+00:04:10,230 --> 00:04:13,190
+too much just because it's a lot faster to type out average.
+
+00:04:13,350 --> 00:04:16,440
+And now that we know how to use round you can do it on your own.
+
+00:04:16,440 --> 00:04:22,440
+So again if you want to use round you just take the numerical column amount that you're trying to pass
+
+00:04:23,490 --> 00:04:28,230
+type in around and it basically takes in essentially two arguments here.
+
+00:04:28,260 --> 00:04:33,900
+The first is the number you actually want to round and then you say comma and put in the number of decimal
+
+00:04:33,900 --> 00:04:35,280
+places you want around 2.
+
+00:04:35,520 --> 00:04:39,760
+So for instance two decimal places five to run it.
+
+00:04:39,870 --> 00:04:41,860
+And I have that round that number.
+
+00:04:41,940 --> 00:04:42,500
+OK.
+
+00:04:42,810 --> 00:04:46,450
+So let's go ahead to learn about couple more aggregate functions.
+
+00:04:46,450 --> 00:04:50,210
+Another useful one is men for minimum.
+
+00:04:50,340 --> 00:04:56,980
+And if we just say select men and let's go in and select the minimum rental or payment rates.
+
+00:04:57,570 --> 00:04:59,380
+And that would be the amount column.
+
+00:04:59,380 --> 00:05:06,780
+So I want to select the minimum amount anyone ever paid and or process can go ahead and say five here
+
+00:05:06,790 --> 00:05:07,010
+.
+
+00:05:07,260 --> 00:05:10,470
+And that's interesting the minimum amount was $0.
+
+00:05:10,470 --> 00:05:13,680
+So that might be something we might want to check into.
+
+00:05:13,740 --> 00:05:19,080
+So let's go ahead and check into that by saying selects amounts.
+
+00:05:19,080 --> 00:05:27,660
+And let's go ahead and order by the amounts ordered by amounts and see if we can find out a little more
+
+00:05:27,660 --> 00:05:33,510
+about this so if we order by amount you'll notice we have actually a lot of zeros in the beginning.
+
+00:05:33,540 --> 00:05:39,090
+So that might be an interesting question to ask ourselves later why are there so many zeros there and
+
+00:05:39,840 --> 00:05:42,820
+let's say we actually want to count how many there were.
+
+00:05:43,170 --> 00:05:49,290
+We could say select counts which is another aggregate function.
+
+00:05:49,320 --> 00:05:56,670
+So count the number of occurrences amount from payments and then we're going to say where Count is equal
+
+00:05:56,670 --> 00:05:57,410
+to.
+
+00:05:57,450 --> 00:06:04,860
+And let's say hosers or and notice we get an error here and that's because I wasn't paying attention
+
+00:06:04,890 --> 00:06:09,750
+and this should not been count that should have been amounts got confused there for a second because
+
+00:06:09,750 --> 00:06:10,650
+they rhyme.
+
+00:06:10,770 --> 00:06:16,150
+But here we go we have 24 instances of the amount being $0.
+
+00:06:16,170 --> 00:06:18,330
+So that's interesting.
+
+00:06:18,420 --> 00:06:22,120
+Pay attention to this because you may asked something similar in a challenge later on.
+
+00:06:22,140 --> 00:06:24,120
+So just a quick hint there.
+
+00:06:24,270 --> 00:06:27,940
+Anyways let's go ahead and continue on.
+
+00:06:28,110 --> 00:06:31,190
+So we have min and max.
+
+00:06:31,470 --> 00:06:38,460
+So if we just go ahead and check the max amounts anyone ever paid from payments max amount was $11 99
+
+00:06:38,460 --> 00:06:38,980
+cents.
+
+00:06:39,000 --> 00:06:40,980
+OK that makes sense.
+
+00:06:40,980 --> 00:06:42,980
+We already took the average amounts.
+
+00:06:43,680 --> 00:06:49,440
+And one of the last ones I want to show you is some and what some will do is just basically add all
+
+00:06:49,440 --> 00:06:50,930
+those amounts together from payment.
+
+00:06:50,940 --> 00:06:52,340
+So the entire sum.
+
+00:06:52,500 --> 00:06:58,080
+So all the payments sum together is sixty one thousand three hundred twelve dollars and four cents.
+
+00:06:58,440 --> 00:06:59,160
+OK.
+
+00:06:59,160 --> 00:07:01,170
+Those are the real basics of Agri function.
+
+00:07:01,170 --> 00:07:05,640
+So let's just go ahead and review what we learned we learned about from just going to type them here
+
+00:07:05,640 --> 00:07:06,290
+.
+
+00:07:06,420 --> 00:07:15,780
+We learned about men Max some average and we briefly again went over counts which we've seen before
+
+00:07:15,800 --> 00:07:16,070
+.
+
+00:07:16,350 --> 00:07:22,170
+So we went over minimax some average count and then we also learned how we can use round.
+
+00:07:22,170 --> 00:07:28,770
+So let's go ahead and redo that so I can use round two round numeric values so I'm going to say round
+
+00:07:29,160 --> 00:07:32,720
+first argument you passen is the column that's going to be a number.
+
+00:07:32,730 --> 00:07:36,570
+Then you say comma and you put in the number of decimal places you want.
+
+00:07:36,570 --> 00:07:39,030
+So in this case say I want one decimal place.
+
+00:07:39,030 --> 00:07:44,140
+If I run this I will go ahead and chop off that 4 and run that down to zero.
+
+00:07:44,160 --> 00:07:44,790
+OK.
+
+00:07:45,090 --> 00:07:47,510
+Thanks everyone for listening to this lecture.
+
+00:07:47,580 --> 00:07:54,240
+Again pretty basic stuff just the aggregate functions minimax some Furch count and then how to use round
+
+00:07:54,240 --> 00:07:54,650
+.
+
+00:07:54,720 --> 00:07:59,700
+Coming up next we'll learn how to use GROUP BY which is going to use a lot of these functions to be
+
+00:08:00,480 --> 00:08:03,090
+our source for really powerful sequel queries.
+
+00:08:03,160 --> 00:08:05,610
+OK thanks everyone and I'll see you at the next lecture

@@ -1,0 +1,743 @@
+00:00:01,680 --> 00:00:04,880
+Hello everyone and welcome to the group by lecture.
+
+00:00:04,950 --> 00:00:09,930
+So you just finished your general challenge and now it's time to take our understanding of sequel to
+
+00:00:09,930 --> 00:00:11,010
+the next level.
+
+00:00:11,090 --> 00:00:15,510
+Have some more to Fance features like group by group is going to be the first introduction to these
+
+00:00:15,510 --> 00:00:17,880
+more advanced sequel functions.
+
+00:00:17,880 --> 00:00:22,750
+It's a really common one but it's definitely still a level up from what we've been doing before.
+
+00:00:23,010 --> 00:00:28,160
+So we're going to learn about the GROUP BY clause and or function of in how you want to call it.
+
+00:00:28,380 --> 00:00:30,290
+And we'll see a few examples in action.
+
+00:00:30,330 --> 00:00:36,080
+It's best explained through example but we'll go over some basic syntax first.
+
+00:00:36,480 --> 00:00:40,920
+So the GROUP BY clause can be a bit confusing for beginners so make sure you take your time with this
+
+00:00:40,920 --> 00:00:41,750
+topic.
+
+00:00:41,850 --> 00:00:45,480
+And again it's one of the most useful tools in sequel.
+
+00:00:46,020 --> 00:00:48,610
+So is the group by clause and how does it work.
+
+00:00:48,750 --> 00:00:54,750
+The group by clause divides the rows returned from the select statement into groups so groups them by
+
+00:00:55,020 --> 00:00:56,570
+a certain function.
+
+00:00:56,600 --> 00:01:02,970
+So for each group you can apply an aggregate function and with an aggregate function does is it basically
+
+00:01:03,060 --> 00:01:06,360
+aggregates all your information into a single value.
+
+00:01:06,420 --> 00:01:12,540
+So for example calculating the sum of items is an example of an aggregate function it aggregates all
+
+00:01:12,540 --> 00:01:18,360
+the item counts and gives you back a sum which is going to be a single number or count the number of
+
+00:01:18,360 --> 00:01:19,500
+items in the groups.
+
+00:01:19,500 --> 00:01:25,440
+That's also an aggregate function because it counts the specific number of items and then returns single
+
+00:01:25,440 --> 00:01:27,840
+count values.
+
+00:01:27,840 --> 00:01:30,810
+So basic group by syntax may look something like this.
+
+00:01:30,810 --> 00:01:37,710
+You say select column 1 some sort of aggregate functions such as some are count and we'll learn different
+
+00:01:37,710 --> 00:01:43,890
+aggregate functions throughout this lecture and you'll put it on another column you'll say from the
+
+00:01:43,890 --> 00:01:46,650
+table name and then you'll group by a certain column.
+
+00:01:46,690 --> 00:01:48,360
+There's many variations of this.
+
+00:01:48,360 --> 00:01:52,010
+You don't actually have to call an aggregate function in order to do a group buy.
+
+00:01:52,230 --> 00:01:56,010
+But most commonly you're you will be calling an aggregate function.
+
+00:01:56,040 --> 00:02:00,740
+So we're really going to focus on just going through as many examples as possible of various use cases
+
+00:02:00,740 --> 00:02:04,350
+that group by to really fully understand how to use it.
+
+00:02:04,350 --> 00:02:09,210
+So with that being said let's go ahead and jump to P.G. admen because group buys really best learn through
+
+00:02:09,210 --> 00:02:10,060
+example.
+
+00:02:10,320 --> 00:02:10,730
+OK.
+
+00:02:10,890 --> 00:02:12,810
+Go ahead and jump to PGA admen now.
+
+00:02:13,320 --> 00:02:15,290
+OK so here we are at PGE admen.
+
+00:02:15,330 --> 00:02:22,130
+We're going to go ahead and scroll up here click on DVD rental and click on X Q. arbitrary sequel queries
+
+00:02:22,130 --> 00:02:22,670
+.
+
+00:02:22,800 --> 00:02:24,190
+Go ahead and move this guy here.
+
+00:02:24,360 --> 00:02:24,600
+OK.
+
+00:02:24,600 --> 00:02:26,910
+So here we are at our sequel Ed..
+
+00:02:26,910 --> 00:02:30,700
+First I want to show you a group by looks like without an aggregate function.
+
+00:02:30,720 --> 00:02:37,140
+So we're going to focus on the payment table right now and then to say select let's just select everything
+
+00:02:38,010 --> 00:02:44,810
+from the payment table and it's going to limit that to just two rows.
+
+00:02:44,850 --> 00:02:48,110
+And this is just so we can get a reminder of what the payment table has.
+
+00:02:48,410 --> 00:02:55,470
+So remember the payment table has a payment ID a customer id a staff ID rentals the amount and payment
+
+00:02:55,470 --> 00:02:56,290
+date.
+
+00:02:56,340 --> 00:03:02,400
+So you'll notice that if we go ahead and select couple more rows here and run this they are repetitions
+
+00:03:02,430 --> 00:03:04,280
+of the customer ID right.
+
+00:03:04,370 --> 00:03:06,060
+So here are a three for one.
+
+00:03:06,060 --> 00:03:10,870
+So there's many entries of that specific customer making several payments.
+
+00:03:10,920 --> 00:03:12,410
+So that makes sense.
+
+00:03:12,420 --> 00:03:14,290
+So you have the same customer coming back.
+
+00:03:14,310 --> 00:03:18,090
+So they have specific customer I.D. and are doing various payments.
+
+00:03:18,090 --> 00:03:18,640
+OK.
+
+00:03:18,900 --> 00:03:23,990
+So let's go ahead and use GROUP BY without applying an aggregate function first.
+
+00:03:24,030 --> 00:03:35,460
+So we'll go ahead and say select the customer ID column from payments and let's go in just separate
+
+00:03:35,460 --> 00:03:37,850
+this into a new line.
+
+00:03:37,990 --> 00:03:42,540
+So it's really clear what we're doing we're saying select customer id column front payments and then
+
+00:03:42,540 --> 00:03:45,530
+we're going to say group by and noticed there's a space there.
+
+00:03:45,540 --> 00:03:46,940
+It's group space by.
+
+00:03:47,150 --> 00:03:55,710
+And then we'll group it by the customer ID and so that is going to do it's going to group all your results
+
+00:03:55,770 --> 00:03:58,780
+by the customer ID for the customer ID column.
+
+00:03:58,980 --> 00:04:04,780
+And what that basically does is it just acts like you based like you just called the stinks on it because
+
+00:04:04,800 --> 00:04:11,430
+it's only going to return the distinct customer ID's so it's grouping everything by the customer ID
+
+00:04:11,430 --> 00:04:11,450
+.
+
+00:04:11,460 --> 00:04:16,900
+So all those instances of multiple customers get grouped by into a single result.
+
+00:04:16,950 --> 00:04:19,700
+So that's a group by looks like without an aggregate function.
+
+00:04:19,740 --> 00:04:22,020
+It kind of acts like a distinct call.
+
+00:04:22,260 --> 00:04:28,320
+So you won't be using it too much in this sort of syntax but this is just to begin our understanding
+
+00:04:28,320 --> 00:04:30,270
+of how you can use GROUP BY.
+
+00:04:30,270 --> 00:04:35,820
+So again GROUP BY here by itself without using an aggregate function basically acts like a distinct
+
+00:04:35,850 --> 00:04:36,660
+clause.
+
+00:04:36,810 --> 00:04:43,520
+So we get back five hundred ninety nine rows if we went ahead and didn't do that group by call.
+
+00:04:43,980 --> 00:04:50,900
+Let's go in and see how many rows we get back we would have gotten back around over 14000 rows.
+
+00:04:51,030 --> 00:04:56,580
+So you notice that group by function here or the group by clause what it's doing is it's grouping by
+
+00:04:56,580 --> 00:05:00,770
+that customer id value.
+
+00:05:00,810 --> 00:05:07,290
+So we again have group by here these various instances of duplicate customer IDs are getting grouped
+
+00:05:07,500 --> 00:05:09,540
+together.
+
+00:05:09,950 --> 00:05:11,170
+And then we have this return.
+
+00:05:11,170 --> 00:05:13,380
+So it's basically acting like distinct here.
+
+00:05:13,790 --> 00:05:14,290
+OK.
+
+00:05:14,390 --> 00:05:19,700
+So more importantly the group by clause is really useful when it's used in conjunction with an aggregate
+
+00:05:19,700 --> 00:05:20,670
+function.
+
+00:05:20,660 --> 00:05:26,110
+Remember that aggregate function just aggregates a bunch of results into single values.
+
+00:05:26,120 --> 00:05:32,660
+So for example to get how much a customer has been paid you can use the group by clause to divide payment
+
+00:05:32,660 --> 00:05:38,390
+tables into groups and then for each group calculate total amounts of money by using the SUM function
+
+00:05:39,020 --> 00:05:43,490
+and this sort of query and we're actually going to introduce you to the sum function.
+
+00:05:43,500 --> 00:05:48,320
+So there's various aggregate functions and we've already seen something like counts and now we're going
+
+00:05:48,320 --> 00:05:50,270
+to learn about some.
+
+00:05:50,270 --> 00:05:58,130
+So let's say let's go ahead and say select customer id comma and then we're going to say some
+
+00:06:00,830 --> 00:06:12,490
+amount we'll say from the payment table and then we'll say group by customer underscore ID.
+
+00:06:12,500 --> 00:06:16,010
+So Michael let's go out and run that and then break down what it's doing.
+
+00:06:16,200 --> 00:06:23,300
+So group by is doing here is the group by clause sort's the result set by customer ID and adds up the
+
+00:06:23,300 --> 00:06:28,940
+amount that belongs to the same customer whenever the customer ID changes it adds the road to the return
+
+00:06:28,970 --> 00:06:32,090
+result sets.
+
+00:06:32,150 --> 00:06:37,250
+Now before we continue on here it should be noted that postscripts sequel is pretty flexible with what
+
+00:06:37,250 --> 00:06:43,490
+you can call in the select statement versus what you can group by other sequel.
+
+00:06:43,530 --> 00:06:49,790
+Engines have really specific rules when it comes to group by as far as you must select or you must call
+
+00:06:49,790 --> 00:06:54,060
+an aggregate function on the same column that you're grouping by.
+
+00:06:54,050 --> 00:07:00,530
+So for instance if I just go out and delete customer id table or column from the select statement and
+
+00:07:00,530 --> 00:07:02,980
+run this it will still work.
+
+00:07:03,050 --> 00:07:09,020
+It just won't report the customer ID to other sequel engines will have an issue with that and kind of
+
+00:07:09,020 --> 00:07:16,230
+like when we are discussing order by the require you to specifically input the column you requested
+
+00:07:17,120 --> 00:07:20,420
+and in the group by statement as well.
+
+00:07:20,420 --> 00:07:25,890
+So it's good practice to always say select the column that you're grouping by or at least call some
+
+00:07:25,880 --> 00:07:32,730
+sort of aggregate function such as some on the column you're grouping by other sequel engines will complain
+
+00:07:32,720 --> 00:07:34,820
+if you don't have an aggregate function.
+
+00:07:34,820 --> 00:07:39,910
+So remember earlier we did something like this just going to cut that out we lips.
+
+00:07:39,930 --> 00:07:43,210
+Let's go ahead and delete that comma.
+
+00:07:43,250 --> 00:07:48,860
+So earlier we did this which acted kind of as a distinct statement so just return the stink customer
+
+00:07:48,870 --> 00:07:54,590
+IDs some sequel engines will complain and require you to put an aggregate function somewhere in your
+
+00:07:54,590 --> 00:07:55,640
+select statement.
+
+00:07:55,700 --> 00:07:59,970
+So just keep those rules in mind and kind of the pen than what sequel engine you're using.
+
+00:08:00,050 --> 00:08:04,880
+Postscripts sequel's really flexible which is some something that's really nice about it.
+
+00:08:05,420 --> 00:08:11,810
+OK so let's go in and go back to our original statement here saying select customer id comma some amounts
+
+00:08:11,810 --> 00:08:14,600
+from payment's group by customer ID.
+
+00:08:14,630 --> 00:08:17,610
+So again let's break this down as to what's actually happening here.
+
+00:08:17,630 --> 00:08:19,300
+What we're telling sequel to do.
+
+00:08:19,550 --> 00:08:23,480
+So here we're telling sequel to select the customer ID column.
+
+00:08:23,490 --> 00:08:29,960
+So here's our first column customer ID and then we're saying Take the sum of the amount column from
+
+00:08:29,960 --> 00:08:33,330
+the payment table grouped by the customer ID.
+
+00:08:33,440 --> 00:08:40,660
+So what's that saying is for every customer id go ahead group by the customer ID and then some that
+
+00:08:40,670 --> 00:08:43,590
+specific customers amount column.
+
+00:08:43,640 --> 00:08:51,350
+So customer ID for instance our first volume customer ideas 2:51 and the same values 100 dollars and
+
+00:08:51,360 --> 00:08:52,740
+seventy five cents.
+
+00:08:52,860 --> 00:09:01,210
+That means the total amount that that customer spent or was paid ended up being $100 and 75 cents.
+
+00:09:01,220 --> 00:09:06,900
+So that's basically just taking the sum of all their amounts and kind of condensing it or aggregating
+
+00:09:06,890 --> 00:09:08,860
+it into a single value.
+
+00:09:09,200 --> 00:09:14,390
+All right let's go ahead and Bill on top of this so you can also use an ORDER BY clause with a group
+
+00:09:14,390 --> 00:09:18,600
+by clause to sort these groups so that I could say something like this.
+
+00:09:18,600 --> 00:09:31,520
+I could say after saying group by the customer ID I could say order by the sum amount which is going
+
+00:09:31,520 --> 00:09:33,890
+to be basically that some call them.
+
+00:09:34,070 --> 00:09:35,760
+So I could say order by that some out.
+
+00:09:35,820 --> 00:09:39,120
+Let's do it in descending order.
+
+00:09:39,350 --> 00:09:40,870
+If I run this.
+
+00:09:41,580 --> 00:09:48,640
+And so now I can see what customers have basically spent the most money or done the most payments.
+
+00:09:48,950 --> 00:09:49,310
+OK.
+
+00:09:49,350 --> 00:09:54,570
+So we kind of saw a basic example of how to use some with a group by statement.
+
+00:09:54,570 --> 00:09:59,460
+Let's go ahead and go back a bit and see if we can use something like a count function of a group by
+
+00:09:59,450 --> 00:10:00,690
+statements.
+
+00:10:00,770 --> 00:10:05,760
+So let's go ahead and review what all the columns are in the payment table.
+
+00:10:05,800 --> 00:10:06,870
+Gonna delete all that.
+
+00:10:07,040 --> 00:10:14,110
+Well say select Asterix means select all columns from payments and also select all rows in this case
+
+00:10:14,110 --> 00:10:14,710
+.
+
+00:10:14,710 --> 00:10:20,060
+So we've got a payment idea customers the staff the rental the amount and payment date.
+
+00:10:20,140 --> 00:10:25,130
+So let's say I wanted to count the number of transactions each staff has been processing.
+
+00:10:25,330 --> 00:10:30,730
+I can group the payments table based on staff ID and then use the Count function to get the number of
+
+00:10:30,730 --> 00:10:33,770
+transactions that each staff has been processing.
+
+00:10:34,120 --> 00:10:40,960
+So if we kind of briefly scroll through this database there ends up being just two staff ID numbers
+
+00:10:41,020 --> 00:10:42,550
+number one and number two.
+
+00:10:42,610 --> 00:10:47,270
+So we have two staff members here and they're the ones that are processing the orders.
+
+00:10:47,470 --> 00:10:52,960
+And I want to find out who's been processing the most orders and how much has each staff member been
+
+00:10:52,960 --> 00:10:53,960
+processing.
+
+00:10:54,250 --> 00:10:58,000
+So I'm going to do this using a group by statements.
+
+00:10:58,060 --> 00:11:06,420
+So I'm going to say select staff underscore ID comma and Megami use count.
+
+00:11:07,000 --> 00:11:08,050
+And I want to count.
+
+00:11:08,060 --> 00:11:22,300
+Let's say the payments ID column from payments and I'm going to say grouped by staff ID loops that underscore
+
+00:11:22,380 --> 00:11:24,490
+the semi-colon.
+
+00:11:24,970 --> 00:11:26,870
+So if I run that I get this result.
+
+00:11:26,920 --> 00:11:28,450
+So what's going on here.
+
+00:11:28,540 --> 00:11:35,380
+The group by clause is basically getting that results that by the staff ID so it keeps a running total
+
+00:11:35,380 --> 00:11:43,510
+of rows and whenever the staff changes it adds the road to the correct returning result set.
+
+00:11:43,570 --> 00:11:49,180
+Now again back when we were discussing counts you notice or you should have noticed that it didn't really
+
+00:11:49,180 --> 00:11:53,030
+matter whether you put a column name here or you put an asterix name here.
+
+00:11:53,230 --> 00:11:55,070
+You'll get the same results.
+
+00:11:55,120 --> 00:12:00,010
+And the reason for that is you're just counting the number of rows that your statement is returning
+
+00:12:00,010 --> 00:12:00,610
+back.
+
+00:12:00,610 --> 00:12:02,810
+So let's go ahead and break this down.
+
+00:12:02,860 --> 00:12:08,530
+So I'm saying select the staff by the column and just count the number of rows returned from payments
+
+00:12:08,530 --> 00:12:09,010
+.
+
+00:12:09,010 --> 00:12:14,660
+When you group by the staff underscore ID column.
+
+00:12:14,770 --> 00:12:20,380
+So it's taking all these instances of staff ID grouping them together basically aggregating them by
+
+00:12:20,380 --> 00:12:30,520
+count and that is saying OK staff Id had 70000 CFIT to have 7300 for transactions and by the one process
+
+00:12:30,520 --> 00:12:33,900
+seven thousand two hundred ninety two transactions.
+
+00:12:34,780 --> 00:12:35,080
+OK.
+
+00:12:35,080 --> 00:12:40,450
+So let's go ahead and go through a couple more examples the group by to really make sure we understand
+
+00:12:40,450 --> 00:12:40,830
+it.
+
+00:12:41,110 --> 00:12:46,880
+Let's go ahead and play around for another table will say selects Asterix everything.
+
+00:12:46,960 --> 00:12:53,770
+So all the columns from let's go to say the film table and we'll say limit just five so we don't get
+
+00:12:53,770 --> 00:12:55,090
+everything back.
+
+00:12:55,120 --> 00:12:55,860
+OK.
+
+00:12:55,990 --> 00:13:01,790
+So remember the film table has the titles of the films the description text the release year etc. but
+
+00:13:01,810 --> 00:13:07,870
+I'm kind of interested in is figuring out how many films of each rating type do we have.
+
+00:13:07,870 --> 00:13:10,730
+Some of that's RPG 13 etc..
+
+00:13:11,080 --> 00:13:12,160
+So let's break this down.
+
+00:13:12,160 --> 00:13:14,280
+Think about how we can do this.
+
+00:13:14,290 --> 00:13:28,030
+So what I want to do is say selects the rating column from Phil and then one I'm going to do is also
+
+00:13:28,030 --> 00:13:39,130
+say counts the rating from film and instead of saying limit five what I'm going to do is I'm going to
+
+00:13:39,130 --> 00:13:46,990
+say group by the rating column something to take all the films in the database grouped them together
+
+00:13:47,020 --> 00:13:52,420
+by their rating and then what I'm asking for back is the rating column.
+
+00:13:52,420 --> 00:13:59,860
+And in that case it's actually just going to be the rating types so GBG P.G. 13 are in NC 17 and then
+
+00:13:59,860 --> 00:14:03,880
+it's going to return a count of the number of occurrences for that rating.
+
+00:14:03,880 --> 00:14:07,670
+When you grouped it together so count here is that aggregate function.
+
+00:14:07,840 --> 00:14:10,710
+It's aggregating the counts of the different rating types.
+
+00:14:10,900 --> 00:14:13,250
+So let's go ahead and run this is what we get back.
+
+00:14:13,660 --> 00:14:14,290
+OK.
+
+00:14:14,440 --> 00:14:20,380
+So if we look at the results here we get a column with the rating and then a count of the number of
+
+00:14:20,380 --> 00:14:25,030
+occurrences where each of those ratings occurs.
+
+00:14:25,450 --> 00:14:27,970
+OK so let's go out and see another example.
+
+00:14:27,970 --> 00:14:31,020
+Let's go ahead and count the rental durations.
+
+00:14:31,240 --> 00:14:40,060
+So we'll go ahead and say select just say select all columns from film limit one just so you can get
+
+00:14:40,060 --> 00:14:42,790
+a quick overview of what the columns are again.
+
+00:14:42,930 --> 00:14:49,300
+Quick scroll a little bit to the right you'll notice we have a rental duration column as well as a rental
+
+00:14:49,300 --> 00:14:50,530
+rate column.
+
+00:14:50,530 --> 00:14:56,920
+Let's say now I wanted to know the counts of the various rental durations so I could say something like
+
+00:14:56,920 --> 00:15:01,750
+this selects rental underscore duration.
+
+00:15:01,750 --> 00:15:09,220
+So that's how many days they took the movie out four and counts the number of those occurrences rental
+
+00:15:10,090 --> 00:15:13,310
+duration from film.
+
+00:15:14,000 --> 00:15:20,870
+And in this case I'm going out to say group by the rental duration group by rental duration.
+
+00:15:20,920 --> 00:15:22,860
+So what question is this answering to.
+
+00:15:23,080 --> 00:15:24,690
+And going to answer.
+
+00:15:25,150 --> 00:15:29,740
+How many counts of occurrences are there for each of these rental duration periods.
+
+00:15:29,980 --> 00:15:36,670
+So if we kind of take a quick scan at this it looks like five and seven day rental duration periods
+
+00:15:37,480 --> 00:15:43,120
+have the lowest amount of occurrences and the highest amount occurrences is a six day rental duration
+
+00:15:43,120 --> 00:15:43,900
+period.
+
+00:15:44,240 --> 00:15:53,020
+OK let's go ahead and do one more group by example before we head on to the challenge for the byes.
+
+00:15:53,440 --> 00:16:04,450
+And if we go ahead and selects the rental rates call them and let's say the rating column from film
+
+00:16:04,450 --> 00:16:10,960
+and let's not group by anything else just take a quick look at them say limit let's say five and run
+
+00:16:10,960 --> 00:16:11,820
+that.
+
+00:16:11,830 --> 00:16:13,570
+So it's a quick sampling example.
+
+00:16:13,570 --> 00:16:15,910
+We have the rental rates and the rating.
+
+00:16:16,210 --> 00:16:21,220
+Let's say I wanted to know the average rental rate for a movie's rating.
+
+00:16:21,220 --> 00:16:35,920
+What I can do is say group by the rating column and almost all go ahead and ask for the rating column
+
+00:16:36,760 --> 00:16:43,520
+and then I'm going to take the average of the rental rates.
+
+00:16:45,640 --> 00:16:51,580
+So I'm going to say select the rating and the average rental rates of the various rating types from
+
+00:16:51,580 --> 00:16:53,920
+film group by rating.
+
+00:16:53,920 --> 00:16:57,150
+So if I go ahead and run this I should get quite a few decimal points.
+
+00:16:57,160 --> 00:17:02,300
+But because it is taking it pretty exact average so there are a lot of decimal points there.
+
+00:17:02,560 --> 00:17:09,580
+But basically I can see here if there's any sort of trend that different rated movies have different
+
+00:17:09,580 --> 00:17:10,730
+rental rates.
+
+00:17:10,840 --> 00:17:16,480
+Looks like they're pretty even across the board with the highest average rental rate being P.G. movies
+
+00:17:16,510 --> 00:17:19,550
+and the lowest average rental rate being Jeem movies.
+
+00:17:19,780 --> 00:17:20,720
+OK.
+
+00:17:21,220 --> 00:17:26,620
+So we already seen a couple of examples how we can use GROUP BY with area functions and without aggregate
+
+00:17:26,620 --> 00:17:33,280
+functions in order to solve various problems you're really going to be tested on grouped by and challenged
+
+00:17:33,280 --> 00:17:35,560
+on it in the next group by challenge.
+
+00:17:35,560 --> 00:17:39,820
+So hopefully they'll test your understanding and group by Take your time with this topic.
+
+00:17:39,820 --> 00:17:41,780
+Sometimes a little tricky to get a hold of.
+
+00:17:41,980 --> 00:17:47,200
+But basically once your mind makes the switch to understanding how to do a group buy you'll find it's
+
+00:17:47,230 --> 00:17:50,380
+really intuitive to use later on in the course.
+
+00:17:50,410 --> 00:17:53,320
+OK thanks everyone and I'll see you at the next lecture.
+
+00:17:53,320 --> 00:17:58,540
+We'll have the group by challenge and just a quick note in that group by challenge.
+
+00:17:58,540 --> 00:18:01,100
+I will just be giving you the solution on a slide.
+
+00:18:01,120 --> 00:18:06,340
+We'll actually be coding it out together just to really make sure you understand the group by concept
+
+00:18:06,350 --> 00:18:06,530
+.
+
+00:18:06,700 --> 00:18:07,350
+OK.
+
+00:18:07,540 --> 00:18:09,490
+Thanks everyone and I'll see you at the next lecture

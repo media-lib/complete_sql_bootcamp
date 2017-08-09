@@ -1,0 +1,179 @@
+00:00:01,200 --> 00:00:05,650
+Hello everyone and welcome to the having challenge lecture.
+
+00:00:05,670 --> 00:00:09,810
+So again we're going to have just general challenge tasks utilizing all the skills you've learned so
+
+00:00:09,810 --> 00:00:15,510
+far but each challenge in particular is going to need a Having a statement going to be two challenges
+
+00:00:15,510 --> 00:00:16,820
+in this lecture.
+
+00:00:16,830 --> 00:00:21,390
+Once the challenge or business task is presented to you you'll get some hints of the challenge and then
+
+00:00:21,420 --> 00:00:25,110
+a walk through solutions that challenge so the challenges are going to be difficult.
+
+00:00:25,110 --> 00:00:28,920
+So try breaking down the problem into individual tests.
+
+00:00:29,030 --> 00:00:29,520
+OK.
+
+00:00:29,820 --> 00:00:31,380
+Here's your first challenge.
+
+00:00:31,380 --> 00:00:36,420
+We want to know what customers are eligible for a platinum credit card program and the requirements
+
+00:00:36,450 --> 00:00:40,500
+are that the customer has at least the total of 40 transaction payments.
+
+00:00:40,500 --> 00:00:43,590
+So that's the count of the transaction payments.
+
+00:00:43,590 --> 00:00:49,930
+What I want to know is what customers by customer ID are eligible for the credit card again.
+
+00:00:49,950 --> 00:00:56,160
+Basically just find me the customers that have at least a total count of 40 transaction payments.
+
+00:00:56,160 --> 00:00:56,850
+OK.
+
+00:00:57,150 --> 00:00:59,740
+Let's go ahead and give you some hints.
+
+00:01:00,270 --> 00:01:05,100
+So the hint is you'll need to use the payment table and don't want to give too much away here but remember
+
+00:01:05,100 --> 00:01:09,990
+you going to have to use some sort of aggregate function with a group by and the use of a having clause
+
+00:01:09,990 --> 00:01:11,090
+.
+
+00:01:11,100 --> 00:01:11,400
+OK.
+
+00:01:11,400 --> 00:01:15,290
+Coming up next the solutions are good and positivity enough if you don't want to see it yet.
+
+00:01:15,750 --> 00:01:17,730
+OK here it comes.
+
+00:01:17,730 --> 00:01:24,900
+So here's the solution you need to select the customer ID column count the amount column from payments
+
+00:01:24,990 --> 00:01:31,070
+and then group by the customer ID then what you had to do is filter that counts amounts by the conditions
+
+00:01:31,070 --> 00:01:36,310
+specified by the credit card which was at least 40 instances or 40 transactions.
+
+00:01:36,330 --> 00:01:41,340
+So that means you had to say having count amounts greater than 40 some might call in.
+
+00:01:41,370 --> 00:01:42,240
+OK.
+
+00:01:42,240 --> 00:01:45,160
+So hopefully now that you see a solution it's pretty straightforward.
+
+00:01:45,180 --> 00:01:51,090
+Basically just using that group by and again using having to filter out based on some condition after
+
+00:01:51,090 --> 00:01:57,540
+you've done the group by statements let's go ahead and do the final and second challenge.
+
+00:01:57,540 --> 00:02:03,690
+So when grouped by rating what movie ratings have an average rental duration of more than five days
+
+00:02:03,690 --> 00:02:04,170
+.
+
+00:02:04,410 --> 00:02:11,430
+Again when you group them by rating what movie ratings so the films have an average Rensil duration
+
+00:02:11,580 --> 00:02:13,830
+of more than five days.
+
+00:02:13,860 --> 00:02:19,430
+OK here come the hints hint is you'll need to use the film table.
+
+00:02:19,500 --> 00:02:23,370
+And again remember you're gonna have to use some sort of aggregate function of group by and the use
+
+00:02:23,370 --> 00:02:24,800
+of the having clause.
+
+00:02:25,200 --> 00:02:25,530
+OK.
+
+00:02:25,530 --> 00:02:30,170
+Coming up next is the solutions to good impassivity enough you don't want to see a solution.
+
+00:02:30,180 --> 00:02:32,100
+All right here it comes.
+
+00:02:32,130 --> 00:02:33,600
+So here's a solution.
+
+00:02:33,660 --> 00:02:39,690
+You had to select the rating column and then select the average rental duration.
+
+00:02:39,690 --> 00:02:43,580
+So then you had to say that from the film table in group it by rating.
+
+00:02:43,890 --> 00:02:50,100
+After that in order to figure out what by group by rating what movies ratings have the average rental
+
+00:02:50,100 --> 00:02:53,480
+duration greater than five days you had to use that having clause.
+
+00:02:53,490 --> 00:02:58,800
+So you have to group by rating and say having the average rental duration be greater than five.
+
+00:02:59,190 --> 00:02:59,740
+OK.
+
+00:02:59,760 --> 00:03:01,450
+So that's really all there is to it.
+
+00:03:01,470 --> 00:03:05,250
+And hopefully by now you're seeing and getting a sense of how to use having.
+
+00:03:05,270 --> 00:03:06,690
+It's it's really not that tough.
+
+00:03:06,690 --> 00:03:11,400
+Once you understand that you're basically filtering the condition just like a WHERE clause except you're
+
+00:03:11,400 --> 00:03:16,620
+doing it after you've done that group by meaning most common use cases are going to be on some sort
+
+00:03:16,620 --> 00:03:19,850
+of aggregate column function.
+
+00:03:19,920 --> 00:03:20,800
+OK.
+
+00:03:21,270 --> 00:03:23,880
+So great job on the group by section.
+
+00:03:23,910 --> 00:03:29,250
+Coming up next is an assessment test to fully test everything we've learned so far without giving you
+
+00:03:29,250 --> 00:03:35,040
+any specific hints on what specific clauses to use.
+
+00:03:35,250 --> 00:03:35,900
+OK.
+
+00:03:36,150 --> 00:03:40,650
+So thanks everyone great job on the group section and I will see you at the next lecture where we go
+
+00:03:40,650 --> 00:03:41,810
+over that assessment's us

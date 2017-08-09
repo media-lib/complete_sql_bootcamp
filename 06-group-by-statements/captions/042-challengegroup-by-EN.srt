@@ -1,0 +1,608 @@
+00:00:01,380 --> 00:00:04,850
+Hello everyone and welcome to the group by Challenge lecture.
+
+00:00:04,950 --> 00:00:07,040
+We're going to keep things pretty simple in this lecture.
+
+00:00:07,050 --> 00:00:09,810
+Just three basic challenges.
+
+00:00:09,810 --> 00:00:14,280
+They're all going to be kind of similar to what we saw in the large group of examples in the previous
+
+00:00:14,280 --> 00:00:15,210
+lecture.
+
+00:00:15,210 --> 00:00:19,230
+So hopefully you'll be able to reference and rewashed that previous lecture in case you're still having
+
+00:00:19,230 --> 00:00:24,960
+trouble with the group like concept in order to tackle these challenges that we're about to face.
+
+00:00:24,960 --> 00:00:25,220
+OK.
+
+00:00:25,230 --> 00:00:29,480
+So again General challenge tasks we're going to utilize all the skills you've learned so far.
+
+00:00:29,760 --> 00:00:34,210
+Except in this case each of these challenges needs a GROUP BY statement.
+
+00:00:34,230 --> 00:00:34,950
+You're going to get hints.
+
+00:00:34,950 --> 00:00:39,840
+The challenge right after you get the problem statement and then instead of just showing you a solution
+
+00:00:39,960 --> 00:00:42,660
+since GROUP BY sometimes is difficult for beginners.
+
+00:00:42,810 --> 00:00:47,190
+I'm going to walk you through a solution and actually type it out myself with explanations in Peachi
+
+00:00:47,190 --> 00:00:47,890
+admen.
+
+00:00:48,230 --> 00:00:48,770
+OK.
+
+00:00:48,840 --> 00:00:50,310
+Again these challenges are going to be difficult.
+
+00:00:50,310 --> 00:00:54,280
+So try breaking down the problem into individual tasks.
+
+00:00:54,300 --> 00:00:55,610
+Your first challenge is this.
+
+00:00:55,620 --> 00:00:56,690
+Here's the situation.
+
+00:00:56,820 --> 00:01:01,950
+We have two staff members with staff IDs one and two and we want to give a bonus to the staff member
+
+00:01:01,950 --> 00:01:04,060
+that handled the most payments.
+
+00:01:04,080 --> 00:01:05,930
+So your question is how many payments.
+
+00:01:06,000 --> 00:01:11,640
+Each staff member handle and how much was the total amount processed by each staff member.
+
+00:01:11,760 --> 00:01:14,610
+So you have those two questions to solve.
+
+00:01:14,850 --> 00:01:19,580
+And coming up next are some hints good and positive do you now see if you can solve those two questions
+
+00:01:19,590 --> 00:01:24,510
+for the challenge in order to figure out who should give our bonus to certify the one or step ID to
+
+00:01:25,150 --> 00:01:25,440
+.
+
+00:01:25,500 --> 00:01:29,450
+Coming onto the hints you're going to ease the payment table.
+
+00:01:29,530 --> 00:01:34,490
+And remember to use some sort of aggregate function with that group by statements.
+
+00:01:34,500 --> 00:01:35,020
+OK.
+
+00:01:35,280 --> 00:01:37,690
+So here comes the solution for it.
+
+00:01:38,400 --> 00:01:44,620
+So the solution is this select CFIT count amount some amount from payment group by staff ID.
+
+00:01:44,790 --> 00:01:49,450
+Let's go ahead and jump to P.G. admen so we can work this out fully.
+
+00:01:49,520 --> 00:01:49,780
+OK.
+
+00:01:49,800 --> 00:01:51,300
+Here I am at PG admin.
+
+00:01:51,300 --> 00:01:57,000
+I actually already have the sequel Ed. open just went ahead and ran an arbitrary sequel on the DVD rental
+
+00:01:57,000 --> 00:01:58,180
+database.
+
+00:01:58,200 --> 00:02:01,640
+So again we had to figure out who are we going to give bonuses to.
+
+00:02:01,680 --> 00:02:13,800
+So if we just say select let's say staff underscore ID and the amount column from the payment table
+
+00:02:13,800 --> 00:02:16,270
+we can get an idea of what we're working with here.
+
+00:02:16,320 --> 00:02:21,560
+So we have the staff ID will notice it's just two in ones Iligan Group By to verify that.
+
+00:02:21,750 --> 00:02:26,880
+And then we have the amount column and what we want to do is figure out two things the total amount
+
+00:02:26,880 --> 00:02:31,470
+of transactions and the total sum of that amount.
+
+00:02:31,470 --> 00:02:33,240
+So here's what we're going to do.
+
+00:02:33,450 --> 00:02:36,400
+We want to do is group by the staff ID.
+
+00:02:36,570 --> 00:02:36,870
+Right.
+
+00:02:36,870 --> 00:02:43,250
+So we know that's a necessary step here since we want to get all the information just by staff.
+
+00:02:43,260 --> 00:02:47,580
+So it's going to group all the instances where staff ideas to an audience answers were staff ideas one
+
+00:02:47,590 --> 00:02:47,900
+.
+
+00:02:48,330 --> 00:02:51,780
+And then we want to do two separate aggregate functions.
+
+00:02:51,780 --> 00:03:00,060
+One is to count on amount and that's going to count the number of instances of that amount for that
+
+00:03:00,060 --> 00:03:01,660
+specific staff ID.
+
+00:03:02,010 --> 00:03:06,780
+And then it's going to we're also wanting to some the amount because we wanted to answer two questions
+
+00:03:06,780 --> 00:03:07,170
+.
+
+00:03:07,170 --> 00:03:13,050
+One was who did the most transactions and then the other one was who did the most total in the transactions
+
+00:03:13,050 --> 00:03:13,770
+.
+
+00:03:13,770 --> 00:03:21,030
+OK so let's go in and run this in now we have these answer columns so we have the staff ID tune one
+
+00:03:21,030 --> 00:03:21,490
+.
+
+00:03:21,600 --> 00:03:23,750
+We have the counts.
+
+00:03:24,150 --> 00:03:30,070
+So it looks like here staff ID number two made the most transactions.
+
+00:03:30,150 --> 00:03:38,130
+Not a whole lot more but they edged out staff ID number one and they also had a larger sum of the total
+
+00:03:38,250 --> 00:03:43,710
+amount of money processed and that makes sense because they did more overall as it counts.
+
+00:03:43,710 --> 00:03:48,480
+Okay so just to break that down again we had a group by that staff ID and we had added to aggregate
+
+00:03:48,480 --> 00:03:50,580
+functions count and sum.
+
+00:03:50,610 --> 00:03:55,740
+Now you may have actually done this as two separate queries you may have done first count and then have
+
+00:03:55,740 --> 00:04:00,980
+done some but its actually okay to do both of these counts amounts and some amounts.
+
+00:04:00,990 --> 00:04:01,450
+All right.
+
+00:04:01,510 --> 00:04:08,310
+But that being said let's go ahead and jump back to that presentation and see the next challenge.
+
+00:04:08,310 --> 00:04:08,520
+Okay.
+
+00:04:08,520 --> 00:04:10,220
+Here we are at the presentation again.
+
+00:04:10,380 --> 00:04:15,600
+And your next challenge is this corporate headquarters is auditing our store and they want to know the
+
+00:04:15,600 --> 00:04:18,700
+average replacement cost of movies by rating.
+
+00:04:18,960 --> 00:04:24,690
+So for example R-rated movies have an average replacement cost of $20 and 23 cents.
+
+00:04:24,690 --> 00:04:29,540
+So the challenges we want to know the average replacement costs of all the movies by their rating.
+
+00:04:29,580 --> 00:04:35,960
+So what are the average placement costs for P.G. movies P.G. either teen movies are movies etc. and
+
+00:04:35,990 --> 00:04:38,530
+the quick can't they should all be pretty close.
+
+00:04:38,530 --> 00:04:43,040
+You shouldn't see any huge discrepancy in the average replacement costs of these movies by reading.
+
+00:04:43,070 --> 00:04:44,630
+Kind of makes sense.
+
+00:04:44,640 --> 00:04:44,900
+OK.
+
+00:04:44,910 --> 00:04:47,520
+Coming up next is some stronger hints.
+
+00:04:47,520 --> 00:04:49,860
+So that and possibly enough you want to do a few hints.
+
+00:04:49,950 --> 00:04:54,280
+Here come the hints it's OK.
+
+00:04:54,320 --> 00:04:56,620
+So quick Kintz you need a film table.
+
+00:04:56,650 --> 00:05:01,400
+And remember again you need to use an aggregate function with the group by statements.
+
+00:05:01,400 --> 00:05:02,860
+All right good and positivity.
+
+00:05:02,870 --> 00:05:04,600
+Now take another stab at it.
+
+00:05:04,780 --> 00:05:07,280
+Here comes the solution.
+
+00:05:07,430 --> 00:05:12,740
+So here's the solution you had to select rating average replacement cost from film and group by rating
+
+00:05:12,760 --> 00:05:12,980
+.
+
+00:05:13,180 --> 00:05:17,690
+It's good and jumped the PGA even one more time and really walk through this.
+
+00:05:18,650 --> 00:05:18,990
+OK.
+
+00:05:19,010 --> 00:05:20,360
+Here PGA admin.
+
+00:05:20,390 --> 00:05:27,530
+Well we're going to do is go ahead and say selects rading remember wanting to get the average replacement
+
+00:05:27,550 --> 00:05:32,450
+cost by rating so we can actually kind of almost translate that question directly into sequel so what
+
+00:05:32,450 --> 00:05:33,440
+are we looking for.
+
+00:05:33,470 --> 00:05:38,960
+We're looking for the average replacement cost by rating meaning I need I already know I need to have
+
+00:05:38,960 --> 00:05:42,050
+just the rating column because I want that in my results.
+
+00:05:42,050 --> 00:05:46,910
+And if we keep translating that basically English sentence into a sequel I also said I wanted to know
+
+00:05:46,910 --> 00:05:48,420
+the average replacement costs.
+
+00:05:48,470 --> 00:05:54,500
+So the aggregate function for average is just a veggie and I'm going to pass in the replacement cost
+
+00:05:54,500 --> 00:06:07,970
+column from the film table and I wanted to group by rating so that basically aggregates the replacement
+
+00:06:07,970 --> 00:06:11,490
+costs as an average for the films by rating.
+
+00:06:11,900 --> 00:06:12,710
+So here we go.
+
+00:06:12,710 --> 00:06:14,780
+Here the results are rated movies.
+
+00:06:14,780 --> 00:06:23,360
+You can see here is $20 and 23 cents and it looks like G NC 17 mpg 13 all basically around $20 and maybe
+
+00:06:23,360 --> 00:06:27,380
+a little surprisingly P.G. was about a dollar less than everything else.
+
+00:06:27,630 --> 00:06:28,190
+OK.
+
+00:06:28,460 --> 00:06:33,520
+So just a quick reminder we had the round function that we could also explore.
+
+00:06:33,710 --> 00:06:39,470
+So in case you didn't want this many decimal points you could have also done this have said passen round
+
+00:06:39,470 --> 00:06:39,950
+here.
+
+00:06:39,990 --> 00:06:45,350
+I remember the first argument in surround It's just that column and then you put a comma to pass and
+
+00:06:45,350 --> 00:06:49,370
+the second argument which is the number of decimal places you want after that.
+
+00:06:49,370 --> 00:06:52,450
+In this case I just want two decimal places and it's money.
+
+00:06:52,460 --> 00:06:55,510
+And then here we have rounded off to two decimal places.
+
+00:06:55,520 --> 00:06:56,220
+OK.
+
+00:06:56,360 --> 00:07:02,070
+So let's go ahead and then tackle the third challenge for you in that group by Challenge lecture.
+
+00:07:02,120 --> 00:07:04,920
+I'm going to go ahead and jump back to that presentation.
+
+00:07:05,870 --> 00:07:08,260
+OK so here we are at the last challenge.
+
+00:07:08,510 --> 00:07:12,220
+And so it's going to be a little tricky especially if the group by statement.
+
+00:07:12,260 --> 00:07:18,020
+So what we want is to send coupons to the five customers who has spent the most amount of money at our
+
+00:07:18,020 --> 00:07:18,910
+store.
+
+00:07:18,980 --> 00:07:23,510
+So the five customers that have done basically the most payment amounts by money.
+
+00:07:23,750 --> 00:07:27,250
+So not by count but by the actual sum of how much money they've made.
+
+00:07:27,590 --> 00:07:27,980
+OK.
+
+00:07:27,980 --> 00:07:32,730
+So what I want to do is get me the customer IDs of those top five spenders.
+
+00:07:33,350 --> 00:07:34,380
+OK good and positive.
+
+00:07:34,400 --> 00:07:37,480
+Now coming up next are some hints.
+
+00:07:37,540 --> 00:07:39,370
+So here are the hints.
+
+00:07:39,470 --> 00:07:40,710
+Go out and show them.
+
+00:07:40,760 --> 00:07:41,730
+So a couple of hints.
+
+00:07:41,740 --> 00:07:46,070
+You're going to need to use the payment table and you're also going to need to use a group by and an
+
+00:07:46,100 --> 00:07:51,190
+order by that order by is going to be useful for trying to get the top five of something.
+
+00:07:51,650 --> 00:07:56,750
+And what I want you to do is pay careful attention to what you actually want to order by.
+
+00:07:56,810 --> 00:08:00,770
+That's probably what you're going to have if you do have trouble of this that might be what you're having
+
+00:08:00,770 --> 00:08:04,280
+trouble with is what are you actually trying to order by.
+
+00:08:04,280 --> 00:08:08,300
+Is it a whole column or is it some sort of aggregate function just keep that in mind.
+
+00:08:08,830 --> 00:08:09,410
+OK.
+
+00:08:09,430 --> 00:08:12,230
+Let's go to show you the solution now.
+
+00:08:12,320 --> 00:08:13,560
+So the solution is this.
+
+00:08:13,580 --> 00:08:21,230
+Select the customer ID column some the amount column from the payment table group by customer ID and
+
+00:08:21,230 --> 00:08:22,690
+here's kind of the trick to it.
+
+00:08:22,730 --> 00:08:28,950
+You had to order by the sum of the amounts not just by the amounts and in descending order.
+
+00:08:28,970 --> 00:08:31,850
+I also put in limit fives and so only one of the top five.
+
+00:08:31,910 --> 00:08:36,720
+Let's go ahead and jump to pediatrician and walk through the solution.
+
+00:08:36,800 --> 00:08:37,060
+OK.
+
+00:08:37,070 --> 00:08:38,530
+Here we are PGE admen.
+
+00:08:38,600 --> 00:08:42,650
+Let's go ahead and check out the solution to this.
+
+00:08:42,650 --> 00:08:43,970
+So again what do we want to know.
+
+00:08:43,970 --> 00:08:48,630
+We wanted to know the top five customers spending money at our store.
+
+00:08:48,710 --> 00:08:52,730
+So we're going to say say select
+
+00:08:55,490 --> 00:09:00,770
+customer ID and then we want to know how much they were spending.
+
+00:09:00,800 --> 00:09:08,420
+So some of the amount column from the payment table.
+
+00:09:09,560 --> 00:09:16,430
+And then we wanted to group by customer ID and that makes sense because that's what we actually want
+
+00:09:16,430 --> 00:09:18,350
+to sort by order by right.
+
+00:09:18,380 --> 00:09:21,230
+Or excuse me that's what we actually want to know.
+
+00:09:21,230 --> 00:09:24,390
+We want to know which customers have spent the most.
+
+00:09:24,390 --> 00:09:27,980
+That's what I want to group by and then getting on the order by statement.
+
+00:09:27,980 --> 00:09:28,970
+This is the tricky part.
+
+00:09:28,970 --> 00:09:40,130
+So what you wanted to order by was not the amount column but we wanted to order by the sum of the amount
+
+00:09:40,130 --> 00:09:44,780
+column and you would have got an error if you hadn't put the some in there and we'll have in descending
+
+00:09:44,780 --> 00:09:46,850
+order because we want to get the top 5.
+
+00:09:46,850 --> 00:09:53,210
+So from highest to lowest in descending order in order just to get five of them I can say limit's 5
+
+00:09:53,220 --> 00:09:53,590
+.
+
+00:09:53,960 --> 00:09:58,330
+So if I run that off those are the customer IDs and that's how much they've spent.
+
+00:09:58,520 --> 00:10:05,720
+So looks like customer IDs 1:48 5 2 6 1 7 8 1 3 7 1 4 4 are the customers we should send those coupons
+
+00:10:05,750 --> 00:10:06,640
+to.
+
+00:10:06,650 --> 00:10:12,170
+Again let's break this down one more time because it's a little tricky especially if this order by some
+
+00:10:12,170 --> 00:10:13,250
+.
+
+00:10:13,340 --> 00:10:19,970
+So we wanted to select the customer ID column that makes sense and we wanted to sum the amount column
+
+00:10:20,840 --> 00:10:21,880
+per every customer.
+
+00:10:21,880 --> 00:10:27,740
+So we want to aggregate all that amount that the customer spends into a final sum for each of those
+
+00:10:27,740 --> 00:10:33,080
+customers one do that from the payment table and then we want to group by the customer right in order
+
+00:10:33,080 --> 00:10:35,710
+to do those aggregations for each customer.
+
+00:10:35,720 --> 00:10:42,110
+The tricky part was what you actually wanted to order by you wanted to order by the sum amount column
+
+00:10:42,110 --> 00:10:47,080
+and remember you can really only order by columns that you're selecting.
+
+00:10:47,140 --> 00:10:53,480
+Here in postscripts allows you to not do that but it's good practice and just logically it makes sense
+
+00:10:53,480 --> 00:10:58,160
+to only have order by options of the columns you select.
+
+00:10:58,160 --> 00:10:58,870
+Right.
+
+00:10:58,940 --> 00:11:00,420
+And so we basically have two options here.
+
+00:11:00,440 --> 00:11:01,850
+You want to order by the customer.
+
+00:11:01,880 --> 00:11:04,170
+Or the one order by that some amount.
+
+00:11:04,190 --> 00:11:08,890
+In this case it makes the most sense to order by the same amounts as we want to get the top five spenders
+
+00:11:08,890 --> 00:11:09,070
+.
+
+00:11:09,170 --> 00:11:14,060
+And then we specify in descending order to go from highest to lowest and then we limit 5 just to get
+
+00:11:14,060 --> 00:11:15,440
+those top 5.
+
+00:11:15,880 --> 00:11:16,510
+Okay.
+
+00:11:16,850 --> 00:11:22,730
+So and back to the presentation real quick I want you to note we're going to see group by show up a
+
+00:11:22,730 --> 00:11:28,370
+lot so don't worry if you feel like you kind of got these but wasn't enough examples for you.
+
+00:11:28,370 --> 00:11:32,830
+You're going to see group by over and over again and you'll eventually feel extremely comfortable with
+
+00:11:32,840 --> 00:11:36,440
+that and it's just going to it's going to there's something of a trigger in your mind or are you just
+
+00:11:36,440 --> 00:11:42,620
+going to start thinking of things in a group by syntax so don't worry about it you're going to see it
+
+00:11:42,650 --> 00:11:44,870
+plenty of times ahead.
+
+00:11:44,870 --> 00:11:48,310
+So I don't think that right now we're just going to stop showing group by forever.
+
+00:11:48,320 --> 00:11:50,730
+You'll see it happen over and over again.
+
+00:11:50,790 --> 00:11:56,480
+We're going to learn now and the next lecture is how do you use the having clause and the having clause
+
+00:11:56,570 --> 00:12:02,170
+is basically using a where statement if you have something gripped by.
+
+00:12:02,630 --> 00:12:03,020
+OK.
+
+00:12:03,080 --> 00:12:05,690
+So even that doesn't make quite a lot of sense now.
+
+00:12:05,720 --> 00:12:09,030
+They'll make a lot of sense than an ex arguing over the having clause.
+
+00:12:09,050 --> 00:12:09,710
+All right.
+
+00:12:09,890 --> 00:12:13,880
+I hope these challenges are helpful to you and I will see if the next lecture.
+
+00:12:13,880 --> 00:12:15,410
+Thank you everybody.
