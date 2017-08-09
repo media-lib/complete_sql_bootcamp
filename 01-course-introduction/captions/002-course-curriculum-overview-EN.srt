@@ -1,0 +1,71 @@
+00:00:00,600 --> 00:00:05,190
+Hello everyone and welcome to the course curriculum lecture for the complete sequel boot camp.
+
+00:00:05,430 --> 00:00:10,110
+In this lecture we're going to go over the entire courses curriculum and understand that building blocks
+
+00:00:10,110 --> 00:00:13,290
+that make up this course to begin.
+
+00:00:13,290 --> 00:00:16,970
+You'll start off by installing postscripts sequel mpg admen.
+
+00:00:17,310 --> 00:00:22,860
+We have full installation walkers for both Windows and Mac computer systems.
+
+00:00:22,860 --> 00:00:28,410
+Once we've done that we'll start off with some basic sections the first section will cover databases
+
+00:00:28,560 --> 00:00:29,880
+and table basics.
+
+00:00:30,210 --> 00:00:35,280
+Then we'll learn about sequels statement fundamentals and that section of the Course you'll finally
+
+00:00:35,280 --> 00:00:41,130
+begin to use sequel syntax to query the database in the tables you created in the previous section.
+
+00:00:41,430 --> 00:00:47,160
+Then we'll step it up a notch by learning about the group by clause and once we've finished that you'll
+
+00:00:47,160 --> 00:00:50,700
+have your first assessment test during the course.
+
+00:00:51,060 --> 00:00:55,770
+Once you've completed that first assessment test you'll learn about Joines some more advanced sequel
+
+00:00:55,770 --> 00:01:00,510
+commands and then you'll have a second assessment test to test your understanding of everything you've
+
+00:01:00,510 --> 00:01:04,760
+learned up to this point in the course.
+
+00:01:04,890 --> 00:01:07,400
+After that you'll have your final sections.
+
+00:01:07,530 --> 00:01:11,700
+You'll learn how to create database and tables directly through a sequel syntax.
+
+00:01:11,700 --> 00:01:16,590
+Then you'll have your third assessment test that will test your knowledge on creating databases and
+
+00:01:16,590 --> 00:01:18,980
+tables directly through sequel.
+
+00:01:18,990 --> 00:01:22,050
+Then we also have some extra bonus lectures lectures.
+
+00:01:22,060 --> 00:01:27,570
+These topics include views using postgresql of the Python programming language as well as the special
+
+00:01:27,570 --> 00:01:31,360
+discount offers from other courses.
+
+00:01:31,650 --> 00:01:36,330
+With that all being said lets go ahead and get started with the entire course so it can build up our
+
+00:01:36,330 --> 00:01:37,330
+knowledge.
+
+00:01:37,350 --> 00:01:39,210
+Thanks everyone and I'll see you at the next lecture

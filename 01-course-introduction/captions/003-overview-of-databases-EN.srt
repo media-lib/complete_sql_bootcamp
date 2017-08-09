@@ -1,0 +1,320 @@
+00:00:01,410 --> 00:00:05,500
+Hello everyone and welcome to the database overview lecture.
+
+00:00:05,520 --> 00:00:10,240
+So in this lecture we're going to learn what are databases and why use databases.
+
+00:00:10,320 --> 00:00:14,820
+And after we answer those two fundamental questions we'll get a sense of where this course fits in the
+
+00:00:14,820 --> 00:00:17,370
+realm of things.
+
+00:00:17,400 --> 00:00:23,400
+So let's turn off the basic definition database or systems that allow users to store and organize data
+
+00:00:24,060 --> 00:00:27,840
+and they're useful when dealing of large amounts of data.
+
+00:00:27,930 --> 00:00:33,090
+So you might be wondering what are the typical users look like who deal with databases while databases
+
+00:00:33,090 --> 00:00:35,290
+actually have a wide variety of users.
+
+00:00:35,340 --> 00:00:40,720
+These can include analysts such as a marketing analyst a business analyst or a sales or sales operation
+
+00:00:40,720 --> 00:00:46,330
+analyst or more technical people like data scientist software engineers or web developers.
+
+00:00:46,470 --> 00:00:52,060
+Basically anyone needing to deal data has a great use case to work for database.
+
+00:00:53,250 --> 00:00:59,430
+So since most users have some familiarity with a spreadsheet software either Google Spreadsheets or
+
+00:00:59,460 --> 00:01:06,150
+Microsoft Excel we're going to do is discuss the transition from going from spreadsheets to databases
+
+00:01:06,160 --> 00:01:06,310
+.
+
+00:01:06,480 --> 00:01:12,180
+So it's good to discuss some use cases for spreadsheets versus use cases for databases and then leverage
+
+00:01:12,180 --> 00:01:15,860
+that knowledge to better understand databases.
+
+00:01:16,620 --> 00:01:22,290
+So spreadsheets are really good for a one time analysis or to quickly need to churn something out such
+
+00:01:22,290 --> 00:01:28,230
+as in Excel and they work with reasonable data set sizes something that can excel or Google Spreadsheets
+
+00:01:28,230 --> 00:01:30,910
+can open up really easily.
+
+00:01:31,120 --> 00:01:35,010
+Now what's really nice about spreadsheets is they allow the ability for untrained people to work with
+
+00:01:35,010 --> 00:01:35,610
+data.
+
+00:01:35,790 --> 00:01:39,790
+So anyone can just double click an Excel file open it and work with it.
+
+00:01:39,930 --> 00:01:44,520
+However they do have downsides where databases really shine.
+
+00:01:44,640 --> 00:01:50,340
+So databases are really great for data integrity meaning you don't want to have someone be able to just
+
+00:01:50,340 --> 00:01:52,480
+click on a cell and change the data.
+
+00:01:52,500 --> 00:01:54,360
+Databases don't really allow for that.
+
+00:01:54,630 --> 00:02:00,000
+And they can also handle massive amounts of data data sizes that would just basically make excel or
+
+00:02:00,000 --> 00:02:05,100
+Google Spreadsheets crash and they can also quickly combine different data sets something that might
+
+00:02:05,100 --> 00:02:09,200
+be difficult to do for larger data sets in a spreadsheet.
+
+00:02:09,210 --> 00:02:14,700
+They also are perfect for automating steps for reuse due to the school syntax which will learn about
+
+00:02:14,700 --> 00:02:18,960
+later and they can also support data for Web sites and applications.
+
+00:02:18,960 --> 00:02:25,440
+So most Web sites and web applications or mobile applications are linked to some sort of database to
+
+00:02:25,440 --> 00:02:29,410
+store their data and retrieve their data.
+
+00:02:29,430 --> 00:02:34,950
+So let's go in and leverage that knowledge from spreadsheets to understand databases and see the similarities
+
+00:02:34,950 --> 00:02:37,280
+between them.
+
+00:02:37,290 --> 00:02:41,330
+So here we have a picture of a looks like a normal spreadsheet.
+
+00:02:41,370 --> 00:02:42,510
+Here we have the columns.
+
+00:02:42,510 --> 00:02:45,630
+It's just the basic glucose tracking spreadsheet.
+
+00:02:45,630 --> 00:02:51,840
+And we have columns which just time some measurements etc. and various rows with different data points
+
+00:02:51,840 --> 00:02:51,910
+.
+
+00:02:51,960 --> 00:02:57,570
+And then at the bottom here we have tabs which are referencing various sheets in the spreadsheet software
+
+00:02:57,810 --> 00:03:00,270
+here using Excel.
+
+00:03:00,270 --> 00:03:02,940
+So we're transitioning from a spreadsheet to a database.
+
+00:03:02,940 --> 00:03:07,780
+We can think of databases tables as the tabs of a spreadsheet system.
+
+00:03:07,830 --> 00:03:14,010
+Each of those tabs of the spreadsheet handles various types of data or different rows in different columns
+
+00:03:14,010 --> 00:03:14,520
+.
+
+00:03:14,520 --> 00:03:23,730
+Those tabs will translate to tables in a database so that a database is made up of many tables and then
+
+00:03:23,730 --> 00:03:32,580
+those tables are made up of rows and columns so the columns in the Table of a database is basically
+
+00:03:32,580 --> 00:03:35,780
+exactly what you would think as a column in a spreadsheet.
+
+00:03:36,030 --> 00:03:40,310
+It's just a vertical column that denotes a certain data type.
+
+00:03:40,320 --> 00:03:43,100
+So for instance the first one here we have time.
+
+00:03:43,140 --> 00:03:47,880
+Second we only have measurements so columns and spreadsheets are basically the same as columns in the
+
+00:03:47,880 --> 00:03:49,280
+Table of a database.
+
+00:03:49,500 --> 00:03:55,680
+And then the other feature we have from a spreadsheet to a database is going to be rows and rows again
+
+00:03:55,680 --> 00:03:59,060
+behave exactly like you would expect them to in the database table.
+
+00:03:59,240 --> 00:04:03,240
+They're just the actual row of all that data for a certain data point.
+
+00:04:03,240 --> 00:04:07,650
+So in this case we're highlighting the data points seven eight and nine and then all the measurements
+
+00:04:07,650 --> 00:04:09,230
+for those columns.
+
+00:04:09,240 --> 00:04:13,680
+So again databases and sort of tabs they're going to have tables and those tables are also going to
+
+00:04:13,680 --> 00:04:18,900
+have rows and columns and you can basically just imagine them as spreadsheets just much larger that
+
+00:04:18,900 --> 00:04:21,470
+you can't individually click on.
+
+00:04:22,380 --> 00:04:23,190
+OK.
+
+00:04:23,550 --> 00:04:28,540
+So again we have columns rows and a set of tabs we're going to have tables.
+
+00:04:28,650 --> 00:04:31,170
+So what are database platform options.
+
+00:04:31,230 --> 00:04:35,420
+Well there's actually lots of database platform options a lot more than what I put here.
+
+00:04:35,430 --> 00:04:41,400
+But here are some of the main ones you have postgresql sequel things such as my sequel and my sequel
+
+00:04:41,400 --> 00:04:45,330
+server express Microsoft Access and then sequel lite.
+
+00:04:45,390 --> 00:04:50,760
+Each of these has their pros and cons but we're going to be focusing on postgresql sequel.
+
+00:04:50,760 --> 00:04:54,130
+The reason for this is because postscripts sequel is free open source.
+
+00:04:54,150 --> 00:04:55,830
+It's widely used on the Internet.
+
+00:04:56,130 --> 00:05:01,770
+It's multi-platform So meaning if you have various operating systems like Windows or Mac users you can
+
+00:05:01,770 --> 00:05:07,290
+all use postscripts sequel and one of my main reasons for choosing it is that it's super easy to install
+
+00:05:07,530 --> 00:05:10,530
+and just hit the ground running.
+
+00:05:10,770 --> 00:05:16,230
+So post-career sequel's a great database choice for learning how to use sequel and sequel's a structured
+
+00:05:16,230 --> 00:05:20,290
+query language that's what it stands for and that's what we're going to learn in this course.
+
+00:05:20,320 --> 00:05:23,220
+Sequel is going to be the way we communicate for database.
+
+00:05:23,230 --> 00:05:28,530
+So we were going to be able to communicate database to get data out of it or put data into it.
+
+00:05:29,010 --> 00:05:35,230
+And the sequel learn this course can be applied to a variety of databases or siecle based software.
+
+00:05:35,280 --> 00:05:39,570
+So we're not going to pigeonhole ourselves that just postscripts sequel what you learn in this course
+
+00:05:39,600 --> 00:05:45,470
+you're going to be able to apply it to a variety of databases or software that uses sequel.
+
+00:05:45,480 --> 00:05:51,700
+So for example of what a general sequel syntax would look like it would look something like this selects
+
+00:05:51,760 --> 00:05:58,170
+some column names from a table and then you have some functions or clauses you're ordering by the first
+
+00:05:58,170 --> 00:05:58,690
+name.
+
+00:05:58,950 --> 00:06:04,220
+So we're going to learn how to write a new sequel syntax like this in this course.
+
+00:06:05,250 --> 00:06:07,610
+So sequel is actually useful for a lot of things.
+
+00:06:07,620 --> 00:06:12,960
+Everything I've listed here runs on some sort of syntax of sequel so you have postscripts sequel or
+
+00:06:12,960 --> 00:06:18,980
+my sequel or Oracle databases Microsoft Access to the basic databases you would think of that can use
+
+00:06:18,980 --> 00:06:24,030
+sequel but there's also a lot of software out there that use a sequel as a way of interacting for data
+
+00:06:24,390 --> 00:06:26,690
+such as looker or periscope data.
+
+00:06:26,970 --> 00:06:35,040
+And there's also some abstractions that run on top of big data systems such as Hadoop and you can use
+
+00:06:35,040 --> 00:06:41,040
+sequel with hive or Google's big queery or Facebook's presto which is basically using sequel to run
+
+00:06:41,040 --> 00:06:45,570
+on top of very large data systems that use distributed data.
+
+00:06:45,570 --> 00:06:53,790
+So sequel going to be incredibly useful to operate a variety of tools and databases with.
+
+00:06:54,090 --> 00:06:58,500
+So you're also going to be notified if any of the sequel commands we learn in this course are specific
+
+00:06:58,500 --> 00:06:59,230
+to the post.
+
+00:06:59,400 --> 00:07:01,300
+Gress sequel environment.
+
+00:07:01,350 --> 00:07:05,400
+Most of the commands we learn are actually just going to be general sequel so you won't get too many
+
+00:07:05,400 --> 00:07:06,900
+of these notifications.
+
+00:07:06,960 --> 00:07:12,180
+Basically everything you learn here you're going to be able to apply directly to any conventional sequel
+
+00:07:12,180 --> 00:07:13,650
+database.
+
+00:07:14,460 --> 00:07:16,290
+OK let's go to review what we learned.
+
+00:07:16,440 --> 00:07:20,270
+We learn what a database is why we should use a database.
+
+00:07:20,340 --> 00:07:25,410
+We learned about the various sequel options and we also learned how to use sequel's skills in this course
+
+00:07:25,650 --> 00:07:29,470
+and how we're going to be able to apply them to many other software programs.
+
+00:07:29,730 --> 00:07:30,230
+OK.
+
+00:07:30,520 --> 00:07:34,530
+But that being said let's go at and continue and learn some more.
+
+00:07:34,530 --> 00:07:36,450
+Thanks everyone and I'll see you at the next lecture

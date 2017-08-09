@@ -1,0 +1,776 @@
+00:00:00,330 --> 00:00:06,490
+Hello everyone and welcome to the P.G. admin and post-career sequel installation lecture in this lecture
+
+00:00:06,490 --> 00:00:06,510
+.
+
+00:00:06,510 --> 00:00:09,170
+We're going to briefly discuss what is PGE admin.
+
+00:00:09,390 --> 00:00:12,570
+We'll give you some notes over the various versions of PGE admin.
+
+00:00:12,750 --> 00:00:15,260
+And then we'll go over the installation guide.
+
+00:00:16,200 --> 00:00:18,480
+So let's discuss what is PGE admin.
+
+00:00:18,480 --> 00:00:23,610
+Usually when you're working with a sequel engine whether it be my sequel postgresql sequel Microsoft
+
+00:00:23,610 --> 00:00:28,770
+sequel server you're going to be working through some sort of graphical interface not just direct the
+
+00:00:28,770 --> 00:00:31,700
+command line although you can work direct the command line.
+
+00:00:31,710 --> 00:00:36,960
+It's much easier to use one of these graphical interface tools sometimes known as Gucci's or graphical
+
+00:00:36,960 --> 00:00:38,240
+user interface.
+
+00:00:38,460 --> 00:00:42,580
+PGE Addleman is the most popular interface for postgresql sequel.
+
+00:00:42,610 --> 00:00:48,690
+Now a quick note about the versions of PGE adamant Peachi Adam and four recently came out and it's officially
+
+00:00:48,690 --> 00:00:49,800
+out of beta.
+
+00:00:49,800 --> 00:00:51,890
+It used to be a little buggy for students.
+
+00:00:51,990 --> 00:00:55,490
+So when this course was filmed we filmed that with Peachi admin 3.
+
+00:00:55,650 --> 00:00:59,490
+But keep in mind all the sequel commands will work the same with PGE admin for.
+
+00:00:59,520 --> 00:01:04,470
+So even though the interface may look a little different the course notes and sequel notes will all
+
+00:01:04,470 --> 00:01:08,040
+work the same regardless of what PGE admen version you're using.
+
+00:01:08,070 --> 00:01:12,780
+Now let's go ahead and go over the installation for this lecture and this lecture.
+
+00:01:12,810 --> 00:01:18,270
+We're going to go ahead and install post-career sequel NPG admen through a convenient interactive installer
+
+00:01:18,270 --> 00:01:18,810
+.
+
+00:01:18,810 --> 00:01:23,830
+Then we'll go ahead and do is download the tar file which is a resource for this lecture.
+
+00:01:23,880 --> 00:01:28,650
+We'll use that tar file to restore our film stored database which is the main database we're going to
+
+00:01:28,650 --> 00:01:32,070
+be using or we're learning how to program a sequel in this course.
+
+00:01:32,070 --> 00:01:37,710
+Later on you'll get another tar file for another database for another assessment test in order to get
+
+00:01:37,710 --> 00:01:38,190
+started.
+
+00:01:38,220 --> 00:01:42,530
+Let's go ahead and go to the w w w the post gres sequel dot org.
+
+00:01:42,540 --> 00:01:46,500
+I'm going to go ahead and jump to my browser and Meacher at that Web site.
+
+00:01:46,500 --> 00:01:46,830
+All right.
+
+00:01:46,830 --> 00:01:52,350
+Here I am at postscripts sequel which you're going to go ahead and do is click on this download tab
+
+00:01:52,830 --> 00:01:58,630
+or if you want it can actually just go directly to w w that postgresql or slash download.
+
+00:01:58,750 --> 00:02:03,480
+You should see something that looks like this downloads which are going to go ahead and do is come down
+
+00:02:03,600 --> 00:02:08,940
+and choose the prebuilt package which corresponds to your OS suffusing Mac OS.
+
+00:02:08,950 --> 00:02:10,800
+You'll go ahead and click on this link right here.
+
+00:02:10,980 --> 00:02:12,920
+From Windows you'll go ahead and click on this link.
+
+00:02:13,080 --> 00:02:17,770
+And if you are on Linux depending on what version you're using you have a bunch of options here.
+
+00:02:17,850 --> 00:02:25,410
+So if you go to either Mac OS package or the Windows installer package you should see some sort of installer
+
+00:02:25,410 --> 00:02:27,030
+by enterprise DB.
+
+00:02:27,090 --> 00:02:32,250
+So you'll see it on both Windows Installer and on this Mac OS X package.
+
+00:02:32,250 --> 00:02:38,550
+So what you're going to go ahead and do is basically download this installer from Enterprise D.B and
+
+00:02:38,550 --> 00:02:43,920
+then you'll go ahead and follow the instructions that the graphical or interactive installer prompts
+
+00:02:43,920 --> 00:02:44,340
+you to.
+
+00:02:44,340 --> 00:02:50,520
+So again we're going to be using the enterprise D-B you'll see that in both pages for Mac OS and Windows
+
+00:02:50,570 --> 00:02:50,870
+.
+
+00:02:50,870 --> 00:02:53,030
+There's another installer by big sequel.
+
+00:02:53,160 --> 00:02:57,440
+Some students sometimes have trouble with this one so I really recommend this enterprise D-B.
+
+00:02:57,510 --> 00:03:03,610
+So let's go ahead and download the installer and this installer actually includes not just postscripts
+
+00:03:03,640 --> 00:03:09,600
+sequel but it also includes PGE admen the graphical tool for managing and developing these databases
+
+00:03:09,600 --> 00:03:09,900
+.
+
+00:03:09,900 --> 00:03:15,120
+So instead of having to download PGE admin a postgresql separately we're going to go ahead and download
+
+00:03:15,120 --> 00:03:16,250
+it altogether.
+
+00:03:16,500 --> 00:03:21,810
+So once you click that link it should take you to the enterprise DB and you'll get the same link whether
+
+00:03:21,810 --> 00:03:23,850
+you're on Mac OS or windows.
+
+00:03:23,850 --> 00:03:29,490
+And let's go ahead and just zoom in a bit and you'll see that there's versions here you can download
+
+00:03:29,970 --> 00:03:32,100
+there's 9.6 nine point five five.
+
+00:03:32,100 --> 00:03:35,820
+And what these versions actually mean this is the version of postgresql sequel.
+
+00:03:35,820 --> 00:03:42,210
+So we're going to be using PGE admen for for this installation lecture and we'll also use version nine
+
+00:03:42,200 --> 00:03:47,090
+point six point one you'll want to use the latest version that is not in beta.
+
+00:03:47,130 --> 00:03:51,890
+So right now there is no beta version up here but later on you may be seeing something like nine point
+
+00:03:51,890 --> 00:03:54,740
+seven or maybe nine point six point two et cetera.
+
+00:03:54,930 --> 00:03:58,710
+And if it's as beta they're go ahead and skip down 1 to the latest version.
+
+00:03:58,710 --> 00:04:00,760
+That is not in beta right.
+
+00:04:00,870 --> 00:04:04,370
+So go ahead and click the relevant operating system link here.
+
+00:04:04,410 --> 00:04:06,300
+So if you're a Mac OS you click this one.
+
+00:04:06,420 --> 00:04:10,260
+I'm on Windows right now so I will go ahead and click Windows 64 bit.
+
+00:04:10,260 --> 00:04:13,740
+Make sure you check whether you have a 32 bit Windows computer or 64 bit.
+
+00:04:13,780 --> 00:04:18,350
+If you're on some sort of relatively modern Windows computer it's probably going to be 64 bit.
+
+00:04:18,360 --> 00:04:20,850
+Ms go ahead and click on this to begin the download.
+
+00:04:21,360 --> 00:04:26,490
+So that's beginning in the download I'm going to go ahead and jump forward in time for the download
+
+00:04:26,490 --> 00:04:27,480
+to finish.
+
+00:04:27,510 --> 00:04:28,260
+I'll see you there.
+
+00:04:28,440 --> 00:04:30,260
+OK so my download has completed.
+
+00:04:30,360 --> 00:04:33,550
+Let's go ahead and open up this executable file.
+
+00:04:33,780 --> 00:04:39,450
+And if you see some Microsoft Visual pop up you can go ahead and continue through that.
+
+00:04:39,450 --> 00:04:42,190
+All right so here we are at the installer.
+
+00:04:42,210 --> 00:04:48,120
+Go ahead and click Next through the setup you'll want to specify the director postgresql will be installed
+
+00:04:48,120 --> 00:04:48,430
+.
+
+00:04:48,450 --> 00:04:50,990
+Go ahead and just choose the default C. Program Files.
+
+00:04:51,000 --> 00:04:55,770
+Postscript sequel and you should see something like nine point six or nine point seven pending on what
+
+00:04:55,770 --> 00:04:57,860
+versions you're doing right now were just on 9.6.
+
+00:04:57,870 --> 00:05:00,150
+Let's go ahead and click next.
+
+00:05:00,420 --> 00:05:05,160
+Then you'll want to select the directory under which this sort of data defaults fine.
+
+00:05:05,670 --> 00:05:07,860
+And then this is a really really important part.
+
+00:05:07,920 --> 00:05:11,040
+It's going to ask you to please provide a password for the database.
+
+00:05:11,070 --> 00:05:18,300
+Super User host gress it's extremely important that you remember what you're going to type here.
+
+00:05:18,450 --> 00:05:21,550
+I'm going to just go ahead and use a very simple one I'm going to write password.
+
+00:05:21,650 --> 00:05:25,350
+You know like I mentioned it's extremely important that you remember so go ahead and write this down
+
+00:05:25,350 --> 00:05:27,910
+somewhere or whatever you typed in for your password here.
+
+00:05:29,710 --> 00:05:33,970
+OK then you're going to want to select the port number the server should listen on you'll want to go
+
+00:05:33,970 --> 00:05:35,800
+ahead and choose the default default value.
+
+00:05:35,820 --> 00:05:37,960
+My case is five four three three.
+
+00:05:38,060 --> 00:05:40,690
+Most likely that will also be the same default value for you.
+
+00:05:40,690 --> 00:05:42,850
+So go ahead and just leave the default there.
+
+00:05:43,000 --> 00:05:48,550
+Click next and you'll want to select the location or locale to be used for the new database cluster
+
+00:05:48,560 --> 00:05:48,620
+.
+
+00:05:48,620 --> 00:05:49,870
+Go ahead and just use the default.
+
+00:05:49,880 --> 00:05:51,210
+That's also OK.
+
+00:05:51,680 --> 00:05:53,210
+And now setup is now ready to begin.
+
+00:05:53,200 --> 00:05:56,760
+So go ahead and click next and you should see it installing.
+
+00:05:57,130 --> 00:05:57,370
+OK.
+
+00:05:57,380 --> 00:06:01,210
+So it's creating all the directories and setting up everything for postgresql sequel.
+
+00:06:01,210 --> 00:06:05,410
+We'll go ahead and fast forward through this and get to the next step.
+
+00:06:05,410 --> 00:06:08,240
+So now go ahead and jump forward in time now.
+
+00:06:08,260 --> 00:06:13,270
+All right so my installation has finished now at the very end of the installation you should see something
+
+00:06:13,270 --> 00:06:15,460
+like Do you want to check out stack builder.
+
+00:06:15,580 --> 00:06:17,500
+You can go ahead and just uncheck that box.
+
+00:06:17,500 --> 00:06:18,690
+It's not necessary.
+
+00:06:18,880 --> 00:06:23,920
+Once you have that you should be able to open a PGA admin for this case you can actually just search
+
+00:06:23,930 --> 00:06:25,190
+your computer for it.
+
+00:06:25,210 --> 00:06:26,590
+So it's CPG admen.
+
+00:06:26,650 --> 00:06:29,230
+I have both versions here the old one pgm and three.
+
+00:06:29,360 --> 00:06:33,120
+But let's go ahead and click on PGE admen for and see what it looks like.
+
+00:06:33,130 --> 00:06:38,640
+So PGA 10:04 should look a lot slicker and cleaner than PGE outman theory.
+
+00:06:39,620 --> 00:06:43,830
+All right so now I can see here that PGA admen for has been loaded and opened.
+
+00:06:43,960 --> 00:06:45,760
+And we should see some servers here.
+
+00:06:45,760 --> 00:06:48,100
+I have 9.5 9.6.
+
+00:06:48,190 --> 00:06:51,790
+If you don't see these servers then something probably went wrong with your installation.
+
+00:06:51,790 --> 00:06:53,500
+So go ahead and check that again.
+
+00:06:53,560 --> 00:06:58,450
+But if you follow the instructions it should have worked fine for you and the only one you should see
+
+00:06:58,450 --> 00:07:00,850
+if this is your first time running this is just 9.6.
+
+00:07:00,860 --> 00:07:05,570
+You should see at least one server here in here we can go ahead and see something that looks like this
+
+00:07:05,560 --> 00:07:09,750
+will say please enter the password for the user postgresql and then connect to the server.
+
+00:07:09,760 --> 00:07:13,280
+This is where you're going to enter the password that you saved earlier.
+
+00:07:13,270 --> 00:07:18,550
+So go ahead and just put that in and can click here save password that we don't have to constantly enter
+
+00:07:18,560 --> 00:07:20,360
+this click OK.
+
+00:07:20,560 --> 00:07:23,030
+And you should see something that looks like then like this.
+
+00:07:23,060 --> 00:07:24,970
+Everything's working fine.
+
+00:07:25,660 --> 00:07:30,740
+All right so once you're at this screen we're going to go ahead and do is restore a database using the
+
+00:07:31,030 --> 00:07:31,910
+tar file.
+
+00:07:32,060 --> 00:07:36,590
+So remember to download the tar file which is a resource for this lecture.
+
+00:07:36,700 --> 00:07:42,610
+You'll go ahead and right click here you'll say create database
+
+00:07:45,440 --> 00:07:48,040
+and then you'll have the database name option.
+
+00:07:48,110 --> 00:07:55,960
+In this case I'm going to call this database DVD rental and then click Save that created the DVD rental
+
+00:07:55,960 --> 00:07:57,980
+database so you can see here.
+
+00:07:58,060 --> 00:08:03,070
+We'll go ahead and click on it and you should see something that looks like this cast catalogs the events
+
+00:08:03,070 --> 00:08:04,280
+triggers et cetera.
+
+00:08:04,420 --> 00:08:07,090
+Now right now we just have an empty database.
+
+00:08:07,120 --> 00:08:09,570
+We actually need to restore some data to it.
+
+00:08:09,700 --> 00:08:13,440
+OK now that we created a new database called DVD rental.
+
+00:08:13,490 --> 00:08:19,600
+Let's go ahead and use the tar file from the resource section of this lecture in order to actually restore
+
+00:08:19,610 --> 00:08:20,480
+this database.
+
+00:08:20,500 --> 00:08:24,080
+We have some sort of data information and we'll go ahead.
+
+00:08:24,130 --> 00:08:28,610
+Right click on this and then you will click restore.
+
+00:08:28,610 --> 00:08:33,490
+Now you may get a pop up that says something like this please configure the postgresql binary path in
+
+00:08:33,500 --> 00:08:35,070
+the preferences dialog.
+
+00:08:35,290 --> 00:08:40,270
+So if you get this pop up let me go ahead and show you how you can create this configuration.
+
+00:08:40,270 --> 00:08:47,590
+You'll go ahead and just click OK and then you will click File preferences that are going to make this
+
+00:08:47,600 --> 00:08:52,040
+full screen here and you'll see something that says path's binary path.
+
+00:08:52,030 --> 00:08:57,680
+So we're here and where you're going to go ahead and do it just post the postgresql sequel binary path
+
+00:08:57,670 --> 00:08:57,760
+.
+
+00:08:57,760 --> 00:09:00,860
+Now this sounds kind of intimidating but it's actually quite simple.
+
+00:09:00,880 --> 00:09:05,650
+You're just going to find the binary path where it was default located.
+
+00:09:05,650 --> 00:09:07,470
+So let me go in and show you they can find them.
+
+00:09:07,520 --> 00:09:11,990
+Should be a really similar process on your Mac computer that will show you how to do this on Windows
+
+00:09:12,000 --> 00:09:12,190
+.
+
+00:09:12,380 --> 00:09:16,970
+Go ahead and jump to your program files to postscripts sequel.
+
+00:09:17,010 --> 00:09:19,190
+Want to go ahead and do that now.
+
+00:09:19,210 --> 00:09:23,170
+So here I am under program files postscripts sequel.
+
+00:09:23,170 --> 00:09:26,340
+This is just the default location where everything was installed.
+
+00:09:26,410 --> 00:09:28,100
+You should have 9.6 somewhere.
+
+00:09:28,120 --> 00:09:31,750
+You probably don't have these DVD rental tar files if you haven't done it.
+
+00:09:31,900 --> 00:09:34,470
+But go ahead and see nine point six.
+
+00:09:34,510 --> 00:09:36,530
+And then there's a bin folder here.
+
+00:09:36,760 --> 00:09:37,650
+Double click on that.
+
+00:09:37,690 --> 00:09:39,170
+And this is the folder you need to get to.
+
+00:09:39,190 --> 00:09:42,280
+So it just should be under the default location program files.
+
+00:09:42,280 --> 00:09:48,580
+Post-career sequel 9.6 been so wherever it was default installed on your computer go heading then go
+
+00:09:48,590 --> 00:09:49,590
+to 9.6.
+
+00:09:49,590 --> 00:09:52,250
+We should see some sort of folder called Ben.
+
+00:09:52,510 --> 00:09:54,620
+That's what PGE admin for wants to know.
+
+00:09:54,620 --> 00:09:56,460
+This is the location it's asking for.
+
+00:09:56,600 --> 00:10:00,270
+And you can see up here it says path to the directory containing utility programs.
+
+00:10:00,280 --> 00:10:02,430
+PGE dump PGE restore etc..
+
+00:10:02,600 --> 00:10:07,460
+So if you scroll down here to you get to the PS You should see stuff like PGE underscore it.
+
+00:10:08,000 --> 00:10:10,400
+PGE underscore restore somewhere around here.
+
+00:10:10,390 --> 00:10:11,290
+There it is.
+
+00:10:11,300 --> 00:10:15,410
+So if you want to you're having trouble finding this you can just search your computer for these actual
+
+00:10:15,400 --> 00:10:18,030
+file names and then it should take you to this bin folder.
+
+00:10:18,220 --> 00:10:25,690
+So we're going to go ahead and do it just copy this address and then paste it here.
+
+00:10:25,960 --> 00:10:31,510
+So by default should be under-sea program files postgresql 9.6 Ben and then hit.
+
+00:10:31,750 --> 00:10:33,280
+OK.
+
+00:10:33,280 --> 00:10:39,970
+All right so now let's go ahead and try this again will reichlich DVD rental hit restore and you should
+
+00:10:39,970 --> 00:10:42,590
+see something that looks like this restore the database.
+
+00:10:42,670 --> 00:10:47,020
+We want to select the format so we want a custom or tar.
+
+00:10:47,160 --> 00:10:52,680
+OK now that we've set up custom or tar file here we gonna go ahead and put in the file name.
+
+00:10:53,000 --> 00:10:54,590
+So you have a couple options here.
+
+00:10:54,760 --> 00:11:00,980
+If you click on these three dots here you make it a bug and you may have a hard time actually finding
+
+00:11:01,030 --> 00:11:02,280
+the DVD rental file.
+
+00:11:02,300 --> 00:11:06,470
+You'll get something that pops up saying that there's no disk found and Dr.
+
+00:11:06,500 --> 00:11:10,960
+So instead of actually searching for this manually it's usually much easier to just put in the whole
+
+00:11:10,960 --> 00:11:12,340
+file path here.
+
+00:11:12,350 --> 00:11:17,590
+So go ahead and go to wherever you happen to put the DVD rental that tar file in my case it's under
+
+00:11:17,600 --> 00:11:18,250
+Downloads.
+
+00:11:18,250 --> 00:11:23,680
+When I go ahead and go to that now you'll see something that looks like this.
+
+00:11:23,680 --> 00:11:28,110
+So I have it under my downloads here here's the DVD rental the tar file I downloaded.
+
+00:11:28,340 --> 00:11:29,020
+I'm going to.
+
+00:11:29,050 --> 00:11:30,450
+Right click.
+
+00:11:30,500 --> 00:11:32,020
+Go to its properties.
+
+00:11:32,020 --> 00:11:34,360
+And then I should see the file path here.
+
+00:11:34,370 --> 00:11:36,100
+So says location.
+
+00:11:36,190 --> 00:11:42,540
+I'm going to go ahead and just copy that location then hit OK or Cancel whatever.
+
+00:11:43,000 --> 00:11:50,050
+And then I'm going to paste that in and then I'm going to do another slash and say DVD rental tar.
+
+00:11:50,200 --> 00:11:50,870
+So here it is.
+
+00:11:50,870 --> 00:11:53,750
+Saved under my downloads DVD rental tar.
+
+00:11:53,920 --> 00:11:57,790
+As I mentioned if you click on this three thoughts here sometimes it's a little bit buggy.
+
+00:11:57,910 --> 00:12:03,580
+So go ahead and just instead put in the whole path to the file then I want to go ahead and just briefly
+
+00:12:03,590 --> 00:12:05,500
+show you the restore options.
+
+00:12:05,500 --> 00:12:08,160
+So these restore options and expand this to all screen.
+
+00:12:08,300 --> 00:12:15,020
+You can actually select to only install schema by clicking on this switch button here or only the data
+
+00:12:15,520 --> 00:12:20,140
+and later on we'll discuss or have a little exercise for you to actually try to restore only the scheme
+
+00:12:20,150 --> 00:12:21,570
+or only the data.
+
+00:12:21,590 --> 00:12:26,620
+Basically what that means is you only want to return the actual tables themselves not the actual data
+
+00:12:26,680 --> 00:12:27,920
+that's in the tables.
+
+00:12:27,910 --> 00:12:29,890
+So you're trying to duplicate the format.
+
+00:12:29,890 --> 00:12:31,990
+You can install something like only schema buffering.
+
+00:12:32,020 --> 00:12:34,080
+Now go ahead and leave these all to the default.
+
+00:12:34,120 --> 00:12:36,190
+Should a lot of them just should just say no.
+
+00:12:36,220 --> 00:12:37,260
+Come back to the general.
+
+00:12:37,310 --> 00:12:39,100
+You have your file name your format.
+
+00:12:39,110 --> 00:12:43,440
+Go ahead and then click restore and it should say restore job created.
+
+00:12:43,450 --> 00:12:47,200
+They'll give you a little count down of how long it's taking and it should hopefully say successfully
+
+00:12:47,200 --> 00:12:53,680
+completed and then what you'll need to do is check here and we'll go ahead and click refresh and this
+
+00:12:53,680 --> 00:12:54,680
+step is really important.
+
+00:12:54,700 --> 00:12:59,330
+Otherwise it may look like you haven't done anything so click on refresh it'll go ahead and refresh
+
+00:12:59,330 --> 00:13:01,030
+that DVD rental file.
+
+00:13:01,100 --> 00:13:03,190
+Come down here click on schemas.
+
+00:13:03,190 --> 00:13:08,750
+You should see a public schema and they should come down here to where it says tables expand that and
+
+00:13:08,840 --> 00:13:11,820
+you should see actor address category city etc..
+
+00:13:12,010 --> 00:13:14,630
+So if you're seeing all that you are good to go.
+
+00:13:14,620 --> 00:13:20,220
+Let me go ahead and walk you through a simple sequel query on this new database you have.
+
+00:13:20,330 --> 00:13:24,640
+All right now that we've successfully restored this database Let's confirm that everything is working
+
+00:13:24,640 --> 00:13:24,780
+.
+
+00:13:24,880 --> 00:13:27,280
+By executing our first simple query.
+
+00:13:27,320 --> 00:13:31,520
+Now again don't worry if you don't understand everything about the type in this query that's the whole
+
+00:13:31,510 --> 00:13:35,710
+point of course we're going to teach you a sequel but let's go ahead and kind of do a hello world example
+
+00:13:35,950 --> 00:13:39,070
+just by selecting all the columns and all the rows in a table.
+
+00:13:39,110 --> 00:13:46,100
+So I will right click on DVD rental and then I will click on if you go down here there's the query tool
+
+00:13:46,120 --> 00:13:48,990
+has a little lightning rod go ahead and click on that.
+
+00:13:49,150 --> 00:13:52,430
+You should see a new window pop up that looks like this.
+
+00:13:52,490 --> 00:13:59,450
+And then where you're going to go ahead and write is selects Asterix from and then choose any of these
+
+00:13:59,440 --> 00:14:00,900
+tables that are down here.
+
+00:14:01,000 --> 00:14:03,790
+I'm going to go ahead and choose the actor table.
+
+00:14:03,800 --> 00:14:07,960
+So say it from actor semi-colon and that's it.
+
+00:14:07,960 --> 00:14:13,090
+So basically what this is saying is select all the rows from the actor table.
+
+00:14:13,240 --> 00:14:18,060
+And I'm going to come over here to this lightning rod and then click on execute and refresh.
+
+00:14:18,080 --> 00:14:21,860
+Now when you click on execute and refresh you make it something that looks like this is a little datagrid
+
+00:14:21,860 --> 00:14:22,090
+.
+
+00:14:22,210 --> 00:14:26,990
+You can go ahead and click back here to your normal tab and you should see the results of the data output
+
+00:14:26,980 --> 00:14:27,520
+.
+
+00:14:27,530 --> 00:14:31,290
+So here I see the actor Id the first name and the last name and the last update.
+
+00:14:31,450 --> 00:14:35,170
+So this is the actual data from my table.
+
+00:14:35,170 --> 00:14:40,670
+So if you're able to see this data output it means you are good to go and I will see you at the next
+
+00:14:40,660 --> 00:14:41,190
+lecture.
+
+00:14:41,230 --> 00:14:44,810
+If you have any questions please don't hesitate to post the Q&A forums.
+
+00:14:44,810 --> 00:14:49,060
+I know there's a lot of steps here but make sure you actually watch the video and follow all the steps
+
+00:14:49,120 --> 00:14:52,360
+and makes you got everything right before posting to the Q&A forums.
+
+00:14:52,370 --> 00:14:55,150
+In case you ran into something or forgot to step.
+
+00:14:55,150 --> 00:14:57,040
+Thanks everyone and I'll see you at the next lecture
