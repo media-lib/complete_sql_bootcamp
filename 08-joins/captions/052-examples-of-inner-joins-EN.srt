@@ -1,0 +1,671 @@
+00:00:01,290 --> 00:00:05,490
+Hello everyone and welcome to this lecture we're going to show you just a few more examples of inner
+
+00:00:05,490 --> 00:00:08,660
+joins just to make sure everyone's on the same page.
+
+00:00:08,820 --> 00:00:14,430
+You can remember back in the very early lectures we're showing you the database in general.
+
+00:00:14,640 --> 00:00:19,530
+We gave you this diagram here that showed all the tables in the different relationships they had of
+
+00:00:19,530 --> 00:00:25,310
+each other and we were going to do now is U-joints to take advantage of those relationships.
+
+00:00:25,320 --> 00:00:30,870
+So just to walk you through a couple of examples here we can see for example the language table and
+
+00:00:30,870 --> 00:00:37,800
+the film table are related to each other because we can see here that the language ID column is also
+
+00:00:37,800 --> 00:00:45,060
+present in the film table under language ID and this little key sign basically means the primary key
+
+00:00:45,060 --> 00:00:48,150
+of this table is language ID.
+
+00:00:48,580 --> 00:00:49,310
+OK.
+
+00:00:49,350 --> 00:00:53,610
+So there's some other couple of connections here that we'll continue to explore.
+
+00:00:53,610 --> 00:00:58,940
+Things such as staff Id also being present in the payment table and your staff ID.
+
+00:00:59,250 --> 00:01:03,390
+And let's go ahead and just jump straight to P.G. adamant and show you a couple of more examples of
+
+00:01:03,390 --> 00:01:08,160
+how to use inner joins and then later on we'll learn about different join types.
+
+00:01:08,160 --> 00:01:12,940
+What's different about them and why inner join will always be the best joint to work with.
+
+00:01:13,020 --> 00:01:16,430
+Even though it will be probably the most common join you use.
+
+00:01:16,710 --> 00:01:19,180
+Let's go out and jump straight to P.G. outman now.
+
+00:01:19,920 --> 00:01:21,790
+OK so here I am at PG admin.
+
+00:01:21,840 --> 00:01:26,930
+I went ahead and just select the first five rows from the payment table.
+
+00:01:27,210 --> 00:01:32,670
+And so here we see we have a payment ID column A customer id column staff ID rental ID amount and a
+
+00:01:32,670 --> 00:01:34,060
+payment date.
+
+00:01:34,110 --> 00:01:39,330
+Let's go ahead and explore joining the payment table with the staff table.
+
+00:01:39,360 --> 00:01:44,580
+So if we go ahead and take a look at the staff table notice we have a staff ID from the payment table
+
+00:01:44,590 --> 00:01:44,910
+.
+
+00:01:45,060 --> 00:01:50,280
+But if I go ahead and run the staff table I can actually get their first name and the last name of those
+
+00:01:50,280 --> 00:01:52,040
+two staff ID members.
+
+00:01:52,050 --> 00:01:56,820
+So that's Mike and John let's go ahead and combine the two tables so I can see Mike and John's name
+
+00:01:57,120 --> 00:01:59,820
+along with the payments they processed.
+
+00:01:59,940 --> 00:02:10,650
+So I'm going to go ahead and say select the payments ID the amounts and then first name and last name
+
+00:02:10,650 --> 00:02:11,230
+.
+
+00:02:11,280 --> 00:02:14,850
+Now again I could specify the tables that I want this from.
+
+00:02:14,850 --> 00:02:17,310
+So I could do something like this.
+
+00:02:17,400 --> 00:02:19,590
+STAFF The last name.
+
+00:02:19,590 --> 00:02:25,410
+But in this case again I don't have to because last name is only present in the staff table so sequels
+
+00:02:25,410 --> 00:02:30,330
+not going to get confused on what table or what column you're talking about from which table.
+
+00:02:30,360 --> 00:02:37,230
+Now if the ID or that column is present in both tables then you do need to specify what table you're
+
+00:02:37,230 --> 00:02:39,030
+talking about.
+
+00:02:39,030 --> 00:02:44,310
+So I'm going to select this from my table in this case that's the payment table and I'm going to go
+
+00:02:44,310 --> 00:03:00,270
+ahead and do an inner join with staff on payments dot staff underscore ID is equal to whip's staff staff
+
+00:03:00,270 --> 00:03:01,590
+Id call them.
+
+00:03:01,590 --> 00:03:03,910
+So Michael is going to run that.
+
+00:03:03,910 --> 00:03:09,390
+And so now I get to see the payments ID column the amount column and I get to see the first and last
+
+00:03:09,390 --> 00:03:15,680
+name instead of just the staff ID so I could see John in Mike's name throughout my output data.
+
+00:03:15,690 --> 00:03:17,740
+Couple of things I want to note here.
+
+00:03:18,230 --> 00:03:26,610
+In most pretty much all sequel engines you can go ahead and not have to specify inner join just writing
+
+00:03:26,610 --> 00:03:27,570
+join.
+
+00:03:27,570 --> 00:03:30,150
+By default it will go to an inner join.
+
+00:03:30,150 --> 00:03:35,610
+Now I know we haven't specifically discussed yet the differences between various joints but just keep
+
+00:03:35,610 --> 00:03:37,530
+that in mind for inner joins.
+
+00:03:37,530 --> 00:03:42,210
+You can just go ahead and write join usually throughout the course just to be really explicit.
+
+00:03:42,210 --> 00:03:45,290
+All say inner join but probably in the real world.
+
+00:03:45,330 --> 00:03:49,440
+If someone's doing an inner join let's say you're at work and someone else is writing sequel you are
+
+00:03:49,440 --> 00:03:51,250
+reading their sequel queries.
+
+00:03:51,300 --> 00:03:55,530
+More likely than not if you're doing an inner join they'll probably just write join.
+
+00:03:55,840 --> 00:03:59,970
+OK so let's go ahead and do another example.
+
+00:04:00,360 --> 00:04:07,860
+Let's go ahead and show the inventory table so selects everything Asterix from inventory it's going
+
+00:04:07,860 --> 00:04:10,840
+to limit that to just five rows.
+
+00:04:11,040 --> 00:04:17,220
+So here you have an inventory ID column a film Id column a store Id column and a last updates.
+
+00:04:17,340 --> 00:04:22,550
+And let's go out and see what we have in the film table.
+
+00:04:22,620 --> 00:04:28,890
+So I notice that a film ID in the inventory table and I also have a film ID in the film table and facts
+
+00:04:28,950 --> 00:04:29,810
+in the film table.
+
+00:04:29,850 --> 00:04:33,370
+That's its key its primary key is the film Id.
+
+00:04:33,390 --> 00:04:37,140
+Let's go out and join those two in a matter like this.
+
+00:04:37,140 --> 00:04:41,010
+We're going to go ahead and say select let's say title
+
+00:04:43,620 --> 00:04:53,410
+from inventory and we'll go ahead and say inner join member I could just write join in her drawing film
+
+00:04:53,760 --> 00:05:10,110
+on inventory thought film ID equals film dot film ID and then I'm going to go ahead and select the story
+
+00:05:10,120 --> 00:05:10,140
+.
+
+00:05:10,160 --> 00:05:12,260
+The column as well.
+
+00:05:12,270 --> 00:05:23,010
+So let's go in and say store ID columns so story the title from inventory INNER JOIN film on inventory
+
+00:05:23,680 --> 00:05:24,770
+equals film Id.
+
+00:05:24,790 --> 00:05:26,270
+Let's go in and run that.
+
+00:05:26,900 --> 00:05:27,260
+OK.
+
+00:05:27,270 --> 00:05:28,830
+So what do we have here.
+
+00:05:28,840 --> 00:05:33,110
+I have all the instances of that particular title being at a store.
+
+00:05:33,190 --> 00:05:39,540
+So in this case the movie Academy dinosaur there's four copies at storeyed the one.
+
+00:05:39,690 --> 00:05:46,960
+So if we scroll down to another example I have guys Falcon title is store three times that story the
+
+00:05:46,950 --> 00:05:47,800
+one.
+
+00:05:48,100 --> 00:05:52,490
+So let's call it and ask ourselves let's say a typical business task.
+
+00:05:52,540 --> 00:06:00,900
+I want to know how many copies of each movie are at store ID number one store ID number one how can
+
+00:06:00,900 --> 00:06:01,670
+I do that.
+
+00:06:01,990 --> 00:06:04,650
+Well first let's think what I want to do.
+
+00:06:04,750 --> 00:06:12,280
+I want to filter by store ID one meaning I'm going to go ahead and put a where statements and they say
+
+00:06:12,270 --> 00:06:16,050
+we're store ID is equal to one.
+
+00:06:16,300 --> 00:06:18,910
+And now let's go ahead and see what happens if I run that.
+
+00:06:19,120 --> 00:06:19,390
+All right.
+
+00:06:19,390 --> 00:06:26,130
+So now I have all the instances of story the one and the various instances of the title movies there
+
+00:06:26,130 --> 00:06:29,520
+so Academie dinosaur again is four times present.
+
+00:06:29,520 --> 00:06:32,740
+So there's four copies of that movie as story one.
+
+00:06:32,920 --> 00:06:37,160
+Now what else can I do here if I want to actually get the counts.
+
+00:06:37,200 --> 00:06:42,960
+So instead of having the actual title here I want to get the count of the number of instances that title
+
+00:06:42,970 --> 00:06:43,960
+shows up.
+
+00:06:44,130 --> 00:06:45,430
+So that makes sense so far.
+
+00:06:45,440 --> 00:06:49,830
+But remember if I'm doing an aggregate function I should have some sort of group by function as well
+
+00:06:49,850 --> 00:06:50,190
+.
+
+00:06:50,560 --> 00:06:57,100
+And in this case I just want to group by the title would it makes sense to group by the story idea because
+
+00:06:57,100 --> 00:06:59,350
+there's only one story the story the one.
+
+00:06:59,590 --> 00:07:03,280
+So then if I grouped by the title here I'm going to run this whoops.
+
+00:07:03,490 --> 00:07:05,180
+Let's go ahead and fix that.
+
+00:07:05,190 --> 00:07:10,760
+Notice here my error is that I'm still asking for story which doesn't really make sense since the story
+
+00:07:10,840 --> 00:07:12,810
+is equal to one I'm not grouping by it.
+
+00:07:12,850 --> 00:07:15,960
+I should be selecting the title column.
+
+00:07:16,180 --> 00:07:18,070
+So now if I take a look at this.
+
+00:07:18,270 --> 00:07:22,380
+These are the actual counts of each movie.
+
+00:07:22,380 --> 00:07:26,330
+So how many copies of each movie are at store ID equals one.
+
+00:07:26,380 --> 00:07:33,240
+So that means a movie like Frontier cabin is has two copies that story the one and again let's go ahead
+
+00:07:33,340 --> 00:07:36,840
+and use as to clear this up.
+
+00:07:36,840 --> 00:07:49,780
+Scientists say from inventory count title as let's say copies at store 1 and then if I run that.
+
+00:07:50,190 --> 00:07:57,030
+So here we have two columns tidal copies at store one and it shows you the title and the number of copies
+
+00:07:57,030 --> 00:08:04,090
+are at store 1 and then we can continue working on this let's say let's go in and order this order by
+
+00:08:04,810 --> 00:08:07,540
+title.
+
+00:08:07,690 --> 00:08:09,660
+So now I have this in alphabetical order.
+
+00:08:09,730 --> 00:08:13,820
+And now we're seeing what a real kind of powerful query looks like.
+
+00:08:13,840 --> 00:08:20,610
+Now I can instantly say OK how many titles of Agent Truman do I have at store one and I can quickly
+
+00:08:20,620 --> 00:08:24,150
+do a query here and see that I have three copies that store one.
+
+00:08:24,370 --> 00:08:28,410
+And these are the real kind of queries you'll be looking at in a business setting.
+
+00:08:28,500 --> 00:08:33,930
+Probably not for a rental movie database but whatever database you're using at your place of work.
+
+00:08:33,930 --> 00:08:37,130
+OK let's go ahead and build off of one more example.
+
+00:08:37,680 --> 00:08:45,250
+So I'm gonna go in and clear all this Ale's go it and use the film table cells because you get a reminder
+
+00:08:45,250 --> 00:08:53,560
+of what's in the film table we're going to say select Asterix from film we'll say limit to just two
+
+00:08:53,560 --> 00:08:58,030
+rows and I have a film Id title description.
+
+00:08:58,060 --> 00:08:59,200
+Really Sidey.
+
+00:08:59,250 --> 00:09:04,830
+And what's interesting here to me is I have a language ID so I have a language ID but it's just a number
+
+00:09:05,050 --> 00:09:10,540
+it actually be really nice if I could translate that number into an actual word.
+
+00:09:10,540 --> 00:09:13,840
+So for instance language anyone would be English etc..
+
+00:09:13,920 --> 00:09:19,170
+So now take a look at the actual language table.
+
+00:09:20,050 --> 00:09:29,520
+So if we look at the language table language in run that I have the language ID column and the actual
+
+00:09:29,520 --> 00:09:33,460
+name that each of these language ID numbers corresponds to.
+
+00:09:33,580 --> 00:09:40,200
+So for example language ID number one corresponds to the English language language ID two two Italian
+
+00:09:40,200 --> 00:09:41,260
+etcetera.
+
+00:09:41,520 --> 00:09:46,890
+All right so now what I want would be really nice to see the title of the movie and then the language
+
+00:09:46,890 --> 00:09:47,730
+that it's in.
+
+00:09:48,040 --> 00:09:50,800
+So let's go ahead and do that.
+
+00:09:50,860 --> 00:09:54,150
+That means I'll need to join the film table with the language table.
+
+00:09:54,150 --> 00:10:01,420
+So I wanted to say something like this selects title and let's go ahead and make this really explicit
+
+00:10:01,410 --> 00:10:02,100
+.
+
+00:10:02,130 --> 00:10:07,770
+Granted I don't have to do this because title isn't in the language table but it's still might be nice
+
+00:10:07,770 --> 00:10:09,420
+for reference later on.
+
+00:10:09,690 --> 00:10:11,470
+And then we'll say the
+
+00:10:13,870 --> 00:10:27,340
+language that name so select film title language that name from film and we're going to inner join on
+
+00:10:27,340 --> 00:10:39,550
+language inner join language on language start language ID is equal to film
+
+00:10:42,270 --> 00:10:43,580
+language ID.
+
+00:10:43,960 --> 00:10:46,620
+OK so let's take a look at this again.
+
+00:10:46,640 --> 00:10:47,350
+I was going to run it.
+
+00:10:47,350 --> 00:10:48,120
+Make sure it works.
+
+00:10:48,150 --> 00:10:52,590
+OK so we have the title of the movie and the name of the actual language it's in.
+
+00:10:52,840 --> 00:10:55,380
+So let's go ahead and say call this
+
+00:10:58,020 --> 00:11:00,630
+movie language.
+
+00:11:00,630 --> 00:11:02,290
+Whoops.
+
+00:11:02,350 --> 00:11:05,200
+So it's a little more readable.
+
+00:11:05,500 --> 00:11:07,200
+Right so let's take a look at what it did here.
+
+00:11:07,210 --> 00:11:14,520
+I said select the title Colum from the film table and the name column from the language table as movie
+
+00:11:14,520 --> 00:11:24,540
+language from the film table inner join language on so inner join the A with the beat table on the column
+
+00:11:24,540 --> 00:11:27,750
+where they match up and in this case it's the language ID column.
+
+00:11:28,170 --> 00:11:28,740
+OK.
+
+00:11:29,010 --> 00:11:36,990
+So again I didn't actually have to specify these tables because these column names are unique.
+
+00:11:37,000 --> 00:11:42,010
+Are these field names are unique to the actual tables they're from.
+
+00:11:42,000 --> 00:11:45,410
+So if I go ahead and run this I'll get the same results.
+
+00:11:45,420 --> 00:11:51,070
+Again the reason I didn't have to do that was because title only shows up in the film table and name
+
+00:11:51,070 --> 00:11:54,450
+column only shows up in the language table.
+
+00:11:54,870 --> 00:11:55,280
+OK.
+
+00:11:55,330 --> 00:12:00,400
+So continuing on with this let's go ahead and keep working with this and showing you basically what
+
+00:12:00,390 --> 00:12:07,300
+this would look like if you were getting closer to just typical workplace sequel.
+
+00:12:07,290 --> 00:12:13,130
+So if in a typical workplace you probably wouldn't see the interstates and you would just see join.
+
+00:12:13,140 --> 00:12:18,070
+So if we go ahead and do join here run this again you'll know you get the same results.
+
+00:12:18,180 --> 00:12:21,860
+And also what people tend to do if the table name is really long.
+
+00:12:21,860 --> 00:12:24,300
+So for instance language is kind of long here.
+
+00:12:24,390 --> 00:12:27,180
+What they will do is they will shorten it using an AS statement.
+
+00:12:27,180 --> 00:12:33,610
+So they'll just say from film join language and then they'll say as something like Eliane which is a
+
+00:12:33,610 --> 00:12:34,610
+lot shorter.
+
+00:12:34,990 --> 00:12:37,800
+And then they can call that table Eliane here.
+
+00:12:37,810 --> 00:12:39,910
+So they use that alias name here.
+
+00:12:40,170 --> 00:12:44,380
+Then if I run that notice I get the same results.
+
+00:12:44,380 --> 00:12:53,100
+So I say select title name as movie language from film join language as alien on alien language ID equals
+
+00:12:53,110 --> 00:12:54,620
+film that language ID.
+
+00:12:55,090 --> 00:12:55,460
+OK.
+
+00:12:55,480 --> 00:13:02,710
+And we can actually take this even further through reduction and a lot of times in a real work environment
+
+00:13:02,730 --> 00:13:03,050
+.
+
+00:13:03,250 --> 00:13:08,790
+People don't use the as statement and this kind of one of those quirks of sequel.
+
+00:13:09,180 --> 00:13:18,210
+So which can actually do is just have a space instead of an as statements and it will still work.
+
+00:13:18,220 --> 00:13:26,040
+So if I go ahead and just have a space select title comma name movie language from film join language
+
+00:13:26,050 --> 00:13:26,110
+.
+
+00:13:26,110 --> 00:13:27,190
+Eliane.
+
+00:13:27,180 --> 00:13:30,510
+So I remove the as statements go hand and run this.
+
+00:13:30,510 --> 00:13:33,070
+And you'll notice it still works.
+
+00:13:33,070 --> 00:13:39,220
+So you don't actually need to explicitly put the AS statement there you just need to put a space.
+
+00:13:39,220 --> 00:13:44,170
+Now it's really up to your own personal style whether you like putting an ADD statement there or not
+
+00:13:44,160 --> 00:13:44,590
+.
+
+00:13:44,640 --> 00:13:51,760
+I personally always put in as statement just because to me it's a lot more readable.
+
+00:13:51,880 --> 00:13:57,430
+Now if you for some reason think it's more readable to not have the statement there or you just like
+
+00:13:57,420 --> 00:13:59,220
+the shorthand form better.
+
+00:13:59,350 --> 00:14:05,830
+Feel free to not put as statements but throughout the course more likely than not we will be using as
+
+00:14:06,250 --> 00:14:10,200
+to explicitly rename either tables or column selections.
+
+00:14:10,210 --> 00:14:15,150
+Now again you don't have to use it and if you look at someone else's sequel queries they may not use
+
+00:14:15,150 --> 00:14:15,410
+it.
+
+00:14:15,490 --> 00:14:16,160
+It's not soup.
+
+00:14:16,170 --> 00:14:20,780
+It's not super typical to use it depending on what kind of work environment you are in.
+
+00:14:20,800 --> 00:14:25,710
+But personally I would always recommend that you use it just for readability sake.
+
+00:14:26,130 --> 00:14:30,460
+Ok so I hope that those couple of examples of using inner join.
+
+00:14:30,470 --> 00:14:34,860
+And remember that can be shortened to just join are useful to you.
+
+00:14:34,920 --> 00:14:39,420
+Coming up next we're going to learn about different join cases and we're going to learn about outer
+
+00:14:39,420 --> 00:14:40,740
+join right join.
+
+00:14:40,820 --> 00:14:45,510
+And why would we use those and what actually is the difference between the various joints because you
+
+00:14:45,510 --> 00:14:51,790
+might be thinking what happens if certain rows or certain columns don't exist in table B.
+
+00:14:52,000 --> 00:14:57,700
+Had the sequel actually rectify any missing values there and that's really where the different joints
+
+00:14:57,690 --> 00:14:58,850
+come into play.
+
+00:14:59,250 --> 00:15:04,750
+OK with that being said I hope those inner joins were useful to you in discussion.
+
+00:15:04,790 --> 00:15:10,230
+What I would recommend doing if you still feel a little uncomfortable of the inner joins is to hop back
+
+00:15:10,650 --> 00:15:14,080
+to this table hear me go in and do that.
+
+00:15:14,080 --> 00:15:20,110
+So again hopping back to this table go ahead and see if you can do your own inner joins based off the
+
+00:15:20,110 --> 00:15:25,480
+connections from the tables themselves so see if he can do some inner joins between like address and
+
+00:15:25,480 --> 00:15:28,180
+staff or city and country here.
+
+00:15:28,170 --> 00:15:34,350
+So for example or be a couple of good exercises would be to join the columns from the city table with
+
+00:15:34,360 --> 00:15:42,150
+the country table based off the country Id column or that country Id field and again might be fun to
+
+00:15:42,150 --> 00:15:46,850
+do that with store and staff payments and customer etcetera.
+
+00:15:46,950 --> 00:15:48,450
+So practice your inner joins.
+
+00:15:48,450 --> 00:15:50,640
+Basically you just set the follow these lines.
+
+00:15:50,640 --> 00:15:57,420
+And again if you ever need to reference this diagram you can either download it from the resource section
+
+00:15:57,450 --> 00:16:01,780
+here or you can just google search Keela database in Google Images.
+
+00:16:01,810 --> 00:16:04,810
+So this diagram is available for you as a resource.
+
+00:16:04,820 --> 00:16:08,380
+It's just the PMG while free to take a look at.
+
+00:16:08,450 --> 00:16:14,160
+Again I would really recommend that you check out your own joints based off this diagram here.
+
+00:16:14,160 --> 00:16:14,920
+OK.
+
+00:16:14,910 --> 00:16:18,930
+With that being said let's go ahead to learn about some more joints in the next lecture.
+
+00:16:18,930 --> 00:16:21,010
+Thanks everyone and I'll see you there.

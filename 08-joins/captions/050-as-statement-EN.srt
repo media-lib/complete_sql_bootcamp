@@ -1,0 +1,164 @@
+00:00:01,230 --> 00:00:04,480
+Hello everyone and welcome to the AS statement lecture.
+
+00:00:04,530 --> 00:00:08,570
+So gonna be a really short lecture just introducing how to use as which is going to be really useful
+
+00:00:08,570 --> 00:00:10,600
+when we learn about Joines.
+
+00:00:10,620 --> 00:00:17,550
+So again let's just quickly learn about as that's a guess and how do you use it so that as a statement
+
+00:00:17,640 --> 00:00:21,830
+allows us to rename columns or table selections with an alias name.
+
+00:00:22,050 --> 00:00:24,330
+So it's really easy to show this.
+
+00:00:24,330 --> 00:00:29,370
+If we just go straight to admin and just go through some quick examples again going to be a really short
+
+00:00:29,370 --> 00:00:34,290
+lecture because it's a pretty simple tool to use but it'll be really useful when you go ahead and jump
+
+00:00:34,380 --> 00:00:36,650
+straight to Peachi admin now.
+
+00:00:37,630 --> 00:00:42,610
+OK so here I am at PGE admin and for instance I have selected everything.
+
+00:00:42,720 --> 00:00:48,090
+So Asterix from payment means all calls from payment returning all those rows.
+
+00:00:48,150 --> 00:00:50,880
+So let's go to show you how to use as.
+
+00:00:51,300 --> 00:00:59,090
+So one the simplest way to do it is just by saying something like this select payment's ID.
+
+00:00:59,100 --> 00:01:05,760
+So you have some column as and then you go ahead and type whatever name or alias you want for that actual
+
+00:01:05,760 --> 00:01:06,960
+selection.
+
+00:01:06,960 --> 00:01:09,740
+So in this case I could say slick pavement.
+
+00:01:09,780 --> 00:01:18,960
+The as my payments column is go out and put from on a new line there.
+
+00:01:19,440 --> 00:01:25,650
+And then if you run this you'll notice it basically returns that payment ID column but it returns it
+
+00:01:25,680 --> 00:01:27,240
+as this alias name.
+
+00:01:27,240 --> 00:01:33,570
+So my payments my underscore payment underscore column and that's really all there is to as it just
+
+00:01:33,810 --> 00:01:34,550
+go ahead.
+
+00:01:34,680 --> 00:01:38,480
+It just goes ahead in the an alias name to whatever your selection was.
+
+00:01:38,640 --> 00:01:44,160
+And we'll see this use not only on columns but also on like aggregate functions grouped by statements
+
+00:01:44,160 --> 00:01:45,720
+table selection that cetera.
+
+00:01:45,990 --> 00:01:51,240
+But it's actually just a pretty simple concept so let me go to show you one more example that might
+
+00:01:51,240 --> 00:01:54,110
+make a little more sense than just renaming a car.
+
+00:01:54,600 --> 00:02:00,720
+Again I'm just going to go ahead and say select all from payment's run that in five to run that let's
+
+00:02:00,720 --> 00:02:05,940
+go to do a group by statement because this might be a better example of how to use it.
+
+00:02:06,000 --> 00:02:16,950
+Let's say I want to say Customer ID sum the amounts from payments and then let's go ahead and group
+
+00:02:18,540 --> 00:02:19,720
+by customer right.
+
+00:02:19,740 --> 00:02:22,770
+So we've seen this probably a few times now.
+
+00:02:22,900 --> 00:02:24,700
+Certainly during the group by lectures.
+
+00:02:24,870 --> 00:02:27,940
+But basically this just tells me how much each customer spends.
+
+00:02:27,960 --> 00:02:28,710
+Right.
+
+00:02:29,130 --> 00:02:34,620
+So if you notice here and you've noticed earlier throughout all or aggregate functions we just get the
+
+00:02:34,710 --> 00:02:37,900
+aggregate function itself as the name of the column.
+
+00:02:38,130 --> 00:02:43,470
+So it would be really nice if I were able to rename it and I can using the as statements I'll say some
+
+00:02:43,470 --> 00:02:50,250
+of the amounts as and here I'll say total underscore Spens and notice you're basically just typing it
+
+00:02:50,250 --> 00:02:55,440
+out there's no strings or quotes or anything you're typing it out as if it was a column name that already
+
+00:02:55,440 --> 00:02:56,620
+existed there.
+
+00:02:56,680 --> 00:03:03,000
+And now if I go ahead and execute this query here my column has been renamed to total underscore spent
+
+00:03:03,030 --> 00:03:03,540
+.
+
+00:03:04,060 --> 00:03:04,670
+OK.
+
+00:03:04,890 --> 00:03:11,070
+So that's all there is really to as we'll see it later on we're doing joins and other group by statements
+
+00:03:11,070 --> 00:03:11,460
+.
+
+00:03:11,460 --> 00:03:16,290
+Truly useful just to keep track of what you've requested and what you've selected and you can go ahead
+
+00:03:16,290 --> 00:03:18,850
+and name stuff that is useful to you.
+
+00:03:18,990 --> 00:03:22,960
+That way you can remember what you were actually doing when you see the results in the data output.
+
+00:03:23,340 --> 00:03:24,010
+Okay.
+
+00:03:24,300 --> 00:03:25,500
+Thanks everyone.
+
+00:03:25,500 --> 00:03:27,100
+I hope that all made sense to you.
+
+00:03:27,150 --> 00:03:31,900
+Go ahead and review and try out your own statements in case you're still a little fuzzy on it.
+
+00:03:32,100 --> 00:03:34,320
+But coming up next we'll learn about joints.
+
+00:03:34,320 --> 00:03:34,710
+All right.
+
+00:03:34,920 --> 00:03:36,600
+Thanks everyone and I'll see you at the next lecture

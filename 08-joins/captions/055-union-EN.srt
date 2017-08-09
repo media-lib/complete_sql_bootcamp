@@ -1,0 +1,305 @@
+00:00:01,140 --> 00:00:04,110
+Hello everyone and welcome to the union lecture.
+
+00:00:04,650 --> 00:00:08,910
+So and this sucks we're going to learn how a union statement works how it's different than just the
+
+00:00:08,910 --> 00:00:13,670
+typical joint statement and then we'll see a quick example of a union in some slides.
+
+00:00:13,680 --> 00:00:18,860
+We won't actually code anything out because the concept of a union is actually very simple.
+
+00:00:19,440 --> 00:00:25,980
+So what happens is the union operator combines result sets of two or more select statements into a single
+
+00:00:25,980 --> 00:00:31,650
+result set and the following illustrates the syntax of what the union operator would actually look like
+
+00:00:31,650 --> 00:00:32,020
+.
+
+00:00:32,040 --> 00:00:39,030
+Z would have a select statements so something like select column one column to from some table in the
+
+00:00:39,030 --> 00:00:42,000
+say union and you'll have another select statement.
+
+00:00:42,000 --> 00:00:45,300
+Select column on column 2 from some table.
+
+00:00:45,480 --> 00:00:49,970
+So notice you have these two select statements and you're going to perform a union between them.
+
+00:00:49,980 --> 00:00:52,210
+So there's two major rules you have to follow here.
+
+00:00:52,230 --> 00:00:58,200
+When you're going to use union statements the first rule is that both of these selects queries must
+
+00:00:58,200 --> 00:01:03,990
+return the same number of columns and that makes sense Sophi jump back to the previous slide we have
+
+00:01:03,990 --> 00:01:09,850
+column 1 and column 2 and column 1 and call them to MBO if select statements.
+
+00:01:09,870 --> 00:01:13,980
+So we're turning the same number of columns so far that makes sense.
+
+00:01:13,980 --> 00:01:19,980
+And the second rule is that the corresponding columns in the queries must have compatible data types
+
+00:01:19,980 --> 00:01:20,280
+.
+
+00:01:20,490 --> 00:01:26,940
+Meaning if we go back here if select column 1 column on your first select statement is some sort of
+
+00:01:27,030 --> 00:01:27,760
+integer.
+
+00:01:27,930 --> 00:01:33,240
+Then select column 1 from your second select statement from the second table must also be an integer
+
+00:01:33,240 --> 00:01:33,520
+.
+
+00:01:33,570 --> 00:01:36,990
+So this column data types need to match up.
+
+00:01:37,050 --> 00:01:40,550
+So you might be wondering when am I ever going to use a union statement.
+
+00:01:40,920 --> 00:01:47,520
+Well the union operator removes all duplicate rows unless the union all is used in an union operator
+
+00:01:47,520 --> 00:01:52,640
+may place the rows in the first query before after or between the rows in the results.
+
+00:01:52,660 --> 00:01:53,910
+The second query.
+
+00:01:53,940 --> 00:01:59,130
+So because you get this mixed up order you can sort the rows and the combined result set by a specified
+
+00:01:59,130 --> 00:02:02,510
+column just using the order by clause.
+
+00:02:03,150 --> 00:02:08,730
+But now we understand union and union also again the union operator just removes all the duplicate rows
+
+00:02:08,730 --> 00:02:10,700
+unless a union all is used.
+
+00:02:10,980 --> 00:02:17,190
+Then we often use the union operator to combine data from similar tables that are not perfectly normalized
+
+00:02:17,200 --> 00:02:17,450
+.
+
+00:02:17,700 --> 00:02:24,570
+And what I mean with that is basically you have two tables with the exact same type of information inside
+
+00:02:24,570 --> 00:02:25,150
+of them.
+
+00:02:25,320 --> 00:02:28,290
+But you want to just join that information together.
+
+00:02:28,290 --> 00:02:33,480
+So a typical joint statement doesn't really work in that sense because you basically just want to take
+
+00:02:33,540 --> 00:02:38,850
+all the rows from one table and all the rows from another table and just almost like concatenate them
+
+00:02:39,240 --> 00:02:41,740
+or mix them into a single table.
+
+00:02:42,000 --> 00:02:45,950
+So those tables are often found in the reporting or a data warehouse system.
+
+00:02:46,290 --> 00:02:50,570
+Let's go through a quick example and this will be a little more clear.
+
+00:02:50,580 --> 00:02:55,230
+So take a look at that example now measure we have two tables.
+
+00:02:55,230 --> 00:03:00,160
+We have sales 2007 Q1 and sales 2007 Q2.
+
+00:03:00,360 --> 00:03:05,020
+And these are stores sales data in quarter one and quarter two of 2007.
+
+00:03:05,280 --> 00:03:10,740
+So we're going to have the name of some sales associate in each table and then the amount that they
+
+00:03:10,740 --> 00:03:11,770
+sold.
+
+00:03:11,790 --> 00:03:15,050
+So you'll notice here we have Mike John and Mary and then Mike John and Mary.
+
+00:03:15,100 --> 00:03:20,730
+That makes sense we have the same employees in quarter one quarter two of the year 2007 and we have
+
+00:03:20,760 --> 00:03:23,470
+amounts that they sold for that particular quarter.
+
+00:03:23,670 --> 00:03:29,630
+Some things to notice here is that the amounts for Mike and John changes from quarter one quarter to
+
+00:03:29,640 --> 00:03:29,800
+.
+
+00:03:30,000 --> 00:03:33,510
+But Mary sold the exact same amount in both quarters.
+
+00:03:33,540 --> 00:03:35,020
+That's something to take note of.
+
+00:03:35,400 --> 00:03:38,040
+So how will we actually put a union to work here.
+
+00:03:38,250 --> 00:03:43,230
+Well the union is going to allow us to just combine this information in case we want to have a table
+
+00:03:43,230 --> 00:03:49,500
+that said something like sales 2007 first half of the year quarter one and quarter two we just basically
+
+00:03:49,500 --> 00:03:54,060
+want to concatenate these two tables together.
+
+00:03:54,060 --> 00:03:56,270
+So the syntax would look something like this.
+
+00:03:56,280 --> 00:04:04,050
+We say select everything from sales 2007 Q1 Union and then select Asterix so all columns from sales
+
+00:04:04,560 --> 00:04:05,880
+in Q2.
+
+00:04:05,880 --> 00:04:09,990
+So if we take a look at what happens after this we get this result.
+
+00:04:09,990 --> 00:04:18,330
+We have John John Mary and then Mike Mike and we have their name the amounts and here Mary only shows
+
+00:04:18,330 --> 00:04:19,260
+up once.
+
+00:04:19,380 --> 00:04:23,250
+And that's because she had the same value for both quarters.
+
+00:04:23,250 --> 00:04:28,330
+So as you mentioned earlier if you just use union it's going to delete duplicate rows.
+
+00:04:28,440 --> 00:04:34,410
+And what a duplicate row means is that every single column in both of those rows is exactly the same
+
+00:04:34,420 --> 00:04:34,660
+.
+
+00:04:34,890 --> 00:04:39,100
+So if you want to make sure that doesn't happen you use a UNION ALL statements.
+
+00:04:39,220 --> 00:04:41,950
+So you use a UNION ALL statement here.
+
+00:04:42,090 --> 00:04:46,370
+Then I get both instances of Mary in this resulting table.
+
+00:04:46,590 --> 00:04:51,150
+Now I know I've been using the term concatenate which basically means just a stick or glue these two
+
+00:04:51,150 --> 00:04:52,380
+tables together.
+
+00:04:52,380 --> 00:04:54,630
+But notice that they're not an order here.
+
+00:04:54,810 --> 00:05:00,510
+So later on if you wanted to you could say order by name or order by amount if you wanted to order this
+
+00:05:00,510 --> 00:05:02,040
+table.
+
+00:05:02,040 --> 00:05:07,490
+So this is really useful if you want it to then do some sort of group by name and then some the amounts
+
+00:05:07,490 --> 00:05:08,060
+.
+
+00:05:08,070 --> 00:05:14,220
+This table that gets returned to you for calculating the total amount of sales or particular custom
+
+00:05:14,310 --> 00:05:16,270
+or particular employees.
+
+00:05:16,740 --> 00:05:17,250
+OK.
+
+00:05:17,460 --> 00:05:19,500
+So that's really all there is to a union.
+
+00:05:19,500 --> 00:05:25,140
+Again you can basically just think of it as completely combining tables together with the two rules
+
+00:05:25,140 --> 00:05:29,730
+being that you need to have the same number of columns and those columns need to have the same data
+
+00:05:29,730 --> 00:05:30,330
+type.
+
+00:05:30,630 --> 00:05:35,730
+So really it's almost always used when you're combining two tables that haven't been normalized yet
+
+00:05:35,730 --> 00:05:35,870
+.
+
+00:05:35,870 --> 00:05:38,690
+Me you don't have all the information together in one table.
+
+00:05:39,030 --> 00:05:39,930
+OK.
+
+00:05:40,350 --> 00:05:45,810
+So with that being said we're coming to the end of that joint section and there's no challenges for
+
+00:05:45,810 --> 00:05:48,050
+the join section specifically.
+
+00:05:48,060 --> 00:05:52,980
+Instead we're going to revisit these topics for the second assessment test and this test is going to
+
+00:05:52,980 --> 00:05:58,170
+come right after the next section which goes over just a few more advanced sequel commands that we need
+
+00:05:58,170 --> 00:06:02,710
+to learn in order to take full advantage of everything you just learn in the joints section.
+
+00:06:02,850 --> 00:06:03,540
+So don't worry.
+
+00:06:03,540 --> 00:06:04,170
+Hang tight.
+
+00:06:04,200 --> 00:06:08,020
+You will get tested on all the joints and everything we just covered here.
+
+00:06:08,250 --> 00:06:12,720
+But I want to cover a couple of more advanced sequel commands that we we can really challenge you in
+
+00:06:12,720 --> 00:06:16,010
+the second assessment test with some great questions.
+
+00:06:16,020 --> 00:06:16,700
+OK.
+
+00:06:16,770 --> 00:06:17,800
+With that being said.
+
+00:06:18,060 --> 00:06:18,850
+Thanks everyone.
+
+00:06:18,900 --> 00:06:20,060
+And I will see at the next lecture

@@ -1,0 +1,476 @@
+00:00:01,110 --> 00:00:04,460
+Hello everyone and welcome to this lecture on outer join.
+
+00:00:04,830 --> 00:00:10,600
+So we're going to do here is take a quick look at a specific example of an outer joint statements.
+
+00:00:10,770 --> 00:00:16,770
+So we've actually already seen examples of an inner joint statement and then after that in the previous
+
+00:00:16,770 --> 00:00:22,140
+lecture we saw a bunch of syntax and Venn diagrams describing the various types of joint statements
+
+00:00:22,140 --> 00:00:25,390
+so the inner joins the outer join it's full of drawings etc..
+
+00:00:25,620 --> 00:00:30,150
+And so we're going to do this lecture is take a more specific look at outer join.
+
+00:00:30,300 --> 00:00:35,280
+And to be even more specific than that we're going to take a look at the LEFT OUTER JOIN.
+
+00:00:35,280 --> 00:00:41,830
+So remember for a left outer join it's going to return all the rows in the left table.
+
+00:00:42,000 --> 00:00:45,460
+So we can say if we remember that Venn diagram that would be Table A.
+
+00:00:45,660 --> 00:00:51,150
+So return all the rows in the left table a that are combined of rows in the right table B even though
+
+00:00:51,300 --> 00:00:54,290
+there's no corresponding rows in the right table B.
+
+00:00:54,300 --> 00:00:58,920
+So that's sometimes also known as just the left join and we'll discuss that in a little bit.
+
+00:00:59,370 --> 00:01:05,220
+But each row in the film table to be specific to our rental DVD database may have zero or many rows
+
+00:01:05,220 --> 00:01:11,250
+in the inventory table and each row in the inventory table has all has one and only one row in the film
+
+00:01:11,250 --> 00:01:12,510
+table.
+
+00:01:12,510 --> 00:01:14,080
+So again just to rephrase that.
+
+00:01:14,310 --> 00:01:20,820
+We know that each row in this film table may have either zero or many rows in the inventory table because
+
+00:01:20,850 --> 00:01:22,820
+you have only one title of a film.
+
+00:01:22,830 --> 00:01:23,470
+Right.
+
+00:01:23,790 --> 00:01:30,150
+But you can have multiple copies of inventory in each row in the inventory table has one and only one
+
+00:01:30,150 --> 00:01:31,650
+role in the film table.
+
+00:01:31,650 --> 00:01:37,560
+So in the film table is that kind of list that unique titles of the films and the inventory table is
+
+00:01:37,560 --> 00:01:41,460
+how many copies of those films you have in a specific store.
+
+00:01:41,460 --> 00:01:42,220
+All right.
+
+00:01:42,930 --> 00:01:45,690
+So let's go ahead and see a use case for an outer join.
+
+00:01:45,690 --> 00:01:50,910
+Then again in this case we'll do a left outer join in a quick note in sequel's syntax.
+
+00:01:50,910 --> 00:01:52,710
+Remember we were doing the inner join.
+
+00:01:52,710 --> 00:01:58,790
+We could have also just write written join in for left outer joints and outer joins in general.
+
+00:01:58,800 --> 00:02:04,650
+You can also just write left join or right join siecle automatically know if it refers to an outer join
+
+00:02:04,680 --> 00:02:09,960
+because the left is specified and will go ahead and touch back on this when we see the examples in Peachi
+
+00:02:09,960 --> 00:02:11,380
+admin.
+
+00:02:11,580 --> 00:02:16,700
+With that being said lets go ahead and jump to PGE admin and check out our DVD rental database.
+
+00:02:16,780 --> 00:02:18,200
+Then go ahead and go there now.
+
+00:02:18,270 --> 00:02:21,220
+OK everybody so here we are at the sequel editor.
+
+00:02:21,240 --> 00:02:25,150
+I already open the PGA outman and execute an art literary sequel query.
+
+00:02:25,160 --> 00:02:28,210
+Now we're going to do just explore the tables we're going to be working with.
+
+00:02:28,500 --> 00:02:36,550
+So let's go ahead and select all columns from the film table and let's go ahead and limit this to five
+
+00:02:36,550 --> 00:02:37,890
+.
+
+00:02:38,100 --> 00:02:41,850
+And you notice actually already ran this previously so my data output is the same.
+
+00:02:42,180 --> 00:02:48,070
+But the important columns to look at here we have a film ID and a title of the film.
+
+00:02:48,090 --> 00:02:51,990
+So those are the ones we're going to be most focus on as far as the film tables concerned.
+
+00:02:52,230 --> 00:02:53,940
+And if we take a look at inventory
+
+00:02:56,670 --> 00:03:05,250
+and limit that to five we have a Inventory ID and a film Id And so we know that we have this film ID
+
+00:03:05,250 --> 00:03:09,770
+in both tables and we also have a store ID and a last update.
+
+00:03:09,810 --> 00:03:15,370
+So the most important ones here in inventory are going to be Inventory ID and film ID.
+
+00:03:15,780 --> 00:03:16,560
+OK.
+
+00:03:16,560 --> 00:03:23,310
+So let's go ahead and use a left outer join clause to join the film table to the inventory table and
+
+00:03:23,310 --> 00:03:26,100
+that's going to work as follows.
+
+00:03:26,130 --> 00:03:28,180
+I'm going to say this I'm gonna I say select
+
+00:03:30,900 --> 00:03:37,700
+and I will say the table name table name dots the columns that I want back.
+
+00:03:37,710 --> 00:03:39,480
+So I want fill ID back.
+
+00:03:39,630 --> 00:03:46,290
+And the reason I have to specify again the table here so film that film ID is because film ID is present
+
+00:03:46,290 --> 00:03:56,040
+in both tables and then I'm going also say film dot title column and again since title isn't actually
+
+00:03:56,040 --> 00:03:58,200
+present in both tables.
+
+00:03:58,200 --> 00:04:04,470
+So it's kind of up to you whether you want to specify film not title but I like to specify the actual
+
+00:04:04,470 --> 00:04:05,290
+table name.
+
+00:04:05,670 --> 00:04:17,310
+And then let's go ahead and say Inventory ID sell say inventory underscore ID and Ira I won't write
+
+00:04:17,310 --> 00:04:23,160
+inventory that Inventory ID just because it's a little long and I want to save screen space here since
+
+00:04:23,160 --> 00:04:24,390
+I'm showing you this.
+
+00:04:24,750 --> 00:04:29,690
+So then we'll say from our table in this case going to be film.
+
+00:04:29,700 --> 00:04:42,270
+So that's the left table here and they're going to say LEFT OUTER JOIN inventory on inventory and remember
+
+00:04:42,270 --> 00:04:49,060
+the film ID column is where we're going to join the months on an essay film underscore ID equal to film
+
+00:04:50,430 --> 00:04:55,630
+film underscore ID semi colon and let's go ahead and run that and see what we get.
+
+00:04:57,460 --> 00:04:58,870
+Okay great.
+
+00:04:58,920 --> 00:05:00,210
+So we have our results now.
+
+00:05:00,220 --> 00:05:03,110
+And let's go in and take a further look at them.
+
+00:05:03,150 --> 00:05:08,190
+So right now we can see we have multiple outputs of the same title which makes sense because you can
+
+00:05:08,190 --> 00:05:12,420
+have multiple copies of that film in inventory.
+
+00:05:12,720 --> 00:05:18,510
+But we want to know now is what do we have a film in our film database that no stores have in inventory
+
+00:05:19,080 --> 00:05:22,890
+that would mean we would have a null for the Inventory ID.
+
+00:05:22,950 --> 00:05:29,370
+So if we look at this data input and slowly scroll down if you go all the way to the bottom you'll notice
+
+00:05:29,370 --> 00:05:32,760
+you have blanks here for the Inventory ID integer.
+
+00:05:32,850 --> 00:05:38,250
+That means you have a null value there which makes sense because some rows in the film table do not
+
+00:05:38,250 --> 00:05:40,970
+have corresponding rows in the inventory table.
+
+00:05:41,250 --> 00:05:45,050
+And then that means the value of the Inventory ID is going to be null.
+
+00:05:45,060 --> 00:05:51,090
+So in this case we kind of display it as a blank depending on what your operating system is and what
+
+00:05:51,090 --> 00:05:51,950
+your settings are.
+
+00:05:51,960 --> 00:05:58,440
+You may not get a blank here you may actually show in parentheses null in usually a lighter great text
+
+00:05:58,440 --> 00:05:59,530
+so just keep that in mind.
+
+00:05:59,670 --> 00:06:02,670
+So you have a blank or an else statement there that's fine.
+
+00:06:03,100 --> 00:06:04,200
+OK.
+
+00:06:04,500 --> 00:06:10,350
+So let's say we have this business case and we want to order films that we don't have in any inventory
+
+00:06:10,350 --> 00:06:10,740
+.
+
+00:06:10,830 --> 00:06:15,870
+So a customer is going to request a film and we want to know that we have every single copy of films
+
+00:06:15,870 --> 00:06:16,280
+.
+
+00:06:16,320 --> 00:06:26,310
+So that means we need to specifically ask well where is that inventory I.D. going to be null and we
+
+00:06:26,310 --> 00:06:32,250
+can do this by adding a WHERE clause to select only films that are not in the inventory.
+
+00:06:32,370 --> 00:06:36,950
+And there's a couple of ways to do this but here's a kind of an easy way to think about it.
+
+00:06:37,380 --> 00:06:41,900
+So we're just going to go and add a where statement to this.
+
+00:06:42,420 --> 00:06:43,800
+So I'm going to say where
+
+00:06:46,470 --> 00:06:50,630
+inventory the film underscore.
+
+00:06:50,630 --> 00:06:51,330
+ID
+
+00:06:53,790 --> 00:07:01,080
+is null and if you go back to the previous you show that syntax examples there's a couple of examples
+
+00:07:01,080 --> 00:07:06,170
+of Joines that use this sort of where is null statement to filter things out.
+
+00:07:06,210 --> 00:07:13,740
+So if we go out and run this now we have a copy of all the movies that are not in inventory.
+
+00:07:14,250 --> 00:07:23,370
+So notice here we're asking where the inventory fill my column is null off of this left outer join in
+
+00:07:23,400 --> 00:07:24,000
+another no.
+
+00:07:24,030 --> 00:07:28,440
+Again we can further refine this query if we want to order by a different column.
+
+00:07:28,440 --> 00:07:37,290
+So here we're ordering by title so we can say Order By then we can go ahead an order by the film Id
+
+00:07:37,350 --> 00:07:38,370
+So it could say something like.
+
+00:07:38,370 --> 00:07:43,920
+Order by film by film underscore Id run that.
+
+00:07:43,920 --> 00:07:46,550
+And so now we've ordered it by the film ID.
+
+00:07:46,770 --> 00:07:53,220
+And if you notice it actually is pretty much the same thing because the film ID has to do is correlated
+
+00:07:53,670 --> 00:08:00,000
+to the title in alphabetical order so you could also set order by title or whatever you want.
+
+00:08:00,000 --> 00:08:06,180
+So quick note if this inventory that film ID is NULL is confusing to you.
+
+00:08:06,210 --> 00:08:12,590
+Maybe you can think about it as just selecting stuff off our original combination of these two tables
+
+00:08:12,590 --> 00:08:12,660
+.
+
+00:08:12,660 --> 00:08:18,120
+I'm going to go ahead and show you another way to do this exact same query that maybe makes more sense
+
+00:08:18,720 --> 00:08:20,370
+to some users out there.
+
+00:08:20,640 --> 00:08:23,480
+So again this is where we came up with after we joined them.
+
+00:08:23,490 --> 00:08:29,760
+We have the film Id several instances of the title which makes sense and then their inventory ID integer
+
+00:08:29,760 --> 00:08:30,120
+.
+
+00:08:30,180 --> 00:08:31,650
+So here's that film Id.
+
+00:08:31,690 --> 00:08:36,450
+There is the title of that film and then theres the inventory ID for that specific copy and we can think
+
+00:08:36,450 --> 00:08:43,290
+of this basically as this Inventory ID the one stands for a specific copy of the Academy dinosaur movie
+
+00:08:43,300 --> 00:08:43,600
+.
+
+00:08:43,830 --> 00:08:49,650
+And again for inventory 82 thats another physical copy of an academy dinosaur.
+
+00:08:49,890 --> 00:08:54,090
+And then if we scroll all the way down we notice we had some null values here that we wanted to take
+
+00:08:54,090 --> 00:08:55,430
+care of.
+
+00:08:55,530 --> 00:09:00,300
+So another way we could have done that instead of specifying inventory that Phil might be we could have
+
+00:09:00,300 --> 00:09:06,390
+just said the name of this column right here which is inventory underscore ID so I could have said this
+
+00:09:07,410 --> 00:09:20,100
+where inventory underscore ID is null and if we go ahead and check that out and run that then we get
+
+00:09:20,400 --> 00:09:27,540
+basically the exact same output as we did when we specified inventoried that film ID is null and I can
+
+00:09:27,540 --> 00:09:34,590
+go ahead and work that even more just to say order by in lets go I said go ahead and say order by the
+
+00:09:34,590 --> 00:09:41,640
+title and now you notice that we'll have the exact same results if we scroll down here you can see we
+
+00:09:41,640 --> 00:09:48,180
+have 42 rows going from walls artists back to Alice Fantasia.
+
+00:09:48,210 --> 00:09:54,510
+So that's the exact same queery not the exact same syntax of the query but it will return the exact
+
+00:09:54,510 --> 00:09:55,380
+same results.
+
+00:09:55,380 --> 00:10:01,320
+And sometimes this makes a little more sense to people if you just specify the columns that you were
+
+00:10:01,320 --> 00:10:03,480
+asking for from here.
+
+00:10:03,480 --> 00:10:09,200
+And if case you want to come back to this you can further specify things like filmdom title.
+
+00:10:09,200 --> 00:10:12,060
+And if we run this this will be the exact same thing.
+
+00:10:12,090 --> 00:10:19,740
+So you know the sequel tends to be pretty flexible as far as when you specify tables dot the column
+
+00:10:19,740 --> 00:10:20,110
+name.
+
+00:10:20,160 --> 00:10:24,660
+Or if you don't specify a table name it really depends on what your two tables look like and if they
+
+00:10:24,660 --> 00:10:27,040
+have repeated column names between the two.
+
+00:10:27,300 --> 00:10:32,910
+So just keep that in mind and keep in mind what works best for you personally and what's going to work
+
+00:10:32,910 --> 00:10:37,060
+best for you if you were to come back the same query a few weeks later.
+
+00:10:37,170 --> 00:10:43,050
+It's always better to have something like film but title instead of just title by itself because it's
+
+00:10:43,050 --> 00:10:44,530
+a little more readable in it.
+
+00:10:44,690 --> 00:10:49,260
+Say a nice reminder when you come back to it later on what table you are actually requesting this column
+
+00:10:49,260 --> 00:10:49,990
+from.
+
+00:10:50,010 --> 00:10:51,230
+So keep that in mind.
+
+00:10:51,360 --> 00:10:57,390
+This will eventually become your segue into your own personal style of sequel queries.
+
+00:10:57,420 --> 00:11:03,460
+Some people really like to do it the specific way so the second way I showed you this inventory underscore
+
+00:11:03,510 --> 00:11:04,460
+the title.
+
+00:11:04,470 --> 00:11:08,670
+Some people really like that and some other people really liked the first way I showed it using something
+
+00:11:08,670 --> 00:11:11,370
+like inventory that film Id is no.
+
+00:11:11,610 --> 00:11:12,870
+So it's really up to you.
+
+00:11:13,020 --> 00:11:17,770
+You'll discover your own style as you do more and more sequel queries so just keep that in mind that
+
+00:11:17,820 --> 00:11:23,390
+there's definitely more than one way to get the right answer for a lot of these questions.
+
+00:11:23,400 --> 00:11:23,930
+OK.
+
+00:11:24,180 --> 00:11:27,810
+With that being said that's the end of this outer join lecture.
+
+00:11:27,960 --> 00:11:32,430
+You can go ahead and play around with right outer joins if you want to go ahead and explore that a little
+
+00:11:32,430 --> 00:11:33,020
+further.
+
+00:11:33,150 --> 00:11:39,000
+But it's basically the exact same concept as the left outer join except you're specifying the B table
+
+00:11:39,000 --> 00:11:42,740
+versus the table to hold all the rows.
+
+00:11:42,990 --> 00:11:43,760
+OK.
+
+00:11:43,770 --> 00:11:46,980
+With that being said Thanks everybody and I will see at the next lecture

@@ -1,0 +1,818 @@
+00:00:01,410 --> 00:00:05,250
+Hello everyone and welcome to your first lecture on Joines.
+
+00:00:05,460 --> 00:00:09,900
+So we're going to learn about joints and a quick note Joines can be a bit tricky at first especially
+
+00:00:09,900 --> 00:00:11,000
+for beginners.
+
+00:00:11,040 --> 00:00:15,690
+So after seeing this lecture if you're still fuzzy on some stuff check out the additional resources
+
+00:00:15,690 --> 00:00:17,120
+section of this lecture.
+
+00:00:17,130 --> 00:00:21,750
+So just click that resource link for more links to different explanations of joints.
+
+00:00:21,750 --> 00:00:22,220
+OK.
+
+00:00:22,500 --> 00:00:27,450
+We will try to take it slow and straightforward though so hopefully you don't need those extra resources
+
+00:00:27,480 --> 00:00:29,720
+but they're there just in case you need them.
+
+00:00:30,300 --> 00:00:35,700
+So so far you've learned how to select data from a table choosing which columns and rows you want maybe
+
+00:00:35,700 --> 00:00:41,640
+grouping stuff or sorting stuff so your resulting set gets in a particular order and you get exactly
+
+00:00:41,640 --> 00:00:42,900
+what you want.
+
+00:00:42,900 --> 00:00:48,510
+Now it's time to move on to one of the most important concepts in the database called jointing and that
+
+00:00:48,510 --> 00:00:52,370
+allows you to relate data in one table to the data in other tables.
+
+00:00:52,590 --> 00:00:58,830
+So you may have noticed that in one table we have customer IDs and then customer names and then in another
+
+00:00:58,830 --> 00:01:04,140
+table we have customer IDs and then some other information but we don't actually have the customer names
+
+00:01:04,140 --> 00:01:05,030
+in that table.
+
+00:01:05,200 --> 00:01:11,780
+But joining is going to allow us to do is join data from other tables so we can match up something like
+
+00:01:11,790 --> 00:01:18,630
+first name and last name based off the customer ID to the payments that the customer made based off
+
+00:01:18,630 --> 00:01:20,280
+the customer ID and the payment table.
+
+00:01:20,280 --> 00:01:22,450
+Now we're going to see examples of that later on.
+
+00:01:22,930 --> 00:01:28,320
+Let's go ahead and first discuss just the basic syntax of a joint statement how it works and then we're
+
+00:01:28,320 --> 00:01:33,690
+going to see a lot of examples so you can really flesh out this idea in practice.
+
+00:01:33,720 --> 00:01:34,330
+OK.
+
+00:01:34,440 --> 00:01:38,780
+So there's several kinds of joints including inner join outer join and self-join.
+
+00:01:38,920 --> 00:01:43,610
+This lecture is going to first focus on the most basic join which is INNER JOIN.
+
+00:01:44,370 --> 00:01:44,810
+All right.
+
+00:01:45,030 --> 00:01:47,250
+So let's get some context here.
+
+00:01:47,250 --> 00:01:54,480
+Suppose you want to get data from 2 tables names A and B the beat table has this FKK a field and we'll
+
+00:01:54,570 --> 00:02:00,410
+have that stand for some foreign key feel that relates to the primary key of the table.
+
+00:02:00,420 --> 00:02:08,280
+So an example of this is let's say A is the customer table and the primary key is going to be the customer
+
+00:02:08,310 --> 00:02:09,390
+ID number.
+
+00:02:09,420 --> 00:02:13,880
+So it's an integer and then see one character that other column.
+
+00:02:13,890 --> 00:02:16,510
+Let's say it's going to be their full name.
+
+00:02:16,740 --> 00:02:24,870
+And then in column B let's say that's our payments so that key is going to be something like the actual
+
+00:02:24,870 --> 00:02:30,540
+payments ID character let's say the store they went to and then a foreign key is going to be the customer
+
+00:02:30,540 --> 00:02:31,190
+ID.
+
+00:02:31,470 --> 00:02:33,500
+So we have some different information here.
+
+00:02:33,600 --> 00:02:39,300
+But we have two corresponding columns or keys so I'm going to refer to them as keys and we'll see later
+
+00:02:39,300 --> 00:02:39,890
+on why.
+
+00:02:39,900 --> 00:02:45,300
+But you can just think of them right now as just columns and basically the main point I'm trying to
+
+00:02:45,300 --> 00:02:51,040
+make here is that you have two columns that are the same and a and b.
+
+00:02:51,180 --> 00:02:55,980
+So they may have other columns that are different but you have two corresponding columns so a has some
+
+00:02:55,980 --> 00:03:01,980
+custom write the column and B has some custom write the column and this case will say a day's column
+
+00:03:01,980 --> 00:03:09,390
+that matches up is PKP that primary key and B's column that table that matches up is FKK that foreign
+
+00:03:09,390 --> 00:03:10,320
+key.
+
+00:03:10,320 --> 00:03:15,210
+So that's just some terminology but you can really just think of it as having two columns that match
+
+00:03:15,210 --> 00:03:21,330
+up and you want to join these two tables based off the fact that those columns match up.
+
+00:03:21,420 --> 00:03:26,940
+All right so the syntax for getting data from both tables you're going to use the inner join clause
+
+00:03:27,030 --> 00:03:29,510
+and select statement as follows.
+
+00:03:29,550 --> 00:03:35,790
+You're going to say this you'll say selects and the table names so a dot member or table names are a
+
+00:03:35,790 --> 00:03:38,680
+and b dot the column you want.
+
+00:03:38,850 --> 00:03:41,760
+So here's basically the list of columns we want.
+
+00:03:41,760 --> 00:03:45,000
+So P.K. C-One PKB C-2.
+
+00:03:45,000 --> 00:03:48,480
+So if we go back real quick just go ahead and show this.
+
+00:03:48,510 --> 00:03:50,100
+Here are the column names.
+
+00:03:50,220 --> 00:03:54,160
+PKK C-1 PKB C to F K.
+
+00:03:54,450 --> 00:03:57,210
+And what you do is just like any other select statements.
+
+00:03:57,300 --> 00:04:03,930
+You say select the columns you want separated by a comma except in this case the additional information
+
+00:04:03,990 --> 00:04:06,240
+is what table the column is from.
+
+00:04:06,270 --> 00:04:10,800
+That way sequel knows what column you're actually referring to.
+
+00:04:10,800 --> 00:04:15,510
+So you're going to say the table name in this case or table names are a and b.
+
+00:04:15,510 --> 00:04:20,320
+So in this case a dot and then the column name in the table.
+
+00:04:20,370 --> 00:04:25,820
+So you have the columns you wants and you also specify what table you're actually referencing.
+
+00:04:25,830 --> 00:04:31,860
+So you say Select the table name dot the column name and then you list all the columns you want in this
+
+00:04:31,860 --> 00:04:39,360
+case we just want that Piquet column that primary key column C-1 column primary key column and then
+
+00:04:39,360 --> 00:04:40,560
+C-2.
+
+00:04:40,980 --> 00:04:42,670
+Then you say from a.
+
+00:04:42,740 --> 00:04:48,300
+So you specify what table you want so the initial table you want to join on and he'll say inner join
+
+00:04:48,320 --> 00:04:48,560
+.
+
+00:04:48,730 --> 00:04:51,460
+Be on to a doc.
+
+00:04:51,490 --> 00:04:59,520
+PKK equals b f k and so what that does is it basically corresponds to the two columns you want to match
+
+00:04:59,520 --> 00:05:00,790
+up together.
+
+00:05:00,840 --> 00:05:03,750
+So let's go ahead and break this down a little further.
+
+00:05:04,450 --> 00:05:10,090
+So first you specify the column in both tables from which you want to select the data in the select
+
+00:05:10,090 --> 00:05:11,000
+clause.
+
+00:05:11,020 --> 00:05:12,710
+So that's just our first line here.
+
+00:05:12,820 --> 00:05:16,020
+And notice we have here at the bottom the entire sequel's statement.
+
+00:05:16,060 --> 00:05:16,950
+So you can reference it.
+
+00:05:16,960 --> 00:05:21,250
+But first what we're doing is we're specifying the column in both tables from which we want to select
+
+00:05:21,250 --> 00:05:23,510
+that data in a select clause.
+
+00:05:23,620 --> 00:05:26,040
+Second you specify the main table.
+
+00:05:26,110 --> 00:05:28,550
+In this case a in the FROM clause.
+
+00:05:28,630 --> 00:05:35,310
+So the main table you're looking at is a third you specify the table that the main table joins to.
+
+00:05:35,590 --> 00:05:37,990
+So be in the inner join clause.
+
+00:05:37,990 --> 00:05:42,520
+And in addition you put a join condition after the on keyword.
+
+00:05:42,760 --> 00:05:46,200
+And in this case your condition is going to be a.
+
+00:05:46,210 --> 00:05:49,430
+PKK equals be that FKK.
+
+00:05:49,570 --> 00:05:52,380
+So you want these two columns to be the joining on.
+
+00:05:52,660 --> 00:06:00,310
+So again the syntax is selects table that columns you want that list from the main table you wants and
+
+00:06:00,310 --> 00:06:04,450
+then in this case since we're doing inner join and we'll discuss what an inner join is specifically
+
+00:06:04,450 --> 00:06:11,350
+in a little bit you'll say that whatever joint's me want inner join the second table be on and then
+
+00:06:11,350 --> 00:06:14,970
+the actual statements you want to join on.
+
+00:06:15,010 --> 00:06:15,700
+OK.
+
+00:06:16,120 --> 00:06:22,000
+So for each row on the table what post-career sequel's doing is it scans the B table to check if there's
+
+00:06:22,060 --> 00:06:26,140
+any row that matches a condition where these two columns are the same.
+
+00:06:26,140 --> 00:06:32,890
+So we can imagine if we have the customer ID in the table in the customer ID in the table it goes down
+
+00:06:32,890 --> 00:06:40,300
+those tables and checks Oh the customer the column value here in table A match the customer the value
+
+00:06:40,300 --> 00:06:43,000
+in table B and then it's going to go ahead and match them.
+
+00:06:43,000 --> 00:06:48,850
+So if it finds a match it combines the columns of both throws into one row and then adds the combined
+
+00:06:48,850 --> 00:06:52,100
+wrote the return resultset.
+
+00:06:52,330 --> 00:06:52,940
+All right.
+
+00:06:53,020 --> 00:06:54,210
+Quick couple of notes here.
+
+00:06:54,220 --> 00:06:57,490
+Sometimes a and b tables have the same column name.
+
+00:06:57,520 --> 00:07:04,060
+So we have to refer to the column as table underscore name column underscore names so some yet to specifically
+
+00:07:04,060 --> 00:07:08,020
+say table name column name to avoid ambiguity.
+
+00:07:08,020 --> 00:07:16,000
+And in case the name of the tables is long you can use a table alias and in this case I just corrected
+
+00:07:16,000 --> 00:07:16,870
+the spacing issue.
+
+00:07:16,870 --> 00:07:20,170
+But in this case I'm going to say and sort of table underscore name.
+
+00:07:20,230 --> 00:07:25,510
+I'm just going to say CBL and refer to the column is TBO column or square name.
+
+00:07:25,510 --> 00:07:30,510
+And you can use that alias using the as statement that we just learned in the previous lecture.
+
+00:07:30,700 --> 00:07:33,410
+But don't worry we'll see plenty of examples in just a second.
+
+00:07:33,760 --> 00:07:36,180
+So let's discuss what an inner join.
+
+00:07:36,220 --> 00:07:39,240
+Specifically is the inner join clause.
+
+00:07:39,250 --> 00:07:44,490
+Returns rows in the table the have corresponding rows in the B table.
+
+00:07:44,860 --> 00:07:51,040
+So wherever there's a match it's going to return those results so the stark and spot of the Venn diagram
+
+00:07:51,040 --> 00:07:51,250
+here.
+
+00:07:51,280 --> 00:07:57,090
+So table a table B where they have corresponding matches in both tables.
+
+00:07:57,100 --> 00:08:01,390
+So let's go ahead and go to PG admen and then work through some examples.
+
+00:08:01,390 --> 00:08:01,890
+OK.
+
+00:08:01,990 --> 00:08:04,390
+Go ahead and jump the PGA admin now.
+
+00:08:05,290 --> 00:08:07,200
+OK so here I am at PGE admin.
+
+00:08:07,210 --> 00:08:09,190
+I went ahead and opened up the sequel editor.
+
+00:08:09,220 --> 00:08:15,370
+And what we're going to do is go ahead in practice some inner join statements and if what we just previously
+
+00:08:15,370 --> 00:08:18,080
+discussed isn't too clear yet that's OK.
+
+00:08:18,250 --> 00:08:20,730
+These examples should make it much clearer.
+
+00:08:20,740 --> 00:08:25,280
+All right so let's do some hands on examples so we can better explain what's going on here.
+
+00:08:25,300 --> 00:08:29,440
+We will look at the customer and the payment tables in the sample database.
+
+00:08:29,440 --> 00:08:32,240
+First off let's go ahead and look at these tables.
+
+00:08:32,290 --> 00:08:40,630
+I have a customer id column a story the first name last name email etc. and then some time stamp information
+
+00:08:40,630 --> 00:08:41,820
+and some address information.
+
+00:08:41,830 --> 00:08:44,840
+But what I really want to know is this customer id column.
+
+00:08:45,010 --> 00:08:52,210
+So I have this custom write these columns and that defiance basically what customer id let's say this
+
+00:08:52,360 --> 00:09:01,140
+person Jared Ali has now go ahead and take a look at everything from the payment table.
+
+00:09:01,150 --> 00:09:03,930
+Go ahead and run that.
+
+00:09:03,940 --> 00:09:08,140
+So here I have my payment I.D. and now I also my custom right.
+
+00:09:08,560 --> 00:09:09,310
+All right.
+
+00:09:09,310 --> 00:09:10,790
+So I have my customer I.D..
+
+00:09:10,820 --> 00:09:16,930
+But in this particular payment table I don't have any other information about the customer but I do
+
+00:09:16,930 --> 00:09:20,100
+know I have that customer I.D. information in the customer table.
+
+00:09:20,320 --> 00:09:25,360
+So we're going to try to do is join these twos to establish some sort of link between the two tables
+
+00:09:25,750 --> 00:09:30,060
+and the link is going to be that customer id field or column.
+
+00:09:30,190 --> 00:09:35,890
+So each customer may have zero or many payments and each payment belongs to one and only one customer
+
+00:09:35,900 --> 00:09:36,150
+.
+
+00:09:36,400 --> 00:09:42,460
+So for example this payment I.D. seventeen thousand five hundred three belongs solely to customer 3
+
+00:09:42,470 --> 00:09:43,420
+for one.
+
+00:09:43,780 --> 00:09:49,190
+So let's go ahead and use an inner join clause to join the customer table to the payment table.
+
+00:09:49,750 --> 00:09:53,740
+So let's go in and review this sort of syntax and had actually do it.
+
+00:09:54,310 --> 00:09:59,290
+So I'm going to say select in the first part of this joining and select statement is going to be the
+
+00:09:59,290 --> 00:10:00,980
+actual columns I want.
+
+00:10:01,160 --> 00:10:10,750
+So I want the customer ID column but I'm going to have to specify which table it's from or specify that
+
+00:10:10,750 --> 00:10:17,050
+it's from the customer table because I going to join the payment table to the customer table so customer
+
+00:10:17,100 --> 00:10:22,030
+table is going to act as my a table from the example previously shown in the payment tables going to
+
+00:10:22,030 --> 00:10:24,050
+act as my b table.
+
+00:10:24,100 --> 00:10:33,880
+So I say select customer that customer and the comma and then I'm going to say first name now you might
+
+00:10:33,880 --> 00:10:39,350
+be wondering oh do I have to also specify customer first name.
+
+00:10:39,670 --> 00:10:44,260
+Well you could and you won't receive any heirs but you actually don't have to.
+
+00:10:44,260 --> 00:10:51,120
+And the reason for that being is because the first name column only exists in that customer table.
+
+00:10:51,370 --> 00:10:56,930
+So if we look down at the payment table here there is no first name column so sequels going to know
+
+00:10:57,430 --> 00:11:00,730
+to look for the first name column in the customer table.
+
+00:11:00,970 --> 00:11:05,030
+So it's optional to specify customer that first name.
+
+00:11:05,290 --> 00:11:05,690
+Hello.
+
+00:11:05,710 --> 00:11:11,950
+Go ahead and not do it because as you become a more advanced sequel user you tend to not actually specify
+
+00:11:11,950 --> 00:11:15,770
+the table if the column name is only in one table.
+
+00:11:16,240 --> 00:11:22,690
+Customer ID column however is in both tables so I specifying that I want the customer the customer ID
+
+00:11:22,690 --> 00:11:29,210
+column here so we'll say customer that customer or the column comma the first name column.
+
+00:11:30,160 --> 00:11:35,650
+And let's go ahead and start putting these on a new line so we go in just make this kind of a list here
+
+00:11:35,650 --> 00:11:36,370
+.
+
+00:11:36,430 --> 00:11:44,950
+So I want customer that customer the first name comma go ahead and grab the last name comma will grab
+
+00:11:44,950 --> 00:11:52,690
+the email amounts and payments underscore dates.
+
+00:11:52,720 --> 00:11:53,170
+All right.
+
+00:11:53,170 --> 00:12:00,820
+So I know earlier I kind of made a big fuss about specifying the table not the column name but again
+
+00:12:01,120 --> 00:12:06,910
+as you become more of an SQL user you'll realize that all the columns I just listed here are unique
+
+00:12:06,940 --> 00:12:08,260
+to whatever table they're from.
+
+00:12:08,260 --> 00:12:11,210
+So first name last name and email.
+
+00:12:11,290 --> 00:12:13,560
+Those are all unique to the customer table.
+
+00:12:13,900 --> 00:12:18,670
+And they don't show up in the payment tables so I don't actually need to specify that they're from the
+
+00:12:18,670 --> 00:12:19,870
+customer table.
+
+00:12:20,230 --> 00:12:26,000
+And then likewise the amount column and the payment date column are unique to the payment table.
+
+00:12:26,050 --> 00:12:29,960
+So I don't actually have to specify what table those are coming from either.
+
+00:12:30,130 --> 00:12:34,150
+The only one that I had to actually specify was the customer ID column.
+
+00:12:34,150 --> 00:12:38,280
+So I said customer which is the table name that customer ID.
+
+00:12:38,590 --> 00:12:39,250
+OK.
+
+00:12:39,520 --> 00:12:44,320
+Again you can always ask discussion questions in the forum in case anything is unclear here.
+
+00:12:44,350 --> 00:12:50,740
+Let's go ahead and say from remember the syntax is from that a table.
+
+00:12:50,740 --> 00:12:56,470
+So in this case from customer table and then here comes the new part that we haven't actually really
+
+00:12:56,590 --> 00:12:57,150
+done yet.
+
+00:12:57,190 --> 00:13:06,100
+It's going to be that inner joint statement going to say inner join and we say the table in this case
+
+00:13:06,100 --> 00:13:13,420
+payments on and then we say what column and B we want to join to column an A.
+
+00:13:13,450 --> 00:13:15,450
+So I want to join the payments.
+
+00:13:15,450 --> 00:13:16,440
+Thoughts.
+
+00:13:16,810 --> 00:13:29,620
+Customer ID column and B to the customer customer id column in a so I'm saying inner join the payments
+
+00:13:29,710 --> 00:13:31,040
+table.
+
+00:13:31,060 --> 00:13:33,970
+So from customer inner join with the payment table.
+
+00:13:33,970 --> 00:13:39,270
+So from a table enter join unbe table or inner join.
+
+00:13:39,400 --> 00:13:40,870
+The payment table on.
+
+00:13:40,930 --> 00:13:46,290
+And then the on statement is what actual columns or fields you want to match up.
+
+00:13:46,330 --> 00:13:50,600
+This case I want to make sure that the customer ID columns from each table lineup.
+
+00:13:51,030 --> 00:13:54,240
+So how to execute this and see what we get.
+
+00:13:55,480 --> 00:13:56,040
+OK.
+
+00:13:56,110 --> 00:13:59,430
+So here we have the columns who requested.
+
+00:13:59,460 --> 00:14:00,940
+So we have the customer IDs.
+
+00:14:00,940 --> 00:14:03,240
+Notice there are several instances of those.
+
+00:14:03,280 --> 00:14:07,170
+And that's because they made multiple payments and I went ahead.
+
+00:14:07,170 --> 00:14:11,850
+If we scroll to the right here now we can see the various payments they made.
+
+00:14:11,860 --> 00:14:15,870
+So the actual amounts they made and the payment dates they made those payments on.
+
+00:14:16,180 --> 00:14:20,560
+And we also have their first name last name and e-mail information along with that.
+
+00:14:20,830 --> 00:14:28,170
+So we successfully joined those two tables getting the information from both tables.
+
+00:14:28,720 --> 00:14:29,920
+OK.
+
+00:14:29,950 --> 00:14:35,770
+In the next lecture we're going to do is cover some more joint examples specifically inner join examples
+
+00:14:35,770 --> 00:14:36,110
+.
+
+00:14:36,160 --> 00:14:39,380
+So you really make sure you have a good understanding of what's going on.
+
+00:14:39,430 --> 00:14:45,070
+But what I want to do now before we code totally finish off this lecture is just show you how to use
+
+00:14:45,070 --> 00:14:48,070
+like where clause or order by clauses.
+
+00:14:48,070 --> 00:14:51,390
+With this sort of join this query here.
+
+00:14:51,700 --> 00:14:52,990
+So we just join these two.
+
+00:14:52,990 --> 00:14:54,390
+We got everything we wanted.
+
+00:14:54,580 --> 00:14:58,400
+Let's say we wanted to actually order by the customer ID number.
+
+00:14:58,420 --> 00:15:01,580
+So in this case the customer ID number looks like it's out of order.
+
+00:15:01,630 --> 00:15:09,130
+What I can do is go ahead and add an ORDER BY statements and roomer we use that order by the column
+
+00:15:09,130 --> 00:15:09,960
+.
+
+00:15:09,970 --> 00:15:18,490
+So in this case I'm going to say order by the customer the customer ID column.
+
+00:15:18,500 --> 00:15:25,670
+So the only difference here is I have to specify what table to take the column name from.
+
+00:15:25,870 --> 00:15:29,620
+If I wanted to sort order by first name we can go ahead and try that.
+
+00:15:29,620 --> 00:15:35,010
+So for instance here if I run this I went ahead and ordered by the customer right.
+
+00:15:35,050 --> 00:15:39,430
+So Mary Smith's first if I wanted to order by the first name
+
+00:15:42,360 --> 00:15:48,730
+and I ran that notice I don't get any sort of error or anything and that's because that first name The
+
+00:15:48,730 --> 00:15:51,400
+reason I didn't have to specify the table it came from.
+
+00:15:51,460 --> 00:15:56,800
+So the reason I have to say something like customer the first name is because that first name column
+
+00:15:56,980 --> 00:15:59,270
+only exists in the Customer table.
+
+00:15:59,680 --> 00:16:00,490
+OK.
+
+00:16:00,490 --> 00:16:05,500
+So that's how you would do something like an order by after joining two tables and you could also do
+
+00:16:05,500 --> 00:16:09,040
+something like where to filter based on some sort of condition.
+
+00:16:09,040 --> 00:16:11,970
+So for instance I could say where.
+
+00:16:12,370 --> 00:16:15,270
+Let's just say we're looking for one particular customer.
+
+00:16:15,640 --> 00:16:19,880
+So I'd swap for Customer ID number two or something.
+
+00:16:19,900 --> 00:16:29,050
+I can say where customer thought customer ID is equal to two.
+
+00:16:29,350 --> 00:16:35,670
+And if I run that I just get only the results where the customer I.D. was due to this case.
+
+00:16:35,710 --> 00:16:37,600
+Looks like Patricia Johnson.
+
+00:16:37,600 --> 00:16:41,170
+So you get all of Patricia Johnson's payments here which is nice.
+
+00:16:41,170 --> 00:16:42,370
+OK that.
+
+00:16:42,460 --> 00:16:48,740
+Remember how to specify customer that customer I.D. because a customer id column is in both tables.
+
+00:16:48,760 --> 00:16:54,220
+If I was only doing something like let's say just want for some weird reason where the first names start
+
+00:16:54,220 --> 00:16:55,350
+with an A.
+
+00:16:55,480 --> 00:17:08,650
+I could say where first underscore a name like capital a per cent sign single quote semi colon and if
+
+00:17:08,650 --> 00:17:15,470
+I run that now I get the payment information for all the first names that start off in a.
+
+00:17:15,760 --> 00:17:17,080
+And that's how you can do that.
+
+00:17:17,290 --> 00:17:17,560
+OK.
+
+00:17:17,560 --> 00:17:19,270
+So no one more time.
+
+00:17:19,300 --> 00:17:25,690
+I didn't have to specify the table for the table but first name because first name only shows up in
+
+00:17:25,690 --> 00:17:27,030
+the Customer table.
+
+00:17:27,430 --> 00:17:35,290
+Now if I went ahead and said that customer the first name and ran that's You'll notice I won't get any
+
+00:17:35,290 --> 00:17:40,930
+errors or anything which is fine if you're kind of a beginner at sequel's Sometimes it's really helpful
+
+00:17:40,990 --> 00:17:46,570
+as far as keeping track of what table this column came from to actually specify customer that first
+
+00:17:46,570 --> 00:17:47,380
+name.
+
+00:17:47,440 --> 00:17:52,940
+This is where you'll kind of find out your own style of school selection.
+
+00:17:52,960 --> 00:17:59,380
+When I was first starting off with sequel I really made sure to specify what table each column came
+
+00:17:59,380 --> 00:18:00,020
+from.
+
+00:18:00,160 --> 00:18:06,610
+But as you go on you'll won't want to type as much so you'll end up just kind of dropping these out
+
+00:18:06,730 --> 00:18:10,150
+if they only show up in a single table.
+
+00:18:10,210 --> 00:18:11,740
+That's kind of your own style choice.
+
+00:18:11,770 --> 00:18:15,960
+It's up to you if you want the most readability possible.
+
+00:18:16,120 --> 00:18:20,170
+If you come back later then you should probably be putting in the table name.
+
+00:18:20,170 --> 00:18:22,600
+If it's kind of obvious what table it came from.
+
+00:18:22,600 --> 00:18:27,310
+So for instance you might think it's kind of obvious that first name and last name are coming from a
+
+00:18:27,310 --> 00:18:30,520
+customer table based off this joint statement.
+
+00:18:30,520 --> 00:18:34,340
+Then maybe you don't need to actually specify the table name.
+
+00:18:34,450 --> 00:18:35,060
+All right.
+
+00:18:35,350 --> 00:18:40,480
+So in the next lecture we'll go ahead and explore some more examples of join just to make sure that
+
+00:18:40,810 --> 00:18:45,190
+all the students coming up to this part of the course are all on the same page.
+
+00:18:45,240 --> 00:18:49,990
+OK thanks everyone and I'll see you at the next lecture where we're going to go through a bunch of examples
+
+00:18:49,990 --> 00:18:50,890
+of join.
+
+00:18:51,040 --> 00:18:52,140
+Thanks and I'll see you there
