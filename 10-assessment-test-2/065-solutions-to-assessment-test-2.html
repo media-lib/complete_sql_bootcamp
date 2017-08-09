@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>065-solutions-to-assessment-test-2</title>
+</head>
+<body>
+<div class="asset-container">
+    <div class="asset-container__padding article-view">
+        <div class="w3c-default">
+            <h4>Solutions to Assessment Test 2 </h4>
+
+<p><strong>(My apologies if Udemy's Article Formatting causes any display issues!)</strong></p>
+
+<p>1. select * from cd.facilities; </p>
+
+<p><br>2. select name, membercost from cd.facilities;</p>
+
+<p><br>3. select * from cd.facilities where membercost &gt; 0;</p>
+
+<p><br>4. select facid, name, membercost, monthlymaintenance from cd.facilities where membercost &gt; 0 and (membercost &lt; monthlymaintenance/50.0);</p>
+
+<p><br>5. select * from cd.facilities where name like '%Tennis%';</p>
+
+<p><br>6. select * from cd.facilities where facid in (1,5);</p>
+
+<p><br>7. select memid, surname, firstname, joindate from cd.members where joindate &gt;= '2012-09-01';</p>
+
+<p><br>8. select distinct surname from cd.members order by surname limit 10;</p>
+
+<p><br>9. select max(joindate) as latest from cd.members;</p>
+
+<p><br>10. select count(*) from cd.facilities where guestcost &gt;= 10;</p>
+
+<p><br>11. Skip this one.</p>
+
+<p><br>12. select facid, sum(slots) as "Total Slots" from cd.bookings where starttime &gt;= '2012-09-01' and starttime &lt; '2012-10-01' group by facid order by sum(slots);</p>
+
+<p><br>13. select facid, sum(slots) as "Total Slots" from cd.bookings group by facid having sum(slots) &gt; 1000 order by facid;</p>
+
+<p><br>14. select bks.starttime as start, facs.name as name from cd.facilities facs inner join cd.bookings bks on facs.facid = bks.facid where facs.facid in (0,1) and bks.starttime &gt;= '2012-09-21' and bks.starttime &lt; '2012-09-22' order by bks.starttime;</p>
+
+<p><br>15. select bks.starttime from cd.bookings bks inner join cd.members mems on mems.memid = bks.memid where mems.firstname='David' and mems.surname='Farrell';</p>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

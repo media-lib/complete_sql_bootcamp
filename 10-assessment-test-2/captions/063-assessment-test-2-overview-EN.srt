@@ -1,0 +1,302 @@
+00:00:01,080 --> 00:00:05,430
+Hello everyone and welcome to your second assessment test.
+
+00:00:05,460 --> 00:00:09,720
+So for this second assessment tests we're going to be doing is working in a new database and schema
+
+00:00:09,720 --> 00:00:11,330
+for this assessment test.
+
+00:00:11,340 --> 00:00:15,070
+So you're probably a little tired now of using that DVD rental schema so often.
+
+00:00:15,300 --> 00:00:20,040
+So in order to freshen things up we're going to use a different database schema.
+
+00:00:20,040 --> 00:00:25,800
+So go ahead and download the exercise file from the resource section of this lecture and the next we're
+
+00:00:25,800 --> 00:00:30,250
+going to do in this lectures go through a quick walk through on how to restore that database from the
+
+00:00:30,260 --> 00:00:32,040
+exercises file.
+
+00:00:32,040 --> 00:00:37,950
+Now remember this should be a review we should have already gone over how to create a database and restore
+
+00:00:37,950 --> 00:00:40,640
+a database based off a backup file.
+
+00:00:40,710 --> 00:00:45,710
+But just in case you need a walkthrough for the assessment test this is what this lecture's for.
+
+00:00:46,080 --> 00:00:51,360
+OK with that being said the next lectures actually have the list of questions for the assessment test
+
+00:00:51,620 --> 00:00:52,160
+and the lecture.
+
+00:00:52,170 --> 00:00:55,440
+After that one will have the solutions.
+
+00:00:55,470 --> 00:00:57,370
+Let's go ahead and go to PG admen.
+
+00:00:57,390 --> 00:01:03,090
+Set up the exercise file and set up the database so you can go ahead and get started on the second assessment
+
+00:01:03,090 --> 00:01:03,740
+test.
+
+00:01:03,750 --> 00:01:07,810
+I'm going to go ahead and get started with P.G. admin now.
+
+00:01:07,830 --> 00:01:14,070
+All right so here I am at PG admin we're still going to do is go ahead and connect to your post-career
+
+00:01:14,070 --> 00:01:15,210
+server.
+
+00:01:15,210 --> 00:01:19,590
+Just go ahead and double click on it and then you should see the list of databases you probably don't
+
+00:01:19,590 --> 00:01:19,770
+have.
+
+00:01:19,770 --> 00:01:23,470
+All of my databases here but you should have at least a DVD rental database.
+
+00:01:23,700 --> 00:01:29,400
+Well we're going to go ahead and do is right click on that databases and go ahead and create a new database
+
+00:01:30,270 --> 00:01:37,230
+and call it exercises then click OK.
+
+00:01:37,560 --> 00:01:39,670
+That should have created a new database for you.
+
+00:01:39,670 --> 00:01:41,790
+See a little X on it.
+
+00:01:41,790 --> 00:01:44,850
+Go ahead and click on it in order to connect to that database.
+
+00:01:44,850 --> 00:01:47,780
+So then we're going to do is restore the data to this database.
+
+00:01:47,820 --> 00:01:52,630
+So good and right click on that and click restore.
+
+00:01:53,730 --> 00:01:57,200
+That should open up this restore window.
+
+00:01:57,480 --> 00:02:04,440
+And what you're going to do is then input the file name here or the path to the file name for the exercise
+
+00:02:05,490 --> 00:02:08,840
+file that you downloaded should just be exercises.
+
+00:02:08,850 --> 00:02:14,130
+So again make sure you have customer Taar you can click on these three dots and go ahead and search
+
+00:02:14,130 --> 00:02:19,200
+for wherever you save that file from the resource section of this lecture.
+
+00:02:19,200 --> 00:02:25,170
+Remember when you are looking for the file to specify that you're not just looking for backup files
+
+00:02:25,200 --> 00:02:28,610
+but you're looking for all files in order to find it there.
+
+00:02:29,140 --> 00:02:29,870
+OK.
+
+00:02:29,910 --> 00:02:35,130
+If you need any more reference on how to do this go ahead and go back to the restored database lecturers
+
+00:02:35,130 --> 00:02:39,690
+or the installation lectures where we go through this whole process in much more detail.
+
+00:02:39,780 --> 00:02:46,180
+But for now all you need to do is set up this in path and then just click restore.
+
+00:02:46,890 --> 00:02:51,990
+It should give you a bunch of code saying what it's been doing and then a return an exit code of 0 say
+
+00:02:51,990 --> 00:03:00,390
+done and then with exercise selected go ahead and click the refresh the selected object and expand that
+
+00:03:00,390 --> 00:03:01,560
+database.
+
+00:03:01,620 --> 00:03:02,940
+Check out the schemas.
+
+00:03:02,990 --> 00:03:05,960
+No you'll have a CD schema and a public schema.
+
+00:03:05,970 --> 00:03:12,000
+We're actually going to look at the CD schema for this and then make sure you have three tables here
+
+00:03:12,000 --> 00:03:12,720
+.
+
+00:03:12,750 --> 00:03:13,480
+OK.
+
+00:03:13,620 --> 00:03:20,220
+Now I wanted to to show you how to actually do a query against this particular database.
+
+00:03:20,220 --> 00:03:27,450
+So if exercise is selected go ahead and click and execute an arbitrary sequel query and what you're
+
+00:03:27,450 --> 00:03:35,520
+going to do here is just make sure everything's working by saying selects Asterix from.
+
+00:03:35,850 --> 00:03:42,240
+And we have three tables in this database for the assessment test you have bookings facilities and members
+
+00:03:42,240 --> 00:03:42,720
+.
+
+00:03:42,720 --> 00:03:44,480
+So let's make sure we all work.
+
+00:03:44,700 --> 00:03:49,890
+If you just do the table name itself you will get an error.
+
+00:03:49,890 --> 00:03:55,680
+So if you just try to say select Asterix from bookings you'll get an error because it says relation
+
+00:03:55,690 --> 00:03:57,480
+bookings does not exist.
+
+00:03:57,480 --> 00:04:00,390
+And the reason for that is because it's not in the public schema.
+
+00:04:00,390 --> 00:04:02,490
+It was in that CD schema.
+
+00:04:02,490 --> 00:04:08,170
+So you have to specify schema dot the table name.
+
+00:04:08,190 --> 00:04:14,420
+So now if I say select asterisks from CD that bookings you should get all the data output.
+
+00:04:14,430 --> 00:04:16,850
+So let's go ahead and make sure that works for everything.
+
+00:04:16,930 --> 00:04:19,740
+COSC the bookings.
+
+00:04:19,800 --> 00:04:21,720
+You also have facilities.
+
+00:04:22,200 --> 00:04:23,730
+So here are the facilities.
+
+00:04:23,880 --> 00:04:25,080
+And then you also have
+
+00:04:27,540 --> 00:04:29,350
+members.
+
+00:04:29,400 --> 00:04:30,060
+OK.
+
+00:04:30,120 --> 00:04:35,940
+So let me go ahead and walk through very quickly what each of these tables has inside of it.
+
+00:04:35,940 --> 00:04:42,330
+So here in the Members table we have a surname for the member and then a first name for the member as
+
+00:04:42,330 --> 00:04:44,280
+well as a member ID number.
+
+00:04:44,460 --> 00:04:48,820
+Then you have an address and know it can be guessed as a value.
+
+00:04:48,840 --> 00:04:54,660
+So just keep that in mind and then you have some other possible information such as a zip code a telephone
+
+00:04:55,450 --> 00:05:00,480
+recommended by now that's an integer and then a join date as a time stamp.
+
+00:05:00,480 --> 00:05:03,800
+So that's the Members table.
+
+00:05:03,800 --> 00:05:12,450
+And we also have the facilities table and and the facilities are the facility ID number the name of
+
+00:05:12,450 --> 00:05:13,490
+that facility.
+
+00:05:13,740 --> 00:05:15,030
+The member cost.
+
+00:05:15,120 --> 00:05:22,400
+The cost for a guest column known as initial outlay and then a monthly maintenance column.
+
+00:05:22,440 --> 00:05:22,830
+Okay.
+
+00:05:22,860 --> 00:05:27,360
+And these columns will be more clearly described when you actually get to the assessment test when it's
+
+00:05:27,360 --> 00:05:31,070
+asking you for what you actually are trying to get.
+
+00:05:31,410 --> 00:05:35,680
+And then the last one we have is the bookings table.
+
+00:05:36,450 --> 00:05:43,260
+So the bookings table just has an ID for that particular booking facility ID integer a member ID and
+
+00:05:43,260 --> 00:05:46,650
+a start time and then something known as slots column.
+
+00:05:46,650 --> 00:05:47,460
+All right.
+
+00:05:47,460 --> 00:05:56,280
+So what these tables are basically representing is some sort of club or fitness facility where you have
+
+00:05:56,280 --> 00:06:02,460
+a bunch of facilities and members or guests or booking time at those facilities and paying for it.
+
+00:06:02,820 --> 00:06:03,600
+OK.
+
+00:06:03,600 --> 00:06:10,440
+With that being said Make sure you have everything ready to go as far as able to write these statements
+
+00:06:10,440 --> 00:06:13,350
+and select from the database and those tables.
+
+00:06:13,350 --> 00:06:18,570
+Remember you had a say CD because this in particular is not a public schema.
+
+00:06:18,600 --> 00:06:20,840
+Its under the CD schema.
+
+00:06:20,970 --> 00:06:21,330
+All right.
+
+00:06:21,330 --> 00:06:25,400
+With that being said feel free to post any discussion questions if you're having trouble with this.
+
+00:06:25,620 --> 00:06:30,720
+But coming up next is an article type lecture where you going to get a list of questions to answer along
+
+00:06:30,720 --> 00:06:31,340
+the way.
+
+00:06:31,620 --> 00:06:32,310
+OK.
+
+00:06:32,310 --> 00:06:33,040
+Thanks everyone.
+
+00:06:33,210 --> 00:06:35,700
+And best of luck on your second assessment test.
