@@ -1,0 +1,383 @@
+00:00:01,050 --> 00:00:07,800
+Hello everyone and welcome to this lecture on using postgresql with Python and using the library psycho
+
+00:00:07,800 --> 00:00:09,230
+PGE too.
+
+00:00:09,750 --> 00:00:15,120
+So I'm right now using the Jupiter notebook system in order to show you how all this syntax works.
+
+00:00:15,150 --> 00:00:17,200
+You can feel free to use any editor.
+
+00:00:17,210 --> 00:00:20,050
+I read that you prefer for Python.
+
+00:00:20,220 --> 00:00:25,110
+If you've already experienced one of my other Python courses you're probably already really familiar
+
+00:00:25,170 --> 00:00:29,550
+to Jupiter or python no pick system if you're not and want to find that more.
+
+00:00:29,610 --> 00:00:36,180
+You can go to WDW w that Jupiter org and explore that Web site and also give you a link on how to install
+
+00:00:36,180 --> 00:00:38,220
+it and you can explore it more.
+
+00:00:38,220 --> 00:00:44,370
+I really like it as far as for teaching and quick scripts but you can also explore everything we're
+
+00:00:44,370 --> 00:00:49,250
+about to do in your preferred idea or development environment for Python.
+
+00:00:49,380 --> 00:00:55,320
+So let's go ahead and start by just importing the library that we downloaded from the previous lecture
+
+00:00:55,320 --> 00:00:55,730
+.
+
+00:00:55,740 --> 00:01:00,600
+So again go to the previous lecture for more notes on how to actually download everything.
+
+00:01:00,600 --> 00:01:07,770
+And for the PI file that has all the code that Imman execute here or the notebook file has again all
+
+00:01:07,770 --> 00:01:12,060
+the code and some notes of what I'm going to execute here during the lecture.
+
+00:01:12,060 --> 00:01:20,570
+So to get started like I was saying we need to import psyco PGE too to so psycho mixtures.
+
+00:01:20,590 --> 00:01:23,710
+Well that right Sekou PGE too.
+
+00:01:24,090 --> 00:01:27,790
+So by convention we just import as PGE 2.
+
+00:01:28,320 --> 00:01:34,290
+And then the next thing you're going to do is connect to your database and by convention that C O and
+
+00:01:34,330 --> 00:01:42,540
+N and you're just going to say PGE to and then call the connect method and you're going to pass in a
+
+00:01:42,540 --> 00:01:44,210
+couple of arguments here.
+
+00:01:44,340 --> 00:01:47,560
+The first one is what database you're going to connect to.
+
+00:01:47,610 --> 00:01:52,890
+I'm going to go ahead and connect to the DVD rental database that we've been working with a lot and
+
+00:01:52,890 --> 00:01:55,710
+then you have to define the user.
+
+00:01:55,710 --> 00:02:01,950
+So depending on how you actually set up your PC admin account you may have set up your own particular
+
+00:02:02,030 --> 00:02:07,190
+username if you don't specify the user name in this argument of the connect method.
+
+00:02:07,260 --> 00:02:10,470
+They'll automatically by default on a Windows computer.
+
+00:02:10,740 --> 00:02:15,350
+And I believe on a Mac as well default to the user profile name.
+
+00:02:15,480 --> 00:02:21,240
+But if you've just been following along with all the lectures the default for PGE admin as far as the
+
+00:02:21,240 --> 00:02:23,320
+username is just post gress.
+
+00:02:23,610 --> 00:02:27,810
+So if you're having any trouble if your own username try just saying post.
+
+00:02:27,850 --> 00:02:33,090
+And if you set everything to default it should be postgresql and then the last thing you have to input
+
+00:02:34,080 --> 00:02:36,550
+is your password.
+
+00:02:36,640 --> 00:02:42,540
+Now I've already set up my password as the variable called secret appear.
+
+00:02:42,540 --> 00:02:46,740
+So if you want you could just set up a variable called secret and put in your password.
+
+00:02:46,800 --> 00:02:49,930
+Obviously my password is not the string your password goes here.
+
+00:02:50,370 --> 00:02:56,130
+So if you've done all this correctly you should be able to run this line of code or put this line of
+
+00:02:56,130 --> 00:03:02,100
+code inside your IP y file and then you should have a connection there.
+
+00:03:02,100 --> 00:03:07,530
+So in this Juber notebook system I'm basically just running each of these cells as a separate block
+
+00:03:07,530 --> 00:03:08,310
+of code.
+
+00:03:08,700 --> 00:03:14,420
+And that way I can run the cells and show the output at the same time.
+
+00:03:14,490 --> 00:03:20,040
+So now that we've established the connection to postscripts sequel The next step is to retrieve the
+
+00:03:20,040 --> 00:03:26,010
+cursor and the cursor is just a control structure that enables traversal over the records in a database
+
+00:03:26,010 --> 00:03:26,230
+.
+
+00:03:26,430 --> 00:03:31,870
+So you can basically think of it as some sort of iterator or a pointer for Sequel data retrieval.
+
+00:03:32,430 --> 00:03:37,980
+And the way we're going to do that is we're going to go in and create a variable called C-u are and
+
+00:03:37,980 --> 00:03:42,240
+then we're going to have a connection object.
+
+00:03:42,240 --> 00:03:49,050
+So that was this c o n n and then we call the cursor method off of it.
+
+00:03:49,290 --> 00:03:54,840
+And so now we have our cursor and I was essentially the last thing we need to do in order to execute
+
+00:03:54,850 --> 00:03:57,410
+Suko queries from Python.
+
+00:03:57,480 --> 00:04:03,880
+So using their cursor object I can say execute off of it.
+
+00:04:04,410 --> 00:04:12,030
+And then you basically inside the execute method you pass in a string of whatever you want to actually
+
+00:04:12,540 --> 00:04:20,640
+ask the database or query the database so we can say something like this select Asterix from let's go
+
+00:04:20,640 --> 00:04:25,960
+ahead and say from payments.
+
+00:04:26,010 --> 00:04:33,960
+So now this cursor has the execute statements and this cursor then has a couple of methods available
+
+00:04:33,960 --> 00:04:34,350
+.
+
+00:04:34,470 --> 00:04:37,950
+It has fetch all fetch many and fetch one.
+
+00:04:37,980 --> 00:04:42,470
+So what these do is they basically return rows of data.
+
+00:04:42,600 --> 00:04:47,460
+So if I just say fetch one ill return the first row of that data.
+
+00:04:47,460 --> 00:04:53,900
+So these are the numbers that correspond with that row data from select everything from payment.
+
+00:04:53,910 --> 00:05:00,040
+I can also say fetch many and then actually pasan how many rows I want to fetch.
+
+00:05:00,040 --> 00:05:07,440
+So I can fetch 10 rows and you'll notice that it returns as a list of tuple items which is nice because
+
+00:05:07,440 --> 00:05:09,590
+then you can use tuple and packing later on.
+
+00:05:10,110 --> 00:05:12,320
+And also note that depending on the data type.
+
+00:05:12,390 --> 00:05:15,390
+Also specify like a date time data type.
+
+00:05:15,510 --> 00:05:23,650
+If you have a time stamp information on it for that particular column in your database table so those
+
+00:05:23,650 --> 00:05:27,800
+are really the main features you're going to be using with first psycho P.G. 2.
+
+00:05:28,060 --> 00:05:31,590
+And as far as using this all in Python is going to be kind of up to you.
+
+00:05:31,600 --> 00:05:39,220
+Hayes these main three or four commands in order to use the power of python and use the automation capabilities
+
+00:05:39,220 --> 00:05:43,790
+of Python to query your database or put things into your database.
+
+00:05:43,840 --> 00:05:50,260
+So again let's just go over what we've done so far you have to import Cyclopedia to as PGE to then you
+
+00:05:50,250 --> 00:05:51,890
+had established a connection.
+
+00:05:51,910 --> 00:05:54,190
+I said it is the variable c o n n.
+
+00:05:54,430 --> 00:05:59,710
+And you said PGE to that connect you had to pass in the database name you're connecting to pass in the
+
+00:05:59,710 --> 00:06:06,360
+user you are connecting as the default user for any postscripts application is post gress.
+
+00:06:06,750 --> 00:06:11,230
+And then you had a pass and the password that you set up when you're first installing Peachi admin and
+
+00:06:11,230 --> 00:06:12,900
+post-career sequel.
+
+00:06:13,280 --> 00:06:20,560
+Then you had to get a cursor off of that connection and with that cursor you could then execute sequel
+
+00:06:20,560 --> 00:06:21,700
+queries off of it.
+
+00:06:22,120 --> 00:06:27,910
+And then once you have that cursor execute that query you can actually fetch the rows that are returned
+
+00:06:27,940 --> 00:06:29,680
+you can fetch many rows.
+
+00:06:29,680 --> 00:06:38,360
+You can fetch just one row or the final option is actually to fetch all of them.
+
+00:06:38,570 --> 00:06:42,850
+And notice here since there's quite a few rows you may want to use this carefully.
+
+00:06:42,850 --> 00:06:46,750
+Otherwise you'll just end up with a ton of rows returned.
+
+00:06:46,810 --> 00:06:50,610
+So it's good and change that back to fetch one.
+
+00:06:51,250 --> 00:06:57,480
+So again this is really nice because you can use tuple and packing along with it so you can say something
+
+00:06:57,490 --> 00:07:01,450
+like just say fetch money such as 10.
+
+00:07:01,480 --> 00:07:04,180
+Well let me actually execute that query again.
+
+00:07:04,450 --> 00:07:11,710
+Notice I had to execute the query in order to fetch them off so I could execute the query one more time
+
+00:07:13,570 --> 00:07:18,170
+and we'll say this is equal to data.
+
+00:07:18,940 --> 00:07:25,720
+And if I take a look at data I have this list and I can index off of it as you would expect tuple and
+
+00:07:25,720 --> 00:07:31,050
+pack it keep indexing off of it just to get particular data points.
+
+00:07:31,120 --> 00:07:37,220
+It's really up to you as far as what you're going to use this type of data for and this sort of Python
+
+00:07:37,220 --> 00:07:43,000
+or psycho PGE format with but hopefully basically these lines are the most important ones and that can
+
+00:07:43,540 --> 00:07:48,700
+really be you're building blocks as far as how you're going to use postgresql with Python that sort
+
+00:07:48,700 --> 00:07:54,160
+of applications really up to you and more likely are not just going to be a smaller part or back and
+
+00:07:54,160 --> 00:08:01,000
+the application in Python when you're communicating with your database once you're done communicating
+
+00:08:01,030 --> 00:08:04,750
+executing off your database you're going to want to close your connection.
+
+00:08:04,960 --> 00:08:10,860
+You going to want to say it's your connection and go ahead and close it.
+
+00:08:11,470 --> 00:08:13,440
+And that's really all there is to it.
+
+00:08:13,480 --> 00:08:19,570
+You can check out the PI for a python file from the previous lecture or the python notebook file from
+
+00:08:19,570 --> 00:08:26,590
+the previous lecture to get a couple of more useful hints and tips for how to use Cyclopes too with
+
+00:08:27,040 --> 00:08:29,350
+postgresql and Python.
+
+00:08:29,350 --> 00:08:31,620
+Other than that it's really just the basics of it.
+
+00:08:31,660 --> 00:08:36,090
+That's kind of all we need to know to start exploring how you can use post-career sequel with your own
+
+00:08:36,100 --> 00:08:37,570
+python applications.
+
+00:08:37,570 --> 00:08:40,290
+Again the most important parts are just the import.
+
+00:08:40,570 --> 00:08:46,130
+Establishing that connection creating the cursor and then executing the sequel queries.
+
+00:08:46,170 --> 00:08:53,830
+One thing I wanted to know is to make sure that you kind of avoid using Python print's formatting or
+
+00:08:53,830 --> 00:08:57,070
+string formatting when you're executing the sequel queries.
+
+00:08:57,070 --> 00:08:59,010
+What do you mean by that is.
+
+00:08:59,080 --> 00:09:09,760
+Imagine you have this situation where you want to say executes and you input some commands and let's
+
+00:09:09,780 --> 00:09:14,200
+say earlier in your code your command line was something like.
+
+00:09:14,620 --> 00:09:21,930
+Maybe one selects all from and then you are going to add another string to it later on.
+
+00:09:21,940 --> 00:09:28,120
+So maybe that string was another object and what I'm trying to say is you may want to be careful when
+
+00:09:28,120 --> 00:09:34,090
+you're doing this sort of thing with a psycho pgm post-career sequel with Python because it's kind of
+
+00:09:34,090 --> 00:09:39,760
+dangerous if you accidentally call add something like drop table later on.
+
+00:09:39,750 --> 00:09:44,070
+This could kind of like potentially screw up your database so just keep that in mind.
+
+00:09:44,290 --> 00:09:51,490
+It's always best practice to put in the entire sequel query as just one single string and to verify
+
+00:09:51,790 --> 00:09:54,180
+that it's a single string that you want.
+
+00:09:54,230 --> 00:09:58,630
+There's a couple more notes on that in the note book but it's just something to be aware of.
+
+00:09:58,880 --> 00:10:02,320
+OK with that being said that's really it as far as this.
+
+00:10:02,320 --> 00:10:07,080
+Just a quick overview of how you can use cycle PGE and postgresql of Python.
+
+00:10:07,170 --> 00:10:13,120
+Feel free to ask any questions in the discussion section of the course and you can also feel free to
+
+00:10:13,380 --> 00:10:18,450
+refer to the resources from the previous lecture for more hints and more tutorials on how to use this
+
+00:10:18,690 --> 00:10:20,160
+really useful library.
+
+00:10:20,160 --> 00:10:22,900
+OK thanks everyone and I'll see you at the next lecture
