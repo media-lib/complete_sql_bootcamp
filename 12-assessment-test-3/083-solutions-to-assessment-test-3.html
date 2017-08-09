@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>083-solutions-to-assessment-test-3</title>
+</head>
+<body>
+<div class="asset-container">
+    <div class="asset-container__padding article-view">
+        <div class="w3c-default">
+            <h4>Solutions to Assessment Test 3</h4><p>To create the database  simply right-click on the databases drop down menu and select "New Database".</p><p>Then you can use the following SQL scripts to execute the tasks:</p><p>To create the students table:</p><pre class="prettyprint linenums">CREATE TABLE students(
+student_id serial PRIMARY KEY,
+first_name VARCHAR(45) NOT NULL,
+last_name VARCHAR(45) NOT NULL, 
+homeroom_number integer,
+phone VARCHAR(20) UNIQUE NOT NULL,
+email VARCHAR(115) UNIQUE,
+grad_year integer);</pre><p><br></p><p>To create the teachers table:</p><pre class="prettyprint linenums">CREATE TABLE teachers(
+teacher_id serial PRIMARY KEY,
+first_name VARCHAR(45) NOT NULL,
+last_name VARCHAR(45) NOT NULL, 
+homeroom_number integer,
+department VARCHAR(45),
+email VARCHAR(20) UNIQUE,
+phone VARCHAR(20) UNIQUE);</pre><p>Then for inserting the student information:</p><pre class="prettyprint linenums">INSERT INTO students(first_name,last_name, <br>homeroom_number,phone,grad_year)<br>VALUES ('Mark','Watney',5,'7755551234',2035);</pre><p><br></p><p>Then for inserting the teacher information:</p><pre class="prettyprint linenums">INSERT INTO teachers(first_name,last_name, <br>homeroom_number,department,email,phone)<br>VALUES ('Jonas','Salk',5,'Biology','jsalk@school.org','7755554321');</pre><p><br></p><p><br></p>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
