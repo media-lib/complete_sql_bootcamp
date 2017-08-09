@@ -1,0 +1,209 @@
+00:00:01,620 --> 00:00:04,170
+Hello everyone and welcome to the lecture on the windows.
+
+00:00:04,170 --> 00:00:06,770
+Post sequel installation.
+
+00:00:06,900 --> 00:00:13,800
+First thing you're going to want to do is go ahead and open a web browser and go to w w w post gress
+
+00:00:13,800 --> 00:00:15,400
+sequel dot org.
+
+00:00:15,670 --> 00:00:19,530
+So let me go ahead and jump to my web browser so I can show you what this looks like.
+
+00:00:20,350 --> 00:00:24,930
+Ok so I'm at my web browser now and something I wanted to point out is you can actually just google
+
+00:00:24,930 --> 00:00:30,600
+search postscripts sequel and the very first thing that will pop up as far as non ad links is going
+
+00:00:30,600 --> 00:00:32,190
+to be post gresse sequel.
+
+00:00:32,640 --> 00:00:37,110
+So go ahead and click that link and it should take you to a page that looks like this.
+
+00:00:37,620 --> 00:00:42,120
+And then the next thing you're going to do is go ahead and go to download.
+
+00:00:43,020 --> 00:00:48,390
+And once that's loaded you'll see postgresql sequel court distribution and you'll see some prebuilt
+
+00:00:48,450 --> 00:00:54,330
+packages which are going to do is click on Windows and then you're going to go ahead and download the
+
+00:00:54,330 --> 00:00:55,380
+graphical installer.
+
+00:00:55,380 --> 00:01:00,450
+And what this is going to do is going to really make the process of installing super straightforward
+
+00:01:00,810 --> 00:01:06,690
+and it's actually very quick and fast and it's also going install a very important graphical tool called
+
+00:01:06,960 --> 00:01:09,120
+PGE admen three.
+
+00:01:09,150 --> 00:01:14,960
+So let's go ahead and click download here and I'll take you to a new page.
+
+00:01:15,020 --> 00:01:20,700
+Go ahead and not register and what you're going to do is go ahead depending on your computer download
+
+00:01:20,700 --> 00:01:21,750
+the latest version.
+
+00:01:21,750 --> 00:01:24,690
+Right now it's nine point five point one for me.
+
+00:01:24,690 --> 00:01:29,880
+And depending on whether you have a 32 bit or 64 bit here in your computer is probably going to be 64
+
+00:01:29,880 --> 00:01:31,080
+bit.
+
+00:01:31,080 --> 00:01:37,980
+Go ahead and click the download that's appropriate for you click it and your download should begin shortly
+
+00:01:38,490 --> 00:01:41,310
+and the pending browser using just see it.
+
+00:01:41,340 --> 00:01:42,950
+Come over here.
+
+00:01:43,000 --> 00:01:43,330
+All right.
+
+00:01:43,350 --> 00:01:48,530
+So go ahead and jump to the end of that download.
+
+00:01:48,570 --> 00:01:52,150
+All right so I went ahead and jumped to the finished download.
+
+00:01:52,230 --> 00:01:55,260
+Go ahead and click on that executable file.
+
+00:01:55,260 --> 00:02:01,520
+Go ahead and say yes and you should have the graphical installer jump up.
+
+00:02:02,760 --> 00:02:03,250
+OK.
+
+00:02:03,330 --> 00:02:03,950
+There it is.
+
+00:02:03,990 --> 00:02:07,770
+Let's go ahead and all you do is click next.
+
+00:02:07,770 --> 00:02:12,500
+Save it if you want to whatever directory but I'm going to choose the default under program files.
+
+00:02:12,510 --> 00:02:13,490
+PostgreSQL sequel.
+
+00:02:13,500 --> 00:02:15,060
+Nine point five.
+
+00:02:15,090 --> 00:02:16,790
+Go ahead and click next.
+
+00:02:16,830 --> 00:02:19,350
+Go ahead and store your data under the Data folder.
+
+00:02:19,350 --> 00:02:20,900
+That's fine too.
+
+00:02:21,600 --> 00:02:23,170
+And this is the important part.
+
+00:02:23,340 --> 00:02:25,920
+You're going to want to provide a password for a database.
+
+00:02:25,980 --> 00:02:27,300
+Super User.
+
+00:02:27,420 --> 00:02:28,730
+So we'll go over later on.
+
+00:02:28,730 --> 00:02:30,520
+What a super user actually is.
+
+00:02:30,720 --> 00:02:34,020
+But make sure you remember whatever password you type in here.
+
+00:02:34,050 --> 00:02:36,300
+So let me go ahead and fill this out.
+
+00:02:37,170 --> 00:02:38,440
+OK so I filled that out.
+
+00:02:38,460 --> 00:02:40,990
+I'm going to go ahead and click next.
+
+00:02:41,850 --> 00:02:44,140
+And go ahead and leave the default port.
+
+00:02:44,160 --> 00:02:50,160
+It should probably be five four three two or a very similar number that is default.
+
+00:02:50,160 --> 00:02:54,270
+Go ahead and leave this location for the database cluster's default.
+
+00:02:54,480 --> 00:02:56,330
+And then now you're ready to begin installing so.
+
+00:02:56,380 --> 00:03:02,060
+Go ahead and click next and you'll notice that actually installs very quickly.
+
+00:03:02,280 --> 00:03:09,030
+Again make sure you're write down your super user password somewhere so you remember it will be going
+
+00:03:09,030 --> 00:03:11,640
+over that later on what it actually means.
+
+00:03:11,640 --> 00:03:19,560
+But basically you may need that password later on to access and create tables as a super user.
+
+00:03:19,560 --> 00:03:20,080
+All right.
+
+00:03:20,300 --> 00:03:23,920
+I'll go ahead and fast forward to this finishing.
+
+00:03:24,990 --> 00:03:28,300
+So we're actually almost done that only it was a jump of about 20 seconds.
+
+00:03:28,300 --> 00:03:32,390
+He should the whole process should only take up most just a few minutes.
+
+00:03:32,550 --> 00:03:35,620
+You'll notice it's going to initialize the database cluster.
+
+00:03:35,700 --> 00:03:39,200
+Say this may take a few minutes depending on the speed of a computer.
+
+00:03:39,470 --> 00:03:41,060
+That speed may vary.
+
+00:03:41,670 --> 00:03:46,440
+OK so once that's done initialising you'll notice he has a stack builder option.
+
+00:03:46,440 --> 00:03:48,330
+Go ahead and just click that off.
+
+00:03:48,330 --> 00:03:54,720
+You don't need it for this course and then just go ahead and say finish and that's it.
+
+00:03:54,960 --> 00:03:55,440
+All right.
+
+00:03:55,530 --> 00:04:02,370
+In the next lecture I will show you how to load the sample data into your newly created Postgres sequel
+
+00:04:02,370 --> 00:04:03,810
+installation.
+
+00:04:03,810 --> 00:04:06,030
+Thanks everyone and I will see if the next lecture
