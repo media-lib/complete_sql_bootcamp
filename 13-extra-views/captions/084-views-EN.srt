@@ -1,0 +1,356 @@
+00:00:01,110 --> 00:00:04,970
+Hello everyone and welcome to the views lecture.
+
+00:00:05,550 --> 00:00:10,770
+So in the views section of the course we're going to be doing is introducing you to database views concepts
+
+00:00:11,250 --> 00:00:16,290
+and then showing you how to manage views such as creating modifying and removing views from the database
+
+00:00:16,290 --> 00:00:17,590
+.
+
+00:00:17,670 --> 00:00:18,950
+So what is a view.
+
+00:00:18,960 --> 00:00:24,480
+Well formally we can think of you as a database object that's that of a stored query.
+
+00:00:24,720 --> 00:00:28,640
+So if you can be accessible as a virtual table in postgresql sequel.
+
+00:00:28,680 --> 00:00:33,270
+So in other words this post-career sequel views just the logical table that represents data of one or
+
+00:00:33,270 --> 00:00:37,470
+more underlying tables through some sort of select statements.
+
+00:00:37,470 --> 00:00:41,210
+So this is probably better explained through the use of an illustration.
+
+00:00:41,390 --> 00:00:43,120
+Imagine you have a database.
+
+00:00:43,290 --> 00:00:46,880
+So here we have this kind of like stack of disks representing or a database.
+
+00:00:47,030 --> 00:00:48,460
+And we have three tables in it.
+
+00:00:48,530 --> 00:00:50,380
+One two two and three.
+
+00:00:50,460 --> 00:00:53,100
+And each of those tables has some columns in it.
+
+00:00:53,400 --> 00:00:59,310
+If you want to get a particular query to show certain columns and join these tables in a particular
+
+00:00:59,310 --> 00:01:05,030
+way what you would have to do is do what it says here on the bottom some sort of select statement of
+
+00:01:05,040 --> 00:01:08,010
+columns from then a bunch of joint statements.
+
+00:01:08,280 --> 00:01:15,090
+But you can do is take advantage of the view statements and eventually convert this entire complex query
+
+00:01:15,510 --> 00:01:20,230
+into a simple statement that just says select everything from view.
+
+00:01:20,940 --> 00:01:27,150
+So notice that what The View is doing is just showing you a view of a particular select query.
+
+00:01:27,320 --> 00:01:31,870
+But it's not actually doing is doubling up and storing that data physically.
+
+00:01:31,980 --> 00:01:36,730
+It's almost just like that particular query is being pointed to this view of it.
+
+00:01:37,560 --> 00:01:42,510
+So what have you does it help simplify the complexity of a query because you can just query the view
+
+00:01:42,900 --> 00:01:47,030
+which is based off of some other complex query and sort of having to rewrite it.
+
+00:01:47,100 --> 00:01:50,800
+You could just use a simple select statement with your new view object.
+
+00:01:50,880 --> 00:01:56,970
+So like a table you can grant permissions to users through a view that contains specific data that users
+
+00:01:56,970 --> 00:01:58,680
+are authorized to see.
+
+00:01:58,860 --> 00:02:05,750
+And if you provide a consistent layer even the columns of underlying table changes.
+
+00:02:06,210 --> 00:02:09,960
+So to create a view we use to create these statements.
+
+00:02:09,990 --> 00:02:13,820
+And the simplest syntax of the creative statement just looks like this.
+
+00:02:13,830 --> 00:02:18,440
+You just basically say create view the name of whatever you want to call that view.
+
+00:02:18,600 --> 00:02:20,050
+Then you say as.
+
+00:02:20,100 --> 00:02:23,330
+And then you just have your whole select query of a semi-colon.
+
+00:02:23,760 --> 00:02:27,320
+So this is better shown through just a quick example in postgresql sequel.
+
+00:02:27,330 --> 00:02:32,390
+So let's go ahead and hop to P.G. Adwan and open up a sequel Ed..
+
+00:02:33,240 --> 00:02:38,170
+OK so here I am at PG admin what I'm going to do is go ahead and click our DVD rental database.
+
+00:02:38,170 --> 00:02:43,530
+We worked with a lot and I'm going to go ahead and execute an arbitrary sequel query on it.
+
+00:02:43,530 --> 00:02:46,530
+We're going to be doing is messing around with two tables.
+
+00:02:46,590 --> 00:02:51,870
+The first one is going to be the customer tables slushes review what's in it.
+
+00:02:51,870 --> 00:02:53,540
+As far as the columns.
+
+00:02:54,600 --> 00:02:56,610
+So I have these customer IDs story.
+
+00:02:56,610 --> 00:03:03,570
+DS first name last name email and then some time information and then the other table we're going to
+
+00:03:03,570 --> 00:03:12,570
+be looking at is the address table so the address table has an address some district information and
+
+00:03:12,570 --> 00:03:16,320
+phone information if it's available and postal code information if it's available.
+
+00:03:16,320 --> 00:03:17,940
+So some of these are null values.
+
+00:03:18,300 --> 00:03:25,620
+But what we can do is go ahead and join these two tables that customer table and the address table say
+
+00:03:25,640 --> 00:03:29,540
+what kind of a more complete table view of customer information.
+
+00:03:29,550 --> 00:03:40,200
+So let's say I want maybe their first name or last name their e-mail Altes go ahead and then say their
+
+00:03:40,200 --> 00:03:47,290
+address and phone and I want that from the customer table.
+
+00:03:47,310 --> 00:03:52,740
+But notice like address and phone information that wasn't in the Customer table and the address table
+
+00:03:52,740 --> 00:03:54,310
+so I have joined this.
+
+00:03:54,360 --> 00:03:56,600
+So I was going to go ahead and do a simple inner join.
+
+00:03:56,660 --> 00:04:06,620
+I say join our address or join address and then we're going to stay on and the column that links them
+
+00:04:06,620 --> 00:04:06,870
+both.
+
+00:04:06,870 --> 00:04:08,670
+Is this address underscore ID column.
+
+00:04:08,680 --> 00:04:17,520
+So I'm going to say on customer that address ID equals
+
+00:04:19,980 --> 00:04:25,070
+address Dot's address underscore ID.
+
+00:04:25,070 --> 00:04:26,720
+Some might call in.
+
+00:04:27,090 --> 00:04:28,550
+So it's going to make sure that works.
+
+00:04:28,560 --> 00:04:29,920
+I just ran that.
+
+00:04:30,060 --> 00:04:37,620
+So the first name the last name email address and the phone so looks like my simple join works.
+
+00:04:37,770 --> 00:04:44,160
+Now I wouldn't want to have to keep writing this complex sequel career or save this complex SQL query
+
+00:04:44,160 --> 00:04:45,270
+somewhere.
+
+00:04:45,270 --> 00:04:50,880
+If I had to keep doing this sort of query on a day to day basis if for some reason this is a really
+
+00:04:50,880 --> 00:04:57,840
+common query it would be nice to be able to save this table that gets returned as a view and that's
+
+00:04:57,840 --> 00:05:01,620
+exactly what we can do to view and create new statements.
+
+00:05:01,630 --> 00:05:12,690
+Second can say create new and let's call this customer info and then we're going to say as.
+
+00:05:12,690 --> 00:05:16,530
+And then you have your giant selects queries statement.
+
+00:05:16,890 --> 00:05:20,580
+So I'm going to go ahead and run them and you'll notice the query returns successfully if no result
+
+00:05:20,580 --> 00:05:20,910
+.
+
+00:05:20,910 --> 00:05:23,260
+That means that views been created.
+
+00:05:23,280 --> 00:05:36,270
+So now what I can do is say selects all the columns from customer in underscore in-fill am now basically
+
+00:05:36,270 --> 00:05:42,200
+that complex series query complex sequel query has been saved as the view.
+
+00:05:42,270 --> 00:05:46,270
+Customer info and that's really just the main idea of the view.
+
+00:05:46,530 --> 00:05:47,540
+So the view.
+
+00:05:47,610 --> 00:05:53,970
+Keep in mind it's just this virtual table meaning it's not actually making a copy of all that data it's
+
+00:05:53,970 --> 00:05:56,360
+just viewing it off of the other tables.
+
+00:05:56,490 --> 00:06:01,040
+Based off your sequel query that complex query did earlier.
+
+00:06:01,050 --> 00:06:04,440
+And that's really the main purpose of the view itself.
+
+00:06:05,100 --> 00:06:11,400
+And now what I want to show you are two quick case statements are key clauses that go along with the
+
+00:06:11,400 --> 00:06:13,700
+view or create view statements.
+
+00:06:13,890 --> 00:06:18,020
+So one of them is alter view and rename to.
+
+00:06:18,220 --> 00:06:24,660
+So the alter view allows you to just rename the view so I could say something like Alter view.
+
+00:06:25,200 --> 00:06:33,840
+And then I'm going to put in customer underscore info and then I can say rename to and now I can rename
+
+00:06:33,840 --> 00:06:36,610
+it to a different name for that.
+
+00:06:36,900 --> 00:06:44,940
+So instead of saying customer info I can say something like customer master list or something like that
+
+00:06:44,940 --> 00:06:45,840
+.
+
+00:06:46,080 --> 00:06:46,620
+Run it.
+
+00:06:46,620 --> 00:06:48,450
+You should get no results.
+
+00:06:48,450 --> 00:06:56,790
+And now what I can do is say selects Asterix so all columns from that customer
+
+00:06:59,760 --> 00:07:04,670
+master list.
+
+00:07:06,750 --> 00:07:09,500
+And here we have our customer master list again.
+
+00:07:09,720 --> 00:07:13,100
+So basically that just allows you to rename views again.
+
+00:07:13,110 --> 00:07:17,900
+All you have to do is say alter view.
+
+00:07:18,120 --> 00:07:26,220
+Then you just put in the name of view doesn't matter and then you say rename to and here you put your
+
+00:07:26,220 --> 00:07:29,700
+new name of the view so that's it for renaming the view.
+
+00:07:29,700 --> 00:07:34,770
+Just say alter view put in the name of your view and then rename it to some new name.
+
+00:07:34,950 --> 00:07:39,880
+If you want to go ahead and remove an existing VM postgresql that's also really simple command.
+
+00:07:39,900 --> 00:07:42,140
+You just say drop view.
+
+00:07:42,310 --> 00:07:45,900
+Then we can go ahead and say customer.
+
+00:07:46,350 --> 00:07:50,200
+It was customer master underscore list.
+
+00:07:50,490 --> 00:07:55,320
+So if we go ahead and run that return successfully and that we'll go ahead and drop the view.
+
+00:07:55,650 --> 00:08:00,930
+So again just a quick note removing a view that does not exist in the database will result in error
+
+00:08:00,930 --> 00:08:01,320
+.
+
+00:08:01,500 --> 00:08:04,200
+So you can do it just like dropping a table.
+
+00:08:04,380 --> 00:08:10,520
+If I try running this again for instance it'll say customer masterlist doesn't exist.
+
+00:08:10,530 --> 00:08:11,740
+So just like drop table.
+
+00:08:11,760 --> 00:08:19,590
+I can use the if exists clause here to check first if it exists and then they'll give you a notice instead
+
+00:08:19,590 --> 00:08:20,090
+of an error.
+
+00:08:20,100 --> 00:08:21,190
+So just say Oh.
+
+00:08:21,230 --> 00:08:23,730
+Do this on his list does not exist skipping.
+
+00:08:23,880 --> 00:08:24,700
+All right.
+
+00:08:24,960 --> 00:08:30,270
+So that's really it for the view basic concept that you just had to get from this was just the Create
+
+00:08:30,270 --> 00:08:32,360
+view statements as.
+
+00:08:32,430 --> 00:08:37,640
+And that's really all there is to as far as creating the view is just the nicer cleaner way to save
+
+00:08:37,650 --> 00:08:40,060
+really complex queries as views.
+
+00:08:40,200 --> 00:08:44,250
+Instead of having to retype or save that specific complex query.
+
+00:08:44,300 --> 00:08:47,550
+OK thanks everyone and I will see you at the next lecture
