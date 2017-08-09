@@ -1,0 +1,62 @@
+00:00:01,110 --> 00:00:01,770
+Hello everyone.
+
+00:00:01,770 --> 00:00:04,570
+Welcome to your first assessment test.
+
+00:00:04,620 --> 00:00:08,880
+You've actually had a lot of challenges along the way so this isn't going to be a very long assessment
+
+00:00:08,880 --> 00:00:14,820
+test section is going to be three quick questions and it's also going to be an article lecture format
+
+00:00:14,820 --> 00:00:15,940
+so you won't see any videos.
+
+00:00:15,960 --> 00:00:20,310
+You'll just get the actual text of the question you're going to be provided with the answers to test
+
+00:00:20,310 --> 00:00:20,980
+against.
+
+00:00:21,240 --> 00:00:28,660
+So for instance if the question is something like tell me how many customers do X Y and Z you'll also
+
+00:00:28,680 --> 00:00:32,810
+be provided with the answer and I'll say something like the answer should be 20.
+
+00:00:32,820 --> 00:00:38,400
+You won't actually be provided with the full sequel solution until the lecture after the test lecture
+
+00:00:39,010 --> 00:00:39,410
+again.
+
+00:00:39,410 --> 00:00:42,640
+So the next lecture you're going to questions and then some answers.
+
+00:00:42,660 --> 00:00:44,020
+Check your work against.
+
+00:00:44,160 --> 00:00:48,360
+And then once you've actually matched up or you still haven't been able to match up to the exact answer
+
+00:00:48,810 --> 00:00:53,090
+you can go to that lecture after that to get the full sequel query solution.
+
+00:00:53,160 --> 00:00:56,870
+Keep in mind you may have done SQL queries that are slightly different.
+
+00:00:56,880 --> 00:00:59,670
+There's a couple of different ways to solve each of the questions.
+
+00:00:59,670 --> 00:01:02,930
+So as long as you actually get the right answer you should be good to go.
+
+00:01:03,220 --> 00:01:03,820
+OK.
+
+00:01:04,080 --> 00:01:04,780
+Thanks everyone.
+
+00:01:04,800 --> 00:01:07,120
+And best of luck on the assessment test.
