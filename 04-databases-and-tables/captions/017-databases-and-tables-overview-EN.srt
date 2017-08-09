@@ -1,0 +1,47 @@
+00:00:01,320 --> 00:00:07,820
+Hello everyone and welcome to databases and tables in this section we're going to focus on creating
+
+00:00:07,820 --> 00:00:14,760
+and restoring databases and make heavy use of PGE admin that graphical user interface or GeoEye that
+
+00:00:14,760 --> 00:00:20,370
+we previously installed Peachi admin is a great tool and it's going to save you a lot of time for these
+
+00:00:20,370 --> 00:00:22,230
+specific types of tasks.
+
+00:00:22,340 --> 00:00:28,230
+Restoring a database or creating a new database etc. later on we're going to learn more about direct
+
+00:00:28,230 --> 00:00:30,640
+sequel's syntax like selector.
+
+00:00:30,650 --> 00:00:32,950
+Order by where that kind of thing.
+
+00:00:33,180 --> 00:00:37,080
+So don't worry too much about focusing on the sequel syntax right now.
+
+00:00:37,080 --> 00:00:42,250
+In this particular section we're just going to use PGE admen so that you feel comfortable in creating
+
+00:00:42,250 --> 00:00:43,600
+and restoring databases.
+
+00:00:43,710 --> 00:00:50,370
+In case you ever want to create a restore database to practice your sequel syntax queries later on.
+
+00:00:50,400 --> 00:00:55,680
+So it's important that we get this down really well first before we actually move into the learning
+
+00:00:55,680 --> 00:00:59,710
+style Rexx sequel syntax and programming queries out.
+
+00:01:00,090 --> 00:01:05,280
+So don't worry that's all coming but we're going to focus right now on PGE admen see feel comfortable
+
+00:01:05,370 --> 00:01:10,850
+creating restoring databases with all that being said let's go ahead and get started.
+
+00:01:10,850 --> 00:01:11,860
+I'll see you at the next lecture

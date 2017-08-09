@@ -1,0 +1,248 @@
+00:00:01,230 --> 00:00:07,320
+Hello everyone and welcome to the creating and restoring a database lecture in this lecture we're going
+
+00:00:07,320 --> 00:00:13,860
+to do is create a base with the P.G. admin graphical user interface for UI console and then we're going
+
+00:00:13,860 --> 00:00:17,310
+to restore a database and learn how to delete a database.
+
+00:00:17,340 --> 00:00:25,950
+Something to note here is basically when we were installing the original DVD rental database we were
+
+00:00:25,950 --> 00:00:31,680
+kind of doing it especially for the Windows installation through a very manual command line process
+
+00:00:31,680 --> 00:00:31,940
+.
+
+00:00:31,950 --> 00:00:36,160
+We're going to do now show you how you would actually probably do this if you were implementing post
+
+00:00:36,270 --> 00:00:37,300
+sequel at work.
+
+00:00:37,500 --> 00:00:41,450
+You would just use the PGE admin Council and save yourself a lot of time.
+
+00:00:41,520 --> 00:00:45,080
+So let's go ahead and jump to the PGI item and console.
+
+00:00:45,770 --> 00:00:46,410
+OK.
+
+00:00:46,500 --> 00:00:52,350
+So I'm here at the PGE adamant console and what I have is DVD rental and postscripts remember a DVD
+
+00:00:52,350 --> 00:00:58,930
+rental was our first installation of the sample database.
+
+00:00:59,070 --> 00:01:04,860
+We're going to do now show you how you can do it basically much quicker and much simpler using the PGE
+
+00:01:04,860 --> 00:01:13,530
+oddment 3 console which again is on databases right click and select menu database and then go ahead
+
+00:01:13,530 --> 00:01:14,560
+and name your database.
+
+00:01:14,560 --> 00:01:21,880
+We'll call this DVD to then click OK.
+
+00:01:22,000 --> 00:01:28,050
+Now you'll notice that we have the DVD to database created for us member last time we had a use a sequel
+
+00:01:28,050 --> 00:01:34,170
+query and we said create space database and then the name of the database of a semi-colon.
+
+00:01:34,230 --> 00:01:38,330
+Here we just did it by the right click with the GeoEye console.
+
+00:01:39,000 --> 00:01:45,480
+So just to show you a reminder of how we did it last time member I selected postscripts and then I selected
+
+00:01:45,480 --> 00:01:52,440
+sequel to execute a sequel query brought up my sequel editor and the way you would do this in pure sequel
+
+00:01:53,340 --> 00:02:01,980
+you would say creates database and the name of your database which you could say let's say test DVD
+
+00:02:02,070 --> 00:02:08,040
+and then call semi colon and to let it know that stay on the line that's all you want to write.
+
+00:02:08,520 --> 00:02:12,010
+And then we'll click Run quick return successfully.
+
+00:02:12,010 --> 00:02:14,050
+This is exactly the last time.
+
+00:02:14,100 --> 00:02:16,810
+And then on databases if we just hit refresh.
+
+00:02:17,190 --> 00:02:23,230
+Now we have a new test DVD data database so it's up to you what you prefer.
+
+00:02:23,430 --> 00:02:31,050
+I would imagine most people just like the right click of creating a database so let's go over how to
+
+00:02:31,050 --> 00:02:35,080
+delete a database we'll do the test DVD right now.
+
+00:02:35,190 --> 00:02:42,000
+The most convenient way to do it using PGE admin is right click select Delete drop and then we'll go
+
+00:02:42,000 --> 00:02:44,430
+ahead and just drop that database.
+
+00:02:44,440 --> 00:02:45,190
+All right.
+
+00:02:45,420 --> 00:02:50,660
+So we have DVD rental and DVD to DVD rentals already filled.
+
+00:02:50,670 --> 00:02:58,500
+We go to schemers and public Inori has the tables for the actual database which we did in a very manual
+
+00:02:58,500 --> 00:02:59,110
+way.
+
+00:02:59,370 --> 00:03:03,730
+Now let's see if we can do that in a little bit of a nicer way to DVD too.
+
+00:03:03,730 --> 00:03:09,810
+So if we look at the schemas the public schemas for really DVD to notice we don't have any tables or
+
+00:03:09,810 --> 00:03:15,060
+anything right now so because we haven't actually populated this database with any information.
+
+00:03:15,240 --> 00:03:19,170
+So let's go ahead and use PGE admen in order to do that.
+
+00:03:19,590 --> 00:03:28,700
+What you're going to do is go ahead and Right-Click DVD 2 and go ahead and click restore.
+
+00:03:29,000 --> 00:03:33,200
+So restore is going to allow us to actually search for that tar file.
+
+00:03:33,450 --> 00:03:39,960
+So if you click these three dots you'll get a pop up if you remember from the Windows installation video
+
+00:03:39,960 --> 00:03:43,570
+for the DVD rental database.
+
+00:03:43,650 --> 00:03:50,630
+I had my tar file in this folder under computer OAC Program Files postscripts sequel.
+
+00:03:50,640 --> 00:03:54,920
+You may still have it under the downloads folder but notice I don't actually see it.
+
+00:03:54,930 --> 00:03:56,610
+I just see that nine point five folders.
+
+00:03:56,610 --> 00:04:02,200
+So if you remember having that tar file over here the reason it's not showing up is because right now
+
+00:04:02,200 --> 00:04:05,280
+we're exclusively looking for backup files.
+
+00:04:05,430 --> 00:04:12,540
+So I don't want to say look for all files and now I can see that the tar file right there and I can
+
+00:04:12,540 --> 00:04:19,530
+click open and then just click restore and it will take a little bit of time but it will restore everything
+
+00:04:19,530 --> 00:04:21,840
+and basically fill out all those tables.
+
+00:04:21,840 --> 00:04:22,650
+Select done.
+
+00:04:22,650 --> 00:04:29,880
+Let's go ahead and then refresh DVD to database and I'll notice it has all the same tables as the original
+
+00:04:29,880 --> 00:04:33,810
+DVD rental where we did this manually with the command line.
+
+00:04:33,830 --> 00:04:39,850
+All right so now you know basically two ways of creating and restoring databases.
+
+00:04:39,930 --> 00:04:45,900
+The first is the more manual way when we basically walk through the installation of DVD rental.
+
+00:04:45,900 --> 00:04:49,880
+The second one is kind of the nicer way with the GeoEye.
+
+00:04:49,890 --> 00:04:56,250
+So right clicking on database's say new databases once you've created the new database you can right
+
+00:04:56,250 --> 00:04:58,890
+click and save restore.
+
+00:04:59,580 --> 00:05:00,270
+OK.
+
+00:05:00,450 --> 00:05:05,550
+So that's fully restoring a database of all the information well we're going to do.
+
+00:05:05,550 --> 00:05:11,820
+Next is learn how to restore a database with just the table schema meaning we just want the tables and
+
+00:05:11,820 --> 00:05:14,110
+everything set up all the relationships.
+
+00:05:14,210 --> 00:05:17,390
+But you don't actually want the data information there.
+
+00:05:17,550 --> 00:05:18,750
+That's a little bit trickier.
+
+00:05:18,780 --> 00:05:21,030
+So we'll cover in the next lecture.
+
+00:05:21,030 --> 00:05:24,510
+All right let's go ahead and do a quick review of what we just did.
+
+00:05:25,560 --> 00:05:25,960
+OK.
+
+00:05:25,980 --> 00:05:32,460
+So just a quick overview we learn how to create a database with PGE admin using the graphical user interface
+
+00:05:32,460 --> 00:05:38,250
+specifically learn how to use it also restore a database and delete a database member just using a right
+
+00:05:38,250 --> 00:05:39,680
+clicking and those dropdown menu.
+
+00:05:39,690 --> 00:05:41,310
+So that makes it very easy.
+
+00:05:41,640 --> 00:05:46,010
+So now you kind of have two ideas of how to create and restore databases.
+
+00:05:46,200 --> 00:05:50,290
+I think you'll agree with me that the second one using the GeoEye is quite a bit easier.
+
+00:05:50,290 --> 00:05:52,620
+I'll save you a lot of time.
+
+00:05:52,620 --> 00:05:58,020
+Up next we're going to learn how to restore just the table schema so you can imagine that maybe you
+
+00:05:58,950 --> 00:06:06,660
+are opening up a new DVD rental store so you want to restore a new database with all the same table
+
+00:06:06,660 --> 00:06:13,680
+schema both no data because you're opening up a new DVD rental store and now you want to set up a database
+
+00:06:13,740 --> 00:06:16,580
+have it empty so you can later on add stuff to it.
+
+00:06:16,980 --> 00:06:17,760
+OK.
+
+00:06:17,760 --> 00:06:19,340
+So that will be up in the next lecture.
+
+00:06:19,560 --> 00:06:21,250
+Thanks and I'll see you there.

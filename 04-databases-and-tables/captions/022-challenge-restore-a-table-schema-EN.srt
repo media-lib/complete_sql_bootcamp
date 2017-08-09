@@ -1,0 +1,29 @@
+00:00:01,080 --> 00:00:05,910
+Hello everyone and welcome to another challenge in this challenge.
+
+00:00:05,910 --> 00:00:10,910
+A new DVD rental stores opening and you've been assigned to create its database.
+
+00:00:11,010 --> 00:00:16,740
+So what you have to do is create and restore a new database from DVD rental dot tar that tar file and
+
+00:00:16,770 --> 00:00:20,700
+only restore the table schema as we just did in the previous lecture.
+
+00:00:20,730 --> 00:00:26,190
+We don't want all of that data since this is a new DVD rental store so you can just basically imagine
+
+00:00:26,190 --> 00:00:33,960
+that we just want to copy only the table schema from the DVD rental the tar into a new database.
+
+00:00:33,960 --> 00:00:34,760
+OK.
+
+00:00:34,920 --> 00:00:39,630
+With that being said if you want a solution you can reference the previous lecture.
+
+00:00:39,630 --> 00:00:40,380
+Thanks everyone.
+
+00:00:40,380 --> 00:00:43,190
+Best of luck on the challenge and I'll see at the next lecture.

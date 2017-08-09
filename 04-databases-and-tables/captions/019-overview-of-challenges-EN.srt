@@ -1,0 +1,77 @@
+00:00:00,930 --> 00:00:05,610
+Hello everyone and welcome to the overview of challenges lecture.
+
+00:00:05,700 --> 00:00:10,140
+So throughout this course you're going to be receiving challenges and these challenges are going to
+
+00:00:10,140 --> 00:00:16,200
+allow you to test your understanding of postscripts and basic and more advanced sequel commands as you
+
+00:00:16,200 --> 00:00:17,810
+go throughout the course.
+
+00:00:17,910 --> 00:00:22,830
+The basis of these challenge scenarios will be that you've just been hired as a sequel consultant for
+
+00:00:22,830 --> 00:00:24,470
+a DVD rental store.
+
+00:00:24,540 --> 00:00:30,420
+So that's going to be the basic background as we give you challenges throughout the course.
+
+00:00:30,420 --> 00:00:35,190
+So as far as solutions to the challenges challenges are going to start off very simple and basically
+
+00:00:35,190 --> 00:00:38,490
+be asking you to repeat what you just saw in the previous lecture.
+
+00:00:38,700 --> 00:00:43,470
+So don't worry if you're finding challenges to be very very basic at the beginning because that's how
+
+00:00:43,470 --> 00:00:44,180
+they are.
+
+00:00:44,400 --> 00:00:48,840
+Later on you're going to be provided with solutions or walk through video solutions for the tougher
+
+00:00:48,840 --> 00:00:49,730
+challenges.
+
+00:00:49,950 --> 00:00:54,510
+So at first the challenges are going to start off simple and ask you to repeat what you just saw in
+
+00:00:54,510 --> 00:00:59,250
+the previous lecture and there's not going to be a specific solution to that challenge because you can
+
+00:00:59,250 --> 00:01:04,800
+just reference the previous lecture later on the as it challenges get harder you'll need to be provided
+
+00:01:04,800 --> 00:01:09,840
+with the solutions at the next lecture after the challenge lecture or we'll have a whole walk through
+
+00:01:09,840 --> 00:01:12,790
+video in case it's a very difficult challenge.
+
+00:01:12,810 --> 00:01:15,630
+Keep in mind that challenges may show up unannounced.
+
+00:01:15,630 --> 00:01:21,970
+So always be ready for them with all that being said I hope you enjoy these challenges.
+
+00:01:21,990 --> 00:01:23,180
+And I really hope you do them.
+
+00:01:23,190 --> 00:01:27,420
+They're going to be a great way for you to get a chance to test your understanding and test out your
+
+00:01:27,420 --> 00:01:31,910
+sequel knowledge on the example database as we go along through the course.
+
+00:01:32,150 --> 00:01:32,800
+OK.
+
+00:01:32,940 --> 00:01:35,610
+With that all being said I will see you at the next lecture.
+
+00:01:35,610 --> 00:01:36,430
+Thanks everyone.

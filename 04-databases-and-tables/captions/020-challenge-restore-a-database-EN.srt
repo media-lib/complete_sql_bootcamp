@@ -1,0 +1,32 @@
+00:00:00,390 --> 00:00:06,030
+Hello everyone and welcome to your first surprise challenge and in this challenge your scenario is this
+
+00:00:06,030 --> 00:00:06,780
+.
+
+00:00:06,780 --> 00:00:11,070
+There was an accident in the server room and someone spilled some soft drink on the server causing it
+
+00:00:11,070 --> 00:00:14,730
+to go down and that server contained the database.
+
+00:00:14,730 --> 00:00:19,380
+Luckily you're around to restore that database that you saved as a zip file.
+
+00:00:19,380 --> 00:00:25,600
+So your challenge is to restore the DVD rental database given the DVD rental but zip file.
+
+00:00:26,340 --> 00:00:30,610
+As for the solution you can reference to previous video lecture for the solution.
+
+00:00:30,690 --> 00:00:35,040
+Again you're basically just going to be repeating the exact same process we just did in the previous
+
+00:00:35,040 --> 00:00:37,020
+lecture on your own.
+
+00:00:37,020 --> 00:00:39,990
+All right thanks everyone and I'll see you at the next lecture.
+
+00:00:39,990 --> 00:00:42,240
+And best of luck on the challenge.
