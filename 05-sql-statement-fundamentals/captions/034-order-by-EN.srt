@@ -1,0 +1,413 @@
+00:00:01,140 --> 00:00:05,580
+Hello everyone and welcome to the ORDER BY statements lecture.
+
+00:00:06,300 --> 00:00:11,640
+When you queried data from a table post Chris sequel returns the rows in the order that they were inserted
+
+00:00:11,640 --> 00:00:13,260
+into the table.
+
+00:00:13,530 --> 00:00:19,380
+If you want to sort the resulting set you can use the ORDER BY clause in conjunction with the select
+
+00:00:19,380 --> 00:00:21,350
+statement.
+
+00:00:21,660 --> 00:00:27,180
+So the ORDER BY clause allows you to sort the rows returned from the select statement in either ascending
+
+00:00:27,210 --> 00:00:32,190
+or descending order based on the criteria specified so that would be a particular column you want to
+
+00:00:32,190 --> 00:00:34,100
+order the data by.
+
+00:00:35,070 --> 00:00:38,410
+So the following is going to illustrate the syntax of that select statement.
+
+00:00:38,520 --> 00:00:41,230
+You'll say selects either columns that you want.
+
+00:00:41,250 --> 00:00:46,440
+So again select the columns that you want from the table that you want and then you're going to see
+
+00:00:46,500 --> 00:00:51,870
+Order By then the column name you want to order by and you're going to know it's either an ascending
+
+00:00:51,870 --> 00:00:53,730
+order or descending order.
+
+00:00:53,730 --> 00:00:59,310
+So this slash here is just to note the various options here so you'll either say order by the column
+
+00:00:59,310 --> 00:01:04,810
+name and then ASC for ascending order or DSC for descending order.
+
+00:01:04,860 --> 00:01:08,040
+I will see examples of this later on.
+
+00:01:08,880 --> 00:01:14,460
+So again you specify the column that you want to sorts in the order by clause and if you want to sort
+
+00:01:14,460 --> 00:01:20,590
+the resulting set by multiple columns you use a comma to separate between two columns.
+
+00:01:20,600 --> 00:01:22,210
+I will show examples of that as well.
+
+00:01:22,470 --> 00:01:25,020
+So you don't just have to order by one particular column.
+
+00:01:25,020 --> 00:01:30,810
+You can order by multiple columns and then again you use A.S.C. to sort the resulting set in ascending
+
+00:01:30,810 --> 00:01:35,520
+order and dsc to sort the resulting set in descending order.
+
+00:01:35,820 --> 00:01:39,920
+If you leave it blank the order by clause will use A.S.C. by default.
+
+00:01:39,990 --> 00:01:41,520
+So just keep that in mind.
+
+00:01:42,000 --> 00:01:48,570
+OK with that being said lets go ahead and jump to OPG admin and code out some examples with sequel.
+
+00:01:49,440 --> 00:01:50,250
+Hello everyone.
+
+00:01:50,250 --> 00:01:56,010
+Now we're at PGE admin so I'm going to go ahead and do this select the DVD rental database and then
+
+00:01:56,070 --> 00:01:59,760
+execute arbitrary sequel queries on that database.
+
+00:01:59,760 --> 00:02:02,110
+OK so here are sequel Ed..
+
+00:02:02,220 --> 00:02:06,840
+So let's go ahead and practice some basic order by examples.
+
+00:02:06,840 --> 00:02:09,960
+So let's go to take a quick look at the customer table.
+
+00:02:10,070 --> 00:02:12,450
+I'm gonna say selects Strix.
+
+00:02:12,540 --> 00:02:18,900
+Everything from the customer table member I got to say from customer there.
+
+00:02:19,230 --> 00:02:23,700
+So select everything from customer and let's go ahead and run that.
+
+00:02:24,360 --> 00:02:26,230
+OK so here is a customer table.
+
+00:02:26,490 --> 00:02:33,570
+Now imagine I wanted to sort a query and just get the first names and the last names sorted by the first
+
+00:02:33,570 --> 00:02:34,860
+name in ascending order.
+
+00:02:34,860 --> 00:02:36,130
+How would I do that.
+
+00:02:36,630 --> 00:02:41,460
+So I just want the first names and last names so I'm going to go in and change this Asterix to those
+
+00:02:41,520 --> 00:02:42,120
+columns.
+
+00:02:42,120 --> 00:02:49,170
+I'll say first underscore name comma last underscore name some selecting the first name of the last
+
+00:02:49,170 --> 00:02:56,610
+name from customer and then what I'm going to say is order by and then the column I want to order by
+
+00:02:56,610 --> 00:03:03,030
+in this case I want to order by first name and I'm going to clarify that I want to order an ascending
+
+00:03:03,060 --> 00:03:05,100
+order a se.
+
+00:03:05,430 --> 00:03:12,990
+So if I run that 5 here I have in alphabetical order the results for the first names sorted out that
+
+00:03:13,150 --> 00:03:13,500
+order.
+
+00:03:13,500 --> 00:03:16,120
+So you can see we start off with the A's.
+
+00:03:16,150 --> 00:03:21,590
+Aaron Adam Adrian if we screw all the way down we'll get to the last one which is Zackery Z.
+
+00:03:21,660 --> 00:03:25,210
+So a through Z it's ordered in ascending order.
+
+00:03:25,260 --> 00:03:30,780
+Go ahead and delete a C here and just run it like this and execute that.
+
+00:03:30,780 --> 00:03:36,680
+You'll notice I get the same results and that's because remember the default for ordered by is A.S.C.
+
+00:03:36,760 --> 00:03:37,280
+.
+
+00:03:37,950 --> 00:03:43,080
+So you don't get any difference whether you put A.S.C. or you don't use A.S.C..
+
+00:03:43,080 --> 00:03:45,920
+However I wanted that same result in descending order.
+
+00:03:45,960 --> 00:03:52,350
+I would use DSC So if I run that query noticed now I start with Zachery I go all the way down to the
+
+00:03:52,350 --> 00:03:54,560
+A's and outs Z through a.
+
+00:03:55,190 --> 00:03:56,640
+OK.
+
+00:03:57,420 --> 00:03:59,760
+So let's do one more basic example here.
+
+00:03:59,760 --> 00:04:06,080
+Let's say I want to sort the customers my last name in descending order I would use the descending orders
+
+00:04:06,210 --> 00:04:09,530
+but I would also change the column.
+
+00:04:09,540 --> 00:04:15,780
+I want to order by two last name so I'm going to say select first name comma last name from customer
+
+00:04:15,930 --> 00:04:19,850
+order by the last name in descending order around that.
+
+00:04:19,890 --> 00:04:23,410
+Now I have the last names here young and etc..
+
+00:04:23,730 --> 00:04:25,260
+In the standing order all the way.
+
+00:04:25,300 --> 00:04:32,230
+I all the way down I should get some A's for last names so add Avni Adam Adams etc..
+
+00:04:32,250 --> 00:04:33,030
+Great.
+
+00:04:33,570 --> 00:04:40,020
+So let's say I wanted to sort the customers by first name in the ascending order first and then sort
+
+00:04:40,200 --> 00:04:45,920
+the sorted results by the last name in this in order to produce the final result set.
+
+00:04:46,170 --> 00:04:48,550
+So let me show you what I mean by that.
+
+00:04:48,740 --> 00:04:55,850
+Imagine here that I say select first name last name from customer and an a.a group or.
+
+00:04:55,850 --> 00:04:56,270
+Scuse me.
+
+00:04:56,280 --> 00:05:04,440
+Order by first underscore name ascending order and I'm going to put a comma because I'm going to order
+
+00:05:04,440 --> 00:05:09,910
+by multiple columns so I get a first order by the first name in ascending order.
+
+00:05:10,770 --> 00:05:19,800
+And then ongoing to sort by the last name call them in descending order and you can think of this as
+
+00:05:19,800 --> 00:05:24,370
+basically calling an order on the results of this query.
+
+00:05:24,560 --> 00:05:31,580
+So use a comma to separate the columns you're ordering by and then you're going to say order by first
+
+00:05:31,590 --> 00:05:37,020
+name first in ascending order and then whatever the results of that is I want you to order it by last
+
+00:05:37,020 --> 00:05:41,110
+name in descending order that will produce the final result set.
+
+00:05:41,150 --> 00:05:43,620
+So me going to show you what this looks like.
+
+00:05:44,460 --> 00:05:44,760
+OK.
+
+00:05:44,790 --> 00:05:46,880
+So we have our ordering now.
+
+00:05:47,610 --> 00:05:54,410
+And basically what's going to happen is if the first name was the same anywhere than the last name ordering
+
+00:05:54,500 --> 00:05:55,760
+is going to take into effect.
+
+00:05:55,770 --> 00:06:03,200
+So it's going to scroll down a bit and look for some names some first names that were the same.
+
+00:06:03,420 --> 00:06:10,350
+And since I'm familiar with this dataset I know that there's going to be two people called Kelly.
+
+00:06:10,580 --> 00:06:18,090
+So if you scroll down to the k's maybe see the F G H I J K so scroll down a little more until we get
+
+00:06:18,090 --> 00:06:21,150
+to the name Kelly for the first name.
+
+00:06:21,840 --> 00:06:23,280
+So here we have now.
+
+00:06:23,700 --> 00:06:30,630
+If you go to row 327 and 328 we have Kelleys So there's two Kelleys here.
+
+00:06:30,620 --> 00:06:37,830
+So we sorted the first name column in ascending order and then we sorted the last name column in descending
+
+00:06:37,830 --> 00:06:38,250
+orders.
+
+00:06:38,280 --> 00:06:44,760
+That means if you had two people the first first name with the same first name the last name column
+
+00:06:44,850 --> 00:06:47,610
+is gonna be sorted in descending order.
+
+00:06:47,610 --> 00:06:51,270
+So if we look at this here Torres's first instead of not.
+
+00:06:51,260 --> 00:06:56,760
+So if we go ahead and run this with ascending order then we'll see that not because first and Tor's
+
+00:06:56,750 --> 00:06:58,310
+become second.
+
+00:06:59,110 --> 00:07:05,790
+So is kind of a really basic example but it's important to show that you can sort order by multiple
+
+00:07:05,790 --> 00:07:07,090
+columns.
+
+00:07:07,090 --> 00:07:10,020
+So go into that one more time execute the query.
+
+00:07:10,010 --> 00:07:17,160
+And if we go to that Roche was about 327 and 328 ish for Kelly.
+
+00:07:17,280 --> 00:07:23,890
+So now we notice as we said both first name ascending and last name ascending for the Kelly then K becomes
+
+00:07:23,910 --> 00:07:26,870
+first this is a through Z and Torah's becomes second.
+
+00:07:27,140 --> 00:07:30,690
+So that's just an example of ordering by multiple columns.
+
+00:07:31,130 --> 00:07:31,860
+OK.
+
+00:07:32,120 --> 00:07:40,020
+One more thing I wanted to let you know is that postscripts sequel actually allows you to sort an order
+
+00:07:40,010 --> 00:07:44,630
+by columns even if they're not selected.
+
+00:07:44,740 --> 00:07:46,800
+So give an example of this.
+
+00:07:46,860 --> 00:07:48,630
+Go ahead and show what the entire
+
+00:07:51,210 --> 00:07:52,110
+table looks like.
+
+00:07:52,130 --> 00:07:57,720
+Just say select all from customer leave that and run it.
+
+00:07:57,720 --> 00:08:06,650
+So let's say I wanted to sort by the for example email address.
+
+00:08:06,720 --> 00:08:12,480
+So in postscripts sequel I could say actually let's say I want to sort by the last name to be a more
+
+00:08:12,480 --> 00:08:19,350
+obvious example a sort by the last name but only show the first name so I'll say first name.
+
+00:08:19,350 --> 00:08:30,000
+So select the first name from customer order space by last name semi-colon in front that here you have
+
+00:08:30,000 --> 00:08:33,580
+the list of first names but are ordered by the last name.
+
+00:08:34,080 --> 00:08:35,060
+So this is nice.
+
+00:08:35,070 --> 00:08:42,140
+I can order certain requests or columns even if I don't want that column in my final results.
+
+00:08:42,140 --> 00:08:53,430
+Now this is allowed in postscripts sequel other and say sequel such as my sequel or Oracle sequel database's
+
+00:08:53,750 --> 00:08:55,250
+may not allow you to do this.
+
+00:08:55,250 --> 00:08:56,710
+So keep that in mind.
+
+00:08:57,210 --> 00:09:03,120
+So most standard sequel queries will only allow you to sort rows based on the columns that appear in
+
+00:09:03,120 --> 00:09:05,070
+the select clause.
+
+00:09:05,070 --> 00:09:11,930
+So post gres sequel has the ability to sort resultset spaced on columns that do not appear in the selection
+
+00:09:11,940 --> 00:09:12,520
+list.
+
+00:09:12,730 --> 00:09:17,820
+So here I select that first name but I ordered by last name which didn't appear in the selection list
+
+00:09:17,820 --> 00:09:18,550
+here.
+
+00:09:18,990 --> 00:09:22,270
+Other sequel engines will not allow you to do that.
+
+00:09:22,290 --> 00:09:26,690
+You'll have to be forced to select the column if you want to order by it.
+
+00:09:26,880 --> 00:09:28,620
+So just keep that in mind.
+
+00:09:28,620 --> 00:09:35,940
+Usually it's good practice to follow the most basic sequel queries that will transition from one database
+
+00:09:35,930 --> 00:09:36,920
+to another.
+
+00:09:36,920 --> 00:09:40,960
+So I would recommend that you always select the column if you're going to order by it.
+
+00:09:41,040 --> 00:09:43,820
+So this should really look like this.
+
+00:09:43,860 --> 00:09:49,290
+Since this is going to be the most easily translated from database to database.
+
+00:09:49,340 --> 00:09:51,190
+OK with that being said.
+
+00:09:51,300 --> 00:09:57,270
+Up next are going to be a few challenges that will test your knowledge of order by and will also test
+
+00:09:57,270 --> 00:10:01,090
+your knowledge of how you can use limits with the order by statement.
+
+00:10:01,540 --> 00:10:05,730
+OK so thanks everyone and I will see you at that next lecture.

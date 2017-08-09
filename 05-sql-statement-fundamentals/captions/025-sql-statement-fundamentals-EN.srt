@@ -1,0 +1,29 @@
+00:00:01,170 --> 00:00:07,230
+Hello everyone and welcome to the sequel statement fundamentals section of the Course section is going
+
+00:00:07,230 --> 00:00:12,210
+to focus on sequel syntax and what's really important about what you're going to learn here is that
+
+00:00:12,210 --> 00:00:16,890
+the syntax in this section can be applied to any major type of sequel database.
+
+00:00:16,890 --> 00:00:22,620
+So if you move on to work on like a sequel database or an Oracle database the sequel syntax you learn
+
+00:00:22,620 --> 00:00:26,850
+throughout the section of the course and any time are going to be learning specific sequel's syntax
+
+00:00:26,850 --> 00:00:31,710
+statements and queries you're going to be able to apply that knowledge to basically any major type of
+
+00:00:31,710 --> 00:00:33,360
+sequel database.
+
+00:00:33,450 --> 00:00:37,590
+So we're going to start with the basics and have challenges along the way to test your understanding
+
+00:00:38,690 --> 00:00:39,980
+with all that being said.
+
+00:00:40,080 --> 00:00:41,200
+Let's go ahead and get started

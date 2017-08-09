@@ -1,0 +1,482 @@
+00:00:01,140 --> 00:00:05,150
+Hello everyone and welcome to your first general challenge lecture.
+
+00:00:05,280 --> 00:00:09,840
+So I'm really excited for you to take on this first general challenge because the general challenge
+
+00:00:09,840 --> 00:00:15,480
+tests are going to utilize all the skills that you've learned so far you'll receive the general challenge
+
+00:00:15,480 --> 00:00:19,460
+task and you'll get hence the challenge and then the solution to the challenge.
+
+00:00:19,530 --> 00:00:22,380
+These challenges are going to be a little more difficult than what you've seen earlier.
+
+00:00:22,380 --> 00:00:27,960
+So try breaking down the problem into individual tasks in order to solve the task completely.
+
+00:00:27,960 --> 00:00:30,070
+So let's go ahead and get started.
+
+00:00:30,150 --> 00:00:34,430
+Your first challenge and business task that I want to answer is this.
+
+00:00:34,650 --> 00:00:38,350
+How many payment transactions were greater than $5.
+
+00:00:38,430 --> 00:00:44,520
+Again just what's the number that count of how many payment transactions were greater than $5.
+
+00:00:45,060 --> 00:00:45,300
+OK.
+
+00:00:45,300 --> 00:00:46,620
+Coming up next are the hints.
+
+00:00:46,650 --> 00:00:47,640
+So go ahead and puzzle video.
+
+00:00:47,640 --> 00:00:49,530
+Now if you want to see the hints here.
+
+00:00:49,710 --> 00:00:53,810
+Moving on to the hints so you'll have to use the payments table.
+
+00:00:53,880 --> 00:00:59,790
+And you'll also need to use count and aware along with some sort of comparison operator in order to
+
+00:00:59,790 --> 00:01:03,050
+distinguish what's greater than $5 so just keep that in mind.
+
+00:01:03,450 --> 00:01:03,720
+OK.
+
+00:01:03,720 --> 00:01:06,790
+Coming up next is the solution.
+
+00:01:07,560 --> 00:01:09,450
+So the solution is actually pretty straightforward.
+
+00:01:09,450 --> 00:01:16,110
+You want to select counts amounts from the payment table where the amount is greater than five.
+
+00:01:16,170 --> 00:01:17,720
+So let's take it a couple of concepts.
+
+00:01:17,730 --> 00:01:23,370
+Just a general concept of selecting from that very first thing we learn then the concept of counting
+
+00:01:23,730 --> 00:01:29,220
+the amount column and then using where along of some sort of comparison operator to filter out which
+
+00:01:29,220 --> 00:01:31,620
+amounts we were looking for.
+
+00:01:31,620 --> 00:01:37,490
+So again that was select the counts amount column from payment table were amounts greater than 5 member
+
+00:01:37,560 --> 00:01:40,610
+to put that semi-colon in to end your query.
+
+00:01:41,170 --> 00:01:42,120
+Okay.
+
+00:01:42,420 --> 00:01:48,050
+Next Business Teske how many actors have a first name that starts with the letter p.
+
+00:01:48,360 --> 00:01:52,340
+Again how many actors have a first name that starts with the letter P.
+
+00:01:52,920 --> 00:01:53,470
+OK.
+
+00:01:53,550 --> 00:01:55,060
+Coming up next is a hint.
+
+00:01:55,170 --> 00:01:58,610
+So go ahead impassivity enough you know incident hints yet.
+
+00:01:58,680 --> 00:02:04,610
+OK here comes the hints so you'll need to use the actor table order to answer his question.
+
+00:02:04,680 --> 00:02:10,350
+And you'll also need to use the like statements and some sort of wild card operator such as the percent
+
+00:02:10,350 --> 00:02:12,060
+sign or the underscore.
+
+00:02:12,060 --> 00:02:13,820
+So go ahead and review the like lecture.
+
+00:02:13,950 --> 00:02:20,540
+If you need any refreshment or a refresher on how to use that percent or underscore wild card operators
+
+00:02:20,930 --> 00:02:21,520
+OK.
+
+00:02:21,810 --> 00:02:24,900
+Coming up next is the solution to this challenge.
+
+00:02:24,900 --> 00:02:26,910
+So here it comes.
+
+00:02:26,910 --> 00:02:28,860
+So the solution is select count.
+
+00:02:28,870 --> 00:02:34,740
+In this case I'm just selecting all the rows you can see and asterisks here and this because I just
+
+00:02:34,740 --> 00:02:40,470
+want to count basically all the rows from actor where the first name column is like.
+
+00:02:40,560 --> 00:02:44,420
+And this is where it gets a little tricky to say like a single quote.
+
+00:02:44,520 --> 00:02:45,310
+Capital P.
+
+00:02:45,310 --> 00:02:47,970
+Percent sign Cup quote.
+
+00:02:48,360 --> 00:02:53,000
+And that's because what's going to happen here is you're going to say select the count asterisks meaning
+
+00:02:53,020 --> 00:03:00,300
+just count all the rows from actor where your first underscore name column is like the percent sign
+
+00:03:00,310 --> 00:03:00,350
+.
+
+00:03:00,390 --> 00:03:05,410
+Meaning where the value of first thing columns starts for P..
+
+00:03:06,270 --> 00:03:10,710
+OK so go ahead and review that solution makes you type it out yourself in case you're able to get it
+
+00:03:10,720 --> 00:03:11,020
+.
+
+00:03:11,340 --> 00:03:14,310
+But coming up next is one other challenge task.
+
+00:03:14,310 --> 00:03:17,280
+So here it comes.
+
+00:03:17,280 --> 00:03:23,040
+OK your next challenge is how many unique districts are our customers from.
+
+00:03:23,070 --> 00:03:27,430
+That's how many unique districts are our customers from.
+
+00:03:27,450 --> 00:03:31,670
+OK coming up next are some hints on how to solve the challenge.
+
+00:03:31,710 --> 00:03:38,580
+So here comes the hint slide so you'll need to use the address table and you'll also need to use counts
+
+00:03:38,700 --> 00:03:44,070
+and distinct So go ahead review the distinct lecture in case you don't remember how to use distinct
+
+00:03:44,640 --> 00:03:50,430
+but you'll need that in order to solve the challenge which was how many unique districts are our customers
+
+00:03:50,430 --> 00:03:51,240
+from.
+
+00:03:51,780 --> 00:03:53,960
+OK so coming up next is the solution.
+
+00:03:53,970 --> 00:03:56,840
+So go ahead and posit it enough you want to see the solution yet.
+
+00:03:57,120 --> 00:03:58,970
+OK here comes a solution for it.
+
+00:03:59,520 --> 00:04:05,220
+So the solution was to select count distinct district from address.
+
+00:04:05,580 --> 00:04:11,280
+So this is going to basically do this is going to say select and if we start from the inside here it's
+
+00:04:11,280 --> 00:04:13,770
+going to grab all the distinct districts.
+
+00:04:13,770 --> 00:04:19,980
+So that means if you have for instance a district called Alberta if you have it several times throughout
+
+00:04:19,980 --> 00:04:25,950
+that column so several rows have the value of Alberta in that the district column what the stink is
+
+00:04:25,950 --> 00:04:28,620
+going to do is just select all the unique ones.
+
+00:04:28,740 --> 00:04:34,890
+So it means Ill just filter it down to Alberta only shows up once or that particular district only shows
+
+00:04:34,890 --> 00:04:40,440
+up once and then what count is going to do just counts all those distinct districts and that's basically
+
+00:04:40,440 --> 00:04:47,220
+going to give you the answer of how many districts or unique districts other customers from and you
+
+00:04:47,220 --> 00:04:49,560
+have to get that from the address table.
+
+00:04:50,160 --> 00:04:53,740
+OK so one more challenge.
+
+00:04:53,820 --> 00:04:59,860
+I want you to retrieve the list of names for those distinct districts from the previous question.
+
+00:05:00,240 --> 00:05:03,240
+So this is going to be a really similar question.
+
+00:05:03,250 --> 00:05:07,890
+I just want to make sure you really flesh out your understanding fully and just retrieve the list of
+
+00:05:07,890 --> 00:05:11,630
+names for those distinct districts from the previous question.
+
+00:05:12,360 --> 00:05:14,480
+OK here comes the hints.
+
+00:05:14,850 --> 00:05:20,130
+So again you need to use the address table and really strong hint this is going to be very similar to
+
+00:05:20,130 --> 00:05:21,820
+the previous challenge solution.
+
+00:05:21,840 --> 00:05:24,120
+So it's really only editing.
+
+00:05:24,120 --> 00:05:26,330
+Basically one word.
+
+00:05:27,000 --> 00:05:28,910
+OK so hopefully you can get it.
+
+00:05:28,980 --> 00:05:31,670
+But if you don't go ahead and posit video now try to get it.
+
+00:05:32,040 --> 00:05:33,450
+And now we're going to this solution.
+
+00:05:33,450 --> 00:05:36,100
+So here comes a solution for it.
+
+00:05:36,120 --> 00:05:39,330
+The solution is to basically just remove that count.
+
+00:05:39,390 --> 00:05:43,860
+So if you just say Select Distinct district from address you won't get the actual number count.
+
+00:05:43,860 --> 00:05:48,390
+You'll just get that list of the distinct districts that the customers are from.
+
+00:05:48,410 --> 00:05:51,190
+OK hopefully you're able to get that.
+
+00:05:51,360 --> 00:06:00,480
+Another challenge here is how many films have a rating of R and a replacement costs between $5 and $15
+
+00:06:00,480 --> 00:06:00,870
+.
+
+00:06:01,050 --> 00:06:07,160
+That's how many films have a rating of R and the replacement costs between $5 and $15.
+
+00:06:07,890 --> 00:06:09,500
+OK go ahead impassivity.
+
+00:06:09,510 --> 00:06:13,940
+Now try to solve this challenge on your own using your siecle querying skills.
+
+00:06:14,010 --> 00:06:17,190
+And up next are some hints on how to solve this challenge.
+
+00:06:17,190 --> 00:06:19,450
+Ok here comes the hints.
+
+00:06:19,680 --> 00:06:25,830
+So the hint is you'll need to use the film table and you may also need to use between and a where statement
+
+00:06:25,860 --> 00:06:32,100
+with some sort of comparison operator in order to solve that issue of between the $515.
+
+00:06:32,100 --> 00:06:34,750
+Hopefully the word between earlier was a clue for you too.
+
+00:06:34,770 --> 00:06:37,240
+In order for you to figure that out on your own.
+
+00:06:37,800 --> 00:06:38,910
+OK so those are hints.
+
+00:06:38,910 --> 00:06:42,310
+Go ahead impassivity enough you want to attempt the problem on your own.
+
+00:06:42,540 --> 00:06:44,450
+But coming up next is the solution.
+
+00:06:44,790 --> 00:06:46,850
+Ok here comes a solution.
+
+00:06:47,460 --> 00:06:53,580
+So the solution was to select count Asterix so just select the count of all the rows from film where
+
+00:06:53,580 --> 00:06:56,510
+the rating is equal to that string are a single Co.
+
+00:06:56,510 --> 00:07:02,670
+Our single quote and replacement underscore cost column is between 5 and 15.
+
+00:07:02,670 --> 00:07:08,440
+Notice I don't have to put strings between 5 and 15 because they're both just numeric data types.
+
+00:07:08,820 --> 00:07:11,630
+OK so let's go to break this down a little further.
+
+00:07:11,670 --> 00:07:16,250
+Sometimes it confuses people why you have to just select count as tricks here.
+
+00:07:16,280 --> 00:07:18,770
+It's sort of like title or something.
+
+00:07:18,990 --> 00:07:24,840
+And that's because splicing count Asterix you're basically just saying count the number of rows returned
+
+00:07:24,930 --> 00:07:27,990
+which makes sense because it doesn't matter what column you select.
+
+00:07:27,990 --> 00:07:30,960
+You're still going to be counting the same number of rows there.
+
+00:07:30,990 --> 00:07:36,850
+So you're saying just select the count of the number of rows from film that get returns when you select
+
+00:07:36,850 --> 00:07:36,870
+.
+
+00:07:36,870 --> 00:07:42,360
+The rating is equal to r and the replacement cost has b between 5 and 15 dollars.
+
+00:07:42,780 --> 00:07:46,360
+OK so another challenge.
+
+00:07:46,410 --> 00:07:47,800
+This one's going to be maybe a little trickier.
+
+00:07:47,820 --> 00:07:51,040
+Testing your pattern matching skills.
+
+00:07:51,090 --> 00:07:55,420
+How many films have the word Treumann somewhere in the title.
+
+00:07:55,470 --> 00:07:59,460
+That's how many films have the word Treumann somewhere in the title.
+
+00:07:59,470 --> 00:08:02,640
+OK so coming up next are some hints.
+
+00:08:02,650 --> 00:08:07,740
+Go ahead and posit that you enough and want to see those hints yet here comes the hints so you'll need
+
+00:08:07,740 --> 00:08:13,380
+to use the film table to solve this and you'll also need to use like we have some sort of wild card
+
+00:08:13,440 --> 00:08:14,130
+operator.
+
+00:08:14,220 --> 00:08:19,440
+So again you can review the like lecture in order to get an understanding of how to use those wild card
+
+00:08:19,440 --> 00:08:21,910
+operators in case you've forgotten.
+
+00:08:21,990 --> 00:08:22,460
+All right.
+
+00:08:22,460 --> 00:08:24,490
+I mean up next is the solution.
+
+00:08:24,540 --> 00:08:25,750
+Here it comes.
+
+00:08:26,310 --> 00:08:29,780
+So the solution is to select count Asterix.
+
+00:08:29,790 --> 00:08:36,110
+Again we just want to select the count of the number of rows returned from film where the title column
+
+00:08:36,240 --> 00:08:37,400
+is like.
+
+00:08:37,530 --> 00:08:39,880
+And this is where maybe it is a little tricky for you.
+
+00:08:40,030 --> 00:08:43,420
+But remember the question asked if we just go back to sleights here.
+
+00:08:43,650 --> 00:08:47,480
+It asked how many films of the word Treumann somewhere in the title.
+
+00:08:47,520 --> 00:08:53,520
+So not at the beginning not the end just anywhere in the title and that means we had to use the wildcard
+
+00:08:53,550 --> 00:08:59,010
+operators on both ends of Treumann meaning any number of characters or any sequence of characters can
+
+00:08:59,010 --> 00:09:00,090
+come before Truman.
+
+00:09:00,120 --> 00:09:05,350
+And that includes spaces and any sequence characters can come after Truman.
+
+00:09:05,850 --> 00:09:07,590
+OK so that was the solution.
+
+00:09:07,620 --> 00:09:13,630
+So select count Asterix from film where the title is like and then single quote.
+
+00:09:14,110 --> 00:09:15,960
+Percent sign Treumann percent sign.
+
+00:09:15,960 --> 00:09:17,180
+Single quote semi-colons.
+
+00:09:17,220 --> 00:09:19,290
+And that query.
+
+00:09:19,290 --> 00:09:20,390
+All right great job.
+
+00:09:20,400 --> 00:09:23,090
+Hopefully you found those challenges.
+
+00:09:23,410 --> 00:09:26,290
+Straightforward a little tricky but not too hard.
+
+00:09:26,290 --> 00:09:27,900
+This should have been pretty basic.
+
+00:09:28,200 --> 00:09:32,940
+Well we're going to learn from now on is going to really up your skill level in school learn how to
+
+00:09:32,940 --> 00:09:38,010
+do joints in group bhai's which are some really powerful sequel statements and that will really take
+
+00:09:38,010 --> 00:09:43,980
+you to much more professional level understanding of sequel and the ability to use postgresql database
+
+00:09:44,370 --> 00:09:47,830
+in order to do some real professional queries.
+
+00:09:48,120 --> 00:09:49,590
+OK thanks everyone.
+
+00:09:49,590 --> 00:09:53,040
+Hope you enjoy those challenges and I will see you at the next lecture.
+
+00:09:53,040 --> 00:09:53,430
+Thanks

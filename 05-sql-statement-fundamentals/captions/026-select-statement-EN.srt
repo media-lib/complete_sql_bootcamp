@@ -1,0 +1,485 @@
+00:00:01,140 --> 00:00:06,990
+Hello everyone and welcome to the select statement lecture in this lecture we're going to start a more
+
+00:00:06,990 --> 00:00:12,180
+formal presentation of the select syntax and then we're going to show some examples through a sequel
+
+00:00:12,210 --> 00:00:13,770
+Ed. afterwards.
+
+00:00:14,070 --> 00:00:15,260
+So a quick no.
+
+00:00:15,300 --> 00:00:20,910
+A lot of times people prefer saying select clause instead of select statement in this section of the
+
+00:00:20,910 --> 00:00:24,360
+course we're going to use the terms statement and clause interchangeably.
+
+00:00:24,360 --> 00:00:25,630
+So just keep that in mind.
+
+00:00:25,680 --> 00:00:28,550
+Either ones really correct to use throughout this course.
+
+00:00:29,190 --> 00:00:34,500
+So going along one of the most common tests you're going to have to do when you're working on a sequel
+
+00:00:34,500 --> 00:00:40,740
+database is to query data from tables by using the select statement and that select statement has many
+
+00:00:40,740 --> 00:00:45,900
+clauses that you can combine it with to form really powerful queries so you can get really specific
+
+00:00:45,900 --> 00:00:49,770
+information from your tables in your database.
+
+00:00:49,770 --> 00:00:55,130
+So right now we're going to start off with the very basics and the basic form of a select statement
+
+00:00:55,140 --> 00:00:58,070
+query data from a table looks something like this.
+
+00:00:58,080 --> 00:01:03,210
+So if we look at this bottom line here that's the basic syntax of a select statement.
+
+00:01:03,210 --> 00:01:07,710
+And these two lines are basically which are these two keywords selected from are pretty much going to
+
+00:01:07,710 --> 00:01:10,530
+be in almost all your sequel queries.
+
+00:01:10,530 --> 00:01:15,930
+And the syntax goes like this you say select and then you pass in a list of column names separated by
+
+00:01:15,930 --> 00:01:20,910
+a comma for each column and then you're going to say from and the table name.
+
+00:01:20,970 --> 00:01:26,780
+So you select the list of columns from the name of your table.
+
+00:01:26,820 --> 00:01:31,050
+So again first specify that list of columns in the table from which you want to query data in the select
+
+00:01:31,050 --> 00:01:34,040
+clause and you use a comma between each column.
+
+00:01:34,050 --> 00:01:39,360
+In case you want to query data from multiple columns and if you want to query data from all of the columns
+
+00:01:39,360 --> 00:01:44,630
+you can actually just use an asterisk as a shorthand for all columns and then second.
+
+00:01:44,630 --> 00:01:47,640
+In that case the table named after the from keyword.
+
+00:01:47,640 --> 00:01:53,510
+So we'll be using both those column notations and the Asterix notation throughout this course.
+
+00:01:54,480 --> 00:01:59,310
+So something that you'll notice as you go along with this course the school language is actually case
+
+00:01:59,370 --> 00:02:00,780
+insensitive.
+
+00:02:00,810 --> 00:02:06,750
+It means that you can use the select on all uppercase or select in all lowercase and the effect is the
+
+00:02:06,750 --> 00:02:07,660
+same.
+
+00:02:07,920 --> 00:02:13,320
+By convention However we're going to use sequel keywords in uppercase to make the code easier to read
+
+00:02:13,350 --> 00:02:14,780
+and stand that clearly.
+
+00:02:14,790 --> 00:02:19,980
+So whenever you're using a sequel keyword I would always recommend writing in a per case because when
+
+00:02:19,980 --> 00:02:23,030
+you come back to the code later it's going to be a lot easier to read.
+
+00:02:23,250 --> 00:02:27,660
+And by convention pretty much all the sequel code you're going to come across is going to follow that
+
+00:02:27,660 --> 00:02:31,740
+convention of putting sequel keywords in uppercase.
+
+00:02:31,770 --> 00:02:37,800
+And one quick No it's usually not good practice to use an asterix in the select statement because you
+
+00:02:37,800 --> 00:02:42,870
+can imagine that if you have a really large table with many columns the select statement of an asterix
+
+00:02:42,960 --> 00:02:48,580
+is going to query all the data from the columns in your table which may not be necessary.
+
+00:02:48,600 --> 00:02:54,480
+So usually in a real case where you trying to get a specific set of data you're not going to put an
+
+00:02:54,480 --> 00:02:57,030
+asterix in to retrieve all the data.
+
+00:02:57,030 --> 00:03:03,330
+However since we're working with small tables as example tables that we downloaded in the previous section
+
+00:03:03,880 --> 00:03:09,480
+using an asterix is OK because the tables are small enough where it takes basically just a few milliseconds
+
+00:03:09,780 --> 00:03:13,230
+to query all the data on a normal running computer.
+
+00:03:13,270 --> 00:03:19,440
+However in a normal database server if you say select Asterix it's going to make your database work
+
+00:03:19,530 --> 00:03:23,610
+server work a lot harder and it's also going to increase the traffic between that database server and
+
+00:03:23,610 --> 00:03:24,800
+its applications.
+
+00:03:24,870 --> 00:03:30,030
+And as a result it's going to slow down whatever application is dependent on that database.
+
+00:03:30,030 --> 00:03:35,010
+Therefore we should usually specify the column names in the select clause whenever possible to get only
+
+00:03:35,010 --> 00:03:36,600
+necessary data from a table.
+
+00:03:36,810 --> 00:03:41,850
+So while we are going to be using the Asterix notation a lot throughout the course because there are
+
+00:03:41,850 --> 00:03:44,310
+specific tables and example tables are small.
+
+00:03:44,310 --> 00:03:49,980
+Keep in mind that you should only be really saying specific column names that you want to get back in
+
+00:03:49,980 --> 00:03:52,240
+order to save time.
+
+00:03:52,740 --> 00:03:53,050
+OK.
+
+00:03:53,070 --> 00:03:59,370
+With that being said let's go ahead and see a couple of examples of the select statement in sequel.
+
+00:03:59,370 --> 00:04:03,360
+I'm going to go ahead and jump to P.G. admin now.
+
+00:04:04,480 --> 00:04:07,220
+OK so here I am at PGE admin.
+
+00:04:07,260 --> 00:04:10,380
+If you're using a Mac all you have to do is just type it to your terminal.
+
+00:04:10,380 --> 00:04:13,810
+Or excuse me or Spotlight search PGE admin.
+
+00:04:13,800 --> 00:04:17,300
+It should auto complete and then you just click enter and this should open.
+
+00:04:17,310 --> 00:04:22,380
+If you're using a Windows then just do a search for PGE admin and basically the same thing it should
+
+00:04:22,380 --> 00:04:23,490
+pop up and it should open.
+
+00:04:23,490 --> 00:04:24,740
+Looks like this.
+
+00:04:24,810 --> 00:04:29,730
+So once you have this running you can go ahead and essentially double click here.
+
+00:04:29,730 --> 00:04:35,400
+Has the red X on your post Chris sequel version and then it should connect to all your databases that
+
+00:04:35,400 --> 00:04:39,750
+you created and we're going to do is go ahead and go to the DVD rental database that we created in the
+
+00:04:39,750 --> 00:04:42,710
+previous section and the database that we restored.
+
+00:04:42,710 --> 00:04:46,410
+So if you come to databases you'll get a list of all your databases.
+
+00:04:46,410 --> 00:04:51,540
+I have a couple here but the one we're looking for is the one you made in the previous section with
+
+00:04:51,570 --> 00:04:53,660
+all the DVD rental information.
+
+00:04:53,910 --> 00:04:56,410
+And in this case mine is called DVD rental.
+
+00:04:56,520 --> 00:05:04,550
+So go ahead and click on it and you should be able to click on schemas below it click public and you
+
+00:05:04,550 --> 00:05:08,190
+should see that you have the tables here that we did in the previous section.
+
+00:05:08,450 --> 00:05:13,040
+If you need any review on how to actually download and restore all the data in this table go ahead and
+
+00:05:13,040 --> 00:05:16,030
+check out the lectures in the previous section where we go over that.
+
+00:05:16,360 --> 00:05:22,370
+But for now what I want you to do is that in order to do a sequel query go ahead and click a DVD rental
+
+00:05:22,910 --> 00:05:27,800
+and then she'd come here we see like a little magnifying glass with the word sequel in it and I'll say
+
+00:05:27,840 --> 00:05:29,840
+execute arbitrary sequel queries.
+
+00:05:29,840 --> 00:05:35,070
+Go ahead and click that and you'll get a window pop up that looks something like this.
+
+00:05:35,180 --> 00:05:41,510
+And this is your sequel Ed. And this is what we're going to use in order to actually type in our sequel
+
+00:05:41,510 --> 00:05:42,440
+syntax.
+
+00:05:42,680 --> 00:05:47,410
+So it going to be really useful because basically no matter what operating system use as long as you're
+
+00:05:47,410 --> 00:05:52,550
+using PGE atom in with the sequel editor it should look the same on any operating system so that's really
+
+00:05:52,550 --> 00:05:55,180
+convenient socially for teaching purposes.
+
+00:05:55,190 --> 00:06:00,500
+So now we're going to do is go ahead and type select statement.
+
+00:06:00,620 --> 00:06:08,900
+So let's go and say select and I'll show you first how it Asterix works then go ahead and put an asterix
+
+00:06:09,230 --> 00:06:15,090
+that's usually shift eight's usually above the eight number so I want to say select Asterix from is
+
+00:06:15,170 --> 00:06:18,110
+the second keyword and then we're going to say the table name.
+
+00:06:18,200 --> 00:06:20,300
+So let's go out and select a table.
+
+00:06:20,360 --> 00:06:23,260
+What I'm going to do is go back to PGE Ottman.
+
+00:06:23,480 --> 00:06:24,910
+Check out the table here.
+
+00:06:24,950 --> 00:06:26,270
+And I see a list of tables.
+
+00:06:26,270 --> 00:06:35,630
+Let's go ahead and play one of a few of these we'll say actor so selects Asterix from actor and the
+
+00:06:35,630 --> 00:06:40,760
+way you end a sequel queery here is by putting a semicolon.
+
+00:06:40,790 --> 00:06:47,180
+So I'm saying select Asterix from actor and that's meaning return all the columns from actor and let's
+
+00:06:47,180 --> 00:06:50,540
+go ahead and execute the query here.
+
+00:06:50,570 --> 00:06:56,930
+You can also press F5 if you're using a Windows machine in order to execute that query as a hockey.
+
+00:06:56,930 --> 00:06:57,270
+All right.
+
+00:06:57,290 --> 00:06:58,040
+Great.
+
+00:06:58,070 --> 00:07:04,190
+So if you look down below we have our data output going to go ahead and expand that a bit.
+
+00:07:04,190 --> 00:07:10,610
+So we see your data output and we since we set Asterix that means return all the columns from the actor
+
+00:07:10,700 --> 00:07:11,470
+table.
+
+00:07:11,570 --> 00:07:16,700
+So you can see we have an actor Id a first name last name and last update column.
+
+00:07:16,730 --> 00:07:24,380
+So these are the column names in this first line and the line below it is the data type that exists
+
+00:07:24,440 --> 00:07:25,480
+in that column.
+
+00:07:25,700 --> 00:07:31,010
+So for example the actor ID is an integer data type so these are all integers.
+
+00:07:31,010 --> 00:07:37,430
+The first name column is character vary and that basically stands for a string data type where you actually
+
+00:07:37,430 --> 00:07:38,510
+have characters in it.
+
+00:07:38,810 --> 00:07:43,650
+And this number in parentheses stands for the limit of how many characters can be in there.
+
+00:07:43,940 --> 00:07:48,280
+And then if we see here on this last column this is a data type time stamp.
+
+00:07:48,350 --> 00:07:53,630
+Don't worry too much about data types right now data types become a lot more important when you're dealing
+
+00:07:53,630 --> 00:07:57,760
+of certain where statements or more importantly when you're actually creating the tables.
+
+00:07:57,770 --> 00:08:00,490
+So we actually have a whole lecture on data types.
+
+00:08:00,680 --> 00:08:03,880
+If you want you can explore it really at any time in the course.
+
+00:08:04,100 --> 00:08:09,440
+It's over down in the creating and tables and databases section go to explore that if you want to learn
+
+00:08:09,440 --> 00:08:10,910
+a little more about the data types.
+
+00:08:11,030 --> 00:08:14,030
+Or you can just go throughout the course and reach it naturally.
+
+00:08:14,030 --> 00:08:19,040
+So from now on I won't worry too much about the data types answer really just queering from the table
+
+00:08:19,050 --> 00:08:19,590
+.
+
+00:08:20,090 --> 00:08:20,380
+OK.
+
+00:08:20,390 --> 00:08:26,000
+With that being said let's go ahead and explore a couple of more methods of using that select statement
+
+00:08:26,000 --> 00:08:26,920
+basics so here.
+
+00:08:26,960 --> 00:08:31,240
+Select Asterix which means going to select all the columns.
+
+00:08:31,590 --> 00:08:38,030
+What I'm going to do now is select particular columns and in order to do this I take the column names
+
+00:08:38,030 --> 00:08:39,300
+I'm going to say select.
+
+00:08:39,440 --> 00:08:44,840
+Let's go ahead and get the first name and the last name of those actors and I say select first underscore
+
+00:08:44,840 --> 00:08:49,960
+name and then say comma last underscore name.
+
+00:08:50,330 --> 00:08:55,970
+So you just pasan basically a list here separated by a comma for every column.
+
+00:08:55,970 --> 00:08:57,720
+Let's go ahead and run that.
+
+00:08:57,830 --> 00:09:02,220
+And you notice now I just get the columns that I requested back.
+
+00:09:02,600 --> 00:09:03,310
+OK.
+
+00:09:03,320 --> 00:09:08,750
+So right now we're just getting every single row in that column that information later on we're going
+
+00:09:08,750 --> 00:09:14,360
+to learn how to use where statements and other clauses and sequel in order to limit the amount of rows
+
+00:09:14,360 --> 00:09:17,380
+we get back based on certain conditions that we won.
+
+00:09:17,390 --> 00:09:21,620
+So if we want every actor whose name starts with P or something where we learn how to do that later
+
+00:09:21,620 --> 00:09:27,770
+on but right now for this lecture all you need to know is the basics of using an asterix or column names
+
+00:09:27,770 --> 00:09:30,180
+with the select and from statement.
+
+00:09:30,200 --> 00:09:34,490
+So let's go ahead and do one final review of how to use this.
+
+00:09:34,490 --> 00:09:40,180
+You again say select and go ahead and make those keywords capitalized.
+
+00:09:40,220 --> 00:09:41,340
+Again you don't have to.
+
+00:09:41,340 --> 00:09:46,400
+It'll still work if they're not capitalized but just by convention it's better to have it be capitalized
+
+00:09:46,420 --> 00:09:48,440
+because easier to come back to read.
+
+00:09:48,440 --> 00:09:51,190
+So we start with the keywords select.
+
+00:09:51,350 --> 00:09:53,470
+Then you put in the column names.
+
+00:09:53,570 --> 00:09:57,600
+So I remember a column name was actor Id.
+
+00:09:57,770 --> 00:10:03,560
+So then you say from Again all caps because it's a key word and you actually notice what's nice about
+
+00:10:03,560 --> 00:10:04,720
+the sequel editor is it.
+
+00:10:04,760 --> 00:10:07,780
+It will highlight the keywords so they're a little bit of a shade of blue.
+
+00:10:08,210 --> 00:10:09,570
+And then you say the table name.
+
+00:10:09,590 --> 00:10:12,080
+And in this case the table name is actor.
+
+00:10:12,260 --> 00:10:14,230
+And then you put a semi-colon it in the.
+
+00:10:14,300 --> 00:10:16,820
+That's the end of your query.
+
+00:10:16,940 --> 00:10:21,850
+So if we run that we'll have actor ideas a column and we'll overturn all the rules here.
+
+00:10:22,160 --> 00:10:22,810
+OK.
+
+00:10:22,850 --> 00:10:23,910
+That's really all there is.
+
+00:10:23,930 --> 00:10:29,080
+The very basics of using a select statement and I will see you at the next lecture.
+
+00:10:29,110 --> 00:10:33,410
+We're going to discuss even more ways to build off this basic select statement.
+
+00:10:33,410 --> 00:10:39,230
+So again just select Asterix for all the columns or just a list of the column names separated by a comma
+
+00:10:39,800 --> 00:10:43,960
+space from space the table name semi-colon.
+
+00:10:44,460 --> 00:10:45,990
+OK thanks everyone.
+
+00:10:46,070 --> 00:10:47,670
+I'll see you at the next lecture.

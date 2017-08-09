@@ -1,0 +1,176 @@
+00:00:00,990 --> 00:00:05,840
+Hello everyone and welcome to the challenge lecture for the ORDER BY statement.
+
+00:00:06,510 --> 00:00:10,980
+So in this lecture you'll receive the challenge task and then in the next slide you'll get some hints
+
+00:00:11,010 --> 00:00:15,420
+on how to solve it in the next slide you get the solution and I'll give you fair warning before we get
+
+00:00:15,420 --> 00:00:19,620
+to the hints or solution slides for the challenge task.
+
+00:00:19,830 --> 00:00:20,240
+OK.
+
+00:00:20,280 --> 00:00:26,490
+Your first challenge is to get the customer ID numbers for the top 10 highest payment amounts.
+
+00:00:26,630 --> 00:00:26,910
+OK.
+
+00:00:26,910 --> 00:00:31,890
+Again just get the customer ID numbers for the top 10 highest payment amounts.
+
+00:00:31,890 --> 00:00:36,730
+You may have to do some exploring to figure out what table is right for that sequel query.
+
+00:00:37,380 --> 00:00:38,130
+All right.
+
+00:00:38,130 --> 00:00:40,540
+So go ahead impassivity now.
+
+00:00:40,560 --> 00:00:41,010
+All right.
+
+00:00:41,040 --> 00:00:43,840
+Coming up next is the hints for this challenge.
+
+00:00:43,980 --> 00:00:50,670
+Moving on to the hints so hints you'll need to use the payments table and you also need to use order
+
+00:00:50,670 --> 00:00:53,380
+buy in limit together to solve this.
+
+00:00:53,410 --> 00:00:59,760
+And remember you can use A.S.C. or DGSE to get the desired results of YOUR ORDER BY statement so either
+
+00:00:59,820 --> 00:01:01,620
+ascending or descending.
+
+00:01:01,620 --> 00:01:02,840
+Just keep that in mind.
+
+00:01:03,120 --> 00:01:07,860
+And coming up next is the solution to the challenge to go to impassivity enough you don't want to see
+
+00:01:07,860 --> 00:01:09,170
+the solution yet.
+
+00:01:09,610 --> 00:01:11,570
+OK moving on to the solution.
+
+00:01:12,210 --> 00:01:14,390
+So the solution looks something like this.
+
+00:01:14,430 --> 00:01:22,110
+I said select customer id column and the Amount column from the payment table order by the amount in
+
+00:01:22,110 --> 00:01:25,300
+descending order and limit 10.
+
+00:01:25,530 --> 00:01:30,150
+If you just said ORDER BY amounts you would have gone in the wrong order in order to get the highest
+
+00:01:30,150 --> 00:01:35,900
+payments you had to say descending order and limit 10 to only get the top 10 results.
+
+00:01:36,000 --> 00:01:42,300
+And notice here I said customer id an amount column requested even though post-career sequel doesn't
+
+00:01:42,300 --> 00:01:45,660
+actually require you to say the amount column.
+
+00:01:45,660 --> 00:01:48,870
+If you're going to say ORDER BY amount you could have just said customer ID.
+
+00:01:48,930 --> 00:01:53,610
+It's good practice to include the column name that you're ordering by.
+
+00:01:53,610 --> 00:01:54,880
+So just keep that in mind.
+
+00:01:54,930 --> 00:02:01,470
+That way the sequel syntax can be moved from any sort of sequel engine like Oracle sequel or my sequel
+
+00:02:01,470 --> 00:02:02,640
+etc..
+
+00:02:02,670 --> 00:02:07,070
+OK moving on to the next challenge the next challenge.
+
+00:02:07,110 --> 00:02:13,800
+I want you to get the titles of the movies with film IDs 1 through 5 so just get the titles of the movies
+
+00:02:13,890 --> 00:02:16,270
+with the film IDs 1 through 5.
+
+00:02:16,440 --> 00:02:18,420
+So one two three four five.
+
+00:02:18,920 --> 00:02:19,540
+OK.
+
+00:02:19,650 --> 00:02:24,270
+Coming up next are the hits for this challenge to go in a positive if you don't want see the hints you're
+
+00:02:24,870 --> 00:02:25,990
+living on.
+
+00:02:26,670 --> 00:02:29,520
+OK the hints are you going to want to use the film table.
+
+00:02:29,790 --> 00:02:32,880
+And again you'll need to use the order by and limit statements.
+
+00:02:32,880 --> 00:02:38,040
+And again remember you can use a C or D A C to get desired results.
+
+00:02:38,050 --> 00:02:43,040
+OK moving on to the solutions for this challenge.
+
+00:02:43,080 --> 00:02:50,500
+The solution is select film Id title release year from film order by film.
+
+00:02:50,550 --> 00:02:51,580
+Limit 5.
+
+00:02:51,960 --> 00:02:59,130
+So again you actually didn't have to specify which columns you wanted since I just wanted the film Id
+
+00:02:59,910 --> 00:03:01,200
+You didn't have to.
+
+00:03:01,200 --> 00:03:05,700
+Well since I just wanted the title really you didn't have to actually call for release year but I just
+
+00:03:05,700 --> 00:03:07,840
+did that to show a couple more columns.
+
+00:03:07,840 --> 00:03:12,180
+Really all you had to say was select title from fill order by film Id.
+
+00:03:12,260 --> 00:03:16,800
+I just put a few more columns in there so the query looks a little more fleshed out.
+
+00:03:16,830 --> 00:03:21,630
+Again it's good practice to always include the column filt mighty that you're ordering by.
+
+00:03:21,660 --> 00:03:25,740
+In this case it's film Id really was not an actual necessary column.
+
+00:03:25,740 --> 00:03:29,510
+I just put that in there you should just see 2006 for all of them.
+
+00:03:29,980 --> 00:03:31,910
+OK with that being said.
+
+00:03:32,040 --> 00:03:33,320
+Great job everybody.
+
+00:03:33,750 --> 00:03:37,110
+Let's go ahead and learn some more and I will see you in the next lecture.
+
+00:03:37,110 --> 00:03:37,770
+Thanks everyone

@@ -1,0 +1,218 @@
+00:00:01,080 --> 00:00:05,240
+Hello everyone and welcome to the lecture on select this thing.
+
+00:00:05,790 --> 00:00:10,130
+So this lecture we're going to get an overview of how to use Select Distinct keyword.
+
+00:00:10,310 --> 00:00:15,330
+It's going to be really useful for some common queries where you just want to remove duplicate.
+
+00:00:15,330 --> 00:00:20,790
+So let's go and discuss what select distinct looks like in its syntax and then we'll go through an example
+
+00:00:20,790 --> 00:00:22,140
+.
+
+00:00:22,140 --> 00:00:29,250
+So in a table a column may contain duplicate values so you can imagine if you had a table full of dates
+
+00:00:30,390 --> 00:00:35,370
+you may have duplicate dates and you just really want to grab the stinks dates or maybe have a list
+
+00:00:35,370 --> 00:00:40,800
+of films and you just want to grab the stinko films etc. so that the stink keyboard can be used to return
+
+00:00:40,830 --> 00:00:44,330
+only the stings or different values.
+
+00:00:44,400 --> 00:00:48,750
+So let's go ahead and look at what the syntax for that would look like it's going to look like this
+
+00:00:48,750 --> 00:00:48,780
+.
+
+00:00:48,780 --> 00:00:54,190
+You'll say select space distinct and those are keywords so I put them in all caps.
+
+00:00:54,450 --> 00:01:01,040
+Then the column names you want to select separated by comma and then the save from the table name.
+
+00:01:01,080 --> 00:01:05,040
+So let's go ahead and try this on an actual example.
+
+00:01:05,070 --> 00:01:08,040
+So I get to hop over to PGE Atman and then open up.
+
+00:01:08,040 --> 00:01:10,500
+Sequel editor there.
+
+00:01:10,650 --> 00:01:11,530
+OK everyone.
+
+00:01:11,550 --> 00:01:17,400
+Now I'm at PGE admen three and I'm going to go out and select my DVD rental database and run a sequel
+
+00:01:17,400 --> 00:01:17,940
+query on it.
+
+00:01:17,940 --> 00:01:24,900
+So just as a reminder if I expand this and show the public the schemas etc. and then show the tables
+
+00:01:25,350 --> 00:01:27,710
+here we can see the variety of tables I have.
+
+00:01:27,710 --> 00:01:30,400
+And right now we're going to focus on the film table.
+
+00:01:30,810 --> 00:01:37,530
+So let's go ahead and click the database execute arbitrary sequel queery And now we can run sequel queries
+
+00:01:37,530 --> 00:01:38,730
+on this.
+
+00:01:38,730 --> 00:01:49,460
+So let's start off by just saying select is Asterix which means select every column from film semi-colon
+
+00:01:50,220 --> 00:01:56,280
+and in case you want a little shortcut and not have to click execute queer every time you can use EF
+
+00:01:56,340 --> 00:02:00,090
+5 on your keyboard in order to execute that query.
+
+00:02:00,090 --> 00:02:03,130
+Again that's just to type it out here for you.
+
+00:02:03,390 --> 00:02:06,170
+That's EF 5 that's the hot cat clicking.
+
+00:02:06,240 --> 00:02:10,170
+So I don't have to click execute queery every time.
+
+00:02:10,170 --> 00:02:18,270
+Continuing on here we see that we have a film ID column a title column a description column some release
+
+00:02:18,270 --> 00:02:27,060
+years language ID Rensil duration etc. and then some rental rates replacement costs and some more information
+
+00:02:27,060 --> 00:02:27,960
+.
+
+00:02:27,960 --> 00:02:34,000
+Now let's go ahead and learn how we can use distinct to grab some information that might be handy.
+
+00:02:34,320 --> 00:02:40,050
+Let's say you wanted to know all the distinct years that films were released in your database.
+
+00:02:40,050 --> 00:02:46,650
+So right now if we look at the number of rows our database has we scroll all the way down you'll notice
+
+00:02:46,650 --> 00:02:54,640
+it has 1000 rows but you'll notice here at the very bottom we have a 2006 release year.
+
+00:02:54,810 --> 00:03:01,500
+And as you scroll all the way up you also 2006 release here and now you're wondering is 2006 the only
+
+00:03:01,500 --> 00:03:07,430
+release year is that if we looked at all the distinct release years as 2006 the only one.
+
+00:03:07,800 --> 00:03:11,370
+So here's what you can do will say select
+
+00:03:13,830 --> 00:03:15,520
+this.
+
+00:03:16,710 --> 00:03:21,920
+And in this case we'll just select release underscore year as the column we want.
+
+00:03:22,470 --> 00:03:27,960
+And now you'll see that it's returned all the distinct values that release your hat.
+
+00:03:27,960 --> 00:03:30,060
+In this case it was just one year.
+
+00:03:30,300 --> 00:03:34,680
+For whatever reason this database all the release years are from 2006.
+
+00:03:34,770 --> 00:03:37,350
+So that's interesting something to keep in mind.
+
+00:03:37,380 --> 00:03:44,820
+Let's go ahead and check out all the data one more time and again I know I mentioned that usually using
+
+00:03:44,820 --> 00:03:50,530
+asterisks like this isn't good especially for a large database if you're calling everything.
+
+00:03:50,680 --> 00:03:53,560
+Let's us this is a toy database for examples.
+
+00:03:53,590 --> 00:03:55,950
+You want to worry about that right now.
+
+00:03:55,950 --> 00:04:01,170
+Later on we'll show you how to just grab the first two columns for she rose I should say in case you
+
+00:04:01,170 --> 00:04:08,310
+just want to call them names continue it on another interesting topic we might be interested in is the
+
+00:04:08,310 --> 00:04:15,260
+rental rate so you can see we have a variety of rental rates such as for 99 99 cents to 99 etc..
+
+00:04:15,630 --> 00:04:21,750
+And now I want to know what are a distinct rental rates we have for this rental DVDs store.
+
+00:04:22,290 --> 00:04:33,080
+Well I'll say select listings pass in the column my wants rates and then go ahead and run this.
+
+00:04:33,150 --> 00:04:38,340
+And so now I know that this DVDs store basically only has three rental rates.
+
+00:04:38,370 --> 00:04:45,830
+It's either a 99 cent movie a 299 dollar movie rental rate or ifour $99 movie rental rate.
+
+00:04:46,080 --> 00:04:51,240
+So you can see the power of select distinct statement just by itself.
+
+00:04:51,240 --> 00:04:57,900
+Later on we'll see how we can combine the state with other sequel Syntec statements and then perform
+
+00:04:57,900 --> 00:05:02,760
+really powerful queries to grab really specific information right and hopefully you can see just the
+
+00:05:02,760 --> 00:05:09,690
+power of using Select Distinct on a column to grab really valuable information because if you didn't
+
+00:05:09,690 --> 00:05:14,580
+have select distinct answering the question of well how many rental rates do you have.
+
+00:05:14,580 --> 00:05:19,440
+Would it be a lot harder to do you'd only be able to select everything and then you have to manually
+
+00:05:19,440 --> 00:05:20,880
+go through it.
+
+00:05:20,880 --> 00:05:21,200
+Right.
+
+00:05:21,210 --> 00:05:25,390
+So you'd have to basically sift through this thousand columns and try to find which ones are the uniques
+
+00:05:25,410 --> 00:05:26,580
+and keep track of them.
+
+00:05:26,690 --> 00:05:32,090
+But select the stings allows you to easily answer that question.
+
+00:05:32,550 --> 00:05:33,240
+OK.
+
+00:05:33,540 --> 00:05:37,920
+Go ahead and practice Select Distinct on a couple of other columns or some other tables if you want
+
+00:05:37,920 --> 00:05:38,120
+.
+
+00:05:38,190 --> 00:05:43,670
+But coming up next is a quick challenge to make sure you fully understand select listings.
+
+00:05:43,680 --> 00:05:45,820
+Thanks everyone and I will see you at the next lecture

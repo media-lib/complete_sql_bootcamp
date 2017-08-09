@@ -1,0 +1,107 @@
+00:00:01,170 --> 00:00:02,040
+Hello everyone.
+
+00:00:02,040 --> 00:00:04,220
+Welcome to the next challenge for you.
+
+00:00:04,260 --> 00:00:07,260
+The Select Distinct challenge.
+
+00:00:07,260 --> 00:00:09,390
+We're going to have an overview of the challenge.
+
+00:00:09,390 --> 00:00:15,180
+So what situation is the actual challenge itself in context of the sequel syntax and then some hints
+
+00:00:15,180 --> 00:00:16,400
+and solution.
+
+00:00:16,470 --> 00:00:20,420
+And as always I will warn you in the hints and the solutions are coming.
+
+00:00:21,180 --> 00:00:26,160
+So is the situation we want to know the types of ratings movies can get in the United States.
+
+00:00:26,160 --> 00:00:29,790
+So for example P.G. 13 rated r etc..
+
+00:00:30,090 --> 00:00:33,420
+And we want to know which ones we have in our database.
+
+00:00:33,450 --> 00:00:39,210
+So your challenge is to use a Select Distinct statement to get the distinct rating types our films can
+
+00:00:39,210 --> 00:00:41,220
+have in our database.
+
+00:00:41,220 --> 00:00:45,840
+So for example you're going to use the select distinct statement in order to figure out do we have an
+
+00:00:45,870 --> 00:00:47,950
+R rated movie in our database.
+
+00:00:47,970 --> 00:00:52,580
+How could you use a select statement to answer that question.
+
+00:00:52,740 --> 00:00:54,500
+So remember to click on the database.
+
+00:00:54,510 --> 00:01:00,030
+So in this case that DVD rental database then select arbitrary secret query button to get to the sequel
+
+00:01:00,090 --> 00:01:01,280
+editor.
+
+00:01:01,290 --> 00:01:07,650
+That being said Best of luck you can continue watching for hints in the solution.
+
+00:01:07,650 --> 00:01:08,200
+All right.
+
+00:01:08,250 --> 00:01:09,270
+So go ahead and puzzle video.
+
+00:01:09,270 --> 00:01:15,580
+Now if you want to do a funny Hintz but I'm going to go to the Hintz lecture or slide now.
+
+00:01:15,960 --> 00:01:21,480
+So a couple of hints you'll want to use the film table to do this and you can use select Asterix from
+
+00:01:21,480 --> 00:01:26,970
+films semi-colon to get an idea of what columns to use to actually find the name of that column.
+
+00:01:26,970 --> 00:01:30,750
+All right so those are your hints and a solution is coming up next.
+
+00:01:30,750 --> 00:01:36,460
+So go ahead and positivity now if you want to try it on your own before seeing the solution.
+
+00:01:36,480 --> 00:01:39,000
+Ok so now let's go to the solution.
+
+00:01:39,240 --> 00:01:43,230
+So the solutions actually quite simply want to say select the stinks rating.
+
+00:01:43,260 --> 00:01:49,440
+So rating is the name of the column and it's from the film table so select distinct rating from film
+
+00:01:49,440 --> 00:01:49,470
+.
+
+00:01:49,470 --> 00:01:50,260
+So Michael.
+
+00:01:50,310 --> 00:01:51,940
+And your sequel query.
+
+00:01:52,130 --> 00:01:55,390
+OK hopefully you're able to figure that out on your own.
+
+00:01:55,440 --> 00:02:00,840
+If not go ahead and review the Select Distinct lecture for a better background on how exactly to solve
+
+00:02:00,840 --> 00:02:02,070
+the problem.
+
+00:02:02,070 --> 00:02:04,080
+Thanks everyone and I'll see you at the next lecture

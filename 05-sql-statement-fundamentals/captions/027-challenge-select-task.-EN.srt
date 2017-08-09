@@ -1,0 +1,128 @@
+00:00:01,230 --> 00:00:03,890
+Hello everyone and welcome to another challenge.
+
+00:00:03,900 --> 00:00:09,100
+And in this case we're going to be challenging you on learning how to use the select syntax for sequel
+
+00:00:09,110 --> 00:00:10,050
+.
+
+00:00:10,380 --> 00:00:15,150
+So in this challenge you're going to get a situation the actual challenge I want you to implement some
+
+00:00:15,150 --> 00:00:20,280
+hints the challenge and then the solution all warn you when the hints and solution are coming up next
+
+00:00:20,380 --> 00:00:24,450
+so that if you want to solve the problem on your own you can go ahead and pause the lecture and see
+
+00:00:24,450 --> 00:00:25,920
+if you can solve it on your own.
+
+00:00:26,100 --> 00:00:26,810
+So don't worry.
+
+00:00:26,820 --> 00:00:31,840
+I'll warn you in hints and solutions are coming as far as the situation.
+
+00:00:32,040 --> 00:00:37,260
+We have a database in the tables and now we want to send a promotional e-mail to our existing customers
+
+00:00:37,260 --> 00:00:37,630
+.
+
+00:00:37,770 --> 00:00:42,430
+So we're going to want is some information such as their e-mails and their names.
+
+00:00:42,480 --> 00:00:47,940
+So the challenge is to use a select statement to grab the first and last names of every customer and
+
+00:00:47,940 --> 00:00:50,530
+their email address.
+
+00:00:50,700 --> 00:00:55,860
+Remember to click on the database and then select the arbitrary sequel query button in order to get
+
+00:00:55,860 --> 00:00:57,160
+to the sequel editor.
+
+00:00:57,170 --> 00:00:58,330
+Other than that.
+
+00:00:58,530 --> 00:00:59,790
+Good luck.
+
+00:00:59,790 --> 00:01:03,210
+Now you can go ahead and spazzes lecture if you want to try it out on your own.
+
+00:01:03,210 --> 00:01:09,030
+Up next we'll go over some hints so I'll go ahead and wait for a second case you want to posit.
+
+00:01:09,090 --> 00:01:13,400
+All right now I'm going to go over some hints so some hints are.
+
+00:01:13,400 --> 00:01:15,600
+You'll want to use the customer table.
+
+00:01:16,020 --> 00:01:22,350
+You'll also may want to use Select Asterix from customer semi colon in order to get an idea of what
+
+00:01:22,350 --> 00:01:27,580
+columns use So remember you have to use that semi-colon in order to end your sequel's state.
+
+00:01:27,960 --> 00:01:29,710
+So those are just a couple of hints.
+
+00:01:29,730 --> 00:01:33,930
+Hopefully this general task shouldn't be too hard given what you just learned.
+
+00:01:33,960 --> 00:01:36,370
+But up next is the full solution.
+
+00:01:36,420 --> 00:01:39,520
+Saw it first second before going to the solution slide.
+
+00:01:40,050 --> 00:01:42,410
+OK let's go ahead and go over the solution.
+
+00:01:42,990 --> 00:01:44,670
+So the solution is just this.
+
+00:01:44,670 --> 00:01:50,930
+You're going to say select first underscore name comma last underscore name comma email.
+
+00:01:50,960 --> 00:01:57,280
+So from the customer table these three columns are the main columns I want you to get in order to send
+
+00:01:57,280 --> 00:01:59,040
+out that promotional email.
+
+00:01:59,040 --> 00:02:03,020
+Now you'll notice something here is I've written this on two separate lines.
+
+00:02:03,090 --> 00:02:09,570
+I said select my column names and then from that table in the database and then I ended it off a semi-colon
+
+00:02:10,170 --> 00:02:16,050
+so you can go ahead and write sequel queries in multiple lines and sequels and keep reading everything
+
+00:02:16,170 --> 00:02:20,060
+as if it was written on one line until it runs into a semi colon.
+
+00:02:20,160 --> 00:02:26,250
+So this is really nice for making your queries very readable in a lot of times you'll see people basically
+
+00:02:26,250 --> 00:02:30,260
+for every keyword that shows up they'll start another line.
+
+00:02:30,910 --> 00:02:32,910
+OK so that's it for the solution.
+
+00:02:32,910 --> 00:02:38,120
+I hope you were able to solve it on your own first or at least gave it a really good shot.
+
+00:02:38,130 --> 00:02:42,360
+Up next we're going to learn some more fundamentals for sequel's statements.
+
+00:02:42,360 --> 00:02:44,630
+Thanks everyone and I'll see you at the next lecture.

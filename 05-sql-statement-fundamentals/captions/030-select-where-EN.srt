@@ -1,0 +1,572 @@
+00:00:00,990 --> 00:00:06,960
+Hello everyone and welcome to the select where lecture in this lecture we're going to learn how to use
+
+00:00:06,960 --> 00:00:09,740
+the select clause of the where statements.
+
+00:00:09,780 --> 00:00:15,190
+So what are the most important topics for Sequel fundamentals is using Select with where the selection
+
+00:00:15,210 --> 00:00:17,290
+is going to be a little longer than the previous ones.
+
+00:00:17,300 --> 00:00:22,820
+We're going to cover a couple of things along of that where statement or WHERE clause.
+
+00:00:22,920 --> 00:00:28,170
+So again in previous lectures you've already learned how to use the select statement to query data from
+
+00:00:28,200 --> 00:00:30,110
+a table in a database.
+
+00:00:30,180 --> 00:00:34,590
+Another question is What do you want to query just particular rows from a table matching some sort of
+
+00:00:34,590 --> 00:00:35,620
+condition.
+
+00:00:35,760 --> 00:00:40,890
+In this case you're going to need to use the where clause in the select statement.
+
+00:00:41,080 --> 00:00:47,870
+So the basic syntax that the sort of statement looks like this you have a select keyword list of columns
+
+00:00:47,880 --> 00:00:53,850
+you want to select and you say from then the table name then you have the keyword where you're going
+
+00:00:53,850 --> 00:00:59,150
+to have some sort of condition or some conditions statement there and then you have a semi-colon to
+
+00:00:59,230 --> 00:01:00,600
+end the entire query.
+
+00:01:00,630 --> 00:01:04,830
+So we're going to discuss and this lecture is what are those conditions and how can we actually build
+
+00:01:04,830 --> 00:01:06,650
+them.
+
+00:01:06,960 --> 00:01:12,150
+So again that where clause appears right after the FROM clause of the select statement and the conditions
+
+00:01:12,150 --> 00:01:17,540
+are used to filter the rows returned from the select statement and postgresql in particular provides
+
+00:01:17,570 --> 00:01:22,410
+have various standard operators to construct those conditions and the conditions and operators we're
+
+00:01:22,410 --> 00:01:27,400
+going to learn right now are pretty much applicable to any sequel engine.
+
+00:01:27,510 --> 00:01:32,460
+So some of these basic operators you can probably already guess what they do based on what they look
+
+00:01:32,460 --> 00:01:32,720
+like.
+
+00:01:32,730 --> 00:01:35,320
+But there's also a description here on the right hand side.
+
+00:01:35,610 --> 00:01:39,240
+And these are basic operators you can use along with select where statement.
+
+00:01:39,250 --> 00:01:44,010
+Now we're basically going to cover all of these throughout this lecture through examples in the postgresql
+
+00:01:44,080 --> 00:01:46,290
+sequel tables and databases.
+
+00:01:46,290 --> 00:01:50,940
+Basically what we're going to do is use the operators on the left hand side in along with a select and
+
+00:01:50,940 --> 00:01:55,550
+a where statement to only query particular rows from a table.
+
+00:01:56,730 --> 00:02:01,620
+So let's go ahead and show some slides of a couple of examples and then we'll actually Diven open up
+
+00:02:01,620 --> 00:02:05,260
+a sequel editor and explore all of these just a little more.
+
+00:02:05,350 --> 00:02:12,080
+So imagine you want to get all the customers whose first names are Jamy so you can use the where clause
+
+00:02:12,090 --> 00:02:15,900
+with the equal operator that equals sign as follows.
+
+00:02:15,900 --> 00:02:19,400
+Here below you would say select last name comma first name.
+
+00:02:19,410 --> 00:02:26,490
+So that's the last name column and the first name column from the customer table where then you have
+
+00:02:26,490 --> 00:02:30,930
+some sort of conditional statement and this is our conditional statement we want that first name column
+
+00:02:30,930 --> 00:02:37,350
+value to be equal to the string Jaymie when we define that string with single quotes and then we have
+
+00:02:37,350 --> 00:02:40,100
+a semi-colon to end the entire query.
+
+00:02:40,410 --> 00:02:46,680
+So that's one simple example of using the equals operator in order to only get back rows where the customer's
+
+00:02:46,680 --> 00:02:48,940
+first name is Jamie.
+
+00:02:49,890 --> 00:02:54,730
+So imagine you want to select the customer whose first name is Jamie and whose last name is rice.
+
+00:02:54,900 --> 00:03:01,260
+Then you can use those logical operators that were at the bottom of that chart a n d and in order to
+
+00:03:01,260 --> 00:03:02,970
+combine two conditions.
+
+00:03:02,970 --> 00:03:09,810
+So if we go back real quick here we have the operators notice at the bottom two and that are or those
+
+00:03:09,810 --> 00:03:13,400
+allow us to combine conditions using the other operators.
+
+00:03:13,560 --> 00:03:19,260
+So let's go ahead and go forward again to we want this customer whose first name is Jamie and last name
+
+00:03:19,260 --> 00:03:20,140
+is rice.
+
+00:03:20,340 --> 00:03:23,160
+So we can say select last name comma first name.
+
+00:03:23,160 --> 00:03:28,020
+And again it doesn't really matter what order we're actually selecting these columns and that's just
+
+00:03:28,020 --> 00:03:31,680
+going to specify what order you want your data output to be in.
+
+00:03:31,710 --> 00:03:33,950
+So we'll explore that when we see the examples.
+
+00:03:34,320 --> 00:03:40,480
+So again we say select the columns you want from the customer table where the first name column value
+
+00:03:40,480 --> 00:03:41,700
+is equal to Jamie.
+
+00:03:41,880 --> 00:03:43,810
+And that's the keyword.
+
+00:03:43,940 --> 00:03:47,570
+The last name column is equal to rice than a semi colons end.
+
+00:03:47,970 --> 00:03:53,130
+And if those column values are strings or character varying strings you have to put those single quotes
+
+00:03:53,130 --> 00:03:57,810
+in there as well around Jaymie and rice.
+
+00:03:57,810 --> 00:04:02,610
+So imagine you want to know who paid the rental with amount is either let's say less than you or on
+
+00:04:02,610 --> 00:04:05,130
+US dollar greater than eight U.S. dollars.
+
+00:04:05,160 --> 00:04:10,440
+So you want to know who paid a rental value with an amount that was either less than one U.S. dollar
+
+00:04:10,440 --> 00:04:12,130
+or greater than eight U.S. dollars.
+
+00:04:12,210 --> 00:04:18,390
+Outside of that range you could use the following sort of statement here you could say selects let's
+
+00:04:18,390 --> 00:04:26,280
+say Customer ID amounts payment they columns from the payment table where amount is less than or equal
+
+00:04:26,340 --> 00:04:26,730
+to.
+
+00:04:26,730 --> 00:04:32,120
+So that has a color operator one or the amount is greater than or equal to eight.
+
+00:04:32,130 --> 00:04:37,380
+So here if we look we have these conditional operators that Lessner equal sign or that greater than
+
+00:04:37,380 --> 00:04:38,850
+or equal to sign.
+
+00:04:39,030 --> 00:04:44,370
+And then we have the numbers and then we have the logical operator or in between those two conditions
+
+00:04:44,370 --> 00:04:44,840
+.
+
+00:04:44,850 --> 00:04:51,440
+So here is less than equal to and then greater than 2 so let's go out and play around our database to
+
+00:04:51,440 --> 00:04:54,540
+see couple of more examples and get some more practice.
+
+00:04:54,560 --> 00:05:00,160
+So go ahead and open up P.G. admen and open up a sequel editor and let's so we can actually play some
+
+00:05:00,170 --> 00:05:04,480
+more select where statements are going to go ahead and jump to P.G. admin and open up a sequel.
+
+00:05:04,490 --> 00:05:05,710
+Ed. now.
+
+00:05:06,230 --> 00:05:08,020
+OK so here we are P.G. admin.
+
+00:05:08,030 --> 00:05:15,830
+When I'm going to go ahead and do is go to my databases expand it then select DVD rental and go up here
+
+00:05:15,830 --> 00:05:20,540
+to execute an arbitrary sequel query and that should bring up this query editor.
+
+00:05:21,050 --> 00:05:27,680
+So let's go ahead and start off with just learning how to use the select where statement and in order
+
+00:05:27,680 --> 00:05:34,550
+to do that let's go in and explore a particular table from our database we'll call it the customer table
+
+00:05:34,550 --> 00:05:35,370
+.
+
+00:05:35,630 --> 00:05:37,870
+It's going to run that.
+
+00:05:38,240 --> 00:05:42,550
+And so you notice here we get our data output after selecting every single column.
+
+00:05:42,560 --> 00:05:48,380
+So now we're going to add a where statement to this in order to continue to use those comparison operators
+
+00:05:48,800 --> 00:05:55,100
+to mess around with this and only query certain rows so let's say I want to get where else go ahead
+
+00:05:55,100 --> 00:06:00,950
+and say where the first name is equal to.
+
+00:06:01,010 --> 00:06:04,770
+Let's go ahead and say Jared semi colon.
+
+00:06:04,910 --> 00:06:05,780
+Run that.
+
+00:06:05,960 --> 00:06:12,450
+And so you notice now with the data output I only get all the columns where this is true.
+
+00:06:13,010 --> 00:06:18,410
+And what's nice about these sort of select from where statements is I can't call for any calls back
+
+00:06:18,410 --> 00:06:18,860
+.
+
+00:06:18,890 --> 00:06:25,820
+So I can just get for instance the email column and get Gerrard's e-mail back.
+
+00:06:25,820 --> 00:06:31,730
+So this column here that you're selecting doesn't actually have to be included in the WHERE statement
+
+00:06:31,730 --> 00:06:31,760
+.
+
+00:06:31,760 --> 00:06:35,670
+So you can select all the columns none of the columns some of the columns etc..
+
+00:06:35,870 --> 00:06:40,970
+They don't actually have to match up with your WHERE statement here and your select statement here.
+
+00:06:40,970 --> 00:06:44,060
+So hopefully that makes sense as far as the column you're selecting.
+
+00:06:44,120 --> 00:06:46,810
+Let's go ahead and explore a couple more tables.
+
+00:06:47,150 --> 00:06:51,410
+So Nel's go ahead and check out the payments table.
+
+00:06:52,040 --> 00:06:52,670
+Run that.
+
+00:06:52,760 --> 00:06:56,410
+So that's selecting all columns from the payment table.
+
+00:06:56,550 --> 00:07:01,730
+Since I don't have any other conditions to return all the rows so it's going to filter this out by rows
+
+00:07:01,820 --> 00:07:05,270
+using some of those comparison operators that we saw earlier.
+
+00:07:05,300 --> 00:07:13,760
+So we're going to do now is go ahead and say we have where the amounts column value.
+
+00:07:14,060 --> 00:07:19,130
+Let's go ahead and say where it's equal to seven dollars and ninety nine cents.
+
+00:07:19,190 --> 00:07:24,770
+And since the amount column is just some numeric value we don't have to put this around quotes or anything
+
+00:07:24,770 --> 00:07:25,340
+.
+
+00:07:25,340 --> 00:07:27,410
+So it's going to run that.
+
+00:07:28,850 --> 00:07:32,760
+And now we get the data output for where the amount was equal to seven ninety nine.
+
+00:07:32,780 --> 00:07:41,750
+And if we scroll down here we'll notice that we have 621 rows returns if we didn't have that where statements
+
+00:07:43,700 --> 00:07:45,950
+and we ran that and returned all the rows.
+
+00:07:45,950 --> 00:07:50,220
+If you scroll down you'll notice we get over 14000 rows.
+
+00:07:50,300 --> 00:07:55,220
+So that's the difference between using a selects and using a select where.
+
+00:07:55,220 --> 00:07:59,130
+So let's just walk through all the operators so we just saw the equal operator.
+
+00:07:59,180 --> 00:08:01,590
+Let's go ahead and explore a couple more.
+
+00:08:01,670 --> 00:08:06,200
+We can say where the amount is greater than $5.
+
+00:08:06,410 --> 00:08:12,500
+So that's how you would use that operator that returns everything that was greater than $5 the Kundera
+
+00:08:12,500 --> 00:08:17,130
+thing that was less than $5 now would be everything that was less than $5.
+
+00:08:17,130 --> 00:08:19,630
+You can see here the amounts are less than five.
+
+00:08:19,880 --> 00:08:24,610
+And then you can start doing things like less than or equal to.
+
+00:08:24,620 --> 00:08:29,480
+So for example if I say give me the amounts that are less than four ninety nine you'll notice here I
+
+00:08:29,480 --> 00:08:37,100
+get a 499 amount over at the fourth row that if I actually run this now I don't have the 499 amount
+
+00:08:37,160 --> 00:08:40,380
+because I'm only saying less than not less than or equal to.
+
+00:08:40,640 --> 00:08:45,590
+So if I do want to retain those 499 values I can say less than or equal to.
+
+00:08:45,650 --> 00:08:49,030
+So these operators basically behave as you would expect them to.
+
+00:08:49,280 --> 00:08:53,560
+And now I can say I have a four ninety nine value here in the amount in the fourth row.
+
+00:08:53,570 --> 00:08:58,690
+So again that's because I said the equal sign there instead of just a less than sign.
+
+00:08:58,700 --> 00:09:06,350
+So I can say less than or equal to or I can say greater than or equal to and then I can also do not
+
+00:09:06,350 --> 00:09:12,170
+equal in the way I can do NOT equal as an exclamation points equal sign and that will basically give
+
+00:09:12,170 --> 00:09:13,280
+me all the values.
+
+00:09:13,340 --> 00:09:17,100
+I just run that that are not equal to 499.
+
+00:09:17,120 --> 00:09:21,980
+So that returns all the columns where the amount column was not equal to 499.
+
+00:09:21,980 --> 00:09:28,760
+Then again I can actually ask for specific columns here so I can say Give me the amounts and maybe the
+
+00:09:28,760 --> 00:09:35,810
+payment the column values run that will only return those two columns where this condition here is true
+
+00:09:35,810 --> 00:09:36,690
+.
+
+00:09:36,740 --> 00:09:37,110
+OK.
+
+00:09:37,130 --> 00:09:39,000
+So those are the operators themselves.
+
+00:09:39,050 --> 00:09:42,020
+Let's go ahead and add some logical operators.
+
+00:09:42,020 --> 00:09:48,480
+So the logical operator and allows us to basically combine multiple conditions.
+
+00:09:48,620 --> 00:09:58,070
+So let's say I want to get where rows were the amounts was 499 and rows were the amounts is equal to
+
+00:09:58,070 --> 00:10:05,560
+let's say ninety nine semi-colons and that if you notice here I don't get any returns.
+
+00:10:06,010 --> 00:10:09,270
+Now that makes sense because I'm using an AND statement here.
+
+00:10:09,290 --> 00:10:15,830
+So the the amount column value can't be both for ninety nine and one ninety nine it can be one or the
+
+00:10:15,830 --> 00:10:16,490
+other.
+
+00:10:16,760 --> 00:10:22,280
+So that's where we have to use an OR statement here and now if I have an OR statement then I do get
+
+00:10:22,280 --> 00:10:26,480
+the values that are either 499 or 1 99.
+
+00:10:26,810 --> 00:10:32,510
+In order to use an NS amounts will have to go ahead and see some more different types of queries so
+
+00:10:32,510 --> 00:10:37,970
+let's go out and make an example where we can use an AND operator in order to do this let's go ahead
+
+00:10:37,970 --> 00:10:40,160
+and go back to the customer table.
+
+00:10:40,440 --> 00:10:46,740
+So I must say selects all the columns from the customer table.
+
+00:10:48,560 --> 00:10:50,450
+And so here we have the customer table.
+
+00:10:50,450 --> 00:10:53,550
+So let's go ahead and explore how we can do this.
+
+00:10:53,600 --> 00:11:01,760
+So let's go ahead and say give me these all the columns from the customer table where where the store
+
+00:11:01,760 --> 00:11:05,970
+underscore ID is equal to 1.
+
+00:11:06,200 --> 00:11:10,450
+And let's go ahead and say and first name.
+
+00:11:10,650 --> 00:11:15,830
+Well we can also say an address id here so instead of using the first name that's going to use at or
+
+00:11:16,030 --> 00:11:25,710
+the so say we're story is equal to 1 and the address underscore ID is greater than.
+
+00:11:26,240 --> 00:11:29,110
+Let's go ahead and say five.
+
+00:11:29,240 --> 00:11:32,690
+So if you go ahead and run that now we get results.
+
+00:11:32,690 --> 00:11:37,280
+You'll notice all the story ideas here and the results in the data output are one to make sense.
+
+00:11:37,280 --> 00:11:42,410
+Given our first condition and all the actors say these are greater than five.
+
+00:11:42,710 --> 00:11:47,150
+So if you scroll to the right here under the address id column we should see everything being greater
+
+00:11:47,150 --> 00:11:48,860
+than 5 and that's true there.
+
+00:11:48,860 --> 00:11:52,450
+So that's how you can use the and operator.
+
+00:11:52,550 --> 00:11:56,910
+So hopefully that makes sense as far as like when you can use and when you can use or so.
+
+00:11:56,930 --> 00:11:59,610
+And you want both conditions to be true.
+
+00:11:59,810 --> 00:12:05,030
+And it doesn't really make sense to use and in most cases on the same column because that column can't
+
+00:12:05,030 --> 00:12:07,820
+have two specific values on that row.
+
+00:12:07,940 --> 00:12:11,030
+If it's just a normal integer or string data type.
+
+00:12:11,120 --> 00:12:17,210
+Now we can use or on the same column in order to selectively condition by the same column.
+
+00:12:17,210 --> 00:12:26,820
+So I could say story the equal one or store or underscore the equal to two.
+
+00:12:27,260 --> 00:12:33,980
+And if you notice now all the stories are really equal to one or two were to say and here this doesn't
+
+00:12:33,980 --> 00:12:39,840
+make sense right because the store ID can't be one and two at the same time.
+
+00:12:39,860 --> 00:12:41,980
+So in that case you don't get anything back.
+
+00:12:41,990 --> 00:12:44,850
+So hopefully that clears up the use cases for or.
+
+00:12:44,900 --> 00:12:50,420
+And so or makes sense for these same columns.
+
+00:12:50,690 --> 00:12:57,260
+And it makes sense to use and when you have two different columns something like again an address id
+
+00:12:57,620 --> 00:13:05,030
+to be let's say greater than 200 and you can also then add more things like greater than or equal to
+
+00:13:05,080 --> 00:13:09,470
+two hundred etc. and that will keep filtering out the rows that you want.
+
+00:13:09,470 --> 00:13:14,630
+So that's how you can use a Select where statement in order to build out further understanding of this
+
+00:13:15,110 --> 00:13:19,760
+in the next century going to do is have a select where challenge and I want to challenge you to create
+
+00:13:19,760 --> 00:13:24,230
+queries and I'll give you hints along the way if you need them in order to really build out your understanding
+
+00:13:24,230 --> 00:13:27,150
+of how to use Select and where.
+
+00:13:27,200 --> 00:13:32,210
+So let's go ahead and jump quickly to the slides just so you can get a quick overview of everything
+
+00:13:32,210 --> 00:13:34,770
+we learned.
+
+00:13:34,840 --> 00:13:40,790
+So as a quick review we learn how to combine a simple select from statement with a where clause in order
+
+00:13:40,790 --> 00:13:46,100
+to filter out rows based on some sort of condition and comparison operators and those logical statements
+
+00:13:46,190 --> 00:13:52,550
+and that or allow us to create some conditions in order to further select our queries.
+
+00:13:52,550 --> 00:13:57,260
+So up next we're going to test your understanding of these and select and where with some challenges
+
+00:13:57,270 --> 00:13:57,510
+.
+
+00:13:57,740 --> 00:13:58,550
+OK.
+
+00:13:58,550 --> 00:13:59,420
+Thanks everyone.
+
+00:13:59,660 --> 00:14:02,870
+And best of luck on the challenges which I will see you in the next lecture for

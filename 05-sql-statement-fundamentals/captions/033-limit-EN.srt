@@ -1,0 +1,149 @@
+00:00:01,140 --> 00:00:05,030
+Hello everyone and welcome to the limit statement lecture.
+
+00:00:05,160 --> 00:00:10,520
+So it's going to be a very quick lecture just to introduce the limits sequel query concept.
+
+00:00:10,740 --> 00:00:14,970
+So limit allows you to limit the number of rows you get back after a query.
+
+00:00:15,060 --> 00:00:19,220
+It's really useful when you want to get all the columns but not all the rows.
+
+00:00:19,420 --> 00:00:23,220
+So usually pretty much always goes at the end of a query.
+
+00:00:23,220 --> 00:00:26,550
+Best way to show this is just through a couple of quick examples.
+
+00:00:26,550 --> 00:00:32,980
+So let's go ahead and jump over to the Peachi admin so we can see some examples of this.
+
+00:00:33,090 --> 00:00:38,520
+OK so here I am at PGE admin what I'm going to do is just go ahead and select the DVD rental database
+
+00:00:39,150 --> 00:00:42,530
+and then execute some arbitrary sequent queries.
+
+00:00:42,530 --> 00:00:50,130
+So to show you a good use case for limit imagine you wanted to figure out what all the columns in for
+
+00:00:50,130 --> 00:00:51,760
+example the customer table was.
+
+00:00:51,780 --> 00:00:56,580
+You can say select Asterix from customer.
+
+00:00:56,610 --> 00:00:58,860
+So my colon run this.
+
+00:00:58,860 --> 00:01:03,990
+Now if you're doing a really large database which are table or data set which is what you're usually
+
+00:01:03,990 --> 00:01:08,080
+going to be doing in this case is reasoning and sample data set.
+
+00:01:08,220 --> 00:01:09,960
+It's only about 600 rows.
+
+00:01:09,960 --> 00:01:11,220
+Five hundred ninety nine.
+
+00:01:11,340 --> 00:01:18,210
+So it's not a big deal currently to return all of these rows but usually it is going to be a big deal
+
+00:01:18,230 --> 00:01:18,560
+.
+
+00:01:18,870 --> 00:01:26,250
+So in that case what you can do is go ahead and add limits at the very end of your query and then you
+
+00:01:26,520 --> 00:01:29,600
+enter a number signifying how many rows you want back.
+
+00:01:29,610 --> 00:01:31,360
+So in this case I'll say limit 5.
+
+00:01:31,410 --> 00:01:33,530
+And if I go ahead and run that query number.
+
+00:01:33,570 --> 00:01:40,300
+EF 5 is the key or the hot key for running a query instead of having to click here execute query.
+
+00:01:40,440 --> 00:01:46,590
+And so now I've limited that to just five rows and it returns the first five rows for that query.
+
+00:01:46,620 --> 00:01:52,380
+So there's two really good use cases for this one which will learn about later is when you order or
+
+00:01:52,380 --> 00:01:53,650
+use ORDER BY.
+
+00:01:53,650 --> 00:01:59,550
+So you can just grab like the top five or the first one when you order stuff and we'll learn about ORDER
+
+00:01:59,550 --> 00:02:01,330
+BY in the next lecture.
+
+00:02:01,740 --> 00:02:05,910
+And the other great use case for this is when you just want to figure out what all the columns were
+
+00:02:06,270 --> 00:02:07,880
+for that particular table.
+
+00:02:07,890 --> 00:02:09,350
+You can just say limit 5.
+
+00:02:09,420 --> 00:02:14,430
+That way you return everything as far as the columns you're not returning the entire database so it
+
+00:02:14,430 --> 00:02:17,310
+doesn't take a whole long time to execute a query.
+
+00:02:17,310 --> 00:02:22,470
+So for example just limit one goes ahead and returns you this.
+
+00:02:22,470 --> 00:02:24,660
+So again it's a pretty basic use case.
+
+00:02:24,660 --> 00:02:27,560
+Just limit your keyword goes at the end.
+
+00:02:27,660 --> 00:02:28,890
+So if you have other stuff go.
+
+00:02:28,920 --> 00:02:30,450
+You would just go ahead and fill it in here.
+
+00:02:30,450 --> 00:02:35,840
+So select a certain column from customer maybe have Sunwear statements etc..
+
+00:02:36,030 --> 00:02:42,450
+And then at the very end of all these statements you just say limit and it limits your response to just
+
+00:02:42,450 --> 00:02:44,500
+how many rows you specify.
+
+00:02:44,550 --> 00:02:44,840
+OK.
+
+00:02:44,850 --> 00:02:47,530
+There's that challenge for this because it's a pretty simple concept.
+
+00:02:47,560 --> 00:02:52,330
+Again at the end of your query you can just say limit and then the number of rows you want back semi-colon
+
+00:02:52,350 --> 00:02:52,960
+.
+
+00:02:53,070 --> 00:02:54,590
+OK thanks everyone.
+
+00:02:54,690 --> 00:02:56,250
+And then the next lecture we're going to learn about.
+
+00:02:56,280 --> 00:02:57,560
+ORDER BY.
+
+00:02:57,600 --> 00:02:59,070
+Thanks and I'll see you at the next lecture

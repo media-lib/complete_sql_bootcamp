@@ -1,0 +1,206 @@
+00:00:01,230 --> 00:00:06,790
+Hello everyone and welcome to the challenge lecture for the select where statements.
+
+00:00:07,020 --> 00:00:11,160
+So in this lecture we're going to get a quick update on what the challenge structure is going to look
+
+00:00:11,160 --> 00:00:15,620
+like for the rest of the course and then we'll get the challenges and the solutions that challenge.
+
+00:00:15,620 --> 00:00:19,310
+There's going to be three challenges for the section.
+
+00:00:19,800 --> 00:00:21,010
+So quick notice.
+
+00:00:21,030 --> 00:00:26,620
+We now know enough to begin answering challenge questions posed as business tests.
+
+00:00:26,670 --> 00:00:32,280
+So for example the challenge questions are going to be posed in the form of something like how many
+
+00:00:32,280 --> 00:00:37,980
+customers have the first named Jared versus previously we were being really explicit something like
+
+00:00:38,400 --> 00:00:43,230
+use the select where statement to find Jared in the first name column of the customer table.
+
+00:00:43,540 --> 00:00:48,780
+From now on we're actually going to focus more on business tasks or just general business questions
+
+00:00:49,410 --> 00:00:54,000
+for example that how many customers have the first name Jared versus explicitly telling you what to
+
+00:00:54,000 --> 00:00:55,100
+do in sequel.
+
+00:00:55,470 --> 00:01:01,560
+The reasons for that is in a real world you're not going to be told what sequel commands to use or it's
+
+00:01:01,560 --> 00:01:03,560
+going to be told a business question.
+
+00:01:03,810 --> 00:01:05,640
+So that's what we're going to move towards that.
+
+00:01:05,820 --> 00:01:11,460
+And also as we go later on throughout the course there's going to be multiple ways to solve the question
+
+00:01:11,460 --> 00:01:12,500
+or the challenge.
+
+00:01:12,540 --> 00:01:17,400
+So we're not going explicitly say how to use your sequel query skills you're going to able to choose
+
+00:01:17,400 --> 00:01:19,210
+the way you like the best.
+
+00:01:19,520 --> 00:01:19,810
+OK.
+
+00:01:19,830 --> 00:01:23,950
+So let's go in and see our first challenge and an example of this.
+
+00:01:23,970 --> 00:01:29,130
+So the first select where challenge is this a customer forgot their wallet at our store and we need
+
+00:01:29,130 --> 00:01:31,920
+to track down their e-mail to inform them.
+
+00:01:31,920 --> 00:01:37,890
+So what I want you to know or give me is what's the email for the customer with the name Nancy Thomas
+
+00:01:37,900 --> 00:01:38,240
+.
+
+00:01:38,600 --> 00:01:38,980
+OK.
+
+00:01:39,000 --> 00:01:45,140
+So again the challenge is what's the email for the customer with the name Nancy Thomas All right.
+
+00:01:45,240 --> 00:01:47,930
+Coming up next is the solution to this query.
+
+00:01:48,240 --> 00:01:49,750
+So go ahead and pause the video now.
+
+00:01:49,770 --> 00:01:51,530
+You don't want to see his solution yet.
+
+00:01:52,170 --> 00:01:54,510
+OK here's a solution.
+
+00:01:54,510 --> 00:02:00,690
+So a solution is to select the e-mail columns to select e-mail from customer table where first name
+
+00:02:00,690 --> 00:02:05,090
+is equal to Nancy and the last name is equal to Thomas.
+
+00:02:05,100 --> 00:02:06,060
+A quick note here.
+
+00:02:06,100 --> 00:02:08,350
+There's only one person of the first name Nancy.
+
+00:02:08,390 --> 00:02:11,030
+You could have also said where a first name equals Nancy.
+
+00:02:11,500 --> 00:02:12,140
+OK.
+
+00:02:12,390 --> 00:02:14,630
+So that should have given you the e-mail for Nancy Thomas.
+
+00:02:14,640 --> 00:02:16,800
+Here's the next challenge.
+
+00:02:16,950 --> 00:02:21,720
+Next challenge is a customer wants to know the movie outlaw Hinkey is about.
+
+00:02:21,720 --> 00:02:25,460
+So could you give them a description for the movie outlaw Hinkey.
+
+00:02:25,470 --> 00:02:30,140
+Again your challenge is to give them the description for the movie outlaw Hank.
+
+00:02:31,020 --> 00:02:31,770
+OK.
+
+00:02:31,860 --> 00:02:33,660
+So up next is the solution for this.
+
+00:02:33,670 --> 00:02:35,520
+So go get impassivity now.
+
+00:02:35,990 --> 00:02:36,350
+All right.
+
+00:02:36,360 --> 00:02:37,990
+Now I'm going to go to the solution.
+
+00:02:38,400 --> 00:02:45,150
+So the solution is to select that description column from the film table or the title is equal to outlaw
+
+00:02:45,150 --> 00:02:46,240
+hanky.
+
+00:02:46,350 --> 00:02:48,250
+Remember to put that semi-colon in see.
+
+00:02:48,270 --> 00:02:49,610
+And the query.
+
+00:02:50,280 --> 00:02:53,080
+OK our last challenge is this.
+
+00:02:53,160 --> 00:02:56,050
+So the situation is a customer's late on their movie return.
+
+00:02:56,340 --> 00:02:59,660
+And I know their address is 2 5 9 iPods right.
+
+00:02:59,670 --> 00:03:00,340
+That's I.
+
+00:03:00,340 --> 00:03:01,960
+P O H drive.
+
+00:03:02,280 --> 00:03:05,950
+I want to call them to let them know that they're late on their movie return.
+
+00:03:06,300 --> 00:03:11,750
+So can you give me the phone number for the person who lives that 4:58 9 I drive.
+
+00:03:12,540 --> 00:03:12,990
+OK.
+
+00:03:12,990 --> 00:03:16,600
+So up next is the solution to this.
+
+00:03:16,830 --> 00:03:21,570
+So here's a solution you had a select the phone call from the address table.
+
+00:03:21,630 --> 00:03:26,580
+So I didn't explicitly tell you what table you may have looked at the customer table first but the easiest
+
+00:03:26,580 --> 00:03:32,920
+way to it is select phone from address where address is equal to 2 5 9 iPod drive.
+
+00:03:33,600 --> 00:03:34,130
+OK.
+
+00:03:34,470 --> 00:03:37,110
+So that's it for the challenges.
+
+00:03:37,110 --> 00:03:38,100
+Great job.
+
+00:03:38,100 --> 00:03:41,850
+And now we're going to learn some more tools and some more queries statements we can use with select
+
+00:03:41,940 --> 00:03:42,930
+and where.
+
+00:03:43,260 --> 00:03:44,970
+Thanks everyone and I'll see you at the next lecture

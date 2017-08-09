@@ -1,0 +1,467 @@
+00:00:01,260 --> 00:00:06,840
+Hello everyone and welcome to the like statements lecture this lecture we're going to learn about the
+
+00:00:06,840 --> 00:00:08,110
+like statements.
+
+00:00:08,130 --> 00:00:13,020
+We'll get an overview of how to use it and then we'll also see some examples in the PGE admin of the
+
+00:00:13,020 --> 00:00:15,320
+SQL query.
+
+00:00:15,360 --> 00:00:21,090
+OK so suppose the store manager asks you to find the customer and he doesn't actually remember the exact
+
+00:00:21,150 --> 00:00:21,620
+name.
+
+00:00:21,660 --> 00:00:27,200
+He just remembers that the customer's first name begins of something like J E N so it could be Jenny
+
+00:00:27,210 --> 00:00:27,250
+.
+
+00:00:27,250 --> 00:00:29,120
+Jennifer doesn't really remember.
+
+00:00:29,400 --> 00:00:31,820
+So how can you find that exact customer.
+
+00:00:31,850 --> 00:00:38,790
+That store manager is asking for one way to do it would be to find the customer in the Customer table
+
+00:00:39,060 --> 00:00:40,690
+by looking at that first name column.
+
+00:00:40,710 --> 00:00:46,080
+Maybe you sort it alphabetically and then see if there's any value that begins with J E N.
+
+00:00:46,230 --> 00:00:49,920
+So that would actually be really tedious because there are so many rows in that customer table you know
+
+00:00:49,920 --> 00:00:53,850
+scroll down get to the J section the net the J E etc..
+
+00:00:54,090 --> 00:00:58,110
+So there's a better way to do this and it's using the like statement and something known as pattern
+
+00:00:58,110 --> 00:00:59,180
+matching.
+
+00:00:59,760 --> 00:01:05,310
+So fortunately you can use this like operator and postgresql sequel and most other sequel engines also
+
+00:01:05,310 --> 00:01:10,160
+support this like statements operator to use the following query.
+
+00:01:10,260 --> 00:01:14,430
+So you would say select the columns you want from the table you want.
+
+00:01:14,430 --> 00:01:21,000
+So first thing last then columns from customer table where the columns first name is like.
+
+00:01:21,150 --> 00:01:23,400
+And then you kind of have some special characters here.
+
+00:01:23,610 --> 00:01:27,980
+You have a string and you put in J E and in a percentage sign.
+
+00:01:28,140 --> 00:01:32,700
+And that basically is going to start some pattern matching where it's going to be anything that starts
+
+00:01:32,700 --> 00:01:35,740
+with J E N and any characters after that.
+
+00:01:36,180 --> 00:01:42,150
+So to go into this and a little more detail notice that that where clause contains that special expression
+
+00:01:42,150 --> 00:01:42,360
+.
+
+00:01:42,360 --> 00:01:49,140
+So the first name that column the like operator in the string that contains a percent sign or a percent
+
+00:01:49,170 --> 00:01:52,930
+character and that's referred to as a pattern.
+
+00:01:53,520 --> 00:02:00,000
+So the query returns rows whose values in the first name column begin with Jan and may be followed by
+
+00:02:00,000 --> 00:02:01,800
+any sequence of characters.
+
+00:02:01,860 --> 00:02:04,230
+So that technique is called pattern matching.
+
+00:02:04,230 --> 00:02:10,420
+So again with that percent sign does we go ahead and go back to the actual query here.
+
+00:02:10,470 --> 00:02:19,350
+It says OK find me any values where the first name column the value in the first name column is like
+
+00:02:20,270 --> 00:02:26,020
+J E and percentage sign meaning it starts of J E N and any characters after that.
+
+00:02:26,190 --> 00:02:34,740
+So anything like Jennifer a Jenny I don't know Jeremiah whatever could be returned here.
+
+00:02:35,010 --> 00:02:38,310
+So that technique again is known as pattern matching.
+
+00:02:38,310 --> 00:02:44,640
+So you can construct the pattern by combining a string with wildcard characters and that's another term
+
+00:02:44,730 --> 00:02:49,490
+in a more common sequel term for these sort of percent signs and underscores.
+
+00:02:49,500 --> 00:02:54,630
+So those are known as wildcard characters because wildcard basically means you can put in anything you
+
+00:02:54,630 --> 00:02:59,820
+want after that and you can use the like or not like operator to find the matches.
+
+00:02:59,940 --> 00:03:05,760
+So use that percent sign for matching any sequence of characters and you can use an underscore for matching
+
+00:03:05,760 --> 00:03:08,110
+any single character.
+
+00:03:08,130 --> 00:03:13,170
+So let's go out and see some examples to improve our understanding of how to use these wildcard characters
+
+00:03:13,950 --> 00:03:17,050
+or pattern matching along the like statements.
+
+00:03:17,130 --> 00:03:23,130
+So I'm going to go ahead now and hop over to PGE adamant to do some queries.
+
+00:03:23,130 --> 00:03:25,380
+OK so here we are at PGE admen.
+
+00:03:25,470 --> 00:03:30,590
+Go ahead and click on DVD rental and select execute arbitrary sequel.
+
+00:03:30,780 --> 00:03:33,540
+So I can begin to type in some sequel.
+
+00:03:33,540 --> 00:03:34,880
+Wanting to do just go ahead and do that.
+
+00:03:34,890 --> 00:03:36,560
+First example we're talking about.
+
+00:03:36,600 --> 00:03:44,340
+So the store manager just remembers that the name starts with J E N I say selects first name column
+
+00:03:44,670 --> 00:03:59,190
+comma last name column from the customer table where we'll say first underscore a name like that special
+
+00:03:59,190 --> 00:04:00,390
+key word.
+
+00:04:00,390 --> 00:04:05,170
+And this is where we're going to put in those wild cards or special operators for pattern matching.
+
+00:04:05,400 --> 00:04:13,000
+So he put in the string new wants J E J E N and then we have the percent sign which is the wildcard
+
+00:04:13,050 --> 00:04:14,100
+and then a semi-colon.
+
+00:04:14,100 --> 00:04:19,920
+So that basically means return anything that starts with J E N and any number of characters after that
+
+00:04:19,930 --> 00:04:20,230
+.
+
+00:04:20,520 --> 00:04:23,160
+So if you go ahead and run that we get back.
+
+00:04:23,160 --> 00:04:27,590
+Jennifer Jenny of IEEE and Jenny ending of a Y.
+
+00:04:28,200 --> 00:04:28,840
+OK.
+
+00:04:29,070 --> 00:04:31,970
+So that's what we can use that in the most basic example.
+
+00:04:32,170 --> 00:04:34,690
+Well let's go ahead and see some more examples.
+
+00:04:34,710 --> 00:04:38,650
+So that wildcard character can actually also go at the beginning.
+
+00:04:39,240 --> 00:04:41,940
+So we can ask though in the beginning.
+
+00:04:41,940 --> 00:04:46,830
+So let me show you an example that let's say we just remembered that the name ended in a Y we could
+
+00:04:46,830 --> 00:04:47,110
+say.
+
+00:04:47,110 --> 00:04:49,510
+Percent sign Y.
+
+00:04:49,560 --> 00:04:55,650
+And what that means is any number of characters so that percent cite wild card means any number of characters
+
+00:04:55,860 --> 00:04:57,350
+and the ending with a Y.
+
+00:04:57,600 --> 00:05:00,900
+So in this case we should get all names for Y.
+
+00:05:01,020 --> 00:05:01,590
+And here they are.
+
+00:05:01,590 --> 00:05:09,310
+So we have Mary Dorothy Nancy beti etc. and actually quite a few up to 87 were returned their so you
+
+00:05:09,310 --> 00:05:18,820
+can now use percent signs as wildcard operators to get Rose that either begin or end with certain characters
+
+00:05:19,210 --> 00:05:22,710
+and you can actually use them in the middle.
+
+00:05:22,720 --> 00:05:23,930
+So in conjunction.
+
+00:05:24,050 --> 00:05:32,330
+So for example let's say you wanted to figure out any names that had e are in them somewhere in the
+
+00:05:32,320 --> 00:05:33,490
+name.
+
+00:05:33,500 --> 00:05:34,880
+You could actually do something like this.
+
+00:05:34,880 --> 00:05:38,210
+You could say we're first name is like percent sign.
+
+00:05:38,380 --> 00:05:39,710
+Our percent sign.
+
+00:05:40,030 --> 00:05:44,990
+And that's going to return any names that have e are somewhere in the name.
+
+00:05:45,050 --> 00:05:50,900
+So any carrot any number of wild card characters before any number of wild card characters after it
+
+00:05:50,900 --> 00:05:50,960
+.
+
+00:05:51,010 --> 00:05:57,160
+So if you go ahead and run that now we get any name that had e are somewhere in the name.
+
+00:05:57,280 --> 00:05:58,350
+So we have Jennifer.
+
+00:05:58,380 --> 00:06:03,680
+That's at the end of the name Kimberly that's in the middle the name Catherine in the middle name etc.
+
+00:06:03,690 --> 00:06:04,270
+.
+
+00:06:04,500 --> 00:06:07,510
+So what what's actually happening here let's break it down.
+
+00:06:07,880 --> 00:06:14,720
+Sequel is saying grab me the first name and the last name column from the customer table or the value
+
+00:06:14,810 --> 00:06:18,380
+in the first name column is like.
+
+00:06:18,410 --> 00:06:19,220
+Percent sign.
+
+00:06:19,230 --> 00:06:20,910
+E.R percent sign with a string.
+
+00:06:20,910 --> 00:06:22,500
+So they're single quotes there.
+
+00:06:22,690 --> 00:06:30,760
+So it's that saying is any number of characters 0 through whatever e are and then percent sign any number
+
+00:06:30,760 --> 00:06:32,980
+of characters or through whatever.
+
+00:06:32,990 --> 00:06:37,510
+So it doesn't matter if it shows up in the beginning at the end or somewhere in the middle.
+
+00:06:37,570 --> 00:06:41,680
+It's going to return where the first name column is equal to those values.
+
+00:06:41,750 --> 00:06:45,040
+So that's going to be really useful for us later on.
+
+00:06:45,040 --> 00:06:51,470
+Now we also discussed another wildcard operate operator and that was the underscore and with the underscore
+
+00:06:51,460 --> 00:06:55,610
+allows us to do is match for a single character.
+
+00:06:55,610 --> 00:07:01,030
+So again the percent sign is going to match any sequence of characters 0 through infinity characters
+
+00:07:01,510 --> 00:07:05,040
+and underscore is going to match for any single character.
+
+00:07:05,060 --> 00:07:07,520
+So let's go ahead and check that out.
+
+00:07:07,880 --> 00:07:18,230
+So let's say if select first name underscore last name from customer first name is like I'm going to
+
+00:07:18,620 --> 00:07:19,590
+edit this.
+
+00:07:19,690 --> 00:07:23,360
+I'll say underscore h e r.
+
+00:07:23,670 --> 00:07:27,580
+Percent sign single quote semi-colon.
+
+00:07:27,940 --> 00:07:31,400
+And if I run that we can take a look at what's happening here.
+
+00:07:31,390 --> 00:07:38,020
+So you're telling sequel now it's instead of any sequence of characters every underscore just counts
+
+00:07:38,020 --> 00:07:39,790
+for a single character.
+
+00:07:39,790 --> 00:07:45,370
+So basically now here we're only giving sequel the option of saying OK replace the underscore with any
+
+00:07:45,380 --> 00:07:49,340
+single character as a wildcard and then H.
+
+00:07:49,370 --> 00:07:52,880
+R. and then percent science so any number of characters after that.
+
+00:07:52,880 --> 00:07:57,490
+So if we look at the results here we get first name C as a single character H.
+
+00:07:57,910 --> 00:07:59,030
+Percent sign.
+
+00:07:59,040 --> 00:08:00,910
+T g is a single character.
+
+00:08:01,140 --> 00:08:08,140
+Ichy are present sign as single character etc. and any number of characters can come after that.
+
+00:08:08,140 --> 00:08:11,490
+H e r string of characters.
+
+00:08:11,500 --> 00:08:13,180
+Let's go ahead and take some look at.
+
+00:08:13,390 --> 00:08:15,470
+Not like examples.
+
+00:08:15,470 --> 00:08:21,760
+So just to quickly show you how to use not like let's say we wanted anything that was not like jeon
+
+00:08:22,000 --> 00:08:22,700
+.
+
+00:08:23,060 --> 00:08:30,070
+So I could say where not like a single quote here.
+
+00:08:30,230 --> 00:08:35,650
+J E N percentage sign single quotes semi-colons.
+
+00:08:35,650 --> 00:08:39,790
+If I run that no I get basically the exact opposite.
+
+00:08:39,830 --> 00:08:43,610
+If I were to say just like J and percent sign.
+
+00:08:44,200 --> 00:08:44,560
+OK.
+
+00:08:44,620 --> 00:08:46,610
+And there are the results there.
+
+00:08:47,020 --> 00:08:48,650
+So that's all there is to it.
+
+00:08:48,700 --> 00:08:54,760
+As far as the like operator something I also want you to be aware of is in this case this like operator
+
+00:08:54,760 --> 00:08:56,140
+is case sensitive.
+
+00:08:56,380 --> 00:09:03,920
+Postscripts sequel provides the I like operator the X. exactly like the like operator except it values
+
+00:09:04,030 --> 00:09:06,730
+matches without case sensitivity.
+
+00:09:06,910 --> 00:09:14,660
+So to show you an example of that let's say I knew the name started with a bar like Barry or Barbara
+
+00:09:15,190 --> 00:09:28,850
+I could say I like so case insensitivity and then I could say all capitals BAR Are percent sign single
+
+00:09:28,850 --> 00:09:32,220
+quote semi-colon here and run that.
+
+00:09:32,410 --> 00:09:36,060
+And so you'll notice here if I edit this capitalization in any way.
+
+00:09:36,080 --> 00:09:38,110
+So here is all caps.
+
+00:09:38,170 --> 00:09:44,710
+So if I say B lowercase a uppercase R and run that I'm going to get the same results.
+
+00:09:44,710 --> 00:09:51,040
+However if I did that just using like in Iran that I wouldn't get anything back because like by itself
+
+00:09:51,080 --> 00:09:52,420
+is case sensitive.
+
+00:09:52,660 --> 00:09:53,250
+But I can use.
+
+00:09:53,300 --> 00:09:56,820
+I like for case insensitivity.
+
+00:09:56,870 --> 00:09:58,560
+So just keep that in mind.
+
+00:09:59,170 --> 00:09:59,810
+All right.
+
+00:10:00,110 --> 00:10:05,000
+So later on we're going to get some practice of some challenges to really focus your understanding of
+
+00:10:05,000 --> 00:10:07,570
+the underscore in the percent sign.
+
+00:10:07,580 --> 00:10:13,510
+So like really goes hand in hand with percent sign and underscore those wild card or card operators
+
+00:10:13,510 --> 00:10:13,810
+.
+
+00:10:13,870 --> 00:10:17,790
+She should always be keeping them in mind when you see something like the like statements.
+
+00:10:18,080 --> 00:10:18,970
+OK.
+
+00:10:18,970 --> 00:10:19,750
+Thanks everyone.
+
+00:10:19,750 --> 00:10:23,000
+And I'm excited for you to tackle the challenges coming up next.
+
+00:10:23,000 --> 00:10:24,040
+I'll see you at the next lecture
