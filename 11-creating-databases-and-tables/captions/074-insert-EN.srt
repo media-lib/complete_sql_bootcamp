@@ -1,0 +1,659 @@
+00:00:01,410 --> 00:00:04,880
+Hello everyone and welcome to the inserts lecture.
+
+00:00:05,340 --> 00:00:09,450
+So in this lecture we're going to learn how to use the insert command and then we're going to see some
+
+00:00:09,450 --> 00:00:11,190
+examples.
+
+00:00:11,190 --> 00:00:15,540
+So when you first create a new table it doesn't have any data inside of it yet.
+
+00:00:15,750 --> 00:00:21,060
+So we've seen the create table command but after we create the table the rows are still empty.
+
+00:00:21,060 --> 00:00:25,380
+So we've defined the schema that we need as far as the data types and the columns.
+
+00:00:25,380 --> 00:00:27,540
+We don't actually have rows of data in it.
+
+00:00:27,600 --> 00:00:33,900
+So the first thing you often do is insert new rows into that table and sequel provides the insert statement
+
+00:00:34,230 --> 00:00:39,260
+that allows you to insert one or more rows into a table at a time.
+
+00:00:39,450 --> 00:00:44,700
+So the actual syntax is pretty straightforward and you can see here at the bottom you have the insert
+
+00:00:44,850 --> 00:00:50,850
+into table then some columns and then you have values so first you specify the name of the table that
+
+00:00:50,850 --> 00:00:55,860
+you want to insert a new row after the inserts into clause.
+
+00:00:55,920 --> 00:01:01,380
+So you always start off with inserts into then the name of the table you want inserts and you row and
+
+00:01:01,380 --> 00:01:06,420
+then you follow that by a comma separated column list to start with some parentheses and then you have
+
+00:01:06,420 --> 00:01:07,920
+the name of the columns.
+
+00:01:08,010 --> 00:01:13,430
+Second you list a comma separated value list after the values clause.
+
+00:01:13,470 --> 00:01:19,830
+So you're going to say insert into table a comma separated column list then you'll say values and then
+
+00:01:19,830 --> 00:01:25,650
+the value list must be in the same order as the columns lists specified after that table name.
+
+00:01:25,650 --> 00:01:30,430
+So for example in this in the example here below we have Column 1 column too.
+
+00:01:30,450 --> 00:01:36,270
+So then value 1 should be expected to be inserted into a column on and then value 2 should be expected
+
+00:01:36,270 --> 00:01:37,590
+to be inserted into column 2.
+
+00:01:37,590 --> 00:01:44,130
+So the order there needs to match as you would probably expect to add multiple rows into a table at
+
+00:01:44,130 --> 00:01:44,580
+a time.
+
+00:01:44,580 --> 00:01:50,490
+Use the following syntax so we basically have a list of lists and those values say insert into table
+
+00:01:50,500 --> 00:01:50,580
+.
+
+00:01:50,670 --> 00:01:56,220
+The list of columns that you say values and then by parentheses you have a single list than then comma
+
+00:01:56,220 --> 00:01:56,280
+.
+
+00:01:56,310 --> 00:02:00,460
+Another set of prints is for another list of values and so on.
+
+00:02:00,480 --> 00:02:08,220
+OK so to insert data that comes from another table you can use the insert into select statement as follows
+
+00:02:08,220 --> 00:02:08,500
+.
+
+00:02:08,610 --> 00:02:09,780
+You can say something like this.
+
+00:02:09,780 --> 00:02:16,900
+You can say insert into table and then you'll say selects certain amount of columns from another table
+
+00:02:17,310 --> 00:02:20,030
+and then you can also add some where condition.
+
+00:02:20,040 --> 00:02:25,170
+So let's well see an example of how to actually do this later on in P.G. out of it and the sequel Ed.
+
+00:02:25,170 --> 00:02:25,730
+.
+
+00:02:25,800 --> 00:02:28,670
+So it'll probably be more clear when we actually see a written example of this.
+
+00:02:28,680 --> 00:02:34,510
+But just keep in mind that you're allowed to insert data directly from another table.
+
+00:02:34,710 --> 00:02:40,890
+So now that we've done that let's go ahead and go to PG admen to explore the insert statements.
+
+00:02:40,950 --> 00:02:46,540
+I'm going to go ahead and open a PGE admin and open up a sequel Ed..
+
+00:02:46,650 --> 00:02:46,980
+All right.
+
+00:02:46,980 --> 00:02:49,550
+So here I am at PG admin.
+
+00:02:49,560 --> 00:02:56,660
+Let's go ahead and review how to create a table in order to create a table for the insert into demonstrations
+
+00:02:56,670 --> 00:03:06,100
+so it's going to review how to create a table we're going to say create table call this table link keep
+
+00:03:06,120 --> 00:03:07,460
+an open parentheses.
+
+00:03:07,770 --> 00:03:14,250
+And now we're going to have the column name the type and then the constraint.
+
+00:03:14,250 --> 00:03:17,760
+So it's going to be this will be the primary key of some ID.
+
+00:03:17,880 --> 00:03:25,530
+So we have the primary key to common there to separate that column also have a u r l and we'll say it's
+
+00:03:25,530 --> 00:03:32,290
+a variable character 255 characters we'll call it not no.
+
+00:03:32,730 --> 00:03:42,960
+But a common there will make another column called name have be a variable character will pass in 255
+
+00:03:44,490 --> 00:03:45,400
+also call it not.
+
+00:03:45,410 --> 00:03:47,050
+No.
+
+00:03:47,980 --> 00:03:51,480
+I have another column called description.
+
+00:03:51,720 --> 00:03:58,680
+Let's have it be a variable character 255 again 225 two fifty five doesn't really matter we'll have
+
+00:03:58,680 --> 00:04:00,350
+no constraints on that one.
+
+00:04:00,570 --> 00:04:03,560
+And then we'll have one more called Oriol.
+
+00:04:03,780 --> 00:04:09,330
+Maybe that's a relationship or something and then we'll we'll have that be a variable character just
+
+00:04:09,330 --> 00:04:11,520
+make that 50.
+
+00:04:11,640 --> 00:04:14,530
+Again no actual constraints on that.
+
+00:04:14,820 --> 00:04:16,720
+So we're going to create this table called Link.
+
+00:04:16,740 --> 00:04:22,410
+It's going to have a couple of columns have an ID column as the primary key then a u r l column a named
+
+00:04:22,410 --> 00:04:27,090
+column description column and and Ariail column.
+
+00:04:27,120 --> 00:04:28,470
+So go ahead and run this.
+
+00:04:28,470 --> 00:04:30,930
+Make sure it works out.
+
+00:04:30,930 --> 00:04:31,210
+All right.
+
+00:04:31,230 --> 00:04:38,790
+So looks like we created the table let's go ahead and make sure by saying select everything from link
+
+00:04:40,180 --> 00:04:44,920
+and looks like we're good here so we have the idea that your real name is scription and this Ariail
+
+00:04:44,920 --> 00:04:47,260
+column or well call them.
+
+00:04:47,260 --> 00:04:49,270
+So let's go ahead and explore.
+
+00:04:49,290 --> 00:04:53,640
+I actually use insert into the syntax.
+
+00:04:53,650 --> 00:04:54,740
+Again looks like this.
+
+00:04:54,760 --> 00:05:04,690
+I'm going to say inserts into the name of my table link and then the name of the columns actually want
+
+00:05:04,690 --> 00:05:05,980
+to insert into.
+
+00:05:05,980 --> 00:05:11,140
+So in this case all inserts a u r l and a name.
+
+00:05:11,680 --> 00:05:18,820
+And then I'm going to say values and then I'm going to pass in a list of values here.
+
+00:05:18,820 --> 00:05:25,320
+So we're going to say something like W.W. for the oral Google dot com.
+
+00:05:25,330 --> 00:05:28,860
+So just a string there is a variable character.
+
+00:05:28,860 --> 00:05:34,740
+And let's go ahead and then the name of that is just going to be Google.
+
+00:05:35,140 --> 00:05:37,870
+Finish that list put a semi-colon at the end of it.
+
+00:05:37,900 --> 00:05:39,030
+Go ahead and run it.
+
+00:05:39,490 --> 00:05:42,490
+And looks like it worked out.
+
+00:05:42,640 --> 00:05:46,090
+And keep in mind it's a reminder to insert a character data type.
+
+00:05:46,090 --> 00:05:50,610
+You must enclose it in those single quotes if you're doing a number data type.
+
+00:05:50,610 --> 00:05:51,570
+You don't need to do that.
+
+00:05:51,580 --> 00:05:58,090
+You can just use a plain number if you omit any columns that accepts a null value in the insert statement
+
+00:05:58,090 --> 00:05:58,390
+.
+
+00:05:58,540 --> 00:06:04,780
+The column will take its default value as null and you can actually specify what default values it should
+
+00:06:04,780 --> 00:06:05,340
+go to.
+
+00:06:05,350 --> 00:06:08,530
+If you don't want NULL to be the automatic default value.
+
+00:06:08,860 --> 00:06:11,070
+Let's go ahead and make sure this worked out.
+
+00:06:11,320 --> 00:06:15,050
+Let's go ahead and say select everything.
+
+00:06:15,970 --> 00:06:20,830
+All columns from link again are all rows I should say all columns in rows.
+
+00:06:20,830 --> 00:06:22,210
+So select everything from link.
+
+00:06:22,210 --> 00:06:28,220
+If I run this looks good here we have an ID integer a u r l and the name.
+
+00:06:28,400 --> 00:06:35,120
+So remember that Id integer was a serial data type so it automatically put a 1 in there.
+
+00:06:35,170 --> 00:06:38,840
+And if we do another one or do another insert automatically put in at 2.
+
+00:06:38,860 --> 00:06:41,660
+So it basically automatically increments that value.
+
+00:06:42,190 --> 00:06:46,310
+OK so that was a very basic example of insert into.
+
+00:06:46,390 --> 00:06:52,200
+Again we just had to say insert into the table pass in the list of columns and then say values and pass
+
+00:06:52,200 --> 00:06:53,560
+in the list of values.
+
+00:06:53,560 --> 00:06:57,200
+Let's go ahead and do this one more time just to make sure we really understand it.
+
+00:06:57,580 --> 00:07:02,330
+So I'm going to say again inserts into linked table.
+
+00:07:03,130 --> 00:07:05,460
+We'll put in a u r l and a name again.
+
+00:07:05,740 --> 00:07:07,210
+It's those columns.
+
+00:07:07,410 --> 00:07:13,960
+Now we're going to say values and then we're going to pass in a list of values so let's put in another
+
+00:07:13,960 --> 00:07:23,620
+web site let's just go ahead and say Yahoo dot com and then we'll call this name Yahoo.
+
+00:07:23,620 --> 00:07:24,380
+Semi colons.
+
+00:07:24,400 --> 00:07:26,300
+And that is go ahead and run.
+
+00:07:26,300 --> 00:07:28,970
+That looks like it worked that out.
+
+00:07:29,000 --> 00:07:30,490
+It's one row affected.
+
+00:07:30,730 --> 00:07:35,080
+And let's go out and say select all columns from link.
+
+00:07:35,100 --> 00:07:36,950
+Make sure it works.
+
+00:07:37,120 --> 00:07:42,290
+And there it is again and note that that I.D. which is a serial data type automatically put in a to
+
+00:07:42,310 --> 00:07:45,340
+value increments off of one from the ID.
+
+00:07:45,370 --> 00:07:47,120
+So now we have the R L in the name.
+
+00:07:47,380 --> 00:07:53,350
+So that's looking good and we have no values here since it defaults to know if we don't actually assign
+
+00:07:53,350 --> 00:07:56,770
+a value to a column for that particular row.
+
+00:07:56,770 --> 00:08:02,770
+Now let's take a quick look at how we can insert multiple rows at a time that can say something like
+
+00:08:02,770 --> 00:08:06,140
+this will say insert into link.
+
+00:08:06,370 --> 00:08:12,090
+Again let's just do the your all and name column values.
+
+00:08:12,280 --> 00:08:17,610
+And in this case we're going to insert its multiple values or multiple rows I should say.
+
+00:08:17,620 --> 00:08:27,470
+So let's go ahead and say that w that being that column and we'll describe that as being.
+
+00:08:27,480 --> 00:08:29,930
+Let's go ahead and put in another list of values.
+
+00:08:30,220 --> 00:08:40,900
+Let's go ahead and say W.W. Amazon.com and we'll call that name Amazon semi-colon there go in and run
+
+00:08:40,900 --> 00:08:40,930
+.
+
+00:08:40,930 --> 00:08:43,390
+That looks like it affected two rows.
+
+00:08:43,410 --> 00:08:50,850
+And again confirmed that it worked by saying select everything from link.
+
+00:08:51,740 --> 00:08:57,080
+And if we scroll down here at the bottom we have Google Yahoo and being Amazon on there.
+
+00:08:57,100 --> 00:08:59,110
+So that worked out great.
+
+00:08:59,110 --> 00:09:00,410
+Now to end this lecture.
+
+00:09:00,410 --> 00:09:04,350
+Let's go ahead and see an example of inserting data from another table.
+
+00:09:04,720 --> 00:09:10,630
+So in order to do this we'll have to create another table that is like the linked table and it's actually
+
+00:09:10,630 --> 00:09:13,690
+really easy to do this in post-career sequel.
+
+00:09:13,740 --> 00:09:25,010
+What we can do is we can say create table and the name of the tape table will say this is link copy
+
+00:09:25,950 --> 00:09:32,970
+and then what I could do is again put in all the column values that data types the constraints or if
+
+00:09:32,970 --> 00:09:36,630
+I wanted to be the same structure as another table.
+
+00:09:36,690 --> 00:09:41,920
+There's actually a really nice shortcut for this and it's going to be say like.
+
+00:09:42,210 --> 00:09:46,450
+And then the other table you want to basically copy the same structure from.
+
+00:09:46,740 --> 00:09:50,620
+So I'm going to say create table link copy that's the name of the table we're creating.
+
+00:09:50,700 --> 00:09:56,040
+And if you pass in parentheses like in another table name it will automatically create the table with
+
+00:09:56,040 --> 00:09:58,500
+the same structure as the table you say like.
+
+00:09:58,560 --> 00:10:02,100
+So if I go ahead and run this the query worked out.
+
+00:10:02,120 --> 00:10:11,850
+So then let's select everything from the link copy table select everything from Link copy.
+
+00:10:12,380 --> 00:10:16,270
+And you notice here we have the exact same structure as the linked table.
+
+00:10:16,440 --> 00:10:22,020
+We don't actually copy any of the data from it but we do copy that schema of the structure of that linked
+
+00:10:22,010 --> 00:10:22,640
+table.
+
+00:10:22,860 --> 00:10:26,230
+So again that's just a really easy way of doing it.
+
+00:10:26,340 --> 00:10:33,870
+All we have to do is say create table some new table name and then you say like in parentheses you put
+
+00:10:33,870 --> 00:10:39,690
+in some old table name and that's the basic command for essentially just quickly copying the same schema
+
+00:10:39,780 --> 00:10:44,250
+structure of an older table into a new table really convenient function.
+
+00:10:44,250 --> 00:10:45,310
+Post-career sequel.
+
+00:10:45,600 --> 00:10:50,820
+So I would suggest using that if you're planning on copying tables or what makes your life a lot easier
+
+00:10:50,820 --> 00:10:52,070
+.
+
+00:10:52,080 --> 00:10:56,410
+All right so now let's go over how to insert rows from another table.
+
+00:10:56,610 --> 00:10:58,260
+So we'll go ahead and do this.
+
+00:10:58,250 --> 00:11:07,350
+We're going to say inserts into it let's go ahead and insert into the link copy table.
+
+00:11:07,770 --> 00:11:17,850
+And now we're going to have a select statement so we'll say select all the columns from link and let's
+
+00:11:17,850 --> 00:11:22,250
+go ahead and add a where statement or where clause.
+
+00:11:22,350 --> 00:11:28,470
+So we'll say where and let's go ahead and specify a particular road to put in.
+
+00:11:28,470 --> 00:11:31,380
+So we know like we have being in there.
+
+00:11:31,590 --> 00:11:32,560
+So let's go ahead and do that.
+
+00:11:32,580 --> 00:11:43,800
+We'll say where we'll say where a name equals and we'll pass in being semi colon Let's go in and run
+
+00:11:43,800 --> 00:11:44,010
+this.
+
+00:11:44,000 --> 00:11:45,370
+Make sure it worked.
+
+00:11:45,380 --> 00:11:46,320
+Looks like it worked out.
+
+00:11:46,330 --> 00:11:47,760
+We affected one row.
+
+00:11:48,000 --> 00:11:58,440
+So let's go ahead and delete this and we'll say selects Asterix from and we'll say link underscore copy
+
+00:11:58,440 --> 00:12:02,960
+and if this all worked out we should have copied being and being that.
+
+00:12:03,030 --> 00:12:08,730
+Notice that the ID integer here though got copied as well so even though we have one is that index the
+
+00:12:08,730 --> 00:12:13,230
+ID integer was also copied from the original link table.
+
+00:12:13,230 --> 00:12:14,270
+So keep that in mind.
+
+00:12:14,310 --> 00:12:16,310
+You're going to copy that information as well.
+
+00:12:16,590 --> 00:12:19,000
+Even if it's a serial data type.
+
+00:12:19,050 --> 00:12:19,500
+All right.
+
+00:12:19,710 --> 00:12:21,390
+So that was basically it.
+
+00:12:21,450 --> 00:12:25,980
+As far as inserting into a table and inserting data from another table.
+
+00:12:26,040 --> 00:12:28,520
+So let's go over real quick.
+
+00:12:28,620 --> 00:12:30,060
+Everything that we just did.
+
+00:12:30,420 --> 00:12:39,870
+So we said insert into suffer a basic insert into example or you can say it was inserts into and then
+
+00:12:39,870 --> 00:12:43,760
+you had a say the name of the table you wanted to insert into.
+
+00:12:43,770 --> 00:12:50,340
+So again to do that we could have just said insert into link then you pasand the list of columns you
+
+00:12:50,340 --> 00:12:54,350
+want to insert into such as your name.
+
+00:12:54,930 --> 00:13:02,370
+Use key word values and then you can passen imprint sees a list of values that lines up with the column
+
+00:13:02,370 --> 00:13:03,190
+names.
+
+00:13:03,240 --> 00:13:11,270
+So I'm going to go ahead and put in a couple examples here so we WSS say 8..
+
+00:13:12,990 --> 00:13:14,520
+Now we'll have that be titled A.
+
+00:13:14,610 --> 00:13:16,840
+Actually don't know what these Web sites are.
+
+00:13:17,370 --> 00:13:21,550
+And then let's go and show you another example if I want to insert multiple rows.
+
+00:13:21,570 --> 00:13:24,100
+You can do that.
+
+00:13:25,360 --> 00:13:30,530
+Ampacity be there semi colon to go ahead and close that off.
+
+00:13:30,670 --> 00:13:31,830
+We run that.
+
+00:13:32,150 --> 00:13:32,880
+That's fine.
+
+00:13:32,900 --> 00:13:38,960
+So that's how you insert values or multiple values into a table.
+
+00:13:39,540 --> 00:13:44,220
+And again a quick review of how to insert data from one table into another.
+
+00:13:44,340 --> 00:13:51,710
+You just say insert into and instead of doing this you can say the tape table you want to insert into
+
+00:13:52,470 --> 00:13:58,920
+and then you have a select statement so you'll say let's go in and just select everything from Blink
+
+00:13:58,920 --> 00:13:59,360
+.
+
+00:13:59,550 --> 00:14:04,800
+Not even a word statement there so we're going to say insert into the link copy select everything from
+
+00:14:04,800 --> 00:14:05,480
+link.
+
+00:14:05,520 --> 00:14:09,720
+If I run that that should have affected all the rows and link copies.
+
+00:14:09,720 --> 00:14:17,790
+So if we go ahead and check that out we'll say selects everything from blank underscore copy run that
+
+00:14:17,790 --> 00:14:18,220
+.
+
+00:14:18,380 --> 00:14:22,890
+And so now I have fully copied in again and I noticed I going to have repeats here because I basically
+
+00:14:22,880 --> 00:14:27,360
+ran some of these twice but here's the a dominant B the value.
+
+00:14:27,450 --> 00:14:27,730
+OK.
+
+00:14:27,750 --> 00:14:34,310
+That's really all there is as far as using Insert into the field is probably unlikely that you're inserting
+
+00:14:34,560 --> 00:14:39,720
+individual rows by hand but you never know more likely than not you're going to be using this knowledge
+
+00:14:39,810 --> 00:14:45,030
+of how to insert into A postscripts sequel when you're thinking about database design in some sort of
+
+00:14:45,140 --> 00:14:47,930
+application like a web app or something.
+
+00:14:47,940 --> 00:14:51,530
+And it really depends on what your situation is what your application is and what you're trying to get
+
+00:14:51,540 --> 00:14:56,600
+out of the database to how to how you're actually going to use these commands so in real life it's probably
+
+00:14:56,610 --> 00:15:01,210
+unlikely that you're manually inputting or inserting individual rows.
+
+00:15:01,370 --> 00:15:03,880
+But it is good to understand these basic syntax.
+
+00:15:04,080 --> 00:15:08,700
+That way if you want to make some sort of automated call then you can actually build off your knowledge
+
+00:15:08,700 --> 00:15:13,180
+of the syntax to put it in some code like maybe a Python script or something.
+
+00:15:13,530 --> 00:15:14,190
+OK.
+
+00:15:14,190 --> 00:15:15,600
+So that's it for this lecture.
+
+00:15:15,600 --> 00:15:21,750
+Again go ahead and re watch it and review in case anything was unclear of how to insert into just individual
+
+00:15:21,750 --> 00:15:26,750
+rows into it table or many rows and values into a table or from another table.
+
+00:15:27,060 --> 00:15:28,950
+OK that's it for the lecture.
+
+00:15:28,950 --> 00:15:30,560
+Thanks everyone and I'll see you at the next one

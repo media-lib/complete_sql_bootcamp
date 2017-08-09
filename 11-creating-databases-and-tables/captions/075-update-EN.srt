@@ -1,0 +1,425 @@
+00:00:01,140 --> 00:00:05,400
+Hello everyone and welcome to the update statement lecture.
+
+00:00:05,400 --> 00:00:10,380
+So in this lecture room to learn how to use the update statement to update existing data in a table
+
+00:00:10,380 --> 00:00:10,810
+.
+
+00:00:10,860 --> 00:00:16,540
+So we just learned how to use inserts into claws in order to insert data into a table.
+
+00:00:16,720 --> 00:00:20,860
+But now we want to update it or use a condition to update that data in the table.
+
+00:00:20,980 --> 00:00:26,520
+We can use the update statement along with a SET statement in order to do that and then we'll see some
+
+00:00:26,520 --> 00:00:29,740
+examples in PGE admin of how to actually go about doing it.
+
+00:00:29,760 --> 00:00:35,710
+But first let's go ahead and walk through the syntax so to change the values of the columns in a table
+
+00:00:35,770 --> 00:00:37,470
+use the update statement.
+
+00:00:37,620 --> 00:00:42,690
+And what I mean by change the values of the columns I'm talking about the actual rows so the rows are
+
+00:00:42,690 --> 00:00:44,780
+the values of particular columns.
+
+00:00:44,790 --> 00:00:52,710
+So in order to do this you can say update the table name and then use the set column equal to some value
+
+00:00:52,720 --> 00:00:52,810
+.
+
+00:00:52,890 --> 00:00:58,680
+So for example if you have update let's go back to the link table that we were working with throughout
+
+00:00:58,680 --> 00:01:00,000
+this section.
+
+00:01:00,000 --> 00:01:02,480
+You can say up they link sets.
+
+00:01:02,580 --> 00:01:04,190
+And for instance we have the name column.
+
+00:01:04,210 --> 00:01:11,340
+So I can say update link set name equal to and then I can put in a string there for some generic name
+
+00:01:11,790 --> 00:01:15,380
+such as my name or my underscore name as a string.
+
+00:01:15,390 --> 00:01:22,860
+Now add up all the rows are all the values of that name column to be equal to that string that my name
+
+00:01:22,860 --> 00:01:23,860
+string.
+
+00:01:24,120 --> 00:01:30,560
+Or you can also add a WHERE condition to that in order to only update certain rows.
+
+00:01:30,630 --> 00:01:33,130
+So let's go in and walk through the steps one more time.
+
+00:01:33,390 --> 00:01:38,530
+First you specify the table name where you want to update that data after the update clause.
+
+00:01:38,580 --> 00:01:42,090
+So you have update and then you specify the table name.
+
+00:01:42,130 --> 00:01:46,700
+Second you list the columns whose values you want to change in the set clause.
+
+00:01:46,740 --> 00:01:53,750
+So you say update table set and then the columns he actually want changed the row values of.
+
+00:01:54,090 --> 00:01:59,280
+And then third if you want you can determine which rows you want to update in the condition of the WHERE
+
+00:01:59,280 --> 00:02:04,650
+clause so you can set some sort of where condition in order to only update certain rows of that table
+
+00:02:04,650 --> 00:02:06,450
+or that column.
+
+00:02:06,450 --> 00:02:10,950
+So let's go ahead and see some examples with the link table from the previous lecture.
+
+00:02:11,100 --> 00:02:18,450
+If you don't have the linked table go ahead and go back and quickly create the linked table using the
+
+00:02:18,540 --> 00:02:22,510
+sequel syntax from the previous lectures in this section.
+
+00:02:22,890 --> 00:02:23,420
+OK.
+
+00:02:23,580 --> 00:02:30,750
+So I'm going to go ahead and hop to PGE admen and check out the link table that we made earlier.
+
+00:02:30,750 --> 00:02:37,140
+All right so here I am at Peachi admen I opened up the editor and I ran select Asterix from link in
+
+00:02:37,140 --> 00:02:39,070
+order to select everything from link.
+
+00:02:39,240 --> 00:02:42,030
+And you see here we have the URLs the names.
+
+00:02:42,030 --> 00:02:44,480
+And we had that serial ID integer.
+
+00:02:44,520 --> 00:02:49,080
+So let's go ahead and walk through a couple of examples of how to use the update clause in order to
+
+00:02:49,140 --> 00:02:51,550
+up the data in this table.
+
+00:02:51,570 --> 00:02:55,620
+So let's go ahead and explore something like this.
+
+00:02:55,620 --> 00:02:59,280
+First they are going to say is updates.
+
+00:02:59,280 --> 00:03:07,140
+Then you have the table names so going to update the link table and then you say set and then you're
+
+00:03:07,140 --> 00:03:08,640
+going to have a column name.
+
+00:03:08,640 --> 00:03:13,100
+So for instance we have the description column which is actually full of just nulls right now.
+
+00:03:13,310 --> 00:03:14,030
+Empty.
+
+00:03:14,220 --> 00:03:20,720
+So give us a set description equal to.
+
+00:03:21,020 --> 00:03:24,040
+And now this just put a string here so I'll say.
+
+00:03:24,660 --> 00:03:28,890
+Just let's go and say See Description
+
+00:03:32,140 --> 00:03:33,180
+and then a semi-colon.
+
+00:03:33,180 --> 00:03:39,090
+So what this should do is should update the link table and it's going to set all the values of the description
+
+00:03:39,090 --> 00:03:41,970
+column equal to empty description.
+
+00:03:41,970 --> 00:03:44,700
+So if we go ahead and run that it work.
+
+00:03:44,710 --> 00:03:48,530
+So now let's go ahead and say select everything from LinkedIn.
+
+00:03:48,690 --> 00:03:58,650
+So say select Strix from link and now if I check out my table you'll notice every single value of the
+
+00:03:58,650 --> 00:04:03,830
+description column has been set to the empty description string there.
+
+00:04:03,990 --> 00:04:07,610
+So you can imagine this is pretty useful if you want to update data.
+
+00:04:07,620 --> 00:04:15,750
+Now let's go ahead and do an update using a where statements in order to specifically only update certain
+
+00:04:15,780 --> 00:04:17,700
+rows of a column.
+
+00:04:17,700 --> 00:04:21,780
+So let's go ahead and update the name column.
+
+00:04:21,780 --> 00:04:23,650
+If the name starts with an A.
+
+00:04:23,670 --> 00:04:29,990
+So capital we have Amazon and dot com and dot com and the names are Amazon.
+
+00:04:30,150 --> 00:04:39,090
+So let's go ahead and update those specific descriptions so I'm going to again say updates the table
+
+00:04:39,090 --> 00:04:49,160
+name this case the table name is link and I'm going to say set and let's go ahead and set the name column
+
+00:04:49,490 --> 00:04:55,840
+actually that's go ahead and set that description column sorry we'll set that description equal to.
+
+00:04:56,240 --> 00:05:00,590
+Let's go ahead and say name starts with an A.
+
+00:05:00,980 --> 00:05:02,910
+As the whole string for that description.
+
+00:05:03,350 --> 00:05:08,730
+And now I'm going to say well where the name column.
+
+00:05:09,080 --> 00:05:12,470
+And let's go ahead and say where the name column begins and a.
+
+00:05:12,690 --> 00:05:19,000
+So I'll say it were name like remember we have to use these wildcard operators so I'm going to say where
+
+00:05:19,010 --> 00:05:22,010
+it has an a percentage sign.
+
+00:05:22,040 --> 00:05:25,530
+So this basically means where the name is like and starts from a somewhere.
+
+00:05:25,700 --> 00:05:33,890
+So what we should see is that you are Elle's in name values of WW II Ada a an Amazon Amazon.com Amazon
+
+00:05:34,240 --> 00:05:37,660
+the description should change to say name starts with an A.
+
+00:05:37,760 --> 00:05:38,540
+Let's go ahead and run.
+
+00:05:38,540 --> 00:05:42,290
+That looks like it returned successfully.
+
+00:05:42,500 --> 00:05:48,320
+So let's go ahead and check out what happened by selecting everything from links on them to say selects
+
+00:05:49,010 --> 00:05:52,490
+Asterix from link.
+
+00:05:52,550 --> 00:05:59,300
+Go ahead and run that if I start scrolling down you'll notice here in my description column for those
+
+00:05:59,540 --> 00:06:03,490
+specific name and you are Ell's at the site that started with an A.
+
+00:06:03,600 --> 00:06:07,170
+The description now looks like this says name starts today.
+
+00:06:07,310 --> 00:06:12,770
+So now I can use conditional statements to update certain rows of my data so you can imagine that's
+
+00:06:12,770 --> 00:06:15,900
+super useful depending on what your use cases are.
+
+00:06:16,040 --> 00:06:20,090
+But I can conditionally update things in the table.
+
+00:06:20,090 --> 00:06:22,560
+So not the data is not permanently set.
+
+00:06:22,610 --> 00:06:28,130
+I can go ahead and update it and more conveniently I can update it based off a certain condition.
+
+00:06:28,130 --> 00:06:33,350
+And one more thing I want to show you is that you can actually update the data of a column from another
+
+00:06:33,350 --> 00:06:35,270
+column within the same table.
+
+00:06:35,570 --> 00:06:38,030
+So let's go ahead and show you how we can do that.
+
+00:06:38,040 --> 00:06:42,280
+That's going to be really similar except we'll just pass in the name of a table.
+
+00:06:42,320 --> 00:06:51,350
+So I'm going to say update again the linked table and I'm going to set the description column set description
+
+00:06:51,950 --> 00:06:55,900
+equal to and I'm going to go ahead and set it equal to the name column.
+
+00:06:56,120 --> 00:07:00,560
+And as long as these two data types match up I shouldn't have any problem here.
+
+00:07:00,560 --> 00:07:03,590
+So they're both very in character strings.
+
+00:07:03,740 --> 00:07:05,600
+So let's go ahead and update the link.
+
+00:07:05,600 --> 00:07:10,860
+We'll set the description column to be basically matching the name column.
+
+00:07:11,060 --> 00:07:12,470
+So we'll go ahead and run that.
+
+00:07:12,620 --> 00:07:14,680
+Looks like the query returned successfully.
+
+00:07:14,690 --> 00:07:22,730
+So now let's go ahead and say select everything from we run that and now you'll notice that the Name
+
+00:07:22,730 --> 00:07:25,870
+column and the description column are the exact same.
+
+00:07:26,270 --> 00:07:28,390
+OK great.
+
+00:07:28,550 --> 00:07:34,100
+One more thing I want to show you is that you've noticed after I run the update usually just in the
+
+00:07:34,100 --> 00:07:36,630
+data output says Kurri ran successfully.
+
+00:07:36,650 --> 00:07:43,760
+We can actually add a keyword term known as returning in order to return columns of the updated entries
+
+00:07:43,760 --> 00:07:48,440
+so we can go ahead and show you an example of how that works.
+
+00:07:48,440 --> 00:07:52,920
+So I'm going to go ahead and say update the table name which is link.
+
+00:07:52,940 --> 00:07:56,750
+I'm going to go ahead and set that description column.
+
+00:07:56,750 --> 00:07:58,580
+So set the description column equal to.
+
+00:07:58,580 --> 00:08:05,480
+Let's just make it equal to some string called the new description.
+
+00:08:05,480 --> 00:08:12,940
+And let's go ahead and specify where it's going to specify where ID.
+
+00:08:13,850 --> 00:08:18,130
+So where the ID column is equal to 1.
+
+00:08:18,170 --> 00:08:22,590
+So basically where the ID column here the ID integers equal to 1.
+
+00:08:22,640 --> 00:08:27,580
+We're going to go ahead an update or update the set scription equal to new description.
+
+00:08:27,860 --> 00:08:32,870
+So that should effect basically that first Google dot com entry.
+
+00:08:33,470 --> 00:08:40,430
+And if we ran this just by itself it would have just said oh queries successfully run or run one entry
+
+00:08:40,430 --> 00:08:41,580
+affected.
+
+00:08:41,630 --> 00:08:47,690
+If I actually want to get the results back of the updated entries I can add another keyword and that
+
+00:08:47,690 --> 00:08:53,520
+keyword is returning and I can go ahead and then state columns that I want to return.
+
+00:08:53,540 --> 00:09:06,110
+So I can say returning ID you rl name description and that's just going to return those columns themselves
+
+00:09:06,110 --> 00:09:06,580
+.
+
+00:09:06,590 --> 00:09:08,970
+So let's go ahead and check this out.
+
+00:09:10,070 --> 00:09:11,060
+And there it is.
+
+00:09:11,090 --> 00:09:17,660
+So now we've able to instead of just seeing queries successfully run one row affect that etc. we can
+
+00:09:17,660 --> 00:09:21,810
+actually get returned results and verify that the entries are updated.
+
+00:09:22,010 --> 00:09:24,920
+Let's go ahead and verify this another way.
+
+00:09:24,920 --> 00:09:27,560
+Again the key word is returning.
+
+00:09:27,560 --> 00:09:34,530
+I'm going to go ahead and verify this another way just by saying selects Asterix from link.
+
+00:09:35,030 --> 00:09:43,160
+And if I run that selecting everything from link if we look for Google here at the bottom we have Google
+
+00:09:43,160 --> 00:09:48,360
+dot com Google and Lotus description instead of being the name it still need description.
+
+00:09:48,590 --> 00:09:53,060
+So that returning did work and it did return the updated entries.
+
+00:09:53,060 --> 00:09:53,660
+All right.
+
+00:09:53,870 --> 00:09:58,340
+So that's really all there is as far as updating sequel.
+
+00:09:58,370 --> 00:10:04,370
+Again as I mentioned earlier with the insert statements and other statements here in this particular
+
+00:10:04,370 --> 00:10:08,520
+section of the course more likely than not you're not going to be doing these things manually.
+
+00:10:08,570 --> 00:10:14,070
+You're going to be using this in conjunction with some other larger program or automated scripts.
+
+00:10:14,090 --> 00:10:17,420
+But it's essential to understand how to do these things manually.
+
+00:10:17,420 --> 00:10:19,000
+So you can later automate them.
+
+00:10:19,300 --> 00:10:19,950
+OK.
+
+00:10:20,210 --> 00:10:22,480
+So that's it for the update section.
+
+00:10:22,550 --> 00:10:27,590
+Feel free to post any discussion questions in case you need any clarifications.
+
+00:10:27,620 --> 00:10:29,220
+Thanks and I'll see you at the next lecture

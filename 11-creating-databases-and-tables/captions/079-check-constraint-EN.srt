@@ -1,0 +1,383 @@
+00:00:01,290 --> 00:00:06,070
+Hello everyone and welcome to the lecture on the check constraint.
+
+00:00:06,270 --> 00:00:12,090
+So a check constraint is a kind of constraint that allows you to specify a value in a column must meet
+
+00:00:12,150 --> 00:00:13,910
+a specific requirement.
+
+00:00:13,950 --> 00:00:19,890
+We've already seen constraints such as not know or unique use but check is a really useful constraint
+
+00:00:19,890 --> 00:00:21,620
+to use on your columns.
+
+00:00:21,780 --> 00:00:27,330
+The check constraint uses a boolean expression of some kind to evaluate the values of a column if the
+
+00:00:27,330 --> 00:00:29,730
+values of the column passed that boolean check.
+
+00:00:29,730 --> 00:00:34,870
+So it's going to be some sort of true or false check then postgresql insert or update those values.
+
+00:00:34,890 --> 00:00:38,140
+Otherwise Ill return some sort of error.
+
+00:00:38,190 --> 00:00:40,440
+This is actually really best shown through example.
+
+00:00:40,440 --> 00:00:46,270
+So we're going to do is go straight to some examples by creating a table and applying those checks.
+
+00:00:46,290 --> 00:00:51,720
+Let's go ahead and go to PG admin and I'm going to open up a sequel Ed. And we'll go ahead and make
+
+00:00:52,230 --> 00:00:54,800
+a table.
+
+00:00:54,810 --> 00:00:55,160
+All right.
+
+00:00:55,170 --> 00:01:00,750
+So here I am at my Sequoia Ed. And what we're gonna do is go ahead and create a table and then we're
+
+00:01:00,750 --> 00:01:04,990
+going to while we're creating the table we're going to add some constraints to some columns.
+
+00:01:05,100 --> 00:01:09,810
+So it's going to create a table we'll call it let's just call it new users.
+
+00:01:09,810 --> 00:01:14,940
+You underscore Users table you can really call it whatever you want and go and add some columns to it
+
+00:01:14,940 --> 00:01:15,520
+.
+
+00:01:15,600 --> 00:01:19,650
+So you always want to add a primary key to a table.
+
+00:01:19,710 --> 00:01:26,340
+Let's go in and make a basic one which is called Id have it be a serial data type meaning it's an incrementing
+
+00:01:26,340 --> 00:01:30,550
+data type and will have it be the primary key of the table.
+
+00:01:31,290 --> 00:01:38,970
+Then what we're going to do is create a first name first underscore Name column that will be a variable
+
+00:01:38,970 --> 00:01:40,170
+character string.
+
+00:01:40,200 --> 00:01:46,920
+And let's go ahead and limit it to 50 characters and I need to put a comma here between that column
+
+00:01:46,920 --> 00:01:49,500
+and that column passing a list of columns.
+
+00:01:49,770 --> 00:02:00,040
+Let's go ahead and also put in a birth dates as a column and the birthday is going to be a date.
+
+00:02:00,060 --> 00:02:02,330
+Type in Warga do is.
+
+00:02:02,340 --> 00:02:05,730
+Now we're going to put a constraint on it.
+
+00:02:05,730 --> 00:02:11,250
+So the constraint is going to be a check constraint and then we are using a check constraint you have
+
+00:02:11,250 --> 00:02:16,520
+to pass some sort of boolean expression in parentheses here on that check.
+
+00:02:16,650 --> 00:02:18,330
+So I can do something like this.
+
+00:02:18,360 --> 00:02:25,320
+I'm going to say that birth underscore date meaning that column value needs to be greater then.
+
+00:02:25,560 --> 00:02:35,310
+Let's go ahead and say 9900 the first day so January 1st meaning if we get a new user and the input
+
+00:02:35,370 --> 00:02:39,910
+their birth date they have to have been born before after 9900.
+
+00:02:39,960 --> 00:02:44,250
+So you've probably actually already seen this used in real life when you're reaching for a web site
+
+00:02:44,280 --> 00:02:46,430
+and they ask you to input the year of your birth.
+
+00:02:46,430 --> 00:02:52,980
+They usually can't go below 9900 which makes sense because it's extremely unlikely that anyone still
+
+00:02:52,980 --> 00:02:57,600
+alive if you're born in 1899 or earlier.
+
+00:02:57,600 --> 00:03:03,180
+So let's go ahead and explore how else we could do a check.
+
+00:03:03,180 --> 00:03:10,350
+So imagine we have a nother column called join date and that's also going to be a date type column and
+
+00:03:10,350 --> 00:03:12,370
+then I'm going to have a constraint on that as well.
+
+00:03:12,660 --> 00:03:20,990
+I'm going to check that the joint date value is greater than the birth date value.
+
+00:03:20,990 --> 00:03:23,250
+Whoops let me go to that typo.
+
+00:03:23,250 --> 00:03:28,470
+The birth date value and what that's going to do is it's going to make sure this new user has joined
+
+00:03:28,530 --> 00:03:33,180
+after they were born which makes sense you don't want those dates mixed up.
+
+00:03:33,180 --> 00:03:37,710
+And finally let's go ahead and add another column just to keep showing you examples of how it could
+
+00:03:37,710 --> 00:03:43,290
+use these date check or at least check constraints.
+
+00:03:43,290 --> 00:03:46,640
+Let's go ahead and add a salary value.
+
+00:03:46,650 --> 00:03:51,450
+We'll go ahead and have it be let's say an integer type just some number of their salary.
+
+00:03:51,750 --> 00:03:58,380
+And we're going to check that that value salary is going to have to be greater than zero so they can't
+
+00:03:58,380 --> 00:04:02,230
+make $0 or less.
+
+00:04:02,250 --> 00:04:08,940
+So these are the kind of examples of what we can do with a check statement or a check constraint.
+
+00:04:08,940 --> 00:04:15,380
+So again we put in the column name the data type of that column and then we add constraints to it.
+
+00:04:15,480 --> 00:04:19,390
+And one of the constraints or folks on this lecture is that check constraints.
+
+00:04:19,830 --> 00:04:20,100
+OK.
+
+00:04:20,130 --> 00:04:26,630
+Let's go in and run this and let's say you have a syntax error and it's probably because I have an unbound
+
+00:04:26,630 --> 00:04:30,930
+set of prints C's meaning I need to finish off that set of princes here.
+
+00:04:30,950 --> 00:04:32,430
+Let me run that again.
+
+00:04:32,600 --> 00:04:35,160
+And looks like we have our new table set up.
+
+00:04:35,220 --> 00:04:48,960
+Let me go ahead and explore this by saying selects from New users apps new users.
+
+00:04:49,470 --> 00:04:54,060
+And here we have ID first name birth date join date and salary columns.
+
+00:04:54,210 --> 00:04:55,800
+So looks like those are all good.
+
+00:04:56,040 --> 00:05:02,200
+Let's go ahead and try to insert a new row into the employee or into the new users table.
+
+00:05:02,520 --> 00:05:06,980
+And what we're going to see is if we get errors based off our checks.
+
+00:05:07,290 --> 00:05:17,130
+So again to insert into a table we say insert into we have our new users table and I'm going to insert
+
+00:05:18,110 --> 00:05:18,730
+there.
+
+00:05:18,750 --> 00:05:26,730
+Let's go ahead and sort of first name a birth date a joined dates
+
+00:05:29,910 --> 00:05:31,080
+and some salary
+
+00:05:34,680 --> 00:05:37,210
+and then we're going to do is save values.
+
+00:05:37,230 --> 00:05:43,050
+So now we pass analyst values we're going to insert the values we're going to answer let's just name
+
+00:05:43,080 --> 00:05:45,030
+this person Joe.
+
+00:05:45,780 --> 00:05:52,140
+Let's say they were born in 1980.
+
+00:05:52,350 --> 00:05:54,630
+February 2nd was really matter.
+
+00:05:54,630 --> 00:05:59,330
+And then we were going to do is go ahead and pass in their joint date.
+
+00:05:59,550 --> 00:06:03,870
+Let's say they join 1990 some other random dates of the year.
+
+00:06:04,740 --> 00:06:09,750
+And what we're going to do is specifically impose a salary that doesn't make sense but try to put negative
+
+00:06:09,750 --> 00:06:15,000
+10 as a salary and see if that works.
+
+00:06:15,930 --> 00:06:16,340
+OK.
+
+00:06:16,410 --> 00:06:23,730
+So here we get an error and it says new row for relation new users violates a check constraints and
+
+00:06:23,730 --> 00:06:30,540
+it looks like the check constraint is based off what we were trying to input here on the salary check
+
+00:06:30,530 --> 00:06:31,280
+.
+
+00:06:32,040 --> 00:06:37,560
+And something that's really convenient about postscripts sequel is it automatically names the specific
+
+00:06:37,560 --> 00:06:44,190
+constraint and it does it by it basically concatenates the table name new users with an underscore of
+
+00:06:44,220 --> 00:06:45,420
+the column name.
+
+00:06:45,420 --> 00:06:46,900
+And then it specifies check.
+
+00:06:46,920 --> 00:06:50,650
+So immediately you have a good idea of what check it's failing.
+
+00:06:51,150 --> 00:06:51,510
+OK.
+
+00:06:51,510 --> 00:06:57,810
+So to review this entire topic let's go ahead and just create one more table add a simple check constraint
+
+00:06:57,810 --> 00:07:00,360
+to it just so we fully understand.
+
+00:07:00,360 --> 00:07:09,740
+So again you just say create table will have this be called check test whatever you want.
+
+00:07:10,170 --> 00:07:12,820
+And then we're going to do is pass on a column name.
+
+00:07:13,140 --> 00:07:20,240
+So it can say something like sales and this will be.
+
+00:07:20,280 --> 00:07:25,260
+Let's go ahead and say an integer is the number of sales someone for that month and then we can just
+
+00:07:25,260 --> 00:07:29,830
+say check and then some sort of check constraint.
+
+00:07:29,840 --> 00:07:34,090
+So say sales has to be greater than zero.
+
+00:07:34,320 --> 00:07:40,710
+So that's one example of a simple check constraint and something I wanted to point out is earlier I
+
+00:07:40,710 --> 00:07:46,890
+mentioned that post-procedure will automatically conveniently named constraint check constraints for
+
+00:07:46,890 --> 00:07:47,230
+you.
+
+00:07:47,250 --> 00:07:54,760
+You can actually name these your own personal name and you can do that just by adding a keyword constraints
+
+00:07:54,770 --> 00:07:54,900
+.
+
+00:07:55,050 --> 00:07:56,950
+And this allows you to name constraints.
+
+00:07:57,210 --> 00:07:59,760
+So we'll say we can call this constraint
+
+00:08:02,340 --> 00:08:07,860
+positive sales and then the name of the constraint afterwards.
+
+00:08:07,860 --> 00:08:13,130
+So if we go ahead and close that off so just create a table called check test has one column and it
+
+00:08:13,140 --> 00:08:21,120
+sails into your type and I use the cuarto constraint to name my constraint that is this check constraints
+
+00:08:21,210 --> 00:08:23,610
+to make sure sales is greater than zero.
+
+00:08:23,610 --> 00:08:33,720
+So if I go ahead and run that then what we're going to do is go ahead and inserts into that check test
+
+00:08:33,870 --> 00:08:37,890
+or that sales excuse me that check test table.
+
+00:08:37,890 --> 00:08:45,150
+So I'm going to say inserts into check test and then what we're going to do is answer some valleys into
+
+00:08:45,160 --> 00:08:47,700
+us into this table.
+
+00:08:47,700 --> 00:08:49,090
+So let's go ahead and do that.
+
+00:08:49,110 --> 00:08:56,540
+We can go ahead and say inserts into the sales column and then just the values we're going to do.
+
+00:08:56,730 --> 00:09:01,170
+Let's go ahead and try to insert a value that is correct.
+
+00:09:01,170 --> 00:09:03,400
+Make sure that works.
+
+00:09:03,420 --> 00:09:06,210
+So it looks like one rose effect that that looks correct.
+
+00:09:06,210 --> 00:09:15,150
+And let's go ahead and then try to put in a negative sales value column and notice when we get the air
+
+00:09:15,570 --> 00:09:19,580
+they'll say violate checks constraints and now it's the name of the constraint that we chose.
+
+00:09:19,580 --> 00:09:21,700
+Positive underscore sales.
+
+00:09:21,780 --> 00:09:25,340
+So that might be a convenient feature for you if you're checking on later and you get an error.
+
+00:09:25,350 --> 00:09:30,970
+You'd immediately know based off your description what kind of constraint error wasn't met.
+
+00:09:31,530 --> 00:09:32,130
+OK.
+
+00:09:32,130 --> 00:09:36,020
+So let's go ahead and just finish off the lecture there.
+
+00:09:36,030 --> 00:09:39,380
+You can go ahead and check the documentation for check constraints.
+
+00:09:39,380 --> 00:09:42,900
+Case you want to figure out how to use it in whatever application.
+
+00:09:42,900 --> 00:09:45,780
+Try and develop whatever database you work with.
+
+00:09:45,780 --> 00:09:46,230
+All right.
+
+00:09:46,470 --> 00:09:48,290
+Thanks Ron and I'll see you next lecture.

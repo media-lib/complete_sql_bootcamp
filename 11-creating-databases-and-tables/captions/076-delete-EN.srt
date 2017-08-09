@@ -1,0 +1,179 @@
+00:00:01,230 --> 00:00:05,250
+Hello everyone and welcome to lecture on the delete statements.
+
+00:00:05,520 --> 00:00:10,290
+This lecture we're going to learn how to use the delete statement to delete rows of a table.
+
+00:00:10,760 --> 00:00:14,520
+So to delete rows and table you can use delete statement as follows.
+
+00:00:14,520 --> 00:00:19,140
+You basically just say delete from the table you want to delete from and then you can actually have
+
+00:00:19,140 --> 00:00:22,340
+a WHERE condition to specify what you're going to do.
+
+00:00:22,380 --> 00:00:25,270
+So let's go ahead and break this down step by step.
+
+00:00:25,380 --> 00:00:29,580
+So first you specify the table where you want to delete the delete from clause.
+
+00:00:29,720 --> 00:00:32,880
+So say delete from the specified table.
+
+00:00:32,880 --> 00:00:37,640
+Second you specify which row to delete by using that condition in the WHERE clause.
+
+00:00:37,800 --> 00:00:41,990
+If you omit that where clause than all the rows in the table are going to be deleted.
+
+00:00:42,210 --> 00:00:47,920
+So if you just type and delete from table ill delete all the rows again.
+
+00:00:47,940 --> 00:00:51,660
+Delete the rows in a table you just delete statements like this.
+
+00:00:51,660 --> 00:00:56,910
+So continuing on the delete statement returns the number of rows deleted.
+
+00:00:56,910 --> 00:01:01,300
+If no rows are Athleta the delete statement is just going to return 0.
+
+00:01:01,590 --> 00:01:08,440
+So you all know how many rows were deleted after you run your query or your delete statements.
+
+00:01:08,580 --> 00:01:11,610
+So let's go out and see some examples in postgresql sequel.
+
+00:01:11,610 --> 00:01:16,650
+It's pretty basic to get the hang of well let's go ahead and hop to PD admin and open up a sequel editor
+
+00:01:16,650 --> 00:01:18,860
+there.
+
+00:01:18,870 --> 00:01:20,970
+OK so here we are its sequel editor.
+
+00:01:21,000 --> 00:01:24,820
+I'm going to go ahead and mess around the linked table that we've been playing with.
+
+00:01:25,080 --> 00:01:29,670
+You can use any table for this but the link table is the one where these these examples are actually
+
+00:01:29,680 --> 00:01:30,640
+going to work.
+
+00:01:30,660 --> 00:01:35,520
+Now the delay statement is pretty straightforward so you shouldn't have any problem understanding it
+
+00:01:35,580 --> 00:01:36,960
+at this point in the course.
+
+00:01:37,200 --> 00:01:40,760
+So here I've selected everything from links so it can take a look at it.
+
+00:01:40,970 --> 00:01:45,110
+And let's go ahead and just try to delete anything that starts a B.
+
+00:01:45,300 --> 00:01:52,310
+So I'll say any DLI anywhere where the name column value starts B capital B that is.
+
+00:01:52,650 --> 00:02:02,670
+So I'll say deletes from link so delete from the table name and then you have your WHERE statement for
+
+00:02:02,670 --> 00:02:09,780
+some sort of condition and will say or name like and we'll just have it begin with a B.
+
+00:02:09,790 --> 00:02:11,850
+So we have that wildcard in there.
+
+00:02:11,850 --> 00:02:13,330
+Remember how to use that.
+
+00:02:13,380 --> 00:02:19,710
+So let's go ahead and run that and so you'll notice Ill say quick return successfully two rows affected
+
+00:02:19,710 --> 00:02:20,080
+.
+
+00:02:20,100 --> 00:02:22,690
+So Ill tell you how many rows it actually deleted.
+
+00:02:22,710 --> 00:02:24,500
+That's what it means by affected.
+
+00:02:24,510 --> 00:02:29,410
+So all you had to say was delete from the table name and then some sort of where condition.
+
+00:02:29,460 --> 00:02:31,560
+So if again we'd select everything
+
+00:02:34,530 --> 00:02:36,160
+from link.
+
+00:02:36,840 --> 00:02:42,660
+When you go ahead and run that you'll notice now I don't have anything that started with a B in the
+
+00:02:42,660 --> 00:02:47,780
+Name column so I deleted all those rows and that's basically all there is to it.
+
+00:02:47,790 --> 00:02:54,330
+As far as using the delete statements if you actually want to return the rows instead of just returning
+
+00:02:54,330 --> 00:02:57,870
+the number of rows you can do that using a returning statement.
+
+00:02:57,870 --> 00:02:59,890
+So we've seen a returning statement before.
+
+00:03:00,000 --> 00:03:04,260
+Let's show you how to use it for delete from before we end the lecture.
+
+00:03:04,270 --> 00:03:07,940
+Some of them do a simple example and let's go ahead and delete that.
+
+00:03:08,130 --> 00:03:19,620
+Ada comment tree is something to say delete from a link and will say Where name will go ahead and say
+
+00:03:19,620 --> 00:03:25,200
+equal to A so we don't want it to be like it was just because it on Dilley Amazon or anything we just
+
+00:03:25,200 --> 00:03:26,550
+wanted.
+
+00:03:27,030 --> 00:03:32,250
+There'll be no way that a dot com that row so I put in the condition and then I'm also going to put
+
+00:03:32,250 --> 00:03:37,260
+in returning and I can request which columns to return.
+
+00:03:37,290 --> 00:03:41,940
+So I can request something like your L name etc..
+
+00:03:42,000 --> 00:03:46,150
+If I just put an asterix ill return all the columns for the row that was deleted.
+
+00:03:46,410 --> 00:03:51,480
+So if I go ahead and run this it returns the row that was deleted.
+
+00:03:51,480 --> 00:03:56,000
+So here I've seen this row is now been removed from my linked table.
+
+00:03:56,280 --> 00:04:05,640
+So just to make sure that it was deleted if I select everything from Link run it.
+
+00:04:05,640 --> 00:04:08,420
+Notice I don't have that A-road there anymore.
+
+00:04:08,430 --> 00:04:12,000
+OK so that's really all there is to for a delete.
+
+00:04:12,450 --> 00:04:17,050
+You want to check out some more complicated delete statements like using values from another table.
+
+00:04:17,160 --> 00:04:19,540
+You can go ahead and reference the documentation for that.
+
+00:04:19,940 --> 00:04:22,290
+OK thanks everyone and I'll see you at the next lecture

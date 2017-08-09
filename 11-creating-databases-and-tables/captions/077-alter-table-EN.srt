@@ -1,0 +1,281 @@
+00:00:01,200 --> 00:00:06,720
+Hello everyone and welcome to the altar table lecture in this lecture room with Discover how we can
+
+00:00:06,720 --> 00:00:11,910
+change existing tables structures even if the table already exists inside of a database and we can do
+
+00:00:11,910 --> 00:00:14,640
+that using the ALTER TABLE statement.
+
+00:00:15,330 --> 00:00:18,910
+So the syntax of the ALTER TABLE statement is as follows.
+
+00:00:18,990 --> 00:00:24,120
+It's Boulter table the name of your table that you want to alter and then some sort of action statement
+
+00:00:24,120 --> 00:00:24,350
+.
+
+00:00:24,480 --> 00:00:27,330
+And there's quite a few different types of action statements.
+
+00:00:27,750 --> 00:00:33,570
+So postscripts sequel in particular provides add remove or rename column actions you can set default
+
+00:00:33,570 --> 00:00:39,050
+values for columns and check constraints to a column or rename the table itself.
+
+00:00:39,810 --> 00:00:45,270
+So some of the keywords were going to be exploring our add column drop column rename column add a constraint
+
+00:00:45,390 --> 00:00:47,410
+and rename to.
+
+00:00:47,490 --> 00:00:50,150
+So these are all actually best explored through example.
+
+00:00:50,160 --> 00:00:52,480
+So let's go ahead and open up a sequel Ed..
+
+00:00:52,560 --> 00:00:56,120
+Make a table and then try altering it as we go along.
+
+00:00:56,190 --> 00:00:58,910
+So I'm going to go ahead and jump to the editor now.
+
+00:00:59,410 --> 00:01:05,130
+OK so here I am at the sequel editor Ed. Let's go ahead and create a table to work with.
+
+00:01:05,130 --> 00:01:06,480
+So let's go ahead.
+
+00:01:06,570 --> 00:01:08,920
+You may already have a table called Link.
+
+00:01:09,210 --> 00:01:13,040
+If you have it go ahead and drop the table.
+
+00:01:13,080 --> 00:01:18,440
+So say drop table if exists and link.
+
+00:01:18,480 --> 00:01:20,940
+So if you have it or not this should work.
+
+00:01:20,940 --> 00:01:25,630
+So I already deleted the or dropped the linked table so it says Link doesn't exist.
+
+00:01:25,680 --> 00:01:29,670
+If you had it from some of the previous lectures go ahead and run the statement in order to get rid
+
+00:01:29,670 --> 00:01:30,310
+of it.
+
+00:01:30,600 --> 00:01:35,870
+Because what we're going to do is create a table called link so we can play around with it.
+
+00:01:35,940 --> 00:01:41,520
+So we're going to say create table link and I'll just add three columns this table we're going to add
+
+00:01:41,520 --> 00:01:49,650
+an ID column link ID that's going to be serial Primary Key going to add another column called Title
+
+00:01:51,260 --> 00:01:53,650
+and there will be a variable character column.
+
+00:01:53,670 --> 00:02:00,430
+Let's go ahead and just go off some byte sizes souls say 512 variable character size.
+
+00:02:00,450 --> 00:02:01,190
+No.
+
+00:02:01,380 --> 00:02:03,110
+Let's go out and have a u r l.
+
+00:02:03,630 --> 00:02:09,210
+And again the sizes don't really matter that much of what we're passing in is a variable character.
+
+00:02:10,200 --> 00:02:13,960
+And here in passing and some come column constraints.
+
+00:02:14,040 --> 00:02:17,060
+So I just created a table called Link.
+
+00:02:17,370 --> 00:02:23,250
+It has three columns link ID which is the primary key of this table and it's a serial data type meaning
+
+00:02:23,280 --> 00:02:25,390
+it's like an auto increment data type.
+
+00:02:25,530 --> 00:02:28,130
+Then I have the title column.
+
+00:02:28,350 --> 00:02:35,070
+It's a variable character string data type with up to 512 characters in that string and it has the constraints
+
+00:02:35,100 --> 00:02:37,900
+of being not null so it cannot be null.
+
+00:02:38,160 --> 00:02:42,650
+And then I have the u r l column and it's also a variable character string.
+
+00:02:42,810 --> 00:02:45,250
+Quite a few more characters are allowed and it's not nil.
+
+00:02:45,270 --> 00:02:49,160
+And they also all have to be unique so they all have to be unique addresses.
+
+00:02:49,170 --> 00:02:55,530
+So let's go ahead and discover how we can use alter table to play around and mess up or play around
+
+00:02:55,590 --> 00:02:57,740
+and mess around with this table.
+
+00:02:57,800 --> 00:03:02,520
+So to add a new column to a table you use the add column action.
+
+00:03:02,700 --> 00:03:12,330
+So you're going to say ALTER TABLE the table name ALTER TABLE link and then you say add a column and
+
+00:03:12,330 --> 00:03:17,250
+then what you're going to do is go ahead and add the column names so let's go ahead and make a call
+
+00:03:17,250 --> 00:03:21,490
+a name called active and then you add the data type of the column.
+
+00:03:21,540 --> 00:03:25,010
+So I going to say that it's a Boolean type column.
+
+00:03:25,020 --> 00:03:28,580
+So if you are Ellas active or not you know true or false.
+
+00:03:28,590 --> 00:03:34,620
+So if I run that we went ahead and said alter table the name of the table link at column the active
+
+00:03:34,800 --> 00:03:38,570
+column and then we made a boolean data type for that column.
+
+00:03:38,580 --> 00:03:45,990
+So if I go ahead and check this out let's go and explore it and go ahead and say selects all from link
+
+00:03:46,620 --> 00:03:48,360
+and we shan't get any back.
+
+00:03:48,370 --> 00:03:50,910
+We should get at least the column names.
+
+00:03:50,910 --> 00:03:54,150
+So if you noticed on here now I have active boolean type column.
+
+00:03:54,160 --> 00:03:56,880
+So I was able to alter the table that already exists.
+
+00:03:56,970 --> 00:03:58,500
+So that's awesome.
+
+00:03:58,500 --> 00:04:01,870
+Now let's go ahead and explore how we can drop that column.
+
+00:04:02,250 --> 00:04:06,720
+And that's just going to be alter table the name of the table.
+
+00:04:06,990 --> 00:04:11,730
+And you say drop call them and then the name or whatever column you want it drops so it's good it dropped
+
+00:04:11,730 --> 00:04:13,400
+the active.
+
+00:04:14,280 --> 00:04:16,680
+So it should return successfully if no results.
+
+00:04:16,680 --> 00:04:25,380
+And if I just go ahead and say selects all asterisks from Link run that notice the active column is
+
+00:04:25,380 --> 00:04:27,250
+no longer there.
+
+00:04:27,300 --> 00:04:29,100
+So you want to rename columns.
+
+00:04:29,100 --> 00:04:30,170
+We can do that as well.
+
+00:04:30,180 --> 00:04:36,480
+So to say I have that title column there in the middle we can go ahead and rename it so we can say something
+
+00:04:36,480 --> 00:04:47,510
+like alter table link we can say rename column and then use you pass in the column you want to rename
+
+00:04:47,510 --> 00:04:47,530
+.
+
+00:04:47,520 --> 00:04:49,800
+So let's go ahead and rename the title column.
+
+00:04:49,920 --> 00:05:00,390
+Use the keyword to and then whatever you want to do so will say like new title name and go ahead and
+
+00:05:00,390 --> 00:05:01,680
+run that.
+
+00:05:01,680 --> 00:05:06,960
+So you say ALTER TABLE the name of the table you say rename column title to the new title name.
+
+00:05:07,440 --> 00:05:13,950
+So if we go ahead and explore this let's make sure that actually work by selecting from the linked table
+
+00:05:15,770 --> 00:05:19,460
+and notice now in the middle we have that and you title name column.
+
+00:05:19,470 --> 00:05:20,570
+Great.
+
+00:05:20,580 --> 00:05:26,050
+So let's go ahead and explore just a couple of more actions.
+
+00:05:26,070 --> 00:05:30,910
+So one of these other actions we can take is actually going to affect the whole table.
+
+00:05:30,930 --> 00:05:35,210
+So instead of just affecting one column we can actually like rename the entire table.
+
+00:05:35,610 --> 00:05:42,630
+So if I say select all from Link run that I get that Beletski wanted to rename the linked table I can
+
+00:05:42,630 --> 00:05:50,670
+say alter table link and then use the Q word rename to.
+
+00:05:50,670 --> 00:05:57,420
+And this will rename the entire table so I can name this your L table your underscore table.
+
+00:05:57,750 --> 00:05:58,720
+Run that.
+
+00:05:59,070 --> 00:06:04,590
+So again it's alter table the name of the table renamed to and then the new table name.
+
+00:06:04,590 --> 00:06:09,900
+And then we can go ahead and say selects Asterix from.
+
+00:06:09,900 --> 00:06:15,900
+And if we try to do it from a link you'll notice link doesn't exist anymore because it's being renamed
+
+00:06:15,900 --> 00:06:19,670
+to the real table.
+
+00:06:20,760 --> 00:06:22,810
+And then we get the actual results.
+
+00:06:22,830 --> 00:06:23,410
+OK.
+
+00:06:23,700 --> 00:06:26,730
+So that's it for the basis of using alter table.
+
+00:06:26,940 --> 00:06:33,000
+You can think of it as a nice way to alter columns and rename the table itself once a table already
+
+00:06:33,000 --> 00:06:35,220
+exists in your database.
+
+00:06:35,220 --> 00:06:37,620
+All right thanks everyone and I'll see you at the next lecture

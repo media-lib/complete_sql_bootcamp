@@ -1,0 +1,233 @@
+00:00:01,200 --> 00:00:05,180
+Well everyone and welcome to the unique constraint lecture.
+
+00:00:05,760 --> 00:00:10,050
+So in this lecture we're going to learn a little more about the unique constraint which allows us to
+
+00:00:10,050 --> 00:00:15,020
+make sure that the value in a column or a group of columns is unique in a table.
+
+00:00:15,720 --> 00:00:20,580
+Sometimes you want to ensure that the value in a column or group of columns is unique across the whole
+
+00:00:20,580 --> 00:00:25,270
+table such as like an email address a user name an employee I.D. etc..
+
+00:00:25,500 --> 00:00:31,110
+PostgreSQL provides you with the unique constraint to make sure that the uniqueness of the data is maintained
+
+00:00:31,170 --> 00:00:36,910
+correctly with the unique constraint every time you insert a new row.
+
+00:00:36,970 --> 00:00:42,320
+Post Chris sequel's going to check if the values already in the table if it found that the new values
+
+00:00:42,320 --> 00:00:46,480
+are already there it would give back an error message and reject the changes.
+
+00:00:46,650 --> 00:00:51,700
+And the same process is carried out for the update existing data methods.
+
+00:00:51,840 --> 00:00:57,480
+So let's go ahead and show a quick example in the sequel editor by creating a table specifying a column
+
+00:00:57,480 --> 00:01:02,300
+to be unique and then seeing what happens when we try using the insert statement along with that.
+
+00:01:02,440 --> 00:01:05,510
+Going to go ahead and jump to the sequel editor now.
+
+00:01:05,520 --> 00:01:12,960
+All right so here I am at the sequel Ed. What I'm going to go ahead and do is create a table and let's
+
+00:01:12,960 --> 00:01:15,110
+just go ahead and call this table.
+
+00:01:15,540 --> 00:01:17,480
+Let's call it Persons.
+
+00:01:17,600 --> 00:01:26,430
+Well let's call it people and just go ahead and give it an ID columns so we'll say Id cereal how that
+
+00:01:26,430 --> 00:01:28,850
+be the primary key of this table.
+
+00:01:29,250 --> 00:01:36,440
+We'll go ahead and have this person have a first name that just be a variable character string.
+
+00:01:36,450 --> 00:01:42,570
+Give it 50 length Max and we put some commas here to separate these columns.
+
+00:01:42,960 --> 00:01:51,240
+And the next thing to do is just go ahead and play it and finally email will have that variable character
+
+00:01:51,240 --> 00:01:51,660
+.
+
+00:01:51,660 --> 00:01:52,900
+Go ahead and have 100 link.
+
+00:01:52,920 --> 00:01:57,290
+But the thing we're going to do is add the constraint that needs to be unique.
+
+00:01:57,300 --> 00:01:59,930
+Make sure you spell this right unique.
+
+00:02:00,600 --> 00:02:01,210
+OK.
+
+00:02:01,350 --> 00:02:05,040
+So we have here is the ID column the first name column.
+
+00:02:05,070 --> 00:02:10,210
+And this email column that unique constraint and that's going to make sure that every single value under
+
+00:02:10,250 --> 00:02:12,810
+the email column is going to be unique.
+
+00:02:12,810 --> 00:02:15,310
+So let's go ahead and run that.
+
+00:02:15,310 --> 00:02:17,800
+So we execute that code looks good.
+
+00:02:17,970 --> 00:02:23,190
+And now let's go ahead and try inserting a new row into the People table.
+
+00:02:23,250 --> 00:02:32,070
+So we're going to say inserts into well good people and the columns we have to insert are the ID the
+
+00:02:32,070 --> 00:02:38,250
+first name column and then the email column and we're going to email or excuse me we're going to insert
+
+00:02:38,610 --> 00:02:41,730
+values and we're going to answer a list of values.
+
+00:02:41,780 --> 00:02:46,740
+Let's go ahead and give them an idea of what we can actually leave this blank if we left that cereal
+
+00:02:47,380 --> 00:02:49,980
+so we'll just put one was.
+
+00:02:49,980 --> 00:02:53,440
+Go ahead and say first name is Joe.
+
+00:02:54,060 --> 00:02:56,630
+And then let's give them some e-mail address.
+
+00:02:56,640 --> 00:03:01,870
+We'll give them Joe Joe that come.
+
+00:03:04,460 --> 00:03:05,180
+OK.
+
+00:03:05,190 --> 00:03:08,110
+So we have that if we go ahead to run it.
+
+00:03:08,160 --> 00:03:09,390
+Sic one rose effect then.
+
+00:03:09,390 --> 00:03:12,280
+So let's go ahead and check that out.
+
+00:03:12,720 --> 00:03:20,150
+So it's going to select everything from people so selects all columns from the people table and there
+
+00:03:20,160 --> 00:03:21,030
+we have one.
+
+00:03:21,030 --> 00:03:23,380
+Joe Joe Joe Lockhart perfect.
+
+00:03:23,540 --> 00:03:24,190
+OK.
+
+00:03:24,450 --> 00:03:27,840
+Now let's try to see if we insert some more of the same e-mail.
+
+00:03:27,930 --> 00:03:29,220
+How would that work.
+
+00:03:29,220 --> 00:03:30,230
+We should get an error.
+
+00:03:30,240 --> 00:03:41,730
+So we're going to say insert into people go to specify the columns Id first name and email put in values
+
+00:03:41,740 --> 00:03:41,840
+.
+
+00:03:41,850 --> 00:03:49,890
+And we're going to go ahead and say to give this person another name will say we'll give this person
+
+00:03:49,890 --> 00:03:56,970
+named Joseph and they're going to have the same e-mail address or at least attempt to have the same
+
+00:03:56,970 --> 00:03:58,570
+you know e-mail address.
+
+00:03:58,680 --> 00:03:59,990
+So we'll put a stream in here.
+
+00:04:00,000 --> 00:04:01,490
+We'll give it Joe.
+
+00:04:01,690 --> 00:04:06,620
+Joe come in if we go out and try to run this.
+
+00:04:06,630 --> 00:04:10,180
+So notice that that e-mail is the same as Joe's e-mail.
+
+00:04:10,410 --> 00:04:13,770
+So Joseph has the same email so if I tried to run this I get an error.
+
+00:04:14,010 --> 00:04:17,980
+And now this is actually unrelated.
+
+00:04:17,980 --> 00:04:19,970
+I need to put an s here undervalues.
+
+00:04:19,980 --> 00:04:21,430
+My apologies.
+
+00:04:21,450 --> 00:04:22,110
+So here I get it.
+
+00:04:22,140 --> 00:04:25,770
+The real area that we're looking for which is the e-mail already exists.
+
+00:04:25,770 --> 00:04:31,700
+So it will actually tell you that duplicate key value violates the unique constraint people email key
+
+00:04:31,720 --> 00:04:31,840
+.
+
+00:04:32,040 --> 00:04:33,800
+And then I'll give you a little more detail saying.
+
+00:04:33,810 --> 00:04:34,740
+Email ECOs Joe.
+
+00:04:34,780 --> 00:04:36,740
+Joe that already exists.
+
+00:04:36,960 --> 00:04:40,170
+And that's really the basics of using the unique constraint.
+
+00:04:40,170 --> 00:04:41,990
+We've already seen it use quite a bit.
+
+00:04:42,150 --> 00:04:46,770
+Well hopefully this lecture just showed you a little more clearly and specifically how you can use the
+
+00:04:46,770 --> 00:04:48,570
+unique constraint on a column.
+
+00:04:48,840 --> 00:04:49,420
+OK.
+
+00:04:49,590 --> 00:04:50,760
+That's it for this lecture.
+
+00:04:50,760 --> 00:04:52,330
+Thanks everyone and I'll see you at the next one

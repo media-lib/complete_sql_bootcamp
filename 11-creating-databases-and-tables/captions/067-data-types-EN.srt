@@ -1,0 +1,314 @@
+00:00:01,230 --> 00:00:07,230
+Hello everyone and welcome to the data types lecture in this lecture we're going to learn about postscripts
+
+00:00:07,230 --> 00:00:12,450
+sequel data types including Bulleen character number and a bunch of other data types.
+
+00:00:12,540 --> 00:00:18,140
+So to be more specific postscripts sequel supports the following data types supports boolean data types
+
+00:00:18,150 --> 00:00:24,900
+meaning true or false character data types number data types temporal data types such as date and time
+
+00:00:24,900 --> 00:00:31,380
+related data types and then some special types which are like geometric data types an array data types
+
+00:00:31,380 --> 00:00:32,570
+.
+
+00:00:32,760 --> 00:00:37,320
+So we're going to need to specify what kind of data type a column should have whenever we are creating
+
+00:00:37,320 --> 00:00:39,860
+tables which is why we're learning about data types.
+
+00:00:39,860 --> 00:00:41,420
+More specifically right now.
+
+00:00:41,670 --> 00:00:44,760
+We've actually already interacted with quite a few of these data types.
+
+00:00:44,850 --> 00:00:46,920
+When we were looking at reading from a table.
+
+00:00:47,100 --> 00:00:48,740
+Well let's go ahead and review them all.
+
+00:00:48,780 --> 00:00:52,680
+So we can understand how to use them we're actually creating a table.
+
+00:00:52,740 --> 00:00:58,200
+And the reason we have data types to begin with is to make sure that if someone is using your database
+
+00:00:58,530 --> 00:01:04,340
+they're not able to insert the wrong data type into a column where it doesn't really belong.
+
+00:01:04,350 --> 00:01:09,990
+So let's go ahead and start off the boolean data type the boolean data type and hold one of two possible
+
+00:01:09,990 --> 00:01:12,180
+values either true or false.
+
+00:01:12,270 --> 00:01:16,470
+And in case the value is unknown then the null value is used just a blank.
+
+00:01:16,860 --> 00:01:19,260
+And you can use boolean or bool keyword.
+
+00:01:19,260 --> 00:01:24,010
+When you declare a column that has a boolean data type so I'll be letting you know what the keywords
+
+00:01:24,090 --> 00:01:27,090
+are that we'll be using when we declare a column.
+
+00:01:27,090 --> 00:01:30,140
+Now I know we haven't actually declared a column yet or create a table.
+
+00:01:30,300 --> 00:01:31,500
+So just keep that in mind.
+
+00:01:31,530 --> 00:01:36,580
+Well we visit these words we're actually creating those tables that boolean or bull is the key word
+
+00:01:36,600 --> 00:01:38,710
+for a boolean data type.
+
+00:01:39,570 --> 00:01:44,640
+So when you insert data into a Boolean column post-procedure will convert it into the boolean value
+
+00:01:44,640 --> 00:01:45,090
+.
+
+00:01:45,090 --> 00:01:50,130
+So for example if you input a one a yes y or T are true.
+
+00:01:50,130 --> 00:01:52,140
+Those are all converted to true.
+
+00:01:52,320 --> 00:01:56,320
+And if you were to input a zero or no and false.
+
+00:01:56,520 --> 00:02:00,900
+Those were all be converted to false data types in post-career sequel.
+
+00:02:01,170 --> 00:02:07,680
+When you select data from a Boolean column postscripts sequel displays t for true F for false and a
+
+00:02:07,680 --> 00:02:11,320
+space character for NULL.
+
+00:02:11,460 --> 00:02:17,160
+Now about character data types postscripts sequel has three types of character data types.
+
+00:02:17,160 --> 00:02:19,080
+One is the single character.
+
+00:02:19,080 --> 00:02:27,030
+C H A R and then the second one is the fixed length character strings c h a are of some value and some
+
+00:02:27,030 --> 00:02:32,610
+number if you insert a string that is shorter than the length of the column postscripts sequel will
+
+00:02:32,610 --> 00:02:35,910
+pad spaces mean it is going to add some spaces there.
+
+00:02:36,030 --> 00:02:40,380
+And if you insert a string that is longer than the length of the column post-career sequel issue an
+
+00:02:40,380 --> 00:02:41,300
+error.
+
+00:02:41,310 --> 00:02:47,100
+So the reason you may want to use a fixed length character string is to make sure that a user isnt able
+
+00:02:47,100 --> 00:02:51,630
+to put in a string of characters that doesn't belong there.
+
+00:02:51,660 --> 00:02:58,200
+So you may think of this as maybe you have a certain number of expected letters for some sort of ID
+
+00:02:58,230 --> 00:03:01,600
+code and you don't want the user to be able to mess that up.
+
+00:03:01,650 --> 00:03:03,820
+Then you also have variable length character strings.
+
+00:03:03,840 --> 00:03:08,180
+The A R C H A are with some and number there.
+
+00:03:08,370 --> 00:03:13,560
+And then you can stirrups two characters of variable length character strings and post-career sequel
+
+00:03:13,560 --> 00:03:18,390
+does not have spaces when the string is shorter than the length of the column.
+
+00:03:18,390 --> 00:03:23,720
+So basically the differences here between fixed length and variable if correct strings is fixed length
+
+00:03:23,730 --> 00:03:29,220
+character strings postscripts sequence always going to make sure that they're all the same length either
+
+00:03:29,220 --> 00:03:35,190
+it's going to pad spaces or the clear and air if the item you're trying to insert is longer than the
+
+00:03:35,190 --> 00:03:41,490
+length that's allowed for variable length character strings you can store up to end characters of variable
+
+00:03:41,490 --> 00:03:42,100
+length.
+
+00:03:42,150 --> 00:03:43,470
+So end is just the limit.
+
+00:03:43,560 --> 00:03:48,060
+And in that case postgresql equals not going to pad spaces so a variable length character strings are
+
+00:03:48,060 --> 00:03:52,030
+really useful for people's names where you don't know how long they're going to be.
+
+00:03:52,170 --> 00:03:59,390
+But you will set some limit so someone can't just write in a name of thousands of letters long.
+
+00:03:59,520 --> 00:04:04,560
+So you can go ahead and revisit the like customer column and check out the variable character names
+
+00:04:04,560 --> 00:04:06,620
+for their first and last name.
+
+00:04:06,680 --> 00:04:12,210
+OK so moving along from the character data type we have the number data type and post-career sequel
+
+00:04:12,210 --> 00:04:18,840
+provides two distinct types of numbers integers and a floating point numbers for integers.
+
+00:04:18,840 --> 00:04:20,670
+We have three separate types of integers.
+
+00:04:20,670 --> 00:04:27,230
+We have a small integer and the type you declare is just small ints and it's a two bite sized integer
+
+00:04:27,230 --> 00:04:35,690
+that has somewhere between the range of negative 32000 768 and positive 32000 767.
+
+00:04:36,010 --> 00:04:43,680
+Now we have an integer declared I N T which is a 4 by integer that has a range of those two numbers
+
+00:04:43,680 --> 00:04:45,490
+there.
+
+00:04:45,720 --> 00:04:46,560
+And my apologies.
+
+00:04:46,560 --> 00:04:50,820
+Actually just quickly edited there was a typo there that should have been positive so from negative
+
+00:04:51,390 --> 00:04:56,910
+this number to positive this number and this number is actually just 2 to the power of 31 saying go
+
+00:04:56,910 --> 00:04:58,470
+out and check that out yourself.
+
+00:04:58,620 --> 00:05:04,900
+And then the third integer type is cereal and cereals the same as integer except that postscripts sequel
+
+00:05:04,900 --> 00:05:09,840
+will automatically populate values into the column automatically.
+
+00:05:09,840 --> 00:05:15,210
+So basically what that means it's kind of similar to something US auto increments attribute in some
+
+00:05:15,210 --> 00:05:21,570
+other database management systems but it's just a way to keep a running tally where the integer is populated
+
+00:05:21,570 --> 00:05:25,550
+automatically so it keeps incrementing the pending how you define it.
+
+00:05:25,630 --> 00:05:28,600
+And we'll explore that later on.
+
+00:05:28,710 --> 00:05:32,310
+OK so for the floating point numbers we also have three types.
+
+00:05:32,400 --> 00:05:39,420
+We have a float an ad that declares a floating point number whose precise precision is at least an up
+
+00:05:39,420 --> 00:05:46,430
+to a maximum size of 8 bytes so that's the actual storage size 8 bytes in memory of the database.
+
+00:05:46,500 --> 00:05:47,880
+Then the second type is real.
+
+00:05:47,910 --> 00:05:49,860
+Or you can also use flow 8.
+
+00:05:50,160 --> 00:05:54,610
+And it's a double precision meaning 8 by floating point number.
+
+00:05:54,960 --> 00:06:01,380
+Then you have numeric or you can also use numeric P com s and that's a real number with P digits with
+
+00:06:01,500 --> 00:06:04,320
+X number of them after the decimal point.
+
+00:06:04,350 --> 00:06:09,390
+And if you want the exact numbers so pretty much perfect precision as at least as far as you can get
+
+00:06:09,390 --> 00:06:12,420
+it you can use the numeric with the comma.
+
+00:06:12,420 --> 00:06:15,560
+Nothing that's going to be the exact number.
+
+00:06:15,990 --> 00:06:21,270
+OK so after that we have temporal data which stores date and time information or date and time related
+
+00:06:21,270 --> 00:06:22,220
+data.
+
+00:06:22,230 --> 00:06:28,560
+We have the date which stores date data or just time that stores time data or we have the time stamp
+
+00:06:28,560 --> 00:06:34,530
+which is the one we've been working a lot which stores a date and time data interval stores the difference
+
+00:06:34,530 --> 00:06:35,470
+and time stamps.
+
+00:06:35,490 --> 00:06:37,430
+And we also have time stamped TC.
+
+00:06:37,500 --> 00:06:43,050
+In other words we've been working with that stores both time stamp and time zone data.
+
+00:06:43,050 --> 00:06:49,230
+So these basically just build off of each other so you combine day and time to get time stamp.
+
+00:06:49,230 --> 00:06:53,850
+You can use interval to store the difference between time stamps and then you take time stamp and at
+
+00:06:53,850 --> 00:06:56,450
+time zone data to it and you get time stamped.
+
+00:06:56,440 --> 00:06:58,340
+TC OK.
+
+00:06:58,800 --> 00:07:01,230
+So that's it for the data types.
+
+00:07:01,230 --> 00:07:05,610
+Knowing them is going to be useful in creating tables or inserting data into tables.
+
+00:07:05,610 --> 00:07:08,140
+So don't worry about memorizing all these right now.
+
+00:07:08,160 --> 00:07:12,780
+Usually you just reference the documentation but we're going to slowly build our understanding of these
+
+00:07:12,870 --> 00:07:15,880
+as we insert data into tables and create tables.
+
+00:07:16,190 --> 00:07:16,960
+OK.
+
+00:07:16,980 --> 00:07:20,250
+With that being said thanks everyone and I will see you at the next lecture

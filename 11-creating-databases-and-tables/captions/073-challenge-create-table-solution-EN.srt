@@ -1,0 +1,275 @@
+00:00:01,100 --> 00:00:01,890
+Hello everyone.
+
+00:00:01,890 --> 00:00:04,880
+Welcome to the create table challenge solution.
+
+00:00:04,900 --> 00:00:10,650
+So we're just going to go through the solution for creating the table as a reminder of what the task
+
+00:00:10,650 --> 00:00:15,390
+was and from the previous lecture you had to create a table to organize our potential leads.
+
+00:00:15,390 --> 00:00:18,240
+And we had the following information to organize.
+
+00:00:18,330 --> 00:00:21,770
+We had a customer's first name last name email.
+
+00:00:21,780 --> 00:00:25,970
+Some sign up date and then the number of minutes they spent on the DVD rental site.
+
+00:00:26,460 --> 00:00:31,260
+And I also mentioned that you should have some sort of additional ID tracker for these customers or
+
+00:00:31,260 --> 00:00:32,640
+potential leads.
+
+00:00:33,210 --> 00:00:36,580
+So let's go ahead and jump to P.G. adamant and code this out.
+
+00:00:36,690 --> 00:00:38,580
+Now I want to just make a quick point.
+
+00:00:38,590 --> 00:00:43,010
+There's lots of ways and you had a lot of flexibility in how you could actually create this table.
+
+00:00:43,200 --> 00:00:48,480
+So if you didn't choose the same column names or the same constraints as I did don't worry as long as
+
+00:00:48,480 --> 00:00:52,950
+you're actually able to create a table in a way that makes sense for solving the problem then you're
+
+00:00:52,950 --> 00:00:57,600
+totally fine with that being said let's go ahead and jump to P.G. admin.
+
+00:00:58,900 --> 00:01:05,470
+OK so here I am PGA minute already opened up a sequel Ed. And I opened it up in the learning database
+
+00:01:05,470 --> 00:01:05,520
+.
+
+00:01:05,520 --> 00:01:06,990
+You can see here I'm on learning.
+
+00:01:07,230 --> 00:01:09,950
+But you can open it up in whatever database you want.
+
+00:01:10,290 --> 00:01:13,910
+You can go out and make any database for challenges doesn't really matter.
+
+00:01:14,190 --> 00:01:20,220
+So first thing you had to do was say create table statements so hopefully that was pretty obvious and
+
+00:01:20,220 --> 00:01:22,050
+then you had to name your table.
+
+00:01:22,050 --> 00:01:28,680
+So we'll choose leads as the new over a table and then the next step was to create a set of parentheses
+
+00:01:28,680 --> 00:01:30,210
+brackets.
+
+00:01:30,330 --> 00:01:31,410
+So my colon here.
+
+00:01:31,500 --> 00:01:36,810
+And what's going to go in between all this are the lists the column names the data type they are and
+
+00:01:36,810 --> 00:01:39,250
+then the column constraint.
+
+00:01:39,270 --> 00:01:47,430
+So again we had to have some sort of user ID that was the very last thing specified but it should be
+
+00:01:47,430 --> 00:01:49,100
+here the primary key column.
+
+00:01:49,120 --> 00:01:54,600
+That's what it makes the most sense and given based off the other examples we saw earlier when we're
+
+00:01:54,600 --> 00:02:01,320
+creating tables it makes sense that your ID column should be a serial data type in order to increment
+
+00:02:01,320 --> 00:02:05,960
+and make sure that we add more IDs as we get more Sign-Up users.
+
+00:02:05,970 --> 00:02:12,870
+So let's go ahead and specify this to be primary key comma and then we're just going to continue this
+
+00:02:12,870 --> 00:02:14,600
+pattern for adding more columns.
+
+00:02:14,670 --> 00:02:18,450
+So the next column and go ahead and call it first name.
+
+00:02:18,450 --> 00:02:24,420
+This should probably be a variable character and it's up to you how long you want to define it.
+
+00:02:24,450 --> 00:02:30,750
+Let's just say 50 as a standard really depends on your work environment as to what end values you're
+
+00:02:30,750 --> 00:02:32,230
+going to choose.
+
+00:02:32,280 --> 00:02:37,800
+You can go ahead and check documentation online or talk to your manager as far as what are acceptable
+
+00:02:37,800 --> 00:02:43,000
+and non-acceptable and values there because there's a lot of flexibility there.
+
+00:02:43,030 --> 00:02:49,190
+Your first name and let's go ahead and do the same thing for the last day in column of these potentially
+
+00:02:49,300 --> 00:02:52,310
+so variable character let's call it 15.
+
+00:02:52,500 --> 00:02:58,410
+And again I'm saying not no because I want to make sure that we still have those values as we go along
+
+00:02:58,420 --> 00:02:59,020
+.
+
+00:02:59,730 --> 00:03:04,480
+And then the next column we had an e-mail from the potential customer.
+
+00:03:04,500 --> 00:03:08,690
+Let's go ahead and also have that be a variable character.
+
+00:03:09,000 --> 00:03:13,620
+Well a bit larger right because it's an e-mail address not just the first or last name.
+
+00:03:13,890 --> 00:03:20,020
+And for this I'm going to make sure that it's unique in addition to being not null.
+
+00:03:20,280 --> 00:03:26,730
+And the reason for that is because I want to make sure we only get one Sign-Up per e-mail address so
+
+00:03:26,730 --> 00:03:32,280
+I don't want multiple people signing up on the same e-mail address so you should have at least hopefully
+
+00:03:32,280 --> 00:03:34,250
+realized that it should have probably been unique.
+
+00:03:34,260 --> 00:03:38,430
+It's not it's not a huge deal but it's good to keep that kind of thing in mind when you're creating
+
+00:03:38,430 --> 00:03:40,920
+these tables for a database.
+
+00:03:40,920 --> 00:03:46,360
+Next up we wanted to track the minutes that the person is going to be there.
+
+00:03:46,380 --> 00:03:49,290
+So for that we could have said something like minutes column.
+
+00:03:49,290 --> 00:03:51,390
+Just call it a simple integer.
+
+00:03:51,390 --> 00:03:54,690
+You could have auspice specified eight specified as some sort of floating point number.
+
+00:03:54,690 --> 00:03:56,110
+This was up to you.
+
+00:03:56,120 --> 00:04:01,740
+You have a lot of flexibility on this one because it was pretty vague as far as what the actual requirement
+
+00:04:01,740 --> 00:04:02,620
+was for this.
+
+00:04:02,700 --> 00:04:04,530
+Just the same minutes as an integer.
+
+00:04:04,530 --> 00:04:05,410
+Make sure it's not known.
+
+00:04:05,410 --> 00:04:06,930
+So we actually keep track of it.
+
+00:04:07,230 --> 00:04:12,860
+And then finally we have a let's say Sign-Up dates.
+
+00:04:13,170 --> 00:04:14,590
+Let's go and say it time.
+
+00:04:14,700 --> 00:04:22,620
+Sign up TS for a time stamp and this should have been some sort of portal data type time stamp if you
+
+00:04:22,620 --> 00:04:24,350
+wanted to add a time zone data to it.
+
+00:04:24,360 --> 00:04:26,220
+That's fine too.
+
+00:04:26,220 --> 00:04:31,780
+And let's go ahead and make sure this is not as well and that should basically be it.
+
+00:04:31,800 --> 00:04:35,460
+So we go ahead and run this make sure it works out.
+
+00:04:35,850 --> 00:04:38,530
+And here query returns success with no result.
+
+00:04:38,700 --> 00:04:40,970
+So that makes sense since we just created the table.
+
+00:04:41,130 --> 00:04:46,740
+So now we have our leads table with these columns with the specified data types and constraints.
+
+00:04:47,010 --> 00:04:49,880
+So that was a simple example of how you could have done it again.
+
+00:04:49,890 --> 00:04:54,660
+You had the flexibility could have changed the end values for the characters but hopefully it gave you
+
+00:04:54,660 --> 00:04:59,150
+a general idea of what kind of things you should be accounting for beforehand.
+
+00:04:59,400 --> 00:05:06,570
+So in general creating these tables in databases you really want to make sure that key elements of this
+
+00:05:06,690 --> 00:05:12,160
+is that you kind of predict problems that may occur in the future before they actually occur.
+
+00:05:12,320 --> 00:05:17,130
+So you want to predict things like people having the same e-mail address or people trying to put in
+
+00:05:17,130 --> 00:05:23,490
+the same password or making sure that you have not Knolles in places where you don't expect where you
+
+00:05:23,490 --> 00:05:26,090
+don't want there to be no values et cetera.
+
+00:05:26,190 --> 00:05:30,390
+So it takes a lot of patience to kind of develop this attitude of OK.
+
+00:05:30,600 --> 00:05:33,280
+Think of all the ways that user can mess up beforehand.
+
+00:05:33,480 --> 00:05:38,340
+But that's kind of a big part of creating these databases and these data systems so keep that in mind
+
+00:05:38,340 --> 00:05:38,960
+.
+
+00:05:38,970 --> 00:05:39,630
+All right.
+
+00:05:39,630 --> 00:05:40,580
+With that being said.
+
+00:05:40,650 --> 00:05:41,710
+Thanks everyone.
+
+00:05:41,760 --> 00:05:43,470
+Hope the challenge is pretty straightforward.
+
+00:05:43,470 --> 00:05:47,620
+If not you can review the create tables lecture for a review.
+
+00:05:47,730 --> 00:05:48,140
+OK.
+
+00:05:48,220 --> 00:05:50,670
+Thanks and I'll see you at the next lecture.

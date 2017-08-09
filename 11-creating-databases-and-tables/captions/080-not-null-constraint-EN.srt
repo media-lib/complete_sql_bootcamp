@@ -1,0 +1,284 @@
+00:00:01,200 --> 00:00:07,530
+Hello everyone and welcome to the not no constraint lecture in this lecture we're going to learn a little
+
+00:00:07,530 --> 00:00:16,560
+more about values and the not null statements so in database theory no is unknown or missing information
+
+00:00:16,580 --> 00:00:22,580
+is where you don't actually have a data point and that's different than an empty or a zero.
+
+00:00:22,590 --> 00:00:25,480
+For example we can ask for the email address of a person.
+
+00:00:25,530 --> 00:00:32,100
+And if we don't know we can input a null value there in case the person doesn't have any e-mail address
+
+00:00:32,100 --> 00:00:32,140
+.
+
+00:00:32,160 --> 00:00:35,190
+We could have also marked it as just an empty string.
+
+00:00:35,280 --> 00:00:39,350
+And so that's kind of the difference between empty and no or a zero and null.
+
+00:00:39,570 --> 00:00:44,280
+So for example if you have zero sales for the month that's different than just not knowing how many
+
+00:00:44,280 --> 00:00:46,180
+sales you have for a month.
+
+00:00:46,200 --> 00:00:52,110
+So there's a difference between that empty or that zero value versus a null value because the no value
+
+00:00:52,140 --> 00:00:57,630
+just means it's unknown and it's missing information where you just have no idea if it's a hundred or
+
+00:00:57,630 --> 00:01:00,660
+zero or empty or a thousand etc..
+
+00:01:00,660 --> 00:01:03,240
+So that's really what NULL stands for in database theory.
+
+00:01:03,240 --> 00:01:07,590
+The fact that you just don't know about that missing data point.
+
+00:01:08,250 --> 00:01:14,690
+So postgresql provides the not null constraint to enforce a column that must not accept no values.
+
+00:01:14,700 --> 00:01:16,610
+And we've actually seen this already before.
+
+00:01:16,920 --> 00:01:22,140
+And basically what that means is that whenever you insert or update data you must specify a value that
+
+00:01:22,140 --> 00:01:25,160
+is different from the null value.
+
+00:01:25,260 --> 00:01:30,030
+Like I mentioned we've seen a constraint already used a few times foolishest explore a little more in
+
+00:01:30,030 --> 00:01:36,180
+the editor and we're going to create a quick table and see what happens when we say the not no constraint
+
+00:01:36,180 --> 00:01:40,500
+and try to add something that is a null just to get a better and quick understanding of how it really
+
+00:01:40,500 --> 00:01:41,620
+works.
+
+00:01:41,640 --> 00:01:45,260
+OK I'm going to go ahead and jump to the sequel Ed. now.
+
+00:01:46,320 --> 00:01:46,730
+OK.
+
+00:01:46,740 --> 00:01:51,900
+So here we are at the sequel Ed. Let's go ahead and create a table.
+
+00:01:52,050 --> 00:01:55,890
+We're going to go ahead and say create table and you can name the table whatever you want.
+
+00:01:55,890 --> 00:01:59,040
+Just make sure it's not already in your database.
+
+00:01:59,070 --> 00:02:02,100
+We'll call this create table learn.
+
+00:02:02,190 --> 00:02:03,480
+Let's just call it learn.
+
+00:02:03,500 --> 00:02:10,240
+Underscore null because we're going to use it to learn null and it's going to have just two simple columns
+
+00:02:10,240 --> 00:02:10,260
+.
+
+00:02:10,260 --> 00:02:14,630
+The first one will be some first name call.
+
+00:02:15,420 --> 00:02:21,270
+Let's say it just takes and someone's first name as a variable character string data type and the next
+
+00:02:21,270 --> 00:02:21,630
+one.
+
+00:02:21,630 --> 00:02:27,390
+Let's just say it's going to be some sales number and we always want to make sure that we always know
+
+00:02:27,390 --> 00:02:28,310
+the sales.
+
+00:02:28,500 --> 00:02:33,390
+And with that we don't have any missing data points there and what we're going to do then is put the
+
+00:02:33,390 --> 00:02:35,460
+constraints on top of it that it's not.
+
+00:02:35,470 --> 00:02:36,320
+No.
+
+00:02:36,730 --> 00:02:39,540
+And so those are all columns we close off those parentheses.
+
+00:02:39,750 --> 00:02:41,640
+Let's go ahead and run that.
+
+00:02:41,640 --> 00:02:46,590
+So again we just said create table learn on the score nulls name of the table and we have two columns
+
+00:02:46,680 --> 00:02:51,690
+a first name column which is a variable character type string and then we have a second column which
+
+00:02:51,690 --> 00:02:55,220
+has a sales integer not null type string.
+
+00:02:56,220 --> 00:03:01,850
+So now let's go ahead and inserts into that table.
+
+00:03:02,220 --> 00:03:03,840
+So insert into learn.
+
+00:03:03,840 --> 00:03:05,830
+Underscore no.
+
+00:03:06,630 --> 00:03:12,900
+And then what we're going to go ahead and do is say let's go and insert into that first name column
+
+00:03:12,900 --> 00:03:12,920
+.
+
+00:03:12,930 --> 00:03:17,030
+But notice I'm not actually going to insert into the sales column.
+
+00:03:17,340 --> 00:03:23,340
+So then we put in some values and I want to put it in my list of values in this case let's say this
+
+00:03:23,340 --> 00:03:27,570
+person's first name was John and that's it.
+
+00:03:27,570 --> 00:03:30,930
+So let's think of a second before we run this what's actually going to happen.
+
+00:03:30,990 --> 00:03:37,770
+I'm going to say insert into learn null just into the first name column where values is the first name
+
+00:03:38,000 --> 00:03:38,780
+John.
+
+00:03:38,790 --> 00:03:44,460
+Now remember we also add that sales column and that had a constraint that it could not be null meaning
+
+00:03:44,460 --> 00:03:49,380
+if I just insert this value here post-career sequel is going to try to fill in the rest as null values
+
+00:03:49,620 --> 00:03:51,560
+because I'm not providing that data.
+
+00:03:51,570 --> 00:03:53,190
+It's a missing data point here.
+
+00:03:53,220 --> 00:03:56,100
+So I actually try to run this go ahead and run this.
+
+00:03:56,220 --> 00:04:02,640
+Notice I get an error I get a null value in Column sales violates that not null constraint and that
+
+00:04:02,640 --> 00:04:03,840
+failing RHO contains.
+
+00:04:03,870 --> 00:04:08,870
+And you can see here how postgresql has filled it in as John and null.
+
+00:04:09,300 --> 00:04:15,330
+So that's not no constraint is going to make sure that when you're inserting values into this table
+
+00:04:15,360 --> 00:04:21,300
+as rows if you have a null value or a missing data point that not no constraint is going to throw up
+
+00:04:21,300 --> 00:04:23,630
+an error if you try to do that.
+
+00:04:23,850 --> 00:04:30,050
+So don't we actually put in some sort of integer for his sales number let's say sold 12.
+
+00:04:30,060 --> 00:04:38,010
+If we run that notice Ill say more than target columns because when you specify appear the sales column
+
+00:04:38,010 --> 00:04:38,500
+.
+
+00:04:38,520 --> 00:04:42,930
+So now I want to say insert into learn null the first name column sales column.
+
+00:04:42,990 --> 00:04:46,680
+So I have two columns matching two values John and 12.
+
+00:04:46,680 --> 00:04:50,860
+So if I run that the query did return successfully one row is affected.
+
+00:04:51,010 --> 00:04:58,100
+Let's go ahead and make sure by saying selects Asterix from LEARN.
+
+00:04:58,110 --> 00:05:01,540
+Underscore null and there it is.
+
+00:05:01,530 --> 00:05:03,640
+There's John offis 12 sales.
+
+00:05:03,720 --> 00:05:07,850
+So really the main point is understanding two things from this lecture.
+
+00:05:07,860 --> 00:05:15,630
+One is the difference between a null point in your database or just having a null as unknown or missing
+
+00:05:15,630 --> 00:05:18,420
+information versus that the no value.
+
+00:05:18,420 --> 00:05:21,380
+How it's different than just an empty or a zero value.
+
+00:05:21,570 --> 00:05:24,170
+So that's one of the main things I want you to get out of this lecture.
+
+00:05:24,180 --> 00:05:26,910
+How null is different than just an empty or zero.
+
+00:05:27,030 --> 00:05:33,090
+Because if no you don't know you have missing information there versus an empty string or a zero you
+
+00:05:33,090 --> 00:05:34,430
+actually have information.
+
+00:05:34,440 --> 00:05:36,880
+It just happens to be empty or zero.
+
+00:05:37,170 --> 00:05:41,010
+And then the second thing and once you get out of this is an awareness that if you put that constraint
+
+00:05:41,070 --> 00:05:47,490
+of not null in a table when you insert something where you have a missing data point it will throw up
+
+00:05:47,490 --> 00:05:51,340
+an error then that's the whole purpose of that not null constraint.
+
+00:05:51,480 --> 00:05:56,070
+So it can be incredibly useful to make sure you're not missing any information when you're trying to
+
+00:05:56,070 --> 00:06:01,410
+build some sort of larger application where users are putting in information into a table or a database
+
+00:06:01,410 --> 00:06:02,330
+somewhere.
+
+00:06:02,710 --> 00:06:03,300
+OK.
+
+00:06:03,480 --> 00:06:05,970
+So that's it for a little more on the not.
+
+00:06:05,970 --> 00:06:07,300
+No constraint.
+
+00:06:07,320 --> 00:06:09,490
+Thanks everyone and I'll see you at the next lecture.

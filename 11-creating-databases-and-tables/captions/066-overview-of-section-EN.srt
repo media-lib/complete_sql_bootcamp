@@ -1,0 +1,149 @@
+00:00:01,620 --> 00:00:09,330
+Hello everyone and welcome to this overview on creating databases and tables section of the course in
+
+00:00:09,330 --> 00:00:14,310
+this section of the course we're going to be learning how to create database and tables and manipulate
+
+00:00:14,310 --> 00:00:16,230
+the data inside of them.
+
+00:00:16,410 --> 00:00:22,320
+So previously in the other sections we've been mainly reading from tables or databases where the data
+
+00:00:22,320 --> 00:00:24,500
+is already in there and it already exists.
+
+00:00:24,510 --> 00:00:27,110
+We've been learning how to read data from them.
+
+00:00:27,120 --> 00:00:32,340
+So in this section we're going to focus on is how you actually create those tables and insert data into
+
+00:00:32,340 --> 00:00:35,730
+those tables and cells using sequel syntax.
+
+00:00:36,000 --> 00:00:41,610
+So if your profession or job has some sort of analyst is going to mainly consist of just reading from
+
+00:00:41,610 --> 00:00:46,860
+tables you're not actually ever going to have to input your own data through sequel syntax directly
+
+00:00:46,860 --> 00:00:47,700
+.
+
+00:00:47,700 --> 00:00:54,120
+This entire section may not be super useful but it will help you build a better understanding of how
+
+00:00:54,120 --> 00:00:57,030
+these databases and tables actually interact with each other.
+
+00:00:57,180 --> 00:01:03,040
+And Ill even give you a good understanding of how web application databases work.
+
+00:01:03,060 --> 00:01:04,670
+So a quick note.
+
+00:01:04,710 --> 00:01:08,240
+Many of the concepts in this section are interconnected.
+
+00:01:08,340 --> 00:01:12,080
+Meaning it's a bit difficult to teach them in any sort of proper order.
+
+00:01:12,420 --> 00:01:19,170
+And the what I mean by that is let's say there's concept a concept B there's no real order to cause
+
+00:01:19,170 --> 00:01:19,320
+it.
+
+00:01:19,350 --> 00:01:25,290
+A first is concept B second because you kind of need to learn both of them at the same time in order
+
+00:01:25,290 --> 00:01:27,260
+to use one or the other.
+
+00:01:27,300 --> 00:01:32,040
+So keep that in mind if a video alerts you to something that will be addressed in more detail in a future
+
+00:01:32,040 --> 00:01:32,900
+lecture.
+
+00:01:32,910 --> 00:01:37,350
+So if there's ever a situation like this you'll hear me point out don't worry we're going to learn about
+
+00:01:37,350 --> 00:01:40,020
+this topic in a future lecture.
+
+00:01:40,020 --> 00:01:45,990
+However I have tried my best in order to present all the data and all the lectures in a straightforward
+
+00:01:46,050 --> 00:01:52,400
+and orderly manner so that straightforward and orderly matter is going to start like this.
+
+00:01:52,410 --> 00:01:56,260
+We're going to start at understanding data types in a little more detail.
+
+00:01:56,310 --> 00:02:02,160
+Now we're also going to go over what primary and foreign keys are in more detail then we practice creating
+
+00:02:02,160 --> 00:02:08,640
+tables and manipulating the data rows inside of them and then we'll learn how to manipulate entire tables
+
+00:02:08,640 --> 00:02:09,120
+.
+
+00:02:09,120 --> 00:02:14,970
+And then finally we're going to end some more in view of some constraint concepts and we'll cover what
+
+00:02:14,970 --> 00:02:18,650
+constraints are in a future lecture.
+
+00:02:18,660 --> 00:02:19,690
+So quick note.
+
+00:02:19,740 --> 00:02:25,560
+This section will really focus on challenges too much because a lot of the syntax in this section is
+
+00:02:25,560 --> 00:02:30,230
+actually going to correspond exactly to what you would expect for normal phrasing.
+
+00:02:30,240 --> 00:02:34,930
+So for example of a challenge question asked Oh create a table called Test table.
+
+00:02:35,130 --> 00:02:40,040
+Well a lot of the syntax really matches up and basically says exactly what it does.
+
+00:02:40,050 --> 00:02:45,450
+So the answer to that question would just be create table test table and you're going to notice that
+
+00:02:45,600 --> 00:02:46,610
+as you go along.
+
+00:02:46,650 --> 00:02:51,440
+Let's say there's another question that says oh insert these values into a table.
+
+00:02:51,840 --> 00:02:56,320
+The syntax for that is actually going to be insert blank values blank.
+
+00:02:56,370 --> 00:03:01,560
+So this entire section doesn't really lend itself well to challenge questions because the questions
+
+00:03:01,560 --> 00:03:03,750
+that essentially just give away the answer.
+
+00:03:03,750 --> 00:03:09,120
+So this entire section is really more to beef up your own knowledge and just build an understanding
+
+00:03:09,120 --> 00:03:13,460
+of how databases and tables are created and how they work.
+
+00:03:13,470 --> 00:03:19,170
+So as always feel free to ask any discussion questions for hints tips extra resources or information
+
+00:03:19,610 --> 00:03:22,580
+or to clear up any confusion on any of these topics.
+
+00:03:22,590 --> 00:03:25,240
+With that being said let's go ahead and get started.
+
+00:03:25,530 --> 00:03:27,480
+Thanks everyone and I'll see you at the next lecture

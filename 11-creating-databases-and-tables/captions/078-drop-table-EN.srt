@@ -1,0 +1,263 @@
+00:00:01,290 --> 00:00:07,020
+Hello everyone and welcome to the drop table lecture in this lecture room to learn how to remove or
+
+00:00:07,020 --> 00:00:11,110
+drop tables from a database in post-crash sequel.
+
+00:00:11,430 --> 00:00:13,820
+So the syntax actually really straightforward.
+
+00:00:13,980 --> 00:00:19,770
+If you want to remove an existing table from a database you use the drop table statement as shown in
+
+00:00:19,770 --> 00:00:21,240
+the following below.
+
+00:00:21,240 --> 00:00:23,670
+So you're going to say drop space table.
+
+00:00:23,910 --> 00:00:30,630
+There's an optional if exists term and then you input the table name so that if exists term is an optional
+
+00:00:30,630 --> 00:00:32,930
+statement which will help you avoid errors.
+
+00:00:32,940 --> 00:00:35,730
+If a table doesn't already exist in your database.
+
+00:00:35,730 --> 00:00:41,970
+So if you try to just say drop table some table name and table actually in your database you'll get
+
+00:00:41,970 --> 00:00:44,300
+an error if you say drop table.
+
+00:00:44,320 --> 00:00:46,970
+Table if exists and then some table name.
+
+00:00:47,160 --> 00:00:51,840
+And even if that table is not in your database you won't get an error out.
+
+00:00:52,380 --> 00:00:55,650
+So this is best shown by a couple of simple examples in postscripts sequel.
+
+00:00:55,680 --> 00:01:00,630
+So I'm going to go ahead and hop over to a sequel editor from PGE adamant so we can explore this just
+
+00:01:00,630 --> 00:01:02,700
+a little further.
+
+00:01:02,700 --> 00:01:05,000
+All right so here I am at PGE.
+
+00:01:05,040 --> 00:01:07,340
+Adam and Eve opened up a sequel Ed..
+
+00:01:07,410 --> 00:01:15,470
+Let's go ahead and create a table real quick we'll say create a table the name of the table.
+
+00:01:15,570 --> 00:01:18,070
+Let's go ahead and call this.
+
+00:01:19,090 --> 00:01:22,650
+We'll just say it's called test to we'll name that.
+
+00:01:22,920 --> 00:01:30,780
+Well let's go to like that and does it really matter in the table as long as it doesn't already exist
+
+00:01:30,780 --> 00:01:31,810
+in your database.
+
+00:01:32,010 --> 00:01:38,760
+So create this symbol table will have it have a column called Test Id just make it a serial column have
+
+00:01:38,760 --> 00:01:42,160
+it be the primary key of the table.
+
+00:01:42,650 --> 00:01:46,970
+So call and run that looks like it returned successfully.
+
+00:01:46,980 --> 00:01:49,950
+So it does create in that table test to real quick.
+
+00:01:49,950 --> 00:01:57,780
+And now let's go ahead and just make sure it actually exists will say select Asterix from when it was
+
+00:01:57,780 --> 00:01:59,760
+called Test 2.
+
+00:02:00,450 --> 00:02:00,770
+OK.
+
+00:02:00,780 --> 00:02:06,150
+So notice we don't get any rows back but we do get that test ID column back so we know that table exists
+
+00:02:06,150 --> 00:02:06,720
+.
+
+00:02:06,720 --> 00:02:09,560
+Let's go ahead and explore how to drop the table.
+
+00:02:10,050 --> 00:02:11,360
+So it's actually quite simple.
+
+00:02:11,430 --> 00:02:18,820
+The syntax for dropping table again is just drop table and then the name of the table test too.
+
+00:02:18,920 --> 00:02:20,600
+Now I want to go ahead and run that.
+
+00:02:20,940 --> 00:02:23,290
+So looks at the query returns loof no result.
+
+00:02:23,460 --> 00:02:33,210
+So let's go ahead and make sure the tables actually dropped by saying selects Asterix from test to run
+
+00:02:33,210 --> 00:02:34,770
+that notice.
+
+00:02:34,800 --> 00:02:37,170
+We get an error down here.
+
+00:02:37,170 --> 00:02:42,780
+So it says error relation to underscore does not exist which makes sense because we just deleted or
+
+00:02:42,780 --> 00:02:47,670
+dropped that table from our database so the drop table statement worked out perfectly.
+
+00:02:47,670 --> 00:02:52,320
+Now I want to show you what happens and how to use it if exist statement.
+
+00:02:52,320 --> 00:02:57,150
+So imagine I try to drop this table again so that the tables not in the database.
+
+00:02:57,150 --> 00:02:58,950
+So we should get some sort of error here.
+
+00:02:59,010 --> 00:03:00,740
+If I just say drop table.
+
+00:03:01,140 --> 00:03:06,450
+So if I run that I will get the air table test to those not exists.
+
+00:03:06,450 --> 00:03:12,150
+So they'll give you an error back if you just try to drop the table if you want to avoid getting this
+
+00:03:12,240 --> 00:03:13,230
+error.
+
+00:03:13,290 --> 00:03:14,460
+You can say if
+
+00:03:17,070 --> 00:03:19,280
+exists test too.
+
+00:03:19,320 --> 00:03:26,160
+And now if I run this query it will say a notice instead of a full error will give you a notice saying
+
+00:03:26,160 --> 00:03:27,990
+table test 2 does not exist.
+
+00:03:27,990 --> 00:03:29,030
+Skipping.
+
+00:03:29,160 --> 00:03:31,210
+And then also a clear return successfully.
+
+00:03:31,290 --> 00:03:37,020
+So it will execute the query give you a quick notice telling you that the table doesn't exist but it
+
+00:03:37,020 --> 00:03:38,190
+won't throw back an error.
+
+00:03:38,190 --> 00:03:43,530
+So if you have this sort of statement somewhere along in your code somewhere you won't just disrupt
+
+00:03:43,530 --> 00:03:44,190
+your program.
+
+00:03:44,190 --> 00:03:45,540
+It'll keep on going.
+
+00:03:45,840 --> 00:03:48,980
+So again that's stropped table if exists.
+
+00:03:49,020 --> 00:03:49,810
+All right.
+
+00:03:50,250 --> 00:03:51,970
+That's basically it for the drop table.
+
+00:03:51,990 --> 00:03:54,490
+You can check out the documentation.
+
+00:03:54,540 --> 00:04:01,320
+There's another key word that's actually already automatically input but there's a key word that you
+
+00:04:01,320 --> 00:04:05,540
+can put after your table known as restricts.
+
+00:04:05,700 --> 00:04:12,030
+And basically what restrict does is restrict refuses to drop the table if there's any objects dependent
+
+00:04:12,090 --> 00:04:12,960
+on it.
+
+00:04:12,960 --> 00:04:16,150
+So postgres sequel use restrict that by default.
+
+00:04:16,230 --> 00:04:19,050
+So just keep that in mind if you want to move.
+
+00:04:19,170 --> 00:04:25,500
+Remove this table that has dependencies on it and you want to remove the dependent objects together
+
+00:04:25,500 --> 00:04:25,780
+.
+
+00:04:25,980 --> 00:04:30,040
+You can put in the keyword cascade.
+
+00:04:30,450 --> 00:04:36,120
+We'll discuss cascade and restrict a little more because it has the pins a little more in like views
+
+00:04:36,120 --> 00:04:40,830
+and constraints that actual tables themselves.
+
+00:04:40,890 --> 00:04:46,900
+So just keep in mind if you want to drop a table and your table has constraints or the pendency is on
+
+00:04:46,900 --> 00:04:51,270
+that or other objects that the pendant on that table you're trying to draw or it's use in some sort
+
+00:04:51,270 --> 00:04:54,990
+of view that we haven't actually discussed yet with the view section is enough.
+
+00:04:54,990 --> 00:04:59,280
+Further a section of course you can put in cascade.
+
+00:04:59,280 --> 00:05:06,960
+So by default restricts will always be there so you don't actually have to say restricts if you don't
+
+00:05:06,960 --> 00:05:08,100
+want to.
+
+00:05:08,130 --> 00:05:08,570
+OK.
+
+00:05:08,850 --> 00:05:12,380
+So you can go and explore documentation for a little more info on Cascade and restrict.
+
+00:05:12,510 --> 00:05:18,220
+But right now all you need to know for this section of course is just say drop table if exists.
+
+00:05:18,240 --> 00:05:19,770
+And then the table name.
+
+00:05:19,800 --> 00:05:22,080
+OK that's it for this lecture.
+
+00:05:22,080 --> 00:05:22,890
+Thanks everyone.
+
+00:05:22,920 --> 00:05:24,590
+I'll see you at the next one.

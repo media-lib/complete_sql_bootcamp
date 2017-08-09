@@ -1,0 +1,845 @@
+00:00:01,110 --> 00:00:06,460
+Hello everyone and welcome to lecture on creating tables using the create table statements in this lecture
+
+00:00:06,600 --> 00:00:10,650
+we're gonna learn how to create tables directly in a sequel editor by using the create table command
+
+00:00:10,670 --> 00:00:10,940
+.
+
+00:00:11,190 --> 00:00:15,780
+So previously you've already seen how to use the UI in the very beginning to restore a database and
+
+00:00:15,780 --> 00:00:16,990
+fill in data.
+
+00:00:17,130 --> 00:00:22,110
+And throughout this section we're going to learn how to actually use a sequel editor to interact and
+
+00:00:22,170 --> 00:00:23,820
+add things to the database.
+
+00:00:23,820 --> 00:00:25,880
+So here we're going to learn how to create a table.
+
+00:00:25,920 --> 00:00:31,320
+So if you are using a direct sequel editor or you are using the command line to interact with your sequel
+
+00:00:31,320 --> 00:00:37,050
+database you could use these type of commands in order to create tables in your database.
+
+00:00:37,050 --> 00:00:42,600
+So to create a new table and postscripts sequel you use the create table statement and that's going
+
+00:00:42,600 --> 00:00:47,650
+to look like this as far as the basic syntax you have create table than your table name.
+
+00:00:47,760 --> 00:00:54,210
+And then in print seizure of say the column name then the type you'll have a column constraints comma
+
+00:00:54,240 --> 00:00:56,290
+and then some sort of table constraint.
+
+00:00:56,340 --> 00:01:02,010
+So and then you can also inherit from an existing table mean you inherit properties from an existing
+
+00:01:02,010 --> 00:01:05,260
+table and we'll discuss this as we show you examples later on.
+
+00:01:05,290 --> 00:01:08,620
+Bosko to break this down just a little more line by line.
+
+00:01:08,880 --> 00:01:14,400
+So if we look at this first line first you specify the name of the new table after the create table
+
+00:01:14,400 --> 00:01:15,230
+clause.
+
+00:01:15,240 --> 00:01:20,010
+So for example if you're trying to recreate the customer table you would say something like create table
+
+00:01:20,400 --> 00:01:22,370
+customer.
+
+00:01:22,440 --> 00:01:28,380
+Next you're going to list the column name its data type and column constraint so you can have multiple
+
+00:01:28,380 --> 00:01:29,650
+columns in a table.
+
+00:01:29,910 --> 00:01:34,660
+That just means each column separated by a comma and I'll show you how to do that later on.
+
+00:01:34,680 --> 00:01:39,390
+But basically you just have a bunch of these statements separated by columns and each are separated
+
+00:01:39,390 --> 00:01:39,930
+by commas.
+
+00:01:39,930 --> 00:01:43,230
+Excuse me and he said those have to be a column itself.
+
+00:01:43,230 --> 00:01:49,680
+So the call constraints define the rules for the column and an example one is not null and we'll go
+
+00:01:49,680 --> 00:01:55,200
+through the various types of column constraints and just a little bit but as far as this next step you
+
+00:01:55,200 --> 00:02:00,550
+just listing the column name its data type and then its column constraint.
+
+00:02:00,780 --> 00:02:06,750
+Then after the column lists you define a table level constraint that defines rules for the data in the
+
+00:02:06,750 --> 00:02:07,700
+table.
+
+00:02:07,770 --> 00:02:14,210
+So you have the column name the data types the column constraints and then some table constraints.
+
+00:02:14,730 --> 00:02:18,950
+After that you specify an existing table from which the new table inherits.
+
+00:02:18,960 --> 00:02:24,090
+So it means the new table contains all columns of the existing table and the columns to find in the
+
+00:02:24,090 --> 00:02:26,850
+create table statements.
+
+00:02:26,910 --> 00:02:31,940
+So you actually don't need to inherit from another table but sometimes it's a lot easier if you already
+
+00:02:31,950 --> 00:02:34,480
+have a table to go off of to build a new table.
+
+00:02:34,500 --> 00:02:39,010
+So just keep that in mind that last part is optional and it really depends what you're trying to do
+
+00:02:39,280 --> 00:02:42,950
+and what kind of table you're trying to create.
+
+00:02:42,960 --> 00:02:49,150
+So continuing on let's go ahead and go over some basic postgresql sequel column constraints.
+
+00:02:49,290 --> 00:02:54,600
+So there's not NULL can be an example of a column constraint and that basically means the value of the
+
+00:02:54,600 --> 00:02:56,470
+column cannot be null.
+
+00:02:56,550 --> 00:03:00,600
+So if you're inputting values into that column you cannot input null.
+
+00:03:00,660 --> 00:03:06,330
+So that's a great way to make sure if someone's using your database they can't skip or not put anything
+
+00:03:06,420 --> 00:03:09,050
+into that column or that row.
+
+00:03:09,390 --> 00:03:15,090
+Then there's unique and that's a common constraint meaning the value of the column must be unique across
+
+00:03:15,090 --> 00:03:20,010
+the whole table so you can imagine that's useful when you need those unique values.
+
+00:03:20,010 --> 00:03:26,280
+However the code can have many null values because post-career sequel treats each null value to be unique
+
+00:03:26,280 --> 00:03:26,300
+.
+
+00:03:26,300 --> 00:03:31,380
+So just keep that in mind that even if you have unique as a column constraint you could have many null
+
+00:03:31,380 --> 00:03:36,220
+values because post-career sequel's treating each specific null value to be unique.
+
+00:03:36,420 --> 00:03:42,180
+And notice that the standard only allows one null value in the column that has the unique constraint
+
+00:03:42,250 --> 00:03:43,120
+.
+
+00:03:43,370 --> 00:03:47,020
+And we have some more column constraints so we can use.
+
+00:03:47,110 --> 00:03:49,510
+And those are primary keys one of them.
+
+00:03:49,530 --> 00:03:55,230
+So this constraint is a combination of not Noal and unique constraints so you can define one column
+
+00:03:55,290 --> 00:03:59,260
+as a primary key by using a column level constraint.
+
+00:03:59,370 --> 00:04:04,620
+And in this case the primary key contains multiple columns so you must use the table level constraint
+
+00:04:05,100 --> 00:04:07,620
+and we'll explore table level constraints.
+
+00:04:08,040 --> 00:04:10,920
+After we finish all the options of column constraints.
+
+00:04:10,920 --> 00:04:16,190
+So so far we have not null and that constraint is that the value of the column can't be null.
+
+00:04:16,200 --> 00:04:20,620
+We have unique and that value of the column must be unique across the whole table.
+
+00:04:20,760 --> 00:04:25,540
+And then we have primary key meaning this constraint just a combination of not Molen unique constraints
+
+00:04:25,530 --> 00:04:25,930
+.
+
+00:04:26,130 --> 00:04:31,800
+So you can define one column as primary key by using a column of a constraint and then moving on we
+
+00:04:31,800 --> 00:04:34,570
+also have loops.
+
+00:04:34,650 --> 00:04:40,440
+The check constraint and check enables to check condition when you insert or update data.
+
+00:04:40,710 --> 00:04:45,930
+So for example the values in the price column of the product table must be positive values and then
+
+00:04:45,930 --> 00:04:51,450
+you finally have references as a column constraint which constrains the value of the column that exists
+
+00:04:51,450 --> 00:04:53,670
+in a column in another table.
+
+00:04:53,670 --> 00:05:00,060
+So what that means is that basically use references to define the foreign key constraint.
+
+00:05:00,150 --> 00:05:05,430
+So you can just think of references as defining the foreign key constraint.
+
+00:05:05,880 --> 00:05:11,740
+And then as far as table constraints go they're basically similar to column constraints except that
+
+00:05:11,740 --> 00:05:15,940
+they're applied to the entire table rather than to an individual column.
+
+00:05:15,940 --> 00:05:21,780
+So again if you can say unique column list to force the value stored in columns listen inside the parentheses
+
+00:05:21,790 --> 00:05:27,610
+to be unique and then you can say Primary Key Pass a column list to the find the primary key that consists
+
+00:05:27,610 --> 00:05:32,670
+of multiple columns and then you can also use check in references in a similar manner.
+
+00:05:33,060 --> 00:05:38,360
+So I think all of this may be a little difficult to digest if you're just seeing slides.
+
+00:05:38,520 --> 00:05:43,530
+So we're going to do actually show you some examples of creating tables directly in a sequel editor
+
+00:05:43,520 --> 00:05:43,790
+.
+
+00:05:43,930 --> 00:05:47,860
+So that's probably going to be the most useful way to actually learn this type of information.
+
+00:05:47,920 --> 00:05:52,230
+So we're going to go ahead and do is walk through an example of creating a table or we're going to create
+
+00:05:52,240 --> 00:05:57,790
+the following tables will create a simple rule table which has a role ID and a role name and you can
+
+00:05:57,790 --> 00:06:00,480
+note that the data types are defined there as well.
+
+00:06:00,510 --> 00:06:03,710
+We'll have an account role table and then we'll have an account table.
+
+00:06:03,940 --> 00:06:06,750
+So let's go ahead and jump to P.G. adamant.
+
+00:06:06,750 --> 00:06:11,420
+Create a new database and then start creating these tables directly through the editor.
+
+00:06:11,470 --> 00:06:16,630
+OK I'm going to go ahead and jump to you Adam now so we can get started.
+
+00:06:16,680 --> 00:06:23,140
+OK so here we are at PGE admin and we're going to do is go ahead and you can create a new database for
+
+00:06:23,130 --> 00:06:24,440
+these tables to go in.
+
+00:06:24,610 --> 00:06:27,540
+Or you can actually just put them into the database.
+
+00:06:27,550 --> 00:06:30,830
+We've been working with DVD rental so that's kind of up to you.
+
+00:06:30,850 --> 00:06:34,570
+Let me go and review with you how to create a new database so we're just going to go ahead and right
+
+00:06:34,560 --> 00:06:43,080
+click on database then click new database and let's go ahead and call this I don't know learning database
+
+00:06:43,090 --> 00:06:49,660
+whatever you want to call it click OK we'll go ahead and create that database for you.
+
+00:06:49,650 --> 00:06:53,120
+So here we have learning and then go ahead and double click it.
+
+00:06:53,380 --> 00:06:59,230
+And then once I have it selected I'm just going to click here and execute arbitrary SQL queries and
+
+00:06:59,230 --> 00:07:04,770
+now I'm going to go ahead and write the sequel queries to create the databases create the tables Excuse
+
+00:07:04,770 --> 00:07:06,790
+me do we have our database created.
+
+00:07:06,810 --> 00:07:09,460
+Let's go ahead and create tables for it.
+
+00:07:09,450 --> 00:07:15,250
+First table we're going to make is that account table and that account tables can have a few columns
+
+00:07:15,250 --> 00:07:15,870
+to it.
+
+00:07:15,970 --> 00:07:23,070
+It's going to have a user id a username password email a created on column and then the last logged
+
+00:07:23,060 --> 00:07:24,330
+in column.
+
+00:07:24,340 --> 00:07:26,240
+So let's go ahead and get started.
+
+00:07:26,590 --> 00:07:33,240
+So first thing I need to write is creates table and then I put in the table name.
+
+00:07:33,250 --> 00:07:39,000
+So in this case we're going to call this table account and then I have an open parentheses and I'm going
+
+00:07:39,000 --> 00:07:41,700
+to start putting in the columns.
+
+00:07:41,710 --> 00:07:44,530
+So again the syntax for this is the column name.
+
+00:07:44,680 --> 00:07:53,940
+So the first column will call a user underscore ID then we're going to have some sort of data type.
+
+00:07:53,940 --> 00:07:56,270
+So the first data type we're going to use here.
+
+00:07:56,470 --> 00:08:02,740
+If you recall from the integer data type lecture or the lecture on data types in general I'm going to
+
+00:08:02,740 --> 00:08:08,530
+go ahead and use cereal and remember that one kind of auto increments or is the same as auto increment
+
+00:08:09,090 --> 00:08:10,850
+and some other sequel engines.
+
+00:08:10,850 --> 00:08:15,820
+So that's basically makes sense because when you add new users I want to make sure they have their own
+
+00:08:15,810 --> 00:08:21,520
+unique ID and it keeps automatically incrementing so I'm going to use cereal there.
+
+00:08:21,900 --> 00:08:31,290
+And I'm going to label this as primary key and then the next column we're going to have is username
+
+00:08:32,760 --> 00:08:39,090
+and the user name is going to be some characters right so needs to be a character data type and we're
+
+00:08:39,100 --> 00:08:44,580
+going to go ahead and say it's going to be variable characters since we don't know what people's names
+
+00:08:44,590 --> 00:08:46,080
+are going to be beforehand.
+
+00:08:46,090 --> 00:08:47,370
+We just need to set a limit.
+
+00:08:47,380 --> 00:08:52,910
+So remember that was a R C H A R and then in parentheses you set some sort of limit.
+
+00:08:52,900 --> 00:09:01,390
+Will go ahead and limit it to 50 characters and then we have some column constraints this call constraint
+
+00:09:01,380 --> 00:09:01,680
+.
+
+00:09:01,750 --> 00:09:08,310
+Let's go ahead and make sure it's unique that way we don't get user names confused so you can imagine
+
+00:09:08,320 --> 00:09:10,930
+when you're logging into a web site.
+
+00:09:10,920 --> 00:09:13,540
+Sometimes they say oh this username has been taken already.
+
+00:09:13,570 --> 00:09:21,580
+So here if unique I can help that happen and then I'm going to go ahead and also put not null as a constraint
+
+00:09:21,900 --> 00:09:24,060
+to make sure they just don't leave it empty.
+
+00:09:24,370 --> 00:09:30,450
+And you can kind of start to get this idea of what these sequel database actually look like on the back
+
+00:09:30,550 --> 00:09:33,690
+end of some sort of web service or application.
+
+00:09:33,850 --> 00:09:38,220
+As you build and create these tables Let's go ahead and make another one.
+
+00:09:38,230 --> 00:09:45,360
+Another column that is we'll call it password and password is going to go ahead and be let's say V-A
+
+00:09:45,370 --> 00:09:48,030
+are some variable character again.
+
+00:09:48,050 --> 00:09:53,190
+We'll give it a limit of length 50 and we'll say it just can't be not.
+
+00:09:53,220 --> 00:09:56,830
+No it doesn't really matter if people's passwords are the same right.
+
+00:09:56,880 --> 00:09:59,430
+We just want to make sure the usernames aren't the same.
+
+00:09:59,560 --> 00:10:07,210
+So then we'll have their e-mail as another column and we'll also make this variable character else go
+
+00:10:07,200 --> 00:10:08,560
+ahead and make this a lot longer.
+
+00:10:08,580 --> 00:10:11,190
+These e-mails can be a lot longer we'll just say 300.
+
+00:10:11,230 --> 00:10:12,950
+Let's say three in a 55.
+
+00:10:12,970 --> 00:10:14,910
+Doesn't really matter for this case.
+
+00:10:14,910 --> 00:10:16,090
+I mean it's up to you.
+
+00:10:16,360 --> 00:10:20,990
+And let's go ahead and make sure they have a unique e-mail and that they don't leave it empty.
+
+00:10:21,000 --> 00:10:23,670
+Just not know the will.
+
+00:10:23,670 --> 00:10:27,600
+Let's go ahead and say we have to import all data types.
+
+00:10:27,610 --> 00:10:36,390
+So we have created an underscore on a column and that's going to be a time stamp and we'll just make
+
+00:10:36,390 --> 00:10:37,740
+sure it's not null.
+
+00:10:38,310 --> 00:10:43,850
+Meaning we need to know when they created their account and we'll have a last log in column.
+
+00:10:43,920 --> 00:10:49,590
+So we know when they last logged then and I will also be a time stamp data type and then we're just
+
+00:10:49,590 --> 00:10:53,760
+going to close that parentheses and put a semicolon there.
+
+00:10:53,790 --> 00:10:55,930
+Let's go ahead and run this.
+
+00:10:56,430 --> 00:10:58,920
+And it said query return successfully if no result.
+
+00:10:59,100 --> 00:11:04,490
+So that makes sense because we just created a table we're not actually asking for anything.
+
+00:11:04,590 --> 00:11:07,230
+So let's go ahead and make sure this actually all worked.
+
+00:11:07,230 --> 00:11:13,770
+So if I go back to P.G. admen and then on the learning if I go ahead and refresh that selected object
+
+00:11:14,370 --> 00:11:22,440
+I'm going to extend schemas go to public and you'll see here that at tables we have a new table account
+
+00:11:23,430 --> 00:11:26,100
+perfect so account table has been created.
+
+00:11:26,280 --> 00:11:31,920
+And if we want to we can expand tables expand the count and actually see the column names that we just
+
+00:11:31,920 --> 00:11:33,030
+created.
+
+00:11:33,030 --> 00:11:36,230
+So that's how we can create a basic table.
+
+00:11:36,360 --> 00:11:42,850
+We have some constraints in postgresql so you can realize it's actually really easy to work with post-career
+
+00:11:42,850 --> 00:11:44,090
+sequel.
+
+00:11:44,100 --> 00:11:50,160
+So again it's just create table the table name overprint CS and then you pass in your columns that you
+
+00:11:50,160 --> 00:11:58,230
+want and it goes the column name the data type and then you're going to have the column constraint.
+
+00:11:58,230 --> 00:12:04,230
+And then if you want Additionally you can have table constraints or inherit from another table.
+
+00:12:04,250 --> 00:12:06,090
+But this is just the basics here.
+
+00:12:06,120 --> 00:12:09,500
+You say create table the table name parentheses.
+
+00:12:09,510 --> 00:12:13,700
+Then you gonna have a list separated by commas of all your column names.
+
+00:12:14,160 --> 00:12:15,980
+Just expand that.
+
+00:12:16,010 --> 00:12:21,510
+Notice here there's a basically a pop up here so you can like expand and contract this but you have
+
+00:12:21,510 --> 00:12:27,150
+a user id the column name the data type for that column and then the column constraints and you can
+
+00:12:27,150 --> 00:12:32,370
+go ahead and reference either the documentation or the presentation that's actually going to be as a
+
+00:12:32,370 --> 00:12:35,000
+resource attached to this lecture.
+
+00:12:35,010 --> 00:12:35,260
+OK.
+
+00:12:35,280 --> 00:12:38,940
+So let's go ahead and creates another table.
+
+00:12:39,180 --> 00:12:44,970
+So I'm going to go ahead and delete that and let's create the rule table that consists of two columns
+
+00:12:44,970 --> 00:12:47,480
+just the role ID and a rolled name.
+
+00:12:47,700 --> 00:12:54,870
+So we'll say creates table rule.
+
+00:12:56,190 --> 00:13:02,430
+Open parentheses so I create my table a table name and then go ahead and think for a second before you
+
+00:13:03,000 --> 00:13:03,800
+start typing this.
+
+00:13:03,810 --> 00:13:05,730
+What is this actually going to look like.
+
+00:13:05,870 --> 00:13:08,270
+Numbering in any kind of three things in this list.
+
+00:13:08,310 --> 00:13:12,480
+I need my column name the data type and then the column constraint.
+
+00:13:12,480 --> 00:13:20,340
+So will have role id enrolled name as column names so have role underscore ID as my column name space
+
+00:13:20,340 --> 00:13:21,540
+the data type here.
+
+00:13:21,840 --> 00:13:27,330
+Again I'll use cereal because it's convenient integer type that just makes sure I can increment that
+
+00:13:27,330 --> 00:13:32,600
+roll ID and then them and go ahead and say primary keys.
+
+00:13:32,610 --> 00:13:37,800
+So I'll have that be the primary key of this table and then I'll have another column called the roll
+
+00:13:37,800 --> 00:13:39,120
+name.
+
+00:13:39,120 --> 00:13:42,420
+And who knows what their actual roles name is going to be.
+
+00:13:42,450 --> 00:13:45,070
+It can be like CEO janitor who knows.
+
+00:13:45,070 --> 00:13:46,620
+Programmer et cetera.
+
+00:13:46,620 --> 00:13:50,450
+So let's go ahead and make that a variable character length.
+
+00:13:50,460 --> 00:13:57,510
+Let's say 2 5 5 and we'll make sure that they have a unique rule name and that the rule name is not
+
+00:13:57,520 --> 00:13:59,920
+null.
+
+00:14:00,060 --> 00:14:02,070
+Actually that's going to be it for the column.
+
+00:14:02,070 --> 00:14:07,060
+So let's go in and close off that parentheses put a semi-colon in and go ahead and create that table
+
+00:14:07,070 --> 00:14:07,320
+.
+
+00:14:07,650 --> 00:14:09,700
+So queer returns successful if no result.
+
+00:14:09,750 --> 00:14:12,320
+Let's go ahead and make sure that the table is created.
+
+00:14:12,570 --> 00:14:18,780
+So if we go back to the learning database click here and refresh the selected object.
+
+00:14:18,780 --> 00:14:22,080
+Scroll down a bit you'll see tables here.
+
+00:14:22,110 --> 00:14:25,900
+Now we have the account table and the role table perfect.
+
+00:14:25,920 --> 00:14:32,130
+So now we have the account table and the royal table and now we're going to go ahead and create our
+
+00:14:32,130 --> 00:14:39,060
+final table which is going to be a count roll and we're going to introduce a couple of new things that
+
+00:14:39,060 --> 00:14:43,530
+we haven't touched on yet just to show you as kind of an example of what's coming but we're going to
+
+00:14:43,530 --> 00:14:51,210
+use constraints and references and updates on actions just to show you how you can actually create tables
+
+00:14:51,210 --> 00:14:52,740
+that update on certain actions.
+
+00:14:52,740 --> 00:14:56,520
+So don't worry if you don't understand everything for this final table.
+
+00:14:56,550 --> 00:15:00,260
+But this kind of almost like a sneak preview of what you're going to be able to do.
+
+00:15:00,510 --> 00:15:07,460
+So on a create table call it a count underscore roll up in parentheses here.
+
+00:15:07,590 --> 00:15:14,010
+And let's go ahead and define the columns I'm going to say user underscore ID which is call it an integer
+
+00:15:15,360 --> 00:15:17,120
+or say not no.
+
+00:15:17,370 --> 00:15:24,780
+Also have the rule ID will say integer not in hopes not.
+
+00:15:24,810 --> 00:15:26,030
+No.
+
+00:15:26,910 --> 00:15:30,570
+And then we'll have a grants underscore dates
+
+00:15:33,450 --> 00:15:39,600
+time stamp without time zone.
+
+00:15:40,020 --> 00:15:45,840
+And what I'm going to do now is go ahead and then say primary key
+
+00:15:48,780 --> 00:15:56,960
+user underscore the comma rule underscore Id close parentheses.
+
+00:15:57,330 --> 00:16:00,080
+And now I'm going to go ahead and put in some constraints.
+
+00:16:00,090 --> 00:16:02,240
+So I'm going to go ahead and copy and paste this.
+
+00:16:02,400 --> 00:16:09,240
+And you can go ahead and check out the either the resources or the next lecture for all the actual code
+
+00:16:09,240 --> 00:16:11,350
+that we're going to be putting in here.
+
+00:16:11,370 --> 00:16:14,190
+But let me go in and paste that in and then explain it.
+
+00:16:14,370 --> 00:16:17,930
+I don't actually want to type it out for you guys because we haven't covered some of this stuff yet
+
+00:16:18,120 --> 00:16:24,180
+but I just want to explain just a quick example of another method you could create a table that's basically
+
+00:16:24,180 --> 00:16:29,700
+connected to other tables so let me go in and copy and paste this in here and there it is copied and
+
+00:16:29,700 --> 00:16:30,460
+pasted.
+
+00:16:30,510 --> 00:16:33,000
+And it's an example of using constraints.
+
+00:16:33,180 --> 00:16:37,950
+So let me go ahead and examine this statement in a little more detail bador or if you don't fully understand
+
+00:16:37,950 --> 00:16:41,380
+this because we haven't gone over a few of these things yet.
+
+00:16:41,640 --> 00:16:47,970
+The main part to understand is just the first two examples we did creating a table table name the column
+
+00:16:47,970 --> 00:16:53,640
+name the data type for that column and then the column constraint so as long as you understand that
+
+00:16:53,760 --> 00:16:55,830
+you're good with this lecture and you can move on.
+
+00:16:56,010 --> 00:17:01,200
+Well I just want to show you if this is just a quick simple fix or more complicated example of stuff
+
+00:17:01,200 --> 00:17:03,450
+you could actually do later on.
+
+00:17:03,450 --> 00:17:06,440
+So it's good to examine the statement just a little more detail.
+
+00:17:06,480 --> 00:17:14,040
+We have the primary key of the account role table consists of two columns user ID and role Id meaning
+
+00:17:14,400 --> 00:17:18,400
+this primary key we have user ID and role Id.
+
+00:17:18,420 --> 00:17:25,830
+Therefore we have to use primary key table level constraint to define the primary key like this.
+
+00:17:25,830 --> 00:17:32,370
+So because the user id column references to the user id column in the account table meaning the user
+
+00:17:32,370 --> 00:17:38,430
+id column here is going to reference the user id column and the account table we need to find a foreign
+
+00:17:38,430 --> 00:17:40,740
+key constraint for the user id column.
+
+00:17:41,040 --> 00:17:42,620
+And that basically is what's happening.
+
+00:17:42,650 --> 00:17:43,140
+Fight.
+
+00:17:43,200 --> 00:17:46,690
+Go ahead and space is up for you here.
+
+00:17:46,740 --> 00:17:53,420
+So we're saying create or constraint accounts rural user id foreign key we define the foreign key as
+
+00:17:53,430 --> 00:17:56,750
+user id show you the references of where it's coming from.
+
+00:17:56,760 --> 00:18:02,450
+So it counts user ID and then we have some other statements there in order to make that happen which
+
+00:18:02,450 --> 00:18:03,570
+we haven't gone over yet.
+
+00:18:03,630 --> 00:18:06,550
+But I just want to show you what's possible here.
+
+00:18:06,750 --> 00:18:10,480
+If you're already some sort of database administrator you see things like this before.
+
+00:18:10,680 --> 00:18:14,980
+This may be helpful for you and just showing you how postgresql does this sort of work.
+
+00:18:15,300 --> 00:18:21,510
+But if we look at the seconds statement here we have the rule ID column references the Real ID column
+
+00:18:21,510 --> 00:18:22,730
+and the role table.
+
+00:18:22,920 --> 00:18:27,900
+And we also need to find a foreign key constraint for the Real ID column and that's what happening here
+
+00:18:27,900 --> 00:18:28,340
+.
+
+00:18:28,380 --> 00:18:31,090
+So we stay basically for these two.
+
+00:18:31,560 --> 00:18:35,910
+We set the constraints of the foreign key.
+
+00:18:35,910 --> 00:18:42,790
+We base it off the column that we defined earlier here and then we give it the reference so the references
+
+00:18:42,810 --> 00:18:45,860
+just references the table name.
+
+00:18:46,230 --> 00:18:47,940
+And then the column from that table.
+
+00:18:48,120 --> 00:18:49,550
+And then we have some more.
+
+00:18:49,620 --> 00:18:55,800
+There are some more keywords here with some possibilities for actions in this table and you update it
+
+00:18:55,900 --> 00:18:57,480
+in the other table.
+
+00:18:57,570 --> 00:19:01,830
+Again don't worry too much of basically what these lines are doing.
+
+00:19:02,070 --> 00:19:07,380
+I just want to show you this as a bit of a precursor to what's going to come into the future as far
+
+00:19:07,380 --> 00:19:09,060
+as what you should have gotten out of this lecture.
+
+00:19:09,060 --> 00:19:10,150
+It's just the basics.
+
+00:19:10,160 --> 00:19:16,320
+You should have learned how to use create table say the table name and then parentheses say the column
+
+00:19:16,320 --> 00:19:21,800
+name the data type and then some column constraints.
+
+00:19:21,820 --> 00:19:27,930
+OK with that being said we're going to have a quick challenge excuse me a quick challenge.
+
+00:19:27,930 --> 00:19:31,960
+Coming up next just to make sure you understand the basics of creating that table.
+
+00:19:32,250 --> 00:19:32,790
+OK.
+
+00:19:32,850 --> 00:19:38,160
+So again don't worry about all this stuff right here that codes available for you if you want to check
+
+00:19:38,160 --> 00:19:38,690
+it out.
+
+00:19:38,940 --> 00:19:43,170
+But don't worry about it because we're going to discuss a lot of those things later on.
+
+00:19:43,530 --> 00:19:44,220
+OK.
+
+00:19:44,220 --> 00:19:45,230
+With that being said.
+
+00:19:45,480 --> 00:19:48,030
+Thanks everyone and I will see you at the next lecture

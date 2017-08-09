@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>069-resource-for-create-table-code</title>
+</head>
+<body>
+<div class="asset-container">
+    <div class="asset-container__padding article-view">
+        <div class="w3c-default">
+            <p>In the next lecture we will learn how to use CREATE TABLE. Towards the end of the lecture we will show a more complex example, don't worry about fully understanding the last example, its just there to show you what we will cover in future lectures. You should only need to understand the first two examples.</p><p> Here is the code used in the Create Table lecture:<br></p>
+
+<p><strong>CREATE TABLE account(<br> user_id serial PRIMARY KEY,<br> username VARCHAR (50) UNIQUE NOT NULL,<br> password VARCHAR (50) NOT NULL,<br> email VARCHAR (355) UNIQUE NOT NULL,<br> created_on TIMESTAMP NOT NULL,<br> last_login TIMESTAMP<br>);</strong></p>
+
+<p><strong>CREATE TABLE role(<br> role_id serial PRIMARY KEY,<br> role_name VARCHAR (255) UNIQUE NOT NULL<br>);</strong></p><p>Don't worry about fully understanding this last example yet!</p>
+
+<p><strong>CREATE TABLE account_role<br>(<br>  user_id integer NOT NULL,<br>  role_id integer NOT NULL,<br>  grant_date timestamp without time zone,<br>  PRIMARY KEY (user_id, role_id),<br>  CONSTRAINT account_role_role_id_fkey FOREIGN KEY (role_id)<br>      REFERENCES role (role_id) MATCH SIMPLE<br>      ON UPDATE NO ACTION ON DELETE NO ACTION,<br>  CONSTRAINT account_role_user_id_fkey FOREIGN KEY (user_id)<br>      REFERENCES account (user_id) MATCH SIMPLE<br>      ON UPDATE NO ACTION ON DELETE NO ACTION<br>)</strong></p>
+
+<p><br></p>
+
+<p><br></p>
+
+<p><br></p>
+
+<p><br></p>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
