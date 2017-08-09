@@ -1,0 +1,575 @@
+00:00:01,200 --> 00:00:04,910
+Hello everyone and welcome to the lecture on sub query.
+
+00:00:05,400 --> 00:00:10,380
+So we're going to learn how to use soap queries and that so clearly syntax to form really complex and
+
+00:00:10,380 --> 00:00:16,150
+really powerful queries and the best way to show this is through some simple examples.
+
+00:00:16,710 --> 00:00:22,350
+So overall a sub query allows us to use multiple select statements where we basically have a query within
+
+00:00:22,350 --> 00:00:26,130
+a query and we're going to show this by a few examples.
+
+00:00:26,130 --> 00:00:28,090
+The first example is this.
+
+00:00:28,140 --> 00:00:32,910
+Suppose we want to find the films whose rental rate is higher than the average runs.
+
+00:00:32,910 --> 00:00:39,540
+All right what do we we could do this isn't two steps we can find the average rental rate by using the
+
+00:00:39,540 --> 00:00:41,670
+select statement with the average function.
+
+00:00:41,850 --> 00:00:46,500
+And then after finding the average rental rate we can use the result of the first query in the second
+
+00:00:46,500 --> 00:00:49,710
+select statement to find the films that we want.
+
+00:00:49,710 --> 00:00:54,120
+So we go ahead and go to the sequel editor to code that out and we're going to show how we could do
+
+00:00:54,120 --> 00:00:55,220
+that in two steps.
+
+00:00:55,260 --> 00:00:59,020
+And then later on we'll see how we can use a query to simplify the task.
+
+00:00:59,040 --> 00:01:02,310
+So first we're going to go the long way about it and then we're going to show you how you can use a
+
+00:01:02,310 --> 00:01:04,520
+sub query to simplify it.
+
+00:01:04,530 --> 00:01:08,250
+So again the task we're trying to solve is this first bullet point here.
+
+00:01:08,430 --> 00:01:12,530
+We want to find the films whose rental rate is higher than the average rental rate.
+
+00:01:12,750 --> 00:01:16,490
+Let me go ahead and jump to the sequel Ed. now.
+
+00:01:17,380 --> 00:01:17,780
+OK.
+
+00:01:17,790 --> 00:01:23,010
+So here I am at the sequel Ed. We're going to be working with the film table because if we scroll to
+
+00:01:23,010 --> 00:01:26,810
+the right of the film table notice here we have the rental rate.
+
+00:01:26,940 --> 00:01:31,950
+So again we want to find the movies whose rental rate is higher than the average run rate.
+
+00:01:32,190 --> 00:01:37,590
+One way to do this given what you know right now would be to do two distinct separate steps that would
+
+00:01:37,590 --> 00:01:45,630
+be step one find the average rental rates for say something like a Viji rental underscore rate call
+
+00:01:46,640 --> 00:01:53,160
+get the average from film that run that query notice that's $2 in 98 cents.
+
+00:01:53,250 --> 00:01:59,620
+And then once we have that result $2 a 98 cents then we would continue with the rest of the query would
+
+00:01:59,640 --> 00:02:14,460
+say select for instance title and rental rates from the film table where rental underscore rates is
+
+00:02:14,460 --> 00:02:21,570
+greater than two point ninety eight dollars a 98 cents which we discovered from our first query.
+
+00:02:21,710 --> 00:02:27,690
+And if I run that here I have all the movies whose rental rate is greater than the average $2 in 98
+
+00:02:27,690 --> 00:02:28,370
+cents.
+
+00:02:28,470 --> 00:02:31,440
+That's basically 299 and above.
+
+00:02:31,440 --> 00:02:37,980
+So that was a little inconvenient because I had to use two queries so I'm going to jump back real quick
+
+00:02:38,400 --> 00:02:41,930
+to the PowerPoint slides.
+
+00:02:41,940 --> 00:02:48,180
+And again to comments here we are at the slides to come back and we just saw the code we just went through
+
+00:02:48,180 --> 00:02:50,680
+isn't so elegant it requires two steps.
+
+00:02:50,700 --> 00:02:55,840
+And what's really annoying is you have to write down or remember the result of the first query.
+
+00:02:55,950 --> 00:03:02,010
+We really want a way to pass the result of the first query to the second query in just a single chunk
+
+00:03:02,010 --> 00:03:03,930
+of sequel syntax in one query.
+
+00:03:03,930 --> 00:03:06,480
+And the solution to that is to use a sub query
+
+00:03:09,520 --> 00:03:14,820
+a sub query is a query that's nested inside another query and to construct the query.
+
+00:03:14,820 --> 00:03:21,630
+What we do is we put the second query in brackets or round parentheses and use it in the WHERE clause
+
+00:03:21,700 --> 00:03:24,250
+as an expression.
+
+00:03:24,270 --> 00:03:26,250
+So for instance to construct the subquery.
+
+00:03:26,280 --> 00:03:29,510
+We put again the second query in brackets.
+
+00:03:29,550 --> 00:03:34,110
+Some people just call these round parentheses or refer to them as both brackets in parentheses here
+
+00:03:34,110 --> 00:03:34,490
+.
+
+00:03:34,830 --> 00:03:37,010
+And you use it in the WHERE clause is an expression.
+
+00:03:37,020 --> 00:03:43,260
+So we can say something like this select the columns we want fill my the title rental rate from film
+
+00:03:43,620 --> 00:03:50,910
+where the rental rate and in the previous example we had a say greater than 2.9 8 because we had already
+
+00:03:50,910 --> 00:03:56,680
+done this statement here select average run rate from film with this sub query.
+
+00:03:56,710 --> 00:04:04,720
+We're able to skip that first step and actually incorporate it into our entire query here.
+
+00:04:04,870 --> 00:04:11,030
+And so notice the main syntax that allows us to do this query or the sub query is these brackets or
+
+00:04:11,040 --> 00:04:14,970
+parentheses around the sub query here.
+
+00:04:14,970 --> 00:04:19,030
+So say select the columns we want from the table we want where.
+
+00:04:19,140 --> 00:04:20,600
+And then inside the WHERE clause.
+
+00:04:20,600 --> 00:04:22,480
+Here we have another query.
+
+00:04:22,500 --> 00:04:27,590
+Let's go ahead and code this out and code out a couple more examples.
+
+00:04:27,780 --> 00:04:33,030
+So I'm going to go see a few more examples in the sequel EDR as well as just show you the one we just
+
+00:04:33,030 --> 00:04:39,000
+went over to reiterate how we can change two queries to just one with a sub query going to go ahead
+
+00:04:39,000 --> 00:04:43,960
+and jump back to PGE Adam and now and open up a sequel after.
+
+00:04:43,980 --> 00:04:49,380
+OK so here I am back at the sequel Ed. I remember this when we were doing before we had to actually
+
+00:04:49,380 --> 00:04:51,750
+run a first query and get this number.
+
+00:04:51,750 --> 00:04:57,640
+These two point nine eight value and we're going to do now is see how we can use that sub query.
+
+00:04:57,690 --> 00:05:03,030
+So the so queries just this we put in parentheses or brackets here and in which you want to call them
+
+00:05:03,030 --> 00:05:03,360
+.
+
+00:05:03,420 --> 00:05:11,260
+So we put in those parentheses and then we say select average rental rate basically just put in that
+
+00:05:11,260 --> 00:05:15,240
+first query wanted select the average transfer rate from.
+
+00:05:15,420 --> 00:05:21,970
+And in this case it's the field table and then make sure here that the syntax highlights it so you know
+
+00:05:21,970 --> 00:05:23,190
+it's balanced out.
+
+00:05:23,320 --> 00:05:26,670
+And then if we run this you'll notice we get the exact same results.
+
+00:05:26,690 --> 00:05:29,610
+I just executed that when we got the exact same thing.
+
+00:05:29,830 --> 00:05:30,380
+OK.
+
+00:05:30,670 --> 00:05:35,980
+So this post gres sequel executes the query that contains a sub query and the following sequence.
+
+00:05:35,980 --> 00:05:39,560
+First it's going to execute the sub query here.
+
+00:05:39,610 --> 00:05:44,800
+So as far as the order in which this actually gets executed by the sequel engine it first executes the
+
+00:05:45,070 --> 00:05:52,030
+query then second it gets the result and passes it to the outer query and then third it executes that
+
+00:05:52,130 --> 00:05:53,980
+outer query.
+
+00:05:54,010 --> 00:05:58,610
+OK so a query can return 0 or more rows.
+
+00:05:58,720 --> 00:06:03,280
+So use the query you can also use an in operator in the WHERE clause.
+
+00:06:03,310 --> 00:06:11,210
+So let's go to show you another example of using a subquery with some more complex tasks.
+
+00:06:11,330 --> 00:06:17,140
+It start off we're going to explore two tables just to remind ourselves of what's going to select all
+
+00:06:17,140 --> 00:06:23,710
+the columns from the rental table and take a quick look at it.
+
+00:06:23,740 --> 00:06:27,850
+So the rental table and you can go ahead and set limits so you don't return everything which is looking
+
+00:06:27,850 --> 00:06:34,380
+for the column names here but the rental table has a rental ID number a rental date stamp and then so
+
+00:06:34,540 --> 00:06:41,140
+Inventory ID number customer ID number a return date staff ID and last update.
+
+00:06:41,930 --> 00:06:47,410
+And so a quick issue here is that I don't actually have the film ID.
+
+00:06:47,410 --> 00:06:50,160
+I only have this rental ID.
+
+00:06:50,500 --> 00:06:58,090
+And so what I want to do is match an Inventory ID integer if another table the inventory table in order
+
+00:06:58,090 --> 00:07:01,390
+to start building up a query here.
+
+00:07:01,390 --> 00:07:07,600
+So what I want to do is get films that have been returned between two specific dates let's say May 29th
+
+00:07:07,690 --> 00:07:08,850
+and May 30th.
+
+00:07:09,280 --> 00:07:11,240
+So I'm going to go ahead and explore.
+
+00:07:11,260 --> 00:07:11,870
+Real quick.
+
+00:07:11,890 --> 00:07:14,720
+The inventory table.
+
+00:07:15,220 --> 00:07:21,940
+So again here below have the rental table and note I have an Inventory ID on this rental table and a
+
+00:07:22,000 --> 00:07:22,940
+return date.
+
+00:07:22,970 --> 00:07:27,340
+And those are the two main columns we're going to be using from the rental table from the inventory
+
+00:07:27,340 --> 00:07:31,880
+table if we go ahead and check it out let's just limit that to one row.
+
+00:07:32,080 --> 00:07:36,190
+We have an Inventory ID and a film ID.
+
+00:07:36,460 --> 00:07:43,090
+And so this is the link we want we want to link up this Inventory ID from the inventory table to the
+
+00:07:43,090 --> 00:07:45,270
+Inventory ID from the rental table.
+
+00:07:45,460 --> 00:07:48,440
+So let's go ahead and do that using a joint.
+
+00:07:48,520 --> 00:07:57,490
+So I'm going to say this and you go in and delete that line going to go ahead and say select inventory
+
+00:07:58,300 --> 00:08:03,270
+dot film underscore ID basically at the end of the day.
+
+00:08:03,280 --> 00:08:12,280
+I just want to list the film IDs and I'm going to grab it not from inventory but from rental joint on
+
+00:08:12,280 --> 00:08:18,600
+inventory and we're going to do an inner join because I only want it where they both exist.
+
+00:08:18,970 --> 00:08:20,770
+So you can go ahead and review inner joints.
+
+00:08:20,770 --> 00:08:25,770
+We actually specifically Joines rental and inventory throughout some of those examples.
+
+00:08:25,840 --> 00:08:27,060
+So go ahead and review that.
+
+00:08:27,190 --> 00:08:31,970
+If this is a little fuzzy so I'm going to say select inventory the film.
+
+00:08:32,020 --> 00:08:47,230
+So the film might call in from the inventory table from rental inner join inventory on inventory thought
+
+00:08:47,680 --> 00:09:01,300
+inventory underscore ID equal to rental inventory underscore ID where and in this case I'm going to
+
+00:09:01,300 --> 00:09:04,080
+say return dates.
+
+00:09:04,930 --> 00:09:10,540
+And notice I don't have to specify what table return they is from because it's only in the rental table
+
+00:09:10,560 --> 00:09:10,740
+.
+
+00:09:10,900 --> 00:09:16,750
+So if I wanted to I could say rental return date but I don't have to because return date is only in
+
+00:09:16,750 --> 00:09:17,890
+the rental table.
+
+00:09:18,280 --> 00:09:27,170
+So then I'm going to say between and we'll say 2005 let's say May 29.
+
+00:09:27,280 --> 00:09:29,370
+Pass that in as a string.
+
+00:09:30,430 --> 00:09:33,480
+So note the dashes there ans
+
+00:09:35,510 --> 00:09:37,750
+2005.
+
+00:09:38,800 --> 00:09:41,440
+May 30th.
+
+00:09:43,000 --> 00:09:43,700
+All right.
+
+00:09:43,960 --> 00:09:48,230
+So let's go out and see if this worked out for us make sure we did everything right.
+
+00:09:48,310 --> 00:09:49,200
+Looks like it did.
+
+00:09:49,210 --> 00:09:58,180
+So we have a list of film IDs that were returned between May twenty of 2005 and May 30th 2005.
+
+00:09:58,180 --> 00:10:03,460
+So let's go ahead and review this kind of it's a little bit of a query but hopefully it's not too complicated
+
+00:10:03,470 --> 00:10:03,830
+.
+
+00:10:04,180 --> 00:10:10,450
+We selected the film ID column from the inventory table from excuse me.
+
+00:10:10,480 --> 00:10:10,850
+Yeah.
+
+00:10:10,930 --> 00:10:14,140
+Film ID column from the inventory table.
+
+00:10:14,440 --> 00:10:17,420
+And then we said select that specific column.
+
+00:10:17,520 --> 00:10:27,790
+So I noticed table that column from Rentoul inner join inventory on inventory that inventory underscore
+
+00:10:27,780 --> 00:10:30,720
+I.D. and rental inventory underscore IDs.
+
+00:10:30,750 --> 00:10:37,870
+So we're joining the inventory table with the rental table on the inventory underscore ID column and
+
+00:10:37,870 --> 00:10:38,990
+that matches up.
+
+00:10:39,150 --> 00:10:46,360
+And that's the way we can grab information based off the return day from the rental table but hook it
+
+00:10:46,360 --> 00:10:50,110
+up to the inventory table so we can grab the fill mighty.
+
+00:10:50,280 --> 00:10:55,370
+So go ahead and review the inner join lecture and the between lecture.
+
+00:10:55,530 --> 00:10:58,900
+If any of this is a little fuzzy or unclear.
+
+00:10:59,380 --> 00:10:59,850
+OK.
+
+00:10:59,880 --> 00:11:01,590
+So moving along.
+
+00:11:01,890 --> 00:11:08,860
+Let's go ahead and use this entire query as a sub query to get the titles of the films.
+
+00:11:08,980 --> 00:11:15,790
+So I'm going to put this entire query delete that semi-colon and put this all in between parentheses
+
+00:11:15,780 --> 00:11:18,750
+here.
+
+00:11:18,750 --> 00:11:22,120
+And so that's my giant So queery this list of film IDs.
+
+00:11:22,570 --> 00:11:23,340
+And those are films.
+
+00:11:23,380 --> 00:11:28,980
+These were the return date was between 2005 May 29 and 2005 May 30th.
+
+00:11:29,380 --> 00:11:36,130
+And so then what I'm going to do is grab those film IDs and the movie title.
+
+00:11:36,250 --> 00:11:56,110
+So I'm going to say this selects the film Id Khama title from film where the film ID is in and then
+
+00:11:56,130 --> 00:11:58,240
+I put in the entire sub query.
+
+00:11:58,260 --> 00:12:03,670
+So basically what this is saying is return these two columns the film ID and the title caudal column
+
+00:12:04,000 --> 00:12:12,180
+from the film table were the film ID is in this list so its going to basically treat this entire multiple
+
+00:12:12,180 --> 00:12:15,780
+rows as a list of values in this subquery.
+
+00:12:15,780 --> 00:12:21,120
+So if I go ahead and run this and put a semi-colon there at the end outside of the brackets are parentheses
+
+00:12:21,120 --> 00:12:22,510
+.
+
+00:12:22,870 --> 00:12:30,850
+And now I have the film ID and the title for movies that were returned between 2005 May 29 and 2005
+
+00:12:30,880 --> 00:12:32,040
+May 30th.
+
+00:12:32,500 --> 00:12:39,280
+OK so I know this may look a little daunting and usually giant some queries are a little daunting and
+
+00:12:39,270 --> 00:12:45,700
+this is where it gets really important to use certain naming schemes or aliasing or code formatting
+
+00:12:45,690 --> 00:12:46,040
+.
+
+00:12:46,060 --> 00:12:50,210
+So for example some people like to put select from on one line.
+
+00:12:50,220 --> 00:12:54,460
+Others like to separate it out and this is where you are going to really discover your own style as
+
+00:12:54,460 --> 00:12:59,150
+far as how you like to space stuff out and separate it and make use of whitespace.
+
+00:12:59,250 --> 00:13:05,430
+But its really critical to begin to think about organizing your sequel queries when youre using these
+
+00:13:05,560 --> 00:13:12,390
+sub queries so these queries can be really powerful and get you exactly what you want and they operate
+
+00:13:12,420 --> 00:13:15,570
+a lot quicker than doing multiple queries in a row.
+
+00:13:15,730 --> 00:13:19,870
+But just keep in mind they can start to get a little unreadable here.
+
+00:13:20,380 --> 00:13:25,400
+So let's go out to review everything that we just learned as far as the basics.
+
+00:13:25,530 --> 00:13:28,710
+A So query is the query within a query.
+
+00:13:28,840 --> 00:13:35,430
+So a simple example was that rental rate where we had a sub query to return that value and then we got
+
+00:13:35,430 --> 00:13:42,900
+that result and basically input it into the outer query and then hear a more complicated example is
+
+00:13:42,900 --> 00:13:51,880
+getting a list of multiple rows return and then we use that using the in operator.
+
+00:13:52,050 --> 00:13:58,480
+Again if you go back to the first example that rental rate example we just use some sort of comparison
+
+00:13:58,500 --> 00:14:04,170
+operator or we could have used like if it was a string that was return but if its just a single integer
+
+00:14:04,210 --> 00:14:10,270
+or a single string return then youre going to use either some sort of comparison operator or an equals
+
+00:14:10,340 --> 00:14:17,520
+or like if your so query is going to return a bunch of rows back to you then you're going to use in
+
+00:14:17,940 --> 00:14:21,420
+and then that sub query that returns a bunch of rows.
+
+00:14:21,680 --> 00:14:24,030
+OK so I know this may be tricky.
+
+00:14:24,070 --> 00:14:28,980
+So go ahead and feel free to ask any discussion questions to clear up any questions that you have.
+
+00:14:28,990 --> 00:14:33,900
+We'll be exploring this topic of sub queries on the second assessment test.
+
+00:14:33,900 --> 00:14:34,580
+All right.
+
+00:14:34,750 --> 00:14:35,610
+So that's it.
+
+00:14:35,610 --> 00:14:38,420
+Make sure review the lecture and play around.
+
+00:14:38,430 --> 00:14:44,110
+It's just critical that you understand how to create your queries and how they're useful to you.
+
+00:14:44,250 --> 00:14:49,380
+And I think that's actually really clear in the first example where we showed those two separate queries
+
+00:14:49,650 --> 00:14:51,980
+and then showed that it was easier to make it as one query.
+
+00:14:52,020 --> 00:14:56,610
+But again feel free to post any discussion questions and I'm happy to answer questions for you guys
+
+00:14:56,650 --> 00:14:57,010
+.
+
+00:14:57,450 --> 00:14:59,140
+OK well thanks everyone.
+
+00:14:59,130 --> 00:15:00,600
+And I will see you at the next lecture

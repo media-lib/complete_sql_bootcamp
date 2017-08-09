@@ -1,0 +1,377 @@
+00:00:01,320 --> 00:00:05,880
+Hello everyone and welcome to this lecture on time stamps.
+
+00:00:05,880 --> 00:00:10,230
+So in this lecture run to learn how to use time stamps what there are and keep in mind that different
+
+00:00:10,230 --> 00:00:16,080
+sequel engines such as My sequel Oracle may use slightly different syntax so you may need to refer to
+
+00:00:16,080 --> 00:00:21,240
+the online documentation necessary but we're going to try to show you the most basic and transferable
+
+00:00:21,240 --> 00:00:26,940
+syntax as far as extracting time information from a time stamp object.
+
+00:00:26,940 --> 00:00:33,390
+So sequel allows us to use the time stamp data type to retain time information as we've seen in a lot
+
+00:00:33,390 --> 00:00:36,740
+of the tables such as Date Created or payment's dates.
+
+00:00:36,740 --> 00:00:41,010
+That kind of thing later on we're going to learn how to actually create time stamped columns when we
+
+00:00:41,010 --> 00:00:43,910
+go over creating data and creating tables.
+
+00:00:44,040 --> 00:00:50,220
+But for now let's focus on extracting information from time stamp objects.
+
+00:00:50,220 --> 00:00:57,320
+So the extract function allows us to extract parts from a date and the syntax basically looks like extract
+
+00:00:57,320 --> 00:00:57,380
+.
+
+00:00:57,380 --> 00:01:03,720
+And in parentheses unit from date and we can extract many types of time based information from a time
+
+00:01:03,720 --> 00:01:07,700
+stamp or date or time objects.
+
+00:01:07,710 --> 00:01:13,740
+So here's a giant table all the different types of units you can extract from a time stamp object.
+
+00:01:13,740 --> 00:01:19,170
+So for example you can extract day from that time stamp and return the day of the month.
+
+00:01:19,170 --> 00:01:24,330
+You can do day of the week day of the year millennium's millisecond centuries etc..
+
+00:01:24,330 --> 00:01:30,040
+There's a lot of information and different types of things you can extract or a time stamp object.
+
+00:01:30,330 --> 00:01:34,740
+So you can refer to the documentation for all the units and I'll show you the link later on before we
+
+00:01:34,740 --> 00:01:36,220
+jump to PGE admin.
+
+00:01:36,330 --> 00:01:42,330
+Or you can just google search postscripts sequel date time or postgresql equal time stamp or Mystikal
+
+00:01:42,390 --> 00:01:48,640
+date time or whatever sequel engine you're using plus date time or time.
+
+00:01:48,690 --> 00:01:53,220
+So let's go out and see some quick examples of extracts to get a better understanding of how it works
+
+00:01:53,220 --> 00:01:53,620
+.
+
+00:01:53,670 --> 00:01:59,850
+Before we hopped PGE admin I'm going to go ahead and show you that post gresse sequel documentation
+
+00:01:59,850 --> 00:02:00,620
+page.
+
+00:02:00,630 --> 00:02:02,670
+Let's go ahead and go to it now.
+
+00:02:03,540 --> 00:02:07,430
+OK so here we are at the post gresse sequel documentation page.
+
+00:02:07,530 --> 00:02:14,370
+And notice if you just google search post-career sequels plus date time etc. or date or time.
+
+00:02:14,370 --> 00:02:19,620
+Most often it'll take you straight to this page as the first hit and it will basically give you a list
+
+00:02:19,620 --> 00:02:21,620
+of date time functions and operators.
+
+00:02:21,810 --> 00:02:26,820
+So we're going to focus on extract function in this lecture but I also wanted to let you know that you
+
+00:02:26,820 --> 00:02:32,550
+can use earth medic operator such as Plus or times with date time objects.
+
+00:02:32,550 --> 00:02:39,900
+So for example if we scroll down here if I wanted to use the plus operator on some dates I could say
+
+00:02:39,900 --> 00:02:46,470
+something like this which has dates on this string which converts to a time stamp Plus the integer of
+
+00:02:46,470 --> 00:02:53,660
+seven string which converts it to the integer 7 and that will add days to your time stamp perforation
+
+00:02:53,670 --> 00:02:54,060
+.
+
+00:02:54,060 --> 00:02:58,720
+So this is 2001 month 9 day 28.
+
+00:02:58,800 --> 00:03:06,760
+And if I add 7 to it it's going to return 2001 month 10 days 5 or the fifth.
+
+00:03:06,780 --> 00:03:11,430
+So just keep that in mind later on if you find yourself needing to do this sort of operations you can
+
+00:03:11,440 --> 00:03:15,370
+reference back to STATE time documentation.
+
+00:03:15,480 --> 00:03:17,770
+You can do the same thing with subtraction.
+
+00:03:17,820 --> 00:03:24,380
+You can trip subtract time intervals or basically add time intervals to various time stamp informations
+
+00:03:24,390 --> 00:03:24,980
+.
+
+00:03:25,070 --> 00:03:25,670
+OK.
+
+00:03:25,890 --> 00:03:30,780
+So this is pretty useful stuff in case you want to add or subtract from your current date and you can
+
+00:03:30,780 --> 00:03:34,610
+also multiply by intervals to get larger chunks at time.
+
+00:03:34,620 --> 00:03:38,160
+This really depends on what your data looks like and we're trying to accomplish as far as the actual
+
+00:03:38,160 --> 00:03:39,280
+use cases.
+
+00:03:39,280 --> 00:03:43,360
+So let you reference the documentation when you need it.
+
+00:03:43,380 --> 00:03:49,260
+There's also date time functions which allow you to work and return things from a date time object.
+
+00:03:49,260 --> 00:03:57,000
+So if we just zoom out here for a second we can grab things such as the current date or we can also
+
+00:03:57,000 --> 00:04:04,370
+do things such as age which basically passen to time stamps and all return the interval between them
+
+00:04:04,440 --> 00:04:06,880
+which is basically just doing the same thing as subtract.
+
+00:04:06,990 --> 00:04:12,020
+So takes one time stamp subtracts another time stamp and it's the age or the interval between them.
+
+00:04:12,210 --> 00:04:17,460
+So for example it gives you something like this for three years nine months and 27 days between these
+
+00:04:17,460 --> 00:04:18,610
+two timestamps.
+
+00:04:18,870 --> 00:04:23,190
+Again we're going to focus more on just using the extracts statement since we're focused right now more
+
+00:04:23,190 --> 00:04:28,020
+on reading from a sequel table versus creating time stamp information.
+
+00:04:28,020 --> 00:04:33,450
+So let's go ahead now and you can go ahead and check out these functions on your own time through the
+
+00:04:33,450 --> 00:04:34,220
+documentation.
+
+00:04:34,230 --> 00:04:39,510
+If you ever need to but we're going to go ahead and jump to PGA now to show you a couple of quick examples
+
+00:04:39,510 --> 00:04:40,940
+of using extract.
+
+00:04:41,010 --> 00:04:43,840
+So I'm going to go ahead and help the PGA out of it now.
+
+00:04:45,250 --> 00:04:45,760
+OK.
+
+00:04:45,770 --> 00:04:48,120
+So here we are at PGE admen.
+
+00:04:48,140 --> 00:04:53,860
+I went ahead and selected all the columns from the payments tables to select Asterix from payments and
+
+00:04:53,870 --> 00:04:58,040
+we were going to be dealing with here is the payments underscored date column.
+
+00:04:58,040 --> 00:05:02,410
+So that's going to be the time stamp and no it doesn't have the actual time so.
+
+00:05:02,600 --> 00:05:05,190
+Won't be able to grab time some information from it.
+
+00:05:05,450 --> 00:05:09,670
+But let's go out and explore how we could use extract.
+
+00:05:09,710 --> 00:05:12,390
+So let's just start off with getting the payment date.
+
+00:05:12,620 --> 00:05:13,580
+Column itself.
+
+00:05:13,580 --> 00:05:21,180
+So we're going to say something like this selects and let's go ahead and say select payments underscore
+
+00:05:21,240 --> 00:05:25,620
+date from payments semi-colon.
+
+00:05:25,740 --> 00:05:27,440
+Go ahead and run that.
+
+00:05:27,890 --> 00:05:29,920
+And here's our payment date column.
+
+00:05:30,200 --> 00:05:34,010
+And then the way we would use extract looks like this will say extract
+
+00:05:37,290 --> 00:05:41,620
+princes around payment dates and then we're going to have a unit from the payment date.
+
+00:05:41,630 --> 00:05:50,930
+So I can say extract day from the payment dates and the recent extract from our lower case here is so
+
+00:05:50,940 --> 00:05:56,010
+that you don't get confused that you're extracting something from a table called payment date.
+
+00:05:56,210 --> 00:06:00,260
+So here by conventional we're using from lower case.
+
+00:06:01,280 --> 00:06:06,710
+So now I've been able to if I ran that I saw I have a list of days now.
+
+00:06:07,010 --> 00:06:12,670
+So this is quite useful and we will be able to use this information when we want to filter by something
+
+00:06:12,690 --> 00:06:13,230
+.
+
+00:06:13,220 --> 00:06:20,300
+So for example I can select another column from the payment table if we go ahead and selects.
+
+00:06:20,300 --> 00:06:29,060
+So sick customer id call them let's go ahead and run that and so now I have a customer ID and a date
+
+00:06:29,060 --> 00:06:35,870
+part which is that day so we can actually say for example as in order to rename that so I can say something
+
+00:06:35,880 --> 00:06:40,950
+like as they run that again.
+
+00:06:40,990 --> 00:06:43,580
+And now I have days that column name.
+
+00:06:44,510 --> 00:06:49,890
+OK so let's go ahead and see a real example of why doing extract would be useful.
+
+00:06:50,190 --> 00:06:55,820
+Let's say I wanted to figure out the total amount expenditure by the month.
+
+00:06:55,910 --> 00:06:59,160
+So how would I do that I could say something like this.
+
+00:06:59,330 --> 00:07:07,710
+I know I have an amount column in here so I will sum the amount column and I'm going to extracts month
+
+00:07:07,940 --> 00:07:13,010
+from the payment date and I will say extract this as month.
+
+00:07:13,010 --> 00:07:18,410
+That way I can reference it as month later on that I'm going to say from payments and since I'm doing
+
+00:07:18,410 --> 00:07:25,930
+an aggregate function of some I will need to group by month go ahead and run this.
+
+00:07:25,940 --> 00:07:27,970
+And now we see the total sum.
+
+00:07:28,130 --> 00:07:30,800
+And let's go ahead and order this by the amount
+
+00:07:34,700 --> 00:07:38,390
+and we'll go in and say or actually order it by the sum of the amounts
+
+00:07:43,520 --> 00:07:52,610
+run at 5 here and I can go ahead and put that in descending order and let's go ahead and limit this
+
+00:07:53,120 --> 00:07:54,600
+to one.
+
+00:07:54,890 --> 00:08:00,770
+And this basically answers the business task of how much did I get in payments of my highest grossing
+
+00:08:00,770 --> 00:08:01,320
+month.
+
+00:08:01,340 --> 00:08:04,870
+That's going to be month for January February March April.
+
+00:08:04,910 --> 00:08:06,240
+So that's in April.
+
+00:08:06,320 --> 00:08:11,080
+My total amount was twenty thousand five hundred fifty nine dollars and 46 cents.
+
+00:08:11,090 --> 00:08:15,100
+So that's a really nice use case for using extract.
+
+00:08:15,120 --> 00:08:18,700
+So here we're we're saying select the total sum of the amounts.
+
+00:08:18,890 --> 00:08:23,390
+Extracts this month from payment day as month from the payment table.
+
+00:08:23,570 --> 00:08:28,350
+Go ahead and group that by that month column that we just created order by the sum of the amount in
+
+00:08:28,340 --> 00:08:31,090
+descending order unlimited by 1.
+
+00:08:31,520 --> 00:08:38,840
+Something that might be useful here is just to say as total for that some amount column and then we
+
+00:08:38,850 --> 00:08:45,170
+can say order by and sort of having it clarified by some amount we can go ahead and say order by total
+
+00:08:45,180 --> 00:08:45,570
+.
+
+00:08:46,160 --> 00:08:49,110
+And if we run that you'll get the same result.
+
+00:08:49,110 --> 00:08:49,970
+OK.
+
+00:08:49,980 --> 00:08:56,480
+So go ahead and reference the documentation for more stuff you can extract by Booch have just gotten
+
+00:08:56,490 --> 00:09:02,090
+out of this lecture is how to use extract and how it's useful for queries that have to do with time
+
+00:09:02,100 --> 00:09:03,340
+stamp your affirmation.
+
+00:09:03,600 --> 00:09:07,810
+Again the syntax is just extract parentheses.
+
+00:09:08,000 --> 00:09:14,160
+The units you want to extract and then from and then the column name and by convention we're going to
+
+00:09:14,150 --> 00:09:15,850
+say this from it's lowercase.
+
+00:09:15,870 --> 00:09:19,460
+So we don't get this column name confused if a table name.
+
+00:09:19,730 --> 00:09:23,250
+OK with that being said that's it for this lecture.
+
+00:09:23,250 --> 00:09:24,660
+Thanks and I'll see you at the next one

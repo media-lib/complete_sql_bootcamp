@@ -1,0 +1,590 @@
+00:00:01,170 --> 00:00:06,240
+Hello everyone and welcome to the lecture on self-join and this lecture we're going to learn how to
+
+00:00:06,240 --> 00:00:07,890
+use a self-join statement.
+
+00:00:07,890 --> 00:00:12,510
+See an example in the slides and then we'll see another example of postscripts sequel and PGE admin
+
+00:00:12,510 --> 00:00:12,800
+.
+
+00:00:12,860 --> 00:00:15,250
+It's the database we've been working with.
+
+00:00:15,960 --> 00:00:20,550
+So you've already learned how to join a table with other tables using things such as an inner join a
+
+00:00:20,550 --> 00:00:23,910
+left outer join or right join etc..
+
+00:00:24,000 --> 00:00:31,730
+However there is a special case the join a table to itself which is known as a self-join is self-join
+
+00:00:31,740 --> 00:00:31,780
+.
+
+00:00:31,800 --> 00:00:38,340
+When you want to combine rows with other rows in the same table to perform the self-join operation you
+
+00:00:38,340 --> 00:00:43,770
+must use a table alias to help sequel distinguish the left table from the right table at the same table
+
+00:00:43,780 --> 00:00:43,990
+.
+
+00:00:44,200 --> 00:00:47,660
+And what I mean by alias is using that as statement.
+
+00:00:47,660 --> 00:00:55,710
+So remember we were able to call whole tables or whole column something like column ID as some other
+
+00:00:55,710 --> 00:00:57,570
+name or some alias name.
+
+00:00:57,570 --> 00:01:02,190
+That's what we're referring to when we say table alias and you'll see examples of that as we go forward
+
+00:01:02,200 --> 00:01:02,810
+.
+
+00:01:03,420 --> 00:01:05,780
+So imagine we have the following table.
+
+00:01:05,880 --> 00:01:11,580
+We have one column with employee name and another column with employee location and we can see here
+
+00:01:11,580 --> 00:01:14,570
+that Joe is from New York.
+
+00:01:14,640 --> 00:01:19,440
+Suppose you want to actually find out which employees are from the same location as the employee named
+
+00:01:19,530 --> 00:01:20,230
+Joe.
+
+00:01:20,550 --> 00:01:23,870
+So we quickly scan this table we can see at the bottom there.
+
+00:01:23,880 --> 00:01:28,680
+Jack is also from New York so we want to find out which employees are from the same location as the
+
+00:01:28,680 --> 00:01:30,250
+employee named Joe.
+
+00:01:30,270 --> 00:01:32,510
+There's a couple of ways to do this.
+
+00:01:33,030 --> 00:01:37,470
+In this example like I mentioned that location that Joe lives in is New York and let's assume that we
+
+00:01:37,470 --> 00:01:43,050
+cannot just directly search the table for people who live in New York with a simple query like this
+
+00:01:43,050 --> 00:01:43,080
+.
+
+00:01:43,080 --> 00:01:47,990
+So maybe we don't want to hard code the city name in the sequel queery etc..
+
+00:01:48,030 --> 00:01:51,850
+And what I mean by that is let's imagine that we couldn't couldn't just do this.
+
+00:01:52,050 --> 00:01:58,110
+We can't just say we're employee underscore location equals New York for some reason we just can't directly
+
+00:01:58,110 --> 00:02:01,550
+put in our query where employee location equals New York.
+
+00:02:01,640 --> 00:02:05,450
+And there's a bunch of real world scenarios where that's going to be the case.
+
+00:02:05,460 --> 00:02:09,860
+Either you don't want to have to look it up again or you don't want to have to run to queries etc..
+
+00:02:09,870 --> 00:02:15,060
+So let's just imagine for the sake of argument an example here that we can't write that bottom line
+
+00:02:15,300 --> 00:02:17,350
+exactly like that.
+
+00:02:17,520 --> 00:02:24,330
+In that case we have some other options we could use a sub query and we just saw that earlier in some
+
+00:02:24,330 --> 00:02:30,150
+lectures specifically a subquery lecture where I could say select employee name from Employee table
+
+00:02:30,720 --> 00:02:38,220
+where employee location in and then I have my sub query there in parentheses or round brackets in Iman's
+
+00:02:38,380 --> 00:02:43,380
+and then I'm saying select employee location for an employee where employ underscore name equals Joe
+
+00:02:43,950 --> 00:02:50,380
+and that will bring back New York and then I'll do the other query into the query and that should do
+
+00:02:50,370 --> 00:02:52,880
+then bring back Jack.
+
+00:02:53,800 --> 00:02:56,590
+OK so that's one way to do it.
+
+00:02:56,820 --> 00:03:02,650
+And while a sub query is a valid solution it is actually more efficient to use the self-join that we're
+
+00:03:02,700 --> 00:03:03,810
+learning about.
+
+00:03:03,930 --> 00:03:08,520
+So we're going to join a table to itself again as a general rule.
+
+00:03:08,520 --> 00:03:14,420
+We need to always use aliases or remember that as statement when using a self-join.
+
+00:03:15,210 --> 00:03:18,310
+So for that particular example it would look something like this.
+
+00:03:18,330 --> 00:03:28,250
+I would say select ie one dot Employee Name column from employee as one comma employee as E-2 where
+
+00:03:28,520 --> 00:03:36,060
+each one employee location column equals to that employee location and each to that employee name is
+
+00:03:36,060 --> 00:03:44,100
+equal to Joe and so noticing the actual syntax of the sequel query doesn't specifically use any of the
+
+00:03:44,100 --> 00:03:47,640
+terms join and that's because it's a self-join.
+
+00:03:47,640 --> 00:03:53,660
+So because I'm using this aliasing technique saying employee as E-1 comma employ as E-2.
+
+00:03:53,880 --> 00:03:59,340
+So I basically have two tables in there with from as two aliases but they're actually the same table
+
+00:03:59,340 --> 00:04:00,620
+employee employee.
+
+00:04:00,630 --> 00:04:02,860
+This is known as a self join.
+
+00:04:03,240 --> 00:04:09,510
+So again I'm saying select the employee name column from each E-1 from employee as the one com employee
+
+00:04:09,510 --> 00:04:16,500
+as to where E-1 the employee location is equal to E-2 the employee location so that employee location
+
+00:04:16,500 --> 00:04:22,630
+match matches EON's where that employee name from 8 to was equal to Joe.
+
+00:04:22,650 --> 00:04:24,470
+So let's go to break down a little further.
+
+00:04:24,480 --> 00:04:25,890
+What this is actually doing.
+
+00:04:26,250 --> 00:04:31,110
+So again this crew's going to return the names Joe and Jack to shack as the only other person who lives
+
+00:04:31,110 --> 00:04:36,900
+in New York like Joe and generally queries that refer to the same table can be greatly simplified by
+
+00:04:36,900 --> 00:04:37,970
+rewriting the queries.
+
+00:04:37,990 --> 00:04:39,370
+A self joins.
+
+00:04:39,540 --> 00:04:44,920
+So if you compare the query text to the self-join text there's a lot less text in the self-join.
+
+00:04:44,970 --> 00:04:49,950
+So it looks a lot cleaner and in addition to this there is a performance benefit as well to doing a
+
+00:04:49,950 --> 00:04:53,450
+self-join vs doing to save queries.
+
+00:04:54,270 --> 00:04:59,460
+So let's go at a breakdown with that self-join is actually doing it's good to recall our original table
+
+00:04:59,490 --> 00:05:03,740
+where we have the employee name and the employee location.
+
+00:05:04,070 --> 00:05:09,020
+And then again remember that Joe lives in New York and Jack lives in New York.
+
+00:05:09,530 --> 00:05:11,350
+So then we created two aliases.
+
+00:05:11,370 --> 00:05:14,530
+He wanted me to notice the same table.
+
+00:05:14,560 --> 00:05:17,330
+So they're both instances there of the employee table.
+
+00:05:17,390 --> 00:05:19,870
+They're just aliases.
+
+00:05:19,910 --> 00:05:24,680
+And then the final result of running the self-join query above the actual join table would look like
+
+00:05:24,680 --> 00:05:25,460
+this.
+
+00:05:25,460 --> 00:05:31,590
+You'd have the E-1 the Employee Name column that you wanted the employee location column self-join to
+
+00:05:31,610 --> 00:05:35,280
+eat to that employee name to that employee location.
+
+00:05:35,330 --> 00:05:39,020
+So you would get this as your actual adjoined table.
+
+00:05:39,020 --> 00:05:41,430
+And this is where you actually call the columns off of it.
+
+00:05:41,660 --> 00:05:46,050
+So if a member of the column is called off of it was e one there.
+
+00:05:46,640 --> 00:05:52,400
+And the reason we get two instances of Joe here is because if you look back to the self-join query we
+
+00:05:52,400 --> 00:05:58,240
+had that and statement that said and E-2 that employee underscore name is equal to Joe.
+
+00:05:58,300 --> 00:05:58,570
+OK.
+
+00:05:58,580 --> 00:06:04,170
+So that's what the actual join table looks like when you return office self-join.
+
+00:06:04,190 --> 00:06:10,610
+So let's go out and see an example in NPG adamant to work with our database and get some more understanding
+
+00:06:10,640 --> 00:06:12,920
+of how the self-join is actually operating.
+
+00:06:12,920 --> 00:06:16,750
+I'm going to go ahead and jump to P.G. Adam now.
+
+00:06:18,360 --> 00:06:18,850
+OK.
+
+00:06:18,920 --> 00:06:24,800
+So here we are at PGE admin and I'm going to go ahead and be using the customer table.
+
+00:06:24,800 --> 00:06:27,940
+So it's good to remind ourselves what the customer table looks like.
+
+00:06:27,980 --> 00:06:32,840
+We have a first name and a last name of the customer and then some other information on them are going
+
+00:06:32,840 --> 00:06:36,960
+to be specifically concerned with the first name and last name columns.
+
+00:06:36,980 --> 00:06:43,670
+Let's go ahead and imagine that we wanted to retrieve all customers whose last name matched the first
+
+00:06:43,670 --> 00:06:52,220
+name of another customer meaning if we had a name like Sandra Martin and we had another name or another
+
+00:06:52,220 --> 00:06:57,620
+customer whose first name was Martin and last name was something like Bayles we'd have a match there
+
+00:06:57,620 --> 00:07:00,890
+so we'd have Sandra Martin matches with Martin Bayles.
+
+00:07:00,890 --> 00:07:06,690
+So we want to achieve all the customers whose last name matches the first name of another customer.
+
+00:07:06,920 --> 00:07:10,240
+And the best way to do this is using a self-join.
+
+00:07:10,280 --> 00:07:13,650
+So let's go ahead and explore how we can do that.
+
+00:07:13,700 --> 00:07:29,450
+So to say this selects the ADA first underscore Name column and we'll say Ada last name column and then
+
+00:07:29,450 --> 00:07:38,970
+we'll say be the first name column and be dots last name column.
+
+00:07:40,040 --> 00:07:45,850
+And I'm going to select that from the customer table but remember I have to use aliasing here.
+
+00:07:46,220 --> 00:08:01,010
+So I'm going to say from customer as a comma customer as B and then we're going to say for the actual
+
+00:08:01,070 --> 00:08:05,120
+join I'm going to go ahead and use a WHERE clause.
+
+00:08:05,130 --> 00:08:20,240
+So and then I'm going to say where a first underscore name equals the last underscore name.
+
+00:08:20,240 --> 00:08:22,150
+Now let's go ahead and run that.
+
+00:08:23,000 --> 00:08:28,820
+And you'll notice here we get some results and if we look at them we can see that our query ended up
+
+00:08:28,820 --> 00:08:29,240
+working.
+
+00:08:29,240 --> 00:08:31,140
+So here we have the first name.
+
+00:08:31,220 --> 00:08:39,500
+Rose Howard shares the first name to the last name of Darleen rose and we have Kelly Torres and Denise
+
+00:08:39,500 --> 00:08:44,020
+Kelly So we see the matches on the first column and the last column.
+
+00:08:44,210 --> 00:08:47,190
+And let's go ahead and confirm that these are two separate people.
+
+00:08:47,390 --> 00:08:51,240
+The way you can do that is by grabbing their customer id name as well.
+
+00:08:51,260 --> 00:08:59,840
+So here I'm going to add just two more calls when I say that customer id column and then I'm going to
+
+00:08:59,840 --> 00:09:08,270
+also add the b dot customer id column here and then I'm going to go ahead and run this again at 5 or
+
+00:09:08,270 --> 00:09:10,460
+just execute here on the query.
+
+00:09:10,460 --> 00:09:12,530
+And so here I have the customer ID number.
+
+00:09:12,740 --> 00:09:15,650
+So I have 65 matches of customer 157.
+
+00:09:15,650 --> 00:09:21,440
+So these are two separate people and were able to match up people to have the first name that matches
+
+00:09:21,440 --> 00:09:25,820
+the last name of someone else in the actual table.
+
+00:09:25,880 --> 00:09:31,700
+Now using this sort of comma syntax for a self-join statement is pretty common.
+
+00:09:31,790 --> 00:09:36,650
+But I also want to show you how you could use it with just actually explicitly saying join.
+
+00:09:36,650 --> 00:09:39,770
+So that is possible as well for a self join statement.
+
+00:09:39,770 --> 00:09:41,600
+Some people prefer the way I just did it right.
+
+00:09:41,600 --> 00:09:44,240
+Now if a comma in the way I showed it in the slides.
+
+00:09:44,240 --> 00:09:49,430
+Other people prefer actually explicitly writing that joint statement and then it would look like this
+
+00:09:50,570 --> 00:10:01,750
+you would say from customer as a joyn customer as B and then sort of saying where you would say on a
+
+00:10:02,210 --> 00:10:05,140
+first name is equal to last name here.
+
+00:10:05,210 --> 00:10:09,040
+And so if we run that we get the exact same results.
+
+00:10:09,290 --> 00:10:14,380
+So again you're going to discover your own style as far as what you prefer and what's easier to read
+
+00:10:14,390 --> 00:10:15,070
+for you.
+
+00:10:15,200 --> 00:10:20,480
+I think for a lot of beginners actually this second way that I just showed you is usually easier to
+
+00:10:20,480 --> 00:10:25,400
+read and understand with the caveat being that you're going to use an on statement instead of a where
+
+00:10:25,400 --> 00:10:32,210
+statement if you prefer prefer thinking about it using from and then the customer as Alias Khama customer
+
+00:10:32,210 --> 00:10:35,140
+as alias and then using a where statement.
+
+00:10:35,450 --> 00:10:36,800
+That's also totally fine.
+
+00:10:36,800 --> 00:10:38,890
+So again it's really what you prefer.
+
+00:10:39,170 --> 00:10:42,850
+As far as self-join syntax.
+
+00:10:43,190 --> 00:10:49,010
+And then if we wanted to we could actually continue to work on this query by saying something like order
+
+00:10:49,010 --> 00:10:51,950
+by let's say a customer ID
+
+00:10:55,430 --> 00:11:00,050
+and then we have everything ordered by the customer ID and you can see here that we're going to get
+
+00:11:00,400 --> 00:11:00,680
+.
+
+00:11:00,890 --> 00:11:08,630
+Rose Howard and Arlene Rose Kelly Torres Denise Kelly etc. Now you may be wondering is my only going
+
+00:11:08,630 --> 00:11:11,470
+to use an inner joined by default.
+
+00:11:11,630 --> 00:11:15,080
+What if I wanted a left join or right join.
+
+00:11:15,080 --> 00:11:18,970
+So self joints are not limited to just an inner join.
+
+00:11:18,980 --> 00:11:24,710
+While the cases we've seen make the most sense of inner join you can also use a left join to provide
+
+00:11:24,740 --> 00:11:26,540
+all records from the left table.
+
+00:11:26,600 --> 00:11:28,930
+Regardless if there is actually a match.
+
+00:11:29,090 --> 00:11:34,700
+So if for some reason we wanted to get everything from the left table regardless if there was a match
+
+00:11:34,700 --> 00:11:35,370
+or not.
+
+00:11:35,420 --> 00:11:39,370
+Then we can also specify left or right outer joins.
+
+00:11:39,380 --> 00:11:42,940
+So for example I can edit this and say something like.
+
+00:11:43,100 --> 00:11:44,060
+Left join.
+
+00:11:44,100 --> 00:11:47,000
+And remember this is the same as saying left outer join.
+
+00:11:47,090 --> 00:11:49,090
+I can just say left joined by default.
+
+00:11:49,250 --> 00:11:53,930
+Sequel engines will know your specifically meaning an outer join because of the term left there.
+
+00:11:54,020 --> 00:11:57,800
+So if I do this then go ahead and run this.
+
+00:11:57,800 --> 00:12:03,800
+Notice that I'm going to get a bunch of no or empty values here because this specific person is from
+
+00:12:03,800 --> 00:12:10,040
+the left table so the A or customer has a table and didn't have this first name matching with the last
+
+00:12:10,040 --> 00:12:12,830
+name of anyone else in the table.
+
+00:12:13,040 --> 00:12:15,600
+So we're going to get no values if we do it this way.
+
+00:12:15,770 --> 00:12:18,810
+But as we scroll down you should see some matches pop up.
+
+00:12:18,810 --> 00:12:20,770
+So for example Joy George.
+
+00:12:20,770 --> 00:12:21,570
+Matches.
+
+00:12:21,650 --> 00:12:22,520
+Matches with Joseph.
+
+00:12:22,520 --> 00:12:24,600
+Joy so Joy Joy there.
+
+00:12:24,680 --> 00:12:29,570
+So it's up to you and up to whatever the business task you're trying to solve is if you're going to
+
+00:12:29,570 --> 00:12:32,670
+use a self-join or an inner join or a left join.
+
+00:12:32,720 --> 00:12:37,700
+More likely than not you'll usually use these with inner joins because you're specifically looking for
+
+00:12:37,700 --> 00:12:39,500
+some sort of match there.
+
+00:12:39,520 --> 00:12:42,730
+You don't care about returning everything with the nulls but it's good.
+
+00:12:42,740 --> 00:12:49,010
+Keep in mind that you can use it with left and right outer joints for the tables regardless.
+
+00:12:49,010 --> 00:12:52,360
+OK so that's it for the inner joins.
+
+00:12:52,430 --> 00:12:59,850
+I would recommend doing now is actually Google searching manager plus employee self-join.
+
+00:12:59,900 --> 00:13:03,090
+So if I go ahead and do that real quick.
+
+00:13:03,090 --> 00:13:10,070
+So here am I just jumped to Google and I did a manager employee self-join in the Google search and you'll
+
+00:13:10,220 --> 00:13:11,660
+get a lot of results.
+
+00:13:11,660 --> 00:13:16,640
+Go and explore those if you want to learn more about self-join beyond what we just covered here.
+
+00:13:16,700 --> 00:13:20,400
+Although it's pretty straightforward as far as your joining a table to itself.
+
+00:13:20,570 --> 00:13:27,800
+The specific reason I want you to check out manager employee self-join is that for whatever reason this
+
+00:13:27,830 --> 00:13:34,160
+is an extremely common interview question for people who are going to be interviewed and sequel.
+
+00:13:34,220 --> 00:13:39,950
+It's basically the de facto way to check if you know what a self-join is or not.
+
+00:13:39,950 --> 00:13:45,740
+So basically what happens is you're given this table with employees and managers and you have to figure
+
+00:13:45,740 --> 00:13:49,220
+out what employees make more salary than managers etc..
+
+00:13:49,220 --> 00:13:50,190
+That kind of thing.
+
+00:13:50,330 --> 00:13:53,630
+But for whatever reason this is a really common interview question.
+
+00:13:53,900 --> 00:13:59,450
+As far as testing your knowledge of self joints and sub queries so go ahead and explore that.
+
+00:13:59,480 --> 00:14:03,450
+If you plan on getting interviewed in self Joines or sequel anytime soon.
+
+00:14:03,830 --> 00:14:08,200
+That should probably show up or some form of that question will show up OK.
+
+00:14:08,360 --> 00:14:13,250
+If not then you understand self-join already go ahead and feel free to continue on without doing that
+
+00:14:13,250 --> 00:14:14,330
+Google search.
+
+00:14:14,330 --> 00:14:14,780
+OK.
+
+00:14:15,020 --> 00:14:17,360
+Well thanks everyone and I will see you at the next lecture

@@ -1,0 +1,323 @@
+00:00:01,140 --> 00:00:05,930
+Hello everyone and welcome to the string functions and operators lecture.
+
+00:00:06,420 --> 00:00:10,170
+This lecture we're going learn where you can find various string functions available and post-career
+
+00:00:10,170 --> 00:00:13,360
+sequel and then we're going to see some basic examples.
+
+00:00:13,380 --> 00:00:17,530
+This is going to be almost like a sister lecture to the mathematical functions.
+
+00:00:17,580 --> 00:00:22,260
+There's a ton of string functions and operators in post-career sequel as well it's just basic sequel
+
+00:00:22,270 --> 00:00:22,420
+.
+
+00:00:22,650 --> 00:00:27,060
+So what makes sense to go through all of them but what I want you to get out of this lecture is just
+
+00:00:27,060 --> 00:00:31,190
+know that they're available to you and see some basic examples of them.
+
+00:00:31,230 --> 00:00:35,470
+So like a mission sequel comes a lot of string operators already built in.
+
+00:00:35,520 --> 00:00:38,810
+And you can explore all of them in the documentation at this link.
+
+00:00:39,120 --> 00:00:44,160
+Or you can just basically Google search post-career sequel plus string functions and we'll take you
+
+00:00:44,160 --> 00:00:46,460
+to this link as the first hit.
+
+00:00:46,590 --> 00:00:49,230
+With that being said let's go ahead and jump to the documentation.
+
+00:00:49,230 --> 00:00:51,990
+Explore and then see some basic examples.
+
+00:00:52,020 --> 00:00:55,240
+We're going to go ahead and jump to the documentation now.
+
+00:00:56,400 --> 00:00:58,710
+OK so here we are at the documentation.
+
+00:00:58,770 --> 00:01:00,870
+It's under string functions and operators.
+
+00:01:01,200 --> 00:01:07,140
+And basically here just like the mathematical function section you'll have a list of functions the type
+
+00:01:07,140 --> 00:01:11,590
+of data it returns either text or integer description of what it does.
+
+00:01:11,660 --> 00:01:13,360
+An example of it.
+
+00:01:13,380 --> 00:01:17,890
+So just by coincidence my name is actually here and some of the examples.
+
+00:01:18,240 --> 00:01:20,110
+And you can check out the examples yourself.
+
+00:01:20,130 --> 00:01:24,600
+So some of these really useful ones can be just like concatenating strings together meaning putting
+
+00:01:24,600 --> 00:01:27,330
+them together such as like post Chris sequel.
+
+00:01:27,360 --> 00:01:33,190
+That's just these two bars here and there's a ton a ton of functions here for you to check out as well
+
+00:01:33,190 --> 00:01:39,210
+as some other string functions for putting them in different Unicode in case you're familiar that at
+
+00:01:39,210 --> 00:01:39,490
+all.
+
+00:01:39,510 --> 00:01:41,550
+But you can go ahead and check all of these out.
+
+00:01:41,550 --> 00:01:46,050
+We're going to go ahead and jump to P.G. admen as I scroll down and you can see there's a huge list
+
+00:01:46,050 --> 00:01:46,680
+of them.
+
+00:01:46,950 --> 00:01:50,780
+So let's go over through some of the most basic ones and some of the most useful ones.
+
+00:01:50,790 --> 00:01:51,500
+OK.
+
+00:01:51,640 --> 00:01:58,280
+I going to go ahead and jump to PGE Atman and open up a sequel Ed. there.
+
+00:01:58,770 --> 00:02:02,640
+All right everybody so here I am at the sequel editor for P.J. admen.
+
+00:02:02,820 --> 00:02:07,290
+The table we're going to be working with to see a couple of these string function examples is the customer
+
+00:02:07,290 --> 00:02:08,100
+table.
+
+00:02:08,430 --> 00:02:16,370
+So let's go out and selects all columns from customer them put semi color.
+
+00:02:16,370 --> 00:02:19,260
+We're going to go ahead and run this.
+
+00:02:19,260 --> 00:02:26,300
+And here's our data output and we have three columns here where the specific data type is character
+
+00:02:26,300 --> 00:02:26,330
+.
+
+00:02:26,330 --> 00:02:30,610
+So that means it's strings that we can play around with as far as the string functions.
+
+00:02:30,630 --> 00:02:32,890
+So we have first name last name and e-mail.
+
+00:02:33,090 --> 00:02:36,090
+Let's go out and play around of first name and last name first.
+
+00:02:36,300 --> 00:02:42,660
+One of the most basic functions are string operators you can use is concatenation meaning kind of sticking
+
+00:02:42,660 --> 00:02:44,060
+stuff together.
+
+00:02:44,070 --> 00:02:45,390
+So let's go ahead and try that out.
+
+00:02:45,420 --> 00:02:51,310
+I can take one column this case I'll say first name and concatenate it.
+
+00:02:51,360 --> 00:02:58,620
+Basically sticking it together with the last name and the way I do that is by using these two vertical
+
+00:02:58,620 --> 00:02:59,580
+bars.
+
+00:02:59,640 --> 00:03:06,450
+So I say select first name these two vertical bars you can usually find them above your enter or return
+
+00:03:06,450 --> 00:03:06,940
+key.
+
+00:03:07,020 --> 00:03:13,880
+So shift and then that button there last name from customer let's go and see what that looks like around
+
+00:03:13,980 --> 00:03:14,680
+that.
+
+00:03:15,030 --> 00:03:18,780
+And notice here we have the first name of the customer the last name of the customer kind of squished
+
+00:03:18,780 --> 00:03:23,510
+together meaning they've been concatenated together in order to make this look a little nicer.
+
+00:03:23,520 --> 00:03:28,280
+Let's go ahead and put a space in between these names and then change the name column.
+
+00:03:28,380 --> 00:03:34,830
+So a more useful example of what this would look like is if I took an empty string.
+
+00:03:34,830 --> 00:03:41,760
+So just a single quote a space in a single quote and concatenated that in between the first and last
+
+00:03:41,760 --> 00:03:47,980
+name so saying the first name column with concatenation of an empty string.
+
+00:03:48,120 --> 00:03:52,500
+Number two vertical bars here and then the last name in column from customer.
+
+00:03:52,500 --> 00:03:57,750
+And then I'm going to use aliasing which is just using that as statements to name this column we'll
+
+00:03:57,750 --> 00:04:03,570
+call this column fool underscored name from all it comes from the customer.
+
+00:04:03,810 --> 00:04:05,940
+Let's go ahead and run this.
+
+00:04:06,150 --> 00:04:10,060
+And now we have this nice full name column the full name of the customer.
+
+00:04:10,080 --> 00:04:15,980
+Jared alley Mary Smith etc. So this is kind of a real use case of when you may want to be using these
+
+00:04:15,980 --> 00:04:19,660
+sort of string operators in order to figure stuff out like that.
+
+00:04:19,680 --> 00:04:22,370
+So we have a full name here.
+
+00:04:22,560 --> 00:04:27,420
+Let's go ahead and mess around with one other string function and that might be trying to figure out
+
+00:04:27,450 --> 00:04:29,300
+how many characters a name has.
+
+00:04:29,580 --> 00:04:36,450
+So we take a look at the first name column we have Jared and Mary Patricia Alynda as those first two
+
+00:04:36,450 --> 00:04:37,360
+outputs.
+
+00:04:37,440 --> 00:04:46,230
+Well we can do is use the function character length which is C H A R underscore length so c ha our underscore
+
+00:04:46,320 --> 00:04:50,370
+length and pasan a column of characters.
+
+00:04:50,370 --> 00:04:53,870
+In this case first name and if we run that will return.
+
+00:04:53,910 --> 00:04:59,770
+How many characters are in that specific row for that column.
+
+00:04:59,910 --> 00:05:06,000
+So another just basic string function we can do is like upper and lower so I can say like upper first
+
+00:05:06,000 --> 00:05:12,470
+name and all that will do is return everything uppercase and you can do the same thing with lower dollar
+
+00:05:12,470 --> 00:05:19,300
+turn everything lower case again as I showed in the documentation there's a ton a ton of string operators
+
+00:05:19,300 --> 00:05:21,180
+of functions for you to explore.
+
+00:05:21,180 --> 00:05:26,520
+So purify yourself needed to work with string functions operators or trying to use string functions
+
+00:05:26,530 --> 00:05:26,570
+.
+
+00:05:26,610 --> 00:05:29,650
+Let's say like a regular expression if that's something you're familiar with.
+
+00:05:29,820 --> 00:05:35,170
+Basically trying to find patterns where it's just the simple like statement isn't enough for you.
+
+00:05:35,370 --> 00:05:39,960
+You can go ahead and check out the documentation and if I go out and jump to it real quick I actually
+
+00:05:39,960 --> 00:05:42,350
+have it open in a tab here.
+
+00:05:42,660 --> 00:05:48,750
+We have string functions and operators zoom in a bit for more advanced users of sequel and more advanced
+
+00:05:48,750 --> 00:05:49,950
+programmers in general.
+
+00:05:49,950 --> 00:05:54,830
+You may want to check out regular expressions in sequel granted.
+
+00:05:55,030 --> 00:06:02,220
+Make sure you reference your specific sequel's engines documentation in order to fully understand how
+
+00:06:02,220 --> 00:06:02,980
+to use it.
+
+00:06:03,240 --> 00:06:09,000
+But if we scroll down here you'll notice you have some regular expressions so that means basically you
+
+00:06:09,000 --> 00:06:15,300
+can Passons stream columns and look for matches of certain words here and I'll tell you when they pop
+
+00:06:15,300 --> 00:06:15,870
+up.
+
+00:06:15,870 --> 00:06:17,840
+You can also do replacements etc..
+
+00:06:18,240 --> 00:06:23,070
+And as another quick note there's actually a whole subsection of postscripts sequel's documentation
+
+00:06:23,490 --> 00:06:26,820
+to explore regular expressions a little further.
+
+00:06:26,820 --> 00:06:28,650
+So I encourage you to check this out.
+
+00:06:28,680 --> 00:06:30,470
+In this specific documentation link.
+
+00:06:30,600 --> 00:06:34,020
+If regular expressions is something you feel you're going to be using a lot.
+
+00:06:34,140 --> 00:06:39,570
+Now again I always recommend trying to use something like like in order to use a regular expression
+
+00:06:39,570 --> 00:06:43,680
+operator as far as a pattern matching scheme just because it's a lot simpler and easier to come back
+
+00:06:43,680 --> 00:06:45,910
+to when you're reading your code later on.
+
+00:06:45,990 --> 00:06:52,020
+But if you do need some more complicated tasks sequel and specifically postscripts sequel can support
+
+00:06:52,020 --> 00:06:52,620
+that.
+
+00:06:52,990 --> 00:06:58,480
+OK so I hope this you've gotten out of this lecture is just a general idea of what's possible with string
+
+00:06:58,480 --> 00:07:03,060
+and functions and operators and you know what the documentation is in case you want a reference anything
+
+00:07:03,060 --> 00:07:07,070
+later on for your own specific data sets either at home or at work.
+
+00:07:07,430 --> 00:07:10,440
+OK thanks everyone and I will see you at the next lecture

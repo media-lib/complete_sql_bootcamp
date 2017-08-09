@@ -1,0 +1,287 @@
+00:00:01,320 --> 00:00:06,560
+Hello everyone and welcome to the mathematical functions lecture in this lecture.
+
+00:00:06,570 --> 00:00:10,960
+You're going to learn where you can find various mathematical functions available and post-career sequel
+
+00:00:11,370 --> 00:00:13,780
+and they're We're going to see some basic examples.
+
+00:00:13,860 --> 00:00:19,980
+Keep in mind most of the examples we're going to learn about will be available in whatever sequel engine
+
+00:00:19,980 --> 00:00:20,810
+you're using.
+
+00:00:20,940 --> 00:00:28,220
+But in the documentation you may be alerted to some specific post-career sequel functions.
+
+00:00:28,220 --> 00:00:34,770
+Now sequel comes for a lot of mathematical operators built in that are very use for numeric column types
+
+00:00:34,770 --> 00:00:35,190
+.
+
+00:00:35,190 --> 00:00:39,330
+You can explore all of them in the documentation you can find that this link or you can just google
+
+00:00:39,330 --> 00:00:44,240
+search postscripts sequel plus math and this will be the first link that pops up.
+
+00:00:44,440 --> 00:00:49,830
+So you can go ahead and go to this link or just google search for postscripts sequel plus math and this
+
+00:00:49,830 --> 00:00:51,620
+will be the first hit.
+
+00:00:51,660 --> 00:00:56,280
+So it's good to explore that documentation and then we'll see some examples in Peachi admen and how
+
+00:00:56,280 --> 00:01:01,560
+to actually use his mathematical operations and functions are going to go ahead and jump to the documentation
+
+00:01:01,560 --> 00:01:02,840
+now.
+
+00:01:03,870 --> 00:01:10,080
+OK so here we are at the documentation and something I want you to know is that there are a ton of mathematical
+
+00:01:10,080 --> 00:01:15,630
+functions and operators way more than we have time to go over in this course and they're really outside
+
+00:01:15,630 --> 00:01:17,130
+the scope of the course a lot of them.
+
+00:01:17,240 --> 00:01:20,480
+So issues like coastline are signed and they're really not useful.
+
+00:01:20,490 --> 00:01:26,010
+Given our data set but in case you do need them here's the documentation link so you can check them
+
+00:01:26,010 --> 00:01:26,290
+out.
+
+00:01:26,310 --> 00:01:30,150
+Again it's just that post-career sequela org slash talks slash.
+
+00:01:30,150 --> 00:01:35,990
+In this case I'm looking at the latest version 9.5 slash static slash functions math.
+
+00:01:36,060 --> 00:01:37,950
+Each Tamil or again.
+
+00:01:37,980 --> 00:01:42,700
+Just google search post-career sequel plus math and this will be the link that shows up.
+
+00:01:42,750 --> 00:01:49,380
+So we have basic mathematical operators available to us just plus minus multiplication and basically
+
+00:01:49,410 --> 00:01:54,030
+anything else you can think of just square roots cube roots factorials cetera.
+
+00:01:54,030 --> 00:01:58,710
+So if you have a numeric column types and you want to do mathematical operations on them you can with
+
+00:01:58,710 --> 00:02:03,910
+the use of these operators and there's examples here as well as results.
+
+00:02:03,900 --> 00:02:09,690
+Then there's also basic mathematical functions such as absolute values taking the ceiling of a number
+
+00:02:09,720 --> 00:02:13,210
+meaning takes a small integer not less than the argument.
+
+00:02:13,230 --> 00:02:15,720
+So here's an example of how you can use it.
+
+00:02:15,720 --> 00:02:23,580
+There's degrees exponentials logarithmic operations PI power operations rounding operations you've actually
+
+00:02:23,580 --> 00:02:24,510
+already seen this one.
+
+00:02:24,510 --> 00:02:26,970
+Remember we had around the numbers.
+
+00:02:27,330 --> 00:02:27,790
+OK.
+
+00:02:27,930 --> 00:02:32,150
+And there's a ton of them here that you can go through if you need them.
+
+00:02:32,190 --> 00:02:38,020
+There's also random operations that you can use to fill out random values or select random values.
+
+00:02:38,080 --> 00:02:43,330
+Then there's also trigonometric functions as ArcSight inverse sine etc..
+
+00:02:43,350 --> 00:02:47,300
+OK so let's go ahead and explore some of them are useful ones.
+
+00:02:47,310 --> 00:02:53,310
+And then let's go ahead and hop to PGE admin to see that I'm going to go to hop to PGE admen now and
+
+00:02:53,310 --> 00:02:58,090
+we'll explore a few of these useful mathematical functions and operators.
+
+00:02:58,110 --> 00:03:00,790
+OK so I went ahead and opened up a sequel editor.
+
+00:03:00,870 --> 00:03:06,200
+And what I'm going to do now is just explore a table and what kind of operations we can do on it.
+
+00:03:06,210 --> 00:03:12,720
+So don't say select everything from the payment tables and say no there's payment numbers there.
+
+00:03:13,720 --> 00:03:14,260
+OK.
+
+00:03:14,430 --> 00:03:20,340
+So here we have the payment table we have a payment ID customer id staff id the rental id amount and
+
+00:03:20,340 --> 00:03:21,770
+a payment date.
+
+00:03:21,810 --> 00:03:27,360
+So just an example of how you can use the basic operators such as like a plus or minus or the vision
+
+00:03:28,200 --> 00:03:35,790
+lets say we want to make a new ID for a specific event and that ID was going to be defined by the customer
+
+00:03:35,790 --> 00:03:39,750
+ID and the rental ID so that specific event could have an ID.
+
+00:03:39,780 --> 00:03:44,170
+This case we already have a payment ID is a specific event lets say you want to make one.
+
+00:03:44,190 --> 00:03:45,010
+How can we do that.
+
+00:03:45,120 --> 00:03:49,650
+We could just say take the customer and the add it to the rental ID and that will be that.
+
+00:03:49,650 --> 00:03:50,610
+You bet.
+
+00:03:51,000 --> 00:03:56,070
+Now you may have repetitive events in this manner but this is just a very basic example of how you could
+
+00:03:56,070 --> 00:04:06,300
+use an addition argument here or an operator could say something like select customer id plus in this
+
+00:04:06,300 --> 00:04:08,610
+case rental ID.
+
+00:04:08,610 --> 00:04:14,840
+I will say as lets go ahead and define this as a new ID I will go ahead and select that from payments
+
+00:04:14,850 --> 00:04:15,400
+.
+
+00:04:15,480 --> 00:04:19,580
+Now if I run this will get this new ID which is an integer.
+
+00:04:19,770 --> 00:04:25,560
+So we have this new ID for all the events of the payments.
+
+00:04:25,560 --> 00:04:31,740
+So he just basically took the customer ID column and added the slightly column we could also multiply
+
+00:04:31,740 --> 00:04:38,730
+them together and Ill do the mathematical operational allocation we can subtract them we can divide
+
+00:04:38,730 --> 00:04:40,480
+them etc..
+
+00:04:40,710 --> 00:04:42,970
+So heres a division in this case.
+
+00:04:42,990 --> 00:04:47,950
+Notice how the vision by itself produced all zeros here.
+
+00:04:48,330 --> 00:04:53,730
+If we take a look at the documentation just this division symbol by itself will be integer division
+
+00:04:53,730 --> 00:04:55,750
+that truncates the result.
+
+00:04:55,770 --> 00:05:01,140
+So this is happening because if we go ahead and change this to a comma basically everything is being
+
+00:05:01,140 --> 00:05:06,420
+rounded down to zero because we have this small three digit integer being divided by this larger four
+
+00:05:06,930 --> 00:05:08,140
+digit integer.
+
+00:05:08,220 --> 00:05:10,220
+We went ahead and reversed it.
+
+00:05:10,800 --> 00:05:19,110
+So we say Rensil ID divide it by a customer ID and ran that and put it are in there.
+
+00:05:19,890 --> 00:05:22,240
+Then we start getting these actual new ID results.
+
+00:05:22,250 --> 00:05:23,700
+That makes sense.
+
+00:05:23,730 --> 00:05:24,250
+OK.
+
+00:05:24,510 --> 00:05:27,770
+So those are the basics of the mathematical operators.
+
+00:05:27,780 --> 00:05:31,640
+Let's go ahead and show you the basics of the mathematical function.
+
+00:05:31,710 --> 00:05:42,420
+So if we go ahead and say select we'll go ahead and say avi for the average amount from payments for
+
+00:05:42,420 --> 00:05:45,470
+the go ahead run that we get this average amount.
+
+00:05:45,470 --> 00:05:53,370
+So its $4 and 20 something cents just as a reminder you could do something like round's which is a mathematical
+
+00:05:53,370 --> 00:06:01,710
+operation and tag or insert whatever column or query you're putting into a round and then run that until
+
+00:06:01,770 --> 00:06:02,520
+around that for you.
+
+00:06:02,520 --> 00:06:07,110
+Remember we've actually seen this because we can add a second argument which will be how many decimal
+
+00:06:07,110 --> 00:06:09,620
+places after the zero we want around to.
+
+00:06:09,620 --> 00:06:12,930
+So in this case around the two places after this.
+
+00:06:13,370 --> 00:06:14,040
+OK.
+
+00:06:14,040 --> 00:06:20,070
+So again you can explore the documentation yourself if you're ever finding the need to perform mathematical
+
+00:06:20,070 --> 00:06:20,960
+function.
+
+00:06:20,970 --> 00:06:25,290
+This is lecture's main purpose is just to show you that they're available for you if you ever find yourself
+
+00:06:25,320 --> 00:06:26,310
+needing them.
+
+00:06:26,700 --> 00:06:27,310
+OK.
+
+00:06:27,570 --> 00:06:32,130
+With that being said that's it for this lecture in the next lecture we're going to go ahead and explore
+
+00:06:32,370 --> 00:06:35,250
+a couple more advance features of sequel.
+
+00:06:35,250 --> 00:06:37,290
+Thanks everyone and I'll see you there.
