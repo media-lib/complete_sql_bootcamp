@@ -1,0 +1,464 @@
+00:00:01,140 --> 00:00:05,830
+Hello everyone and welcome to the Mac OS database setup.
+
+00:00:05,910 --> 00:00:10,530
+So this lecture is going to show you how to use the zip file from the previous lecture and set up your
+
+00:00:10,530 --> 00:00:16,830
+database for the course in order to open and extract the zip file you may need to download some free
+
+00:00:16,830 --> 00:00:17,760
+software.
+
+00:00:18,030 --> 00:00:20,680
+I personally recommend downloading WW.
+
+00:00:20,790 --> 00:00:29,540
+Isaac Dotcom's file or software the AIs application that will allow you to open an extra zip files.
+
+00:00:29,550 --> 00:00:34,710
+So again if you haven't already go back to the previous lecture and download from the resources section
+
+00:00:35,070 --> 00:00:36,320
+the DVD rental that's it.
+
+00:00:36,330 --> 00:00:37,040
+File.
+
+00:00:37,410 --> 00:00:42,160
+If you're using a Mac and haven't downloaded it is it file or extraction software.
+
+00:00:42,160 --> 00:00:43,550
+Could it delete WW.
+
+00:00:43,670 --> 00:00:44,650
+Is it dot com.
+
+00:00:44,700 --> 00:00:51,090
+Which I'll show you in just a second and download the isip program in order to extract zip files.
+
+00:00:51,150 --> 00:00:58,050
+I should note sometimes the default archive utility won't work for this step meaning if you try unzipping
+
+00:00:58,050 --> 00:01:01,830
+the file using archive utility the default for a Mac.
+
+00:01:02,100 --> 00:01:06,020
+Sometimes it won't work.
+
+00:01:06,600 --> 00:01:11,580
+So a quick note on the database are going to be using the common learning sample database.
+
+00:01:11,600 --> 00:01:14,260
+This Aqeel a database known as the package.
+
+00:01:14,330 --> 00:01:15,710
+Or put Jilla.
+
+00:01:15,870 --> 00:01:19,970
+Depending how you want to pronounce it database for postgresql.
+
+00:01:20,040 --> 00:01:22,940
+Couple of reasons why this is a great database one.
+
+00:01:23,040 --> 00:01:29,140
+It's a really common database for examples and two it's really easy to use as a reference tool.
+
+00:01:29,490 --> 00:01:35,400
+So that means if you look up online documentation more often than not they'll be using this particular
+
+00:01:35,400 --> 00:01:37,880
+database to show off their examples.
+
+00:01:37,880 --> 00:01:42,090
+Meaning since you've learned them this database throughout this course it's going to be really easy
+
+00:01:42,090 --> 00:01:44,070
+to hop around two different examples.
+
+00:01:44,070 --> 00:01:46,670
+If she's in a database you're already familiar with.
+
+00:01:46,980 --> 00:01:51,420
+So this database kind of reflects a chain of DVD rental stores.
+
+00:01:51,570 --> 00:01:58,380
+So it's also really easy to understand what each of the tables represents such as customers DVDs films
+
+00:01:58,440 --> 00:02:01,520
+actors languages etc..
+
+00:02:01,720 --> 00:02:07,710
+Ok once you've completed this lecture you can go ahead and jump straight to the lecture title challenge
+
+00:02:07,710 --> 00:02:10,610
+restore a database to a couple of lectures ahead of this.
+
+00:02:10,740 --> 00:02:16,050
+From that lecture onwards this course will be relatively Ogust at trial meaning whether using a Mac
+
+00:02:16,080 --> 00:02:21,150
+or Windows everything should look exactly the same as far as the sequel queries are concerned.
+
+00:02:21,480 --> 00:02:26,310
+With that being said lets go ahead and hop to my desktop and show you what you need to know and actually
+
+00:02:26,310 --> 00:02:31,560
+go through the process of setting up our new database and filling it with the data we need.
+
+00:02:31,560 --> 00:02:34,860
+I'm going to go ahead and jump to my desktop now.
+
+00:02:36,180 --> 00:02:43,050
+OK so here I am at my desktop and what I wanted to show you that in case you don't have Zipp software
+
+00:02:43,390 --> 00:02:49,070
+we should do is go to WW w the eyes dot com and scroll down and download for free.
+
+00:02:49,080 --> 00:02:54,360
+This isip software is completely free so you don't need to pay for any sort of license here and it's
+
+00:02:54,360 --> 00:02:59,580
+a really nice way to manage and unzip and extract information from that zip files.
+
+00:02:59,580 --> 00:03:04,890
+Once you've done that go ahead and locate the DVD rental that zip file that you downloaded from the
+
+00:03:04,890 --> 00:03:06,690
+previous lecture.
+
+00:03:06,870 --> 00:03:10,170
+For me it's located right here on my desktop DVD rental.
+
+00:03:10,170 --> 00:03:11,450
+That's it.
+
+00:03:11,490 --> 00:03:12,840
+Go ahead.
+
+00:03:12,840 --> 00:03:17,840
+Right click on it say open with don't use the archive utility default.
+
+00:03:17,910 --> 00:03:20,550
+Instead go to other.
+
+00:03:20,550 --> 00:03:23,400
+This will show you a list of all your applications.
+
+00:03:23,400 --> 00:03:25,770
+Enable all applications.
+
+00:03:26,060 --> 00:03:26,380
+Click.
+
+00:03:26,400 --> 00:03:32,670
+I go down to the applications and then you should see isip after you've downloaded it.
+
+00:03:32,680 --> 00:03:35,580
+Granted maybe you're using another Zipp software.
+
+00:03:35,700 --> 00:03:40,050
+As long as you feel comfortable using that and everything works out the same as it does isip that's
+
+00:03:40,050 --> 00:03:41,000
+OK too.
+
+00:03:41,250 --> 00:03:44,670
+But let's go ahead and click open of isip.
+
+00:03:45,780 --> 00:03:49,960
+And now we have DVD rental and you should see DVD rental tar.
+
+00:03:50,040 --> 00:03:52,060
+That's exactly the file we need.
+
+00:03:52,080 --> 00:03:57,790
+Everything's ready to go if he tried doing the same step with archive utility default.
+
+00:03:57,990 --> 00:04:05,190
+You may have gotten a folder that looks something like this with a bunch of DJT files in a restore that
+
+00:04:05,190 --> 00:04:06,800
+sequel file.
+
+00:04:06,990 --> 00:04:10,560
+It's going to be a lot harder to use these files to restore the database.
+
+00:04:10,560 --> 00:04:16,380
+So make sure that when you extracted the database it ended up giving you a tar file.
+
+00:04:16,620 --> 00:04:18,950
+That's kind of important for the next step.
+
+00:04:18,960 --> 00:04:24,960
+Again if you're getting something that looks more like this with the D 80 files and finally a restore
+
+00:04:24,960 --> 00:04:26,820
+that sequel download I.
+
+00:04:26,830 --> 00:04:27,580
+That's it.
+
+00:04:27,810 --> 00:04:32,510
+And make sure you can extract it so that it looks like a duck tar file instead.
+
+00:04:32,520 --> 00:04:38,490
+OK with that being said once we have that all set up on our desktop the next step is to restart database
+
+00:04:38,520 --> 00:04:39,770
+mpg admin.
+
+00:04:40,020 --> 00:04:50,200
+Go ahead and do command space and search for PGE admin then click enter to open it let's go ahead and
+
+00:04:50,200 --> 00:04:53,800
+expand this a little bit so it's easier to see.
+
+00:04:53,800 --> 00:04:57,510
+So this is a PGE admin should look like should have servers here.
+
+00:04:57,640 --> 00:05:00,940
+Go ahead and double click on postscripts sequel 9.5.
+
+00:05:01,120 --> 00:05:03,510
+You'll be prompted for your password.
+
+00:05:03,520 --> 00:05:05,120
+Go ahead and put it in.
+
+00:05:05,500 --> 00:05:09,460
+And if you don't want to be prompted for your password every time you can just click here and say store
+
+00:05:09,460 --> 00:05:11,800
+password click OK.
+
+00:05:12,040 --> 00:05:14,220
+They'll give you a warning about showing passwords.
+
+00:05:14,320 --> 00:05:18,600
+Don't just say don't show this again and click OK.
+
+00:05:18,640 --> 00:05:19,200
+All right.
+
+00:05:19,390 --> 00:05:24,820
+Now we're ready to actually make a database where we can do is you can see already have a couple of
+
+00:05:24,820 --> 00:05:26,280
+databases made here.
+
+00:05:26,400 --> 00:05:32,140
+You will probably only have this post-crash sequel or postgresql database in order to create a new database
+
+00:05:32,140 --> 00:05:32,170
+.
+
+00:05:32,170 --> 00:05:38,920
+Go ahead and right click on database and click new database then just put in the name of the database
+
+00:05:38,920 --> 00:05:49,900
+you want we'll call this new DVD database and then click OK once you've done that you should see the
+
+00:05:49,900 --> 00:05:52,700
+new database pop up here.
+
+00:05:52,810 --> 00:06:00,400
+Now if you go ahead and click on the dropdown menus you'll see schema public and then all the way down
+
+00:06:00,400 --> 00:06:02,770
+here you'll see tables equals zero.
+
+00:06:03,010 --> 00:06:04,910
+So that means what we do have a database.
+
+00:06:04,930 --> 00:06:06,820
+You don't actually have any data in it.
+
+00:06:06,880 --> 00:06:12,670
+So the next step is to do that is to use that tar file in order to fill out the data for our database
+
+00:06:12,680 --> 00:06:13,000
+.
+
+00:06:13,330 --> 00:06:19,990
+So we're going to do so if we go ahead and right click on new DVD database that database that we just
+
+00:06:19,990 --> 00:06:20,980
+created.
+
+00:06:20,980 --> 00:06:24,730
+Go ahead and click on restore.
+
+00:06:25,030 --> 00:06:31,480
+You should see something like this pop up where format custom or tar and then file name what you're
+
+00:06:31,480 --> 00:06:35,200
+going to want to do is go ahead and clear that.
+
+00:06:35,790 --> 00:06:40,370
+And once you've cleared that file name go ahead and then click on these three dots.
+
+00:06:40,930 --> 00:06:45,400
+And what you want to do now is figure out where a DVD rental the tar file is.
+
+00:06:45,400 --> 00:06:47,730
+So for me it's on my desktop.
+
+00:06:47,950 --> 00:06:54,130
+But if we actually look to where my desktop is it's actually presented as a drive or a device.
+
+00:06:54,280 --> 00:06:58,870
+So it's going to be listed under devices here under DVD rental suffuse.
+
+00:06:59,080 --> 00:07:05,350
+If you use the isip application program to do this they'll probably be under devices if you use something
+
+00:07:05,350 --> 00:07:05,940
+else.
+
+00:07:05,980 --> 00:07:09,620
+It'll be wherever the DVD rental that zip files located.
+
+00:07:09,700 --> 00:07:12,070
+Go ahead and find the tar file.
+
+00:07:12,070 --> 00:07:17,980
+If you can't click on it it's because you haven't enabled it as selectable.
+
+00:07:17,980 --> 00:07:25,060
+So go ahead and go to enable all files and then you can go ahead and click the tar file here then click
+
+00:07:25,090 --> 00:07:30,280
+open and then just click restore.
+
+00:07:30,280 --> 00:07:35,350
+You should see some messages pop up and then if process return exit code 0 means you're done.
+
+00:07:35,350 --> 00:07:38,570
+Go ahead and click on here.
+
+00:07:39,760 --> 00:07:46,800
+And if we go ahead and refreshed this database so new DVD database go ahead and click refresh.
+
+00:07:48,010 --> 00:07:53,470
+And now if we scroll down to the tables you have all the tables available to you and your database is
+
+00:07:53,470 --> 00:07:54,730
+now full of data.
+
+00:07:55,060 --> 00:07:57,890
+So just to make sure everything's working correctly.
+
+00:07:57,940 --> 00:08:02,050
+Go ahead and click new DVD database or whatever you decided to name or database.
+
+00:08:02,200 --> 00:08:07,490
+Click here on the little magnifying glass that says execute arbitrary sequel query.
+
+00:08:08,110 --> 00:08:18,730
+You should see something that looks like this and go ahead and say select space Asterix from actor semi-colon
+
+00:08:19,330 --> 00:08:24,130
+and you actually don't have to uppercase select and from and we'll show you how to do these sort of
+
+00:08:24,130 --> 00:08:25,660
+queries later on.
+
+00:08:25,660 --> 00:08:31,900
+But if you just go ahead and select this execute query this play button and if you get data output coming
+
+00:08:31,900 --> 00:08:33,230
+out of this.
+
+00:08:33,330 --> 00:08:38,380
+So down here if you get data output that means everything's ready to go and you're more than ready to
+
+00:08:38,380 --> 00:08:42,110
+go ahead and tackle the rest of the Course now.
+
+00:08:42,270 --> 00:08:48,310
+Now you can go ahead and feel free to jump directly to the challenge lecture and the child's lecture
+
+00:08:48,320 --> 00:08:52,860
+is just going to ask you to basically repeat all the steps we just did in order to practice for storing
+
+00:08:52,860 --> 00:08:54,870
+a database.
+
+00:08:54,970 --> 00:08:57,740
+Go ahead and don't worry about saving that queery for now.
+
+00:08:58,630 --> 00:09:04,860
+As a quick review let me just go over everything we just did to restore this database.
+
+00:09:04,900 --> 00:09:08,720
+OK let's quickly go over all the steps you just did it for creating that database.
+
+00:09:08,950 --> 00:09:14,740
+You had to download a DVD rental that zip file from the previous lecture download or already use your
+
+00:09:14,740 --> 00:09:19,300
+favorite zip application file to extract stuff from that zip files.
+
+00:09:19,300 --> 00:09:23,550
+I recommend going to w w w dot izip dot com.
+
+00:09:23,610 --> 00:09:30,050
+Then open an extract DVD rental tar file from the DVD rental a zip file using ise it.
+
+00:09:30,400 --> 00:09:33,460
+Then you had a search for PGE adamant three and open it.
+
+00:09:33,670 --> 00:09:39,740
+Then you had a double click on postgresql 9.5 to go ahead and see those databases dropdown.
+
+00:09:39,760 --> 00:09:46,150
+Then right click on the database's icon and then select new database and then you could have been naming
+
+00:09:46,150 --> 00:09:50,400
+your new database and then you select one that was for creating a database.
+
+00:09:50,680 --> 00:09:53,210
+After that we restored the database there.
+
+00:09:53,290 --> 00:09:58,720
+To do that you had to right click on that new database and select restore you to find the path to the
+
+00:09:58,720 --> 00:10:03,060
+DVD rental that tar file and remember to enable all the file extensions.
+
+00:10:03,280 --> 00:10:05,760
+Then you have to select it and click on the restore.
+
+00:10:05,800 --> 00:10:10,540
+After that we had to just click the refresh button with your database selected and then you should now
+
+00:10:10,540 --> 00:10:15,580
+be able to see the table 15 in the dropdown menu of your database and you can test this like we just
+
+00:10:15,580 --> 00:10:19,160
+did by executing an arbitrary siecle query on the database.
+
+00:10:19,360 --> 00:10:22,320
+OK so all these steps are lined up for you.
+
+00:10:22,320 --> 00:10:27,040
+In both the previous lecture and then the next lecture is a quick article summarizing what we just did
+
+00:10:27,220 --> 00:10:27,640
+.
+
+00:10:28,020 --> 00:10:32,500
+OK so if you have any questions go ahead and ask a discussion question.
+
+00:10:32,500 --> 00:10:35,900
+Sometimes installing and restoring these databases can be tricky.
+
+00:10:35,980 --> 00:10:39,290
+So always feel free to ask any discussion questions.
+
+00:10:39,340 --> 00:10:39,910
+All right.
+
+00:10:40,180 --> 00:10:42,520
+Thanks everyone and I'll see you at the next lecture.

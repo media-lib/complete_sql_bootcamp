@@ -1,0 +1,293 @@
+00:00:01,800 --> 00:00:02,580
+Hello everyone.
+
+00:00:02,580 --> 00:00:08,330
+Welcome to the post postscripts sequel Mac installation lecture video to start off.
+
+00:00:08,340 --> 00:00:10,890
+Go ahead and open up your browser and go to W..
+
+00:00:10,900 --> 00:00:12,390
+They'll be w that post.
+
+00:00:12,410 --> 00:00:13,790
+Gresse sequel.
+
+00:00:13,830 --> 00:00:14,870
+Org.
+
+00:00:15,560 --> 00:00:16,080
+OK.
+
+00:00:16,110 --> 00:00:17,640
+And go ahead and jump to the browser.
+
+00:00:17,640 --> 00:00:20,260
+See you there.
+
+00:00:22,410 --> 00:00:24,570
+OK here I am at postscripts sequel.
+
+00:00:24,690 --> 00:00:30,720
+Or what you're going to go ahead and do is click download and when you go to download what you're going
+
+00:00:30,720 --> 00:00:34,080
+to do is go ahead and scroll down and click.
+
+00:00:34,080 --> 00:00:40,390
+Mac OS X and then you'll notice there's a graphical installer.
+
+00:00:40,620 --> 00:00:44,730
+So go ahead and download that graphical installer.
+
+00:00:45,690 --> 00:00:48,380
+You can go ahead and close any pop ups that happen.
+
+00:00:48,960 --> 00:00:54,060
+So this will take you to the download postgresql page depending on what what say you go to.
+
+00:00:54,060 --> 00:00:56,490
+It may be hosted on like Enterprise D-B dot com.
+
+00:00:56,490 --> 00:00:57,430
+Don't worry about that.
+
+00:00:57,470 --> 00:00:59,260
+It's just like some free hosting service.
+
+00:00:59,490 --> 00:01:04,470
+So again you'll see download post sequel and then go ahead and click for the latest version.
+
+00:01:04,470 --> 00:01:09,520
+At this point it's nine point 5.1 at the time of the filming of this lecture video.
+
+00:01:09,540 --> 00:01:12,220
+Go ahead and download the latest version and then click.
+
+00:01:12,220 --> 00:01:14,960
+Mac O S X..
+
+00:01:15,300 --> 00:01:16,780
+So go ahead and download that.
+
+00:01:16,900 --> 00:01:23,030
+That doesn't download you can always click here you'll download the DMG file.
+
+00:01:23,250 --> 00:01:27,840
+Let's go ahead and save that and then wait for the download.
+
+00:01:28,320 --> 00:01:33,060
+So I'll go ahead and jump to the Stallard being finished.
+
+00:01:33,210 --> 00:01:36,900
+So now that it's finished downloading Let's go ahead and click on that file.
+
+00:01:36,900 --> 00:01:39,560
+You'll go ahead and see that it's opening.
+
+00:01:39,690 --> 00:01:45,130
+And so now that we have this open we can go ahead and double click this file and you'll notice you may
+
+00:01:45,130 --> 00:01:45,730
+get a warning.
+
+00:01:45,740 --> 00:01:51,780
+Here you can just go ahead and click the on me and then you can go and open that you may be prompted
+
+00:01:51,780 --> 00:01:52,800
+for your password.
+
+00:01:52,800 --> 00:01:56,060
+Go ahead and type that in.
+
+00:01:56,610 --> 00:02:04,710
+Click OK and you'll notice it'll get the postgresql sequel installer running.
+
+00:02:05,640 --> 00:02:07,200
+So you have a little set up wizard.
+
+00:02:07,200 --> 00:02:09,610
+Just go ahead and follow the directions.
+
+00:02:09,810 --> 00:02:13,470
+You can specify a specific directory where post-procedure will be installed.
+
+00:02:13,470 --> 00:02:18,800
+I'm going to go ahead and go of the defaults here again David their victory just the default.
+
+00:02:19,320 --> 00:02:20,380
+Here's the important part.
+
+00:02:20,490 --> 00:02:22,790
+You're going to need to provide a password for the database.
+
+00:02:22,790 --> 00:02:23,930
+Superuser.
+
+00:02:24,090 --> 00:02:26,460
+Get into what a super user is later.
+
+00:02:26,460 --> 00:02:28,650
+But go ahead and type a password here and retype it.
+
+00:02:28,670 --> 00:02:31,000
+But make sure you write this password down somewhere.
+
+00:02:31,100 --> 00:02:38,730
+You can go ahead and be the same as the password to your laptop computer or your just your Mac.
+
+00:02:38,730 --> 00:02:40,750
+So go ahead and type in that password.
+
+00:02:40,800 --> 00:02:44,460
+Remember you should write this down and you should remember it.
+
+00:02:44,700 --> 00:02:46,310
+You'll get a port here.
+
+00:02:46,320 --> 00:02:48,990
+Five four three two that it should be listening on.
+
+00:02:48,990 --> 00:02:55,070
+Go ahead and leave that as the default and you may get some selection.
+
+00:02:55,080 --> 00:03:00,570
+Go ahead and keep that the fault for the locale and then go ahead and click next and it's going to go
+
+00:03:00,570 --> 00:03:01,500
+ahead and install that.
+
+00:03:01,530 --> 00:03:04,550
+And you'll notice it installs it pretty dang fast.
+
+00:03:05,130 --> 00:03:09,130
+So go ahead and let it happen.
+
+00:03:09,180 --> 00:03:16,510
+This may take a couple of minutes and we'll go ahead and let that happen.
+
+00:03:17,340 --> 00:03:19,750
+So you'll see a stack builder.
+
+00:03:19,950 --> 00:03:27,470
+Go ahead and just don't install that and click Finish.
+
+00:03:27,480 --> 00:03:32,340
+Now that we've installed postscripts sequel we're gonna want to install a PGE admin which is a GeoEye
+
+00:03:32,340 --> 00:03:37,310
+or graphical user interface which is going to help us get things up and running quickly.
+
+00:03:37,440 --> 00:03:42,680
+And it's one of the primary tools people use when working with a postgresql database.
+
+00:03:42,960 --> 00:03:47,760
+So go ahead and go to w w w that PGE adamant that orch going to go ahead and jump to that my browser
+
+00:03:47,790 --> 00:03:49,470
+now.
+
+00:03:49,830 --> 00:03:52,850
+So PGE atom in the org should look something like this.
+
+00:03:52,920 --> 00:03:56,590
+Go ahead and select download.
+
+00:03:56,990 --> 00:03:59,160
+So you noticed you have various options here.
+
+00:03:59,190 --> 00:04:06,940
+Go ahead and click here on Mac OSX and then get the latest version of PGE admin.
+
+00:04:07,200 --> 00:04:11,040
+You'll notice you have some files to go ahead download the DMG file.
+
+00:04:11,670 --> 00:04:12,890
+That's the PGR and files.
+
+00:04:12,900 --> 00:04:17,050
+Go ahead and save that.
+
+00:04:17,850 --> 00:04:20,700
+I'm going to go ahead and jump to when it's done saving.
+
+00:04:22,110 --> 00:04:24,760
+And now that it's done it's go ahead and click on that file.
+
+00:04:24,960 --> 00:04:27,570
+You'll get some license agreement.
+
+00:04:27,570 --> 00:04:32,490
+Go ahead and agree to it and then you'll see it start working.
+
+00:04:34,080 --> 00:04:40,470
+So once you have P.G. adamant three here what you're going to do is come down to Finder select new Finder
+
+00:04:40,470 --> 00:04:41,460
+window.
+
+00:04:42,330 --> 00:04:48,240
+And what you're going to do is take PGE adamant three and drag it into your applications and then let
+
+00:04:48,240 --> 00:04:49,550
+it go there.
+
+00:04:49,560 --> 00:04:55,820
+Once you've done that and you check your applications under your postgresql 9.5 folder you should CPG
+
+00:04:55,890 --> 00:04:57,300
+adamant theory.
+
+00:04:57,300 --> 00:05:01,530
+So then if you go ahead and double click that that should pop up.
+
+00:05:01,530 --> 00:05:05,910
+And now you have the PGE admin 3 development environment.
+
+00:05:05,910 --> 00:05:09,910
+So this is one of the main things we're going to be working in throughout the rest of the Course I'm
+
+00:05:09,930 --> 00:05:11,600
+really working in a Windows environment.
+
+00:05:11,700 --> 00:05:17,000
+So if you see me looking for files you will see a Windows Explorer you can just basically fall all of
+
+00:05:17,000 --> 00:05:20,130
+the same actions in a Mac OS explore.
+
+00:05:20,250 --> 00:05:24,900
+And what's really nice about PGE outman is it's basically going to let anyone they're using Windows
+
+00:05:24,900 --> 00:05:28,570
+or Mac or Linux if you have PGE out of an available to you.
+
+00:05:28,780 --> 00:05:30,020
+Everything is going to look the same.
+
+00:05:30,020 --> 00:05:33,060
+So everything we're going to be learning about is going to be mpg absent.
+
+00:05:33,090 --> 00:05:34,520
+So just keep that in mind.
+
+00:05:34,890 --> 00:05:35,650
+OK.
+
+00:05:36,180 --> 00:05:38,630
+So that's it for the basic installation.
+
+00:05:38,670 --> 00:05:44,730
+What I encourage you to do now is check out how to restore a database in order to learn how to get all
+
+00:05:44,730 --> 00:05:49,830
+the files and resources set up on your computer and have download the example database onto your computer
+
+00:05:49,850 --> 00:05:50,120
+.
+
+00:05:50,370 --> 00:05:51,000
+OK.
+
+00:05:51,180 --> 00:05:53,330
+Thanks everyone and I will see the next lecture
